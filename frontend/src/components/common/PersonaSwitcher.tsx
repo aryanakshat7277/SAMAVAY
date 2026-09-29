@@ -96,7 +96,7 @@ export const PersonaSwitcher: React.FC = () => {
 
       {/* Expanded Persona Switcher Drawer Modal */}
       {isOpen && (
-        <div className="absolute bottom-14 left-0 w-84 sm:w-96 bg-[#092119]/98 border border-gov-700/80 rounded-3xl shadow-2xl p-4 text-stone-100 backdrop-blur-xl animate-fade-in-scale">
+        <div className="absolute bottom-14 left-0 w-84 sm:w-96 bg-[#061e38]/98 border border-gov-700/80 rounded-3xl shadow-2xl p-4 text-slate-100 backdrop-blur-xl animate-fade-in-scale">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-gov-800 pb-3 mb-3">
             <div className="flex items-center gap-2">

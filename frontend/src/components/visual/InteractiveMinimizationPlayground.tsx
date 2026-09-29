@@ -285,13 +285,13 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
         </div>
 
         {/* Right: SAMAVAY Sovereign Interoperable Way */}
-        <div className="lg:col-span-5 bg-gov-50/70 border-2 border-emerald-500/50 rounded-2xl p-5 space-y-4 flex flex-col justify-between shadow-xs">
+        <div className="lg:col-span-5 bg-blue-50/50 border-2 border-blue-500/50 rounded-2xl p-5 space-y-4 flex flex-col justify-between shadow-xs">
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-emerald-200">
-              <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+            <div className="flex items-center justify-between pb-3 border-b border-blue-200">
+              <span className="text-xs font-bold text-gov-800 uppercase tracking-wider flex items-center gap-1.5 font-mono">
                 <span>✅</span> SAMAVAY Sovereign Mesh
               </span>
-              <span className="text-[10px] bg-emerald-200 text-emerald-900 font-black px-2 py-0.5 rounded-full font-mono">
+              <span className="text-[10px] bg-blue-100 text-gov-900 font-black px-2 py-0.5 rounded-full font-mono">
                 {reusePercentage}% REUSED
               </span>
             </div>

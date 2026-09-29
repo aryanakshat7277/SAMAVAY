@@ -41,7 +41,7 @@ export const TopGovBanner: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-[#092119] text-stone-100 text-[11px] border-b border-[#164a37]">
+    <div className="relative bg-[#061e38] text-slate-100 text-[11px] border-b border-[#0f345c]">
       {/* Skip to Main Content Accessible Link */}
       <a
         href="#main-content"

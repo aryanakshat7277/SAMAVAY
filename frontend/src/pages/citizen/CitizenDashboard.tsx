@@ -274,10 +274,10 @@ export const CitizenDashboard: React.FC = () => {
         {/* Right Col: Connected Platforms Widget & Trust Box */}
         <div className="lg:col-span-4 space-y-6">
           {/* Meri Pehchan Sovereign Vault Card */}
-          <div className="bg-white border-2 border-emerald-500/30 rounded-3xl p-5 shadow-card space-y-3.5">
+          <div className="bg-white border border-stone-200/90 rounded-3xl p-5 shadow-card space-y-3.5">
             <div className="flex items-center justify-between border-b border-stone-100 pb-2.5">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold text-xs">
+                <div className="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-gov-800 font-bold text-xs">
                   🇮🇳
                 </div>
                 <div>
@@ -289,7 +289,7 @@ export const CitizenDashboard: React.FC = () => {
                   </span>
                 </div>
               </div>
-              <span className="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full font-mono">
+              <span className="text-[9px] bg-blue-100 text-gov-800 font-bold px-2 py-0.5 rounded-full font-mono">
                 VERIFIED
               </span>
             </div>
