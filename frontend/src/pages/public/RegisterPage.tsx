@@ -88,14 +88,14 @@ export const RegisterPage: React.FC = () => {
             </div>
             <div>
               <span className="text-white font-black text-lg font-serif">SAMAVAY</span>
-              <p className="text-gov-300 text-[10px] font-medium">National Digital Public Infrastructure</p>
+              <p className="text-gov-200 text-xs font-medium">National Digital Public Infrastructure</p>
             </div>
           </div>
 
           {/* Center content */}
           <div className={`space-y-8 transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <div>
-              <div className="inline-flex items-center gap-2 bg-saffron-500/20 border border-saffron-400/30 text-saffron-300 text-[10px] font-bold px-3 py-1.5 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 bg-saffron-500/20 border border-saffron-400/30 text-saffron-300 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
                 <span className="w-1.5 h-1.5 bg-saffron-400 rounded-full animate-pulse" />
                 JOIN 1.66 MILLION CITIZENS
               </div>
@@ -103,7 +103,7 @@ export const RegisterPage: React.FC = () => {
                 India's Unified<br />
                 <span className="text-saffron-400">Government Service Platform</span>
               </h2>
-              <p className="text-gov-300 text-sm mt-3 leading-relaxed max-w-sm">
+              <p className="text-gov-200 text-sm mt-3 leading-relaxed max-w-sm font-normal">
                 Register once. Access all state and central government services with automatic
                 data verification and zero repeated uploads.
               </p>
@@ -119,12 +119,12 @@ export const RegisterPage: React.FC = () => {
                   }`}
                   style={{ transitionDelay: `${(i + 1) * 150}ms` }}
                 >
-                  <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 text-saffron-400">
-                    <Icon className="w-4 h-4" />
+                  <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 text-saffron-400">
+                    <Icon className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-xs">{title}</p>
-                    <p className="text-gov-400 text-[11px] mt-0.5 leading-snug">{desc}</p>
+                    <p className="text-white font-bold text-sm font-serif">{title}</p>
+                    <p className="text-gov-200 text-xs mt-0.5 leading-snug font-normal">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -132,10 +132,10 @@ export const RegisterPage: React.FC = () => {
           </div>
 
           {/* Bottom trust strip */}
-          <div className="flex flex-wrap gap-3 text-[10px] text-gov-400 font-medium">
-            <span className="flex items-center gap-1.5"><Check className="w-3 h-3 text-emerald-500" />Ministry of Electronics & IT</span>
-            <span className="flex items-center gap-1.5"><Check className="w-3 h-3 text-emerald-500" />NIC Hosted</span>
-            <span className="flex items-center gap-1.5"><Check className="w-3 h-3 text-emerald-500" />DigiLocker Integration</span>
+          <div className="flex flex-wrap gap-3 text-xs text-gov-300 font-semibold">
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />Ministry of Electronics & IT</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />NIC Hosted</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />DigiLocker Integration</span>
           </div>
         </div>
       </div>
@@ -157,14 +157,14 @@ export const RegisterPage: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl font-black text-stone-900 font-serif">
               Create Citizen Account
             </h1>
-            <p className="text-xs text-stone-500 mt-1">
+            <p className="text-xs sm:text-sm text-stone-600 mt-1 font-medium">
               Sovereign digital identity — register once, access everything
             </p>
           </div>
 
           {/* Error */}
           {errorMsg && (
-            <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs flex items-center gap-2 animate-fade-in-scale">
+            <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs sm:text-sm flex items-center gap-2 animate-fade-in-scale font-medium">
               <AlertCircle className="w-4 h-4 text-rose-600 flex-shrink-0" />
               <span>{errorMsg}</span>
             </div>
@@ -202,9 +202,9 @@ export const RegisterPage: React.FC = () => {
             {/* Password with strength meter */}
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <label className="block text-xs font-semibold text-stone-800">Create Password</label>
+                <label className="block text-xs sm:text-[13px] font-bold text-stone-900">Create Password</label>
                 {password && (
-                  <span className={`text-[10px] font-bold ${
+                  <span className={`text-xs font-bold ${
                     passwordStrength === 1 ? 'text-rose-600' : passwordStrength === 2 ? 'text-saffron-600' : 'text-gov-700'
                   }`}>
                     {strengthLabel}
@@ -218,12 +218,12 @@ export const RegisterPage: React.FC = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Minimum 6 characters"
-                  className="w-full text-xs text-stone-900 bg-white border border-stone-300 rounded-xl py-2.5 pl-3.5 pr-10 focus:border-gov-600 focus:ring-1 focus:ring-gov-600 outline-none transition"
+                  className="w-full text-sm font-medium text-stone-900 bg-white border border-stone-300 rounded-xl py-2.5 pl-3.5 pr-10 focus:border-gov-600 focus:ring-1 focus:ring-gov-600 outline-none transition"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-500 hover:text-stone-700"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -248,14 +248,14 @@ export const RegisterPage: React.FC = () => {
             />
 
             {/* DPDP Consent */}
-            <label className="flex items-start gap-3 p-3 bg-gov-50 border border-gov-200 rounded-xl cursor-pointer group hover:bg-gov-100 transition">
+            <label className="flex items-start gap-3 p-3.5 bg-gov-50 border border-gov-200 rounded-xl cursor-pointer group hover:bg-gov-100 transition">
               <input
                 type="checkbox"
                 checked={dpdpConsent}
                 onChange={(e) => setDpdpConsent(e.target.checked)}
-                className="mt-0.5 h-4 w-4 rounded border-gov-300 text-gov-700 focus:ring-gov-500 flex-shrink-0"
+                className="mt-0.5 h-4 w-4 rounded border-gov-300 text-gov-700 focus:ring-gov-500 flex-shrink-0 cursor-pointer"
               />
-              <div className="text-[11px] text-gov-900 leading-snug">
+              <div className="text-xs text-gov-950 leading-snug font-medium">
                 <span className="font-bold text-gov-800">I accept the DPDP Act 2023 Terms — </span>
                 my details will be governed with purpose-bound consent and I may revoke access at any time from my Data Permissions page.
               </div>
@@ -264,7 +264,7 @@ export const RegisterPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading || !dpdpConsent}
-              className="w-full py-3 px-6 bg-gov-700 hover:bg-gov-800 disabled:bg-stone-400 text-white text-xs font-bold rounded-xl transition-all duration-200 shadow-gov hover:shadow-gov-lg flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
+              className="w-full py-3 px-6 bg-gov-700 hover:bg-gov-800 disabled:bg-stone-400 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-gov hover:shadow-gov-lg flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>
@@ -282,21 +282,21 @@ export const RegisterPage: React.FC = () => {
 
           {/* Trust indicators */}
           <div className="flex flex-wrap justify-center gap-3 pt-1">
-            <span className="flex items-center gap-1 text-[10px] font-medium text-gov-700">
-              <ShieldCheck className="w-3 h-3" />DPDP Compliant
+            <span className="flex items-center gap-1.5 text-xs font-semibold text-gov-800">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />DPDP Compliant
             </span>
-            <span className="flex items-center gap-1 text-[10px] font-medium text-gov-700">
-              <Lock className="w-3 h-3" />mTLS Secure
+            <span className="flex items-center gap-1.5 text-xs font-semibold text-gov-800">
+              <Lock className="w-3.5 h-3.5 text-gov-700" />mTLS Secure
             </span>
-            <span className="flex items-center gap-1 text-[10px] font-medium text-gov-700">
-              <Globe className="w-3 h-3" />NIC Hosted
+            <span className="flex items-center gap-1.5 text-xs font-semibold text-gov-800">
+              <Globe className="w-3.5 h-3.5 text-gov-700" />NIC Hosted
             </span>
           </div>
 
           {/* Sign in link */}
-          <div className="text-center text-xs text-stone-500 pt-1 border-t border-stone-200">
+          <div className="text-center text-xs sm:text-[13px] text-stone-600 font-medium pt-1 border-t border-stone-200">
             Already have an account?{' '}
-            <Link to="/login" className="font-bold text-gov-700 hover:text-gov-900 hover:underline">
+            <Link to="/login" className="font-bold text-gov-800 hover:text-gov-950 hover:underline">
               Sign In here →
             </Link>
           </div>

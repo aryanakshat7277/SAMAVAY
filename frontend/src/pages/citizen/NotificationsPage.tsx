@@ -92,26 +92,26 @@ export const NotificationsPage: React.FC = () => {
                 {getNotifIcon(notif.type)}
               </div>
 
-              <div className="flex-1 space-y-1 text-xs">
+              <div className="flex-1 space-y-1.5 text-xs">
                 <div className="flex items-center justify-between">
-                  <h4 className={`font-bold ${notif.isRead ? 'text-stone-900' : 'text-gov-950 font-serif'}`}>
+                  <h4 className={`font-bold ${notif.isRead ? 'text-stone-900 text-sm' : 'text-gov-950 font-serif text-sm'}`}>
                     {notif.title}
                   </h4>
-                  <span className="text-[10px] text-stone-400 font-mono">
+                  <span className="text-xs text-stone-600 font-mono font-medium">
                     {new Date(notif.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} • {new Date(notif.createdAt).toLocaleDateString()}
                   </span>
                 </div>
 
-                <p className="text-stone-600 leading-relaxed text-[11px]">{notif.message}</p>
+                <p className="text-stone-700 leading-relaxed text-xs font-normal">{notif.message}</p>
 
                 {notif.actionLink && (
                   <div className="pt-2">
                     <Link
                       to={notif.actionLink}
-                      className="text-gov-800 font-bold hover:underline inline-flex items-center gap-1 text-[11px]"
+                      className="text-gov-800 font-bold hover:text-gov-950 hover:underline inline-flex items-center gap-1.5 text-xs"
                     >
                       <span>Take Action</span>
-                      <ArrowRight className="w-3 h-3" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 )}

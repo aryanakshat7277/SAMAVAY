@@ -104,14 +104,14 @@ export const MyDataPermissionsPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-xl bg-saffron-500/20 border border-saffron-400/30 flex items-center justify-center">
-                  <ShieldCheck className="w-4 h-4 text-saffron-400" />
+                  <ShieldCheck className="w-4.5 h-4.5 text-saffron-400" />
                 </div>
-                <span className="text-gov-300 text-[10px] font-bold uppercase tracking-widest">DPDP Act 2023 — Citizen Rights</span>
+                <span className="text-saffron-300 text-xs font-bold uppercase tracking-widest">DPDP Act 2023 — Citizen Rights</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-white font-serif">
                 You Are in Complete Control of Your Data
               </h2>
-              <p className="text-gov-300 text-xs max-w-lg leading-relaxed">
+              <p className="text-gov-200 text-sm max-w-lg leading-relaxed font-normal">
                 Under the Digital Personal Data Protection Act 2023, no government service can access your records without
                 your explicit, purpose-bound consent. You may revoke access at any time.
               </p>
@@ -121,11 +121,11 @@ export const MyDataPermissionsPage: React.FC = () => {
             <div className="flex gap-4 flex-shrink-0">
               <div className="bg-white/8 border border-white/12 rounded-2xl p-4 text-center min-w-[80px]">
                 <p className="text-2xl font-black text-white font-mono">{activeCount}</p>
-                <p className="text-gov-400 text-[10px] font-medium mt-0.5">Active</p>
+                <p className="text-gov-300 text-xs font-semibold mt-0.5">Active</p>
               </div>
               <div className="bg-white/8 border border-white/12 rounded-2xl p-4 text-center min-w-[80px]">
                 <p className="text-2xl font-black text-rose-400 font-mono">{revokedCount}</p>
-                <p className="text-gov-400 text-[10px] font-medium mt-0.5">Revoked</p>
+                <p className="text-gov-300 text-xs font-semibold mt-0.5">Revoked</p>
               </div>
             </div>
           </div>
@@ -135,10 +135,10 @@ export const MyDataPermissionsPage: React.FC = () => {
             {dpdpRights.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white/6 border border-white/10 rounded-xl p-3 space-y-1">
                 <div className="flex items-center gap-1.5">
-                  <Icon className="w-3.5 h-3.5 text-gov-300" />
-                  <span className="text-white text-[10px] font-bold">{title}</span>
+                  <Icon className="w-4 h-4 text-gov-300" />
+                  <span className="text-white text-xs font-bold">{title}</span>
                 </div>
-                <p className="text-gov-400 text-[10px] leading-snug">{desc}</p>
+                <p className="text-gov-200 text-xs leading-snug font-normal">{desc}</p>
               </div>
             ))}
           </div>
@@ -149,10 +149,10 @@ export const MyDataPermissionsPage: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center justify-between border-b border-stone-200 pb-3">
           <div>
-            <h3 className="font-bold text-stone-900 font-serif text-sm">
+            <h3 className="font-bold text-stone-900 font-serif text-base">
               Active Data Permissions
             </h3>
-            <p className="text-[11px] text-stone-500 mt-0.5">
+            <p className="text-xs text-stone-600 mt-0.5 font-medium">
               {consents.length} authorization{consents.length !== 1 ? 's' : ''} on record
             </p>
           </div>
@@ -183,14 +183,14 @@ export const MyDataPermissionsPage: React.FC = () => {
                   {/* Card header */}
                   <div className="p-4 border-b border-stone-100 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isActive ? 'bg-gov-50' : 'bg-stone-100'}`}>
-                        <Database className={`w-3 h-3 ${isActive ? 'text-gov-700' : 'text-stone-400'}`} />
+                      <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${isActive ? 'bg-gov-50' : 'bg-stone-100'}`}>
+                        <Database className={`w-3.5 h-3.5 ${isActive ? 'text-gov-700' : 'text-stone-400'}`} />
                       </div>
-                      <span className={`text-[10px] font-bold ${isActive ? 'text-gov-800' : 'text-stone-500'}`}>
+                      <span className={`text-xs font-bold ${isActive ? 'text-gov-800' : 'text-stone-500'}`}>
                         {consent.sourceDepartmentName}
                       </span>
                     </div>
-                    <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full ${
+                    <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full ${
                       isActive
                         ? 'bg-gov-50 text-gov-800 border border-gov-200'
                         : 'bg-rose-50 text-rose-700 border border-rose-200'
@@ -203,35 +203,35 @@ export const MyDataPermissionsPage: React.FC = () => {
                   {/* Card body */}
                   <div className="p-4 space-y-3">
                     <div>
-                      <h4 className="font-bold text-stone-900 font-serif">{consent.fieldName}</h4>
-                      <p className="text-[11px] text-stone-500 mt-0.5">
-                        Platform: <strong className="text-stone-700">{consent.sourcePlatformName}</strong>
+                      <h4 className="font-bold text-stone-900 font-serif text-sm">{consent.fieldName}</h4>
+                      <p className="text-xs text-stone-600 mt-0.5 font-medium">
+                        Platform: <strong className="text-stone-900 font-bold">{consent.sourcePlatformName}</strong>
                       </p>
                     </div>
 
                     <div className="p-2.5 bg-sandstone-100 border border-stone-200 rounded-xl space-y-1">
                       <div className="flex items-center gap-1.5">
-                        <Info className="w-3 h-3 text-stone-400" />
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">
+                        <Info className="w-3.5 h-3.5 text-stone-500" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-stone-600">
                           Purpose
                         </span>
                       </div>
-                      <p className="text-[11px] text-stone-700 leading-snug">
+                      <p className="text-xs text-stone-800 leading-snug font-medium">
                         {consent.purpose || `Verification for ${consent.serviceName}`}
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-1 text-[10px] text-stone-400">
-                      <Clock className="w-3 h-3" />
+                    <div className="flex items-center gap-1.5 text-xs text-stone-600 font-medium">
+                      <Clock className="w-3.5 h-3.5 text-stone-500" />
                       Granted {new Date(consent.grantedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </div>
 
                     {isActive && (
                       <button
                         onClick={() => setSelectedConsent(consent)}
-                        className="w-full py-2 px-3 border border-rose-200 text-rose-600 hover:bg-rose-50 hover:border-rose-300 rounded-xl text-[11px] font-bold flex items-center justify-center gap-1.5 transition cursor-pointer"
+                        className="w-full py-2 px-3 border border-rose-200 text-rose-700 hover:bg-rose-50 hover:border-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition cursor-pointer"
                       >
-                        <Trash2 className="w-3 h-3" />
+                        <Trash2 className="w-3.5 h-3.5" />
                         Revoke Access
                       </button>
                     )}

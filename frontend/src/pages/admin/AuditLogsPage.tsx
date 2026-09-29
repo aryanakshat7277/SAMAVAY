@@ -72,13 +72,13 @@ export const AuditLogsPage: React.FC = () => {
       <Card padding="md" className="space-y-3">
         <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
           <div className="relative w-full sm:w-80">
-            <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-stone-500 absolute left-3 top-2.5" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search action, officer, description, or IP..."
-              className="w-full pl-9 pr-3 py-2 text-xs bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
+              className="w-full pl-9 pr-3 py-2 text-sm font-medium bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
             />
           </div>
 
@@ -86,7 +86,7 @@ export const AuditLogsPage: React.FC = () => {
             <select
               value={selectedAction}
               onChange={(e) => setSelectedAction(e.target.value)}
-              className="px-3 py-1.5 bg-stone-50 border border-stone-300 rounded-xl text-xs font-semibold text-stone-800 focus:border-gov-600 cursor-pointer"
+              className="px-3 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs sm:text-[13px] font-bold text-stone-800 focus:border-gov-600 cursor-pointer"
             >
               <option value="ALL">All Actions</option>
               <option value="CONSENT_GRANTED">CONSENT_GRANTED</option>
@@ -104,7 +104,7 @@ export const AuditLogsPage: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse">
             <thead>
-              <tr className="bg-stone-50/90 border-b border-stone-200 text-[11px] font-bold text-stone-600 uppercase tracking-wider">
+              <tr className="bg-stone-50/90 border-b border-stone-200 text-xs font-bold text-stone-700 uppercase tracking-wider">
                 <th className="py-3.5 px-4">Timestamp</th>
                 <th className="py-3.5 px-4">Action Event</th>
                 <th className="py-3.5 px-4">Performed By</th>
@@ -113,28 +113,28 @@ export const AuditLogsPage: React.FC = () => {
                 <th className="py-3.5 px-4 text-right">Integrity</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100 text-stone-800">
+            <tbody className="divide-y divide-stone-100 text-stone-800 font-medium">
               {filteredLogs.length > 0 ? (
                 filteredLogs.map((log) => (
                   <tr key={log.id} className="hover:bg-stone-50/80 transition">
-                    <td className="py-3.5 px-4 text-stone-500 font-mono text-[11px]">
+                    <td className="py-3.5 px-4 text-stone-600 font-mono text-xs">
                       {new Date(log.timestamp).toLocaleString('en-IN')}
                     </td>
                     <td className="py-3.5 px-4">
-                      <span className="font-mono font-bold text-gov-800 bg-gov-50 px-2 py-0.5 rounded border border-gov-200 text-[10px]">
+                      <span className="font-mono font-bold text-gov-800 bg-gov-50 px-2.5 py-0.5 rounded border border-gov-200 text-xs">
                         {log.action}
                       </span>
                     </td>
-                    <td className="py-3.5 px-4 font-semibold text-stone-900">
+                    <td className="py-3.5 px-4 font-bold text-stone-900">
                       {log.performedBy || 'SYSTEM'}
                     </td>
-                    <td className="py-3.5 px-4 max-w-xs text-stone-600">
-                      <span className="block font-medium text-stone-900">{log.description}</span>
+                    <td className="py-3.5 px-4 max-w-xs text-stone-700">
+                      <span className="block font-semibold text-stone-900">{log.description}</span>
                       {log.details && (
-                        <span className="text-[10px] text-stone-400 font-mono truncate block">{log.details}</span>
+                        <span className="text-xs text-stone-500 font-mono truncate block">{log.details}</span>
                       )}
                     </td>
-                    <td className="py-3.5 px-4 font-mono text-[11px] text-stone-500">
+                    <td className="py-3.5 px-4 font-mono text-xs text-stone-600">
                       {log.ipAddress || '127.0.0.1'}
                     </td>
                     <td className="py-3.5 px-4 text-right">

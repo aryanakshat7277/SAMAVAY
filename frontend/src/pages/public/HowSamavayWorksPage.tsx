@@ -24,13 +24,13 @@ export const HowSamavayWorksPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
       {/* 1. HERO SECTION */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full inline-block">
+        <span className="text-xs font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full inline-block">
           DIGITAL PUBLIC INFRASTRUCTURE — NATIONAL SOVEREIGN ARCHITECTURE
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-stone-900 font-serif leading-tight">
           How SAMAVAY Solves Government Platform Fragmentation
         </h1>
-        <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
+        <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
           From disconnected departmental silos to an interoperable, privacy-preserving digital public infrastructure uniting citizens, ministries, and connected service workflows.
         </p>
       </div>
@@ -42,12 +42,12 @@ export const HowSamavayWorksPage: React.FC = () => {
           alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
           className="w-full h-auto object-cover max-h-[380px]"
         />
-        <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
-          <span className="font-bold text-slate-800 flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+        <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-700">
+          <span className="font-bold text-slate-900 flex items-center gap-1.5 text-xs sm:text-sm">
+            <CheckCircle2 className="w-4.5 h-4.5 text-emerald-600" />
             Connected Public Infrastructure Pipeline
           </span>
-          <span className="text-[11px] text-slate-500 text-center sm:text-right">
+          <span className="text-xs text-slate-600 text-center sm:text-right font-medium">
             Zero paper photocopies • Authoritative data reuse • 100% DPDP Act compliance
           </span>
         </div>
@@ -58,34 +58,34 @@ export const HowSamavayWorksPage: React.FC = () => {
         {/* BEFORE: FRAGMENTED GOVERNMENT (THE PROBLEM) */}
         <div className="bg-white border border-red-200/90 rounded-3xl p-6 sm:p-8 shadow-card space-y-6">
           <div className="flex items-center space-x-3 border-b border-red-100 pb-4">
-            <div className="w-10 h-10 rounded-2xl bg-red-100 text-red-700 flex items-center justify-center font-bold">
+            <div className="w-11 h-11 rounded-2xl bg-red-100 text-red-700 flex items-center justify-center font-bold flex-shrink-0">
               <XCircle className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-[10px] font-bold text-red-800 uppercase tracking-wider block">Existing Landscape</span>
+              <span className="text-xs font-bold text-red-800 uppercase tracking-wider block">Existing Landscape</span>
               <h3 className="text-xl font-bold text-stone-900 font-serif">Fragmented Digital Portals</h3>
             </div>
           </div>
 
-          <div className="space-y-3.5 text-xs">
+          <div className="space-y-3.5 text-xs sm:text-[13px]">
             <div className="p-4 bg-red-50/60 border border-red-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-red-900 block">1. Disconnected Departmental Silos</span>
-              <p>Citizens must visit 4+ separate portals (Municipal, Revenue, Transport, DigiLocker) with separate logins and unfamiliar UIs.</p>
+              <span className="font-bold text-red-900 block text-sm">1. Disconnected Departmental Silos</span>
+              <p className="leading-relaxed">Citizens must visit 4+ separate portals (Municipal, Revenue, Transport, DigiLocker) with separate logins and unfamiliar UIs.</p>
             </div>
 
             <div className="p-4 bg-red-50/60 border border-red-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-red-900 block">2. Repetitive Citizen Data Entry</span>
-              <p>Citizens repeatedly upload Aadhaar scans, address proofs, and land records that the government already owns.</p>
+              <span className="font-bold text-red-900 block text-sm">2. Repetitive Citizen Data Entry</span>
+              <p className="leading-relaxed">Citizens repeatedly upload Aadhaar scans, address proofs, and land records that the government already owns.</p>
             </div>
 
             <div className="p-4 bg-red-50/60 border border-red-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-red-900 block">3. Manual Inter-Department Coordination</span>
-              <p>Applications stall for weeks in manual inter-departmental physical inquiries and verification queues.</p>
+              <span className="font-bold text-red-900 block text-sm">3. Manual Inter-Department Coordination</span>
+              <p className="leading-relaxed">Applications stall for weeks in manual inter-departmental physical inquiries and verification queues.</p>
             </div>
 
             <div className="p-4 bg-red-50/60 border border-red-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-red-900 block">4. Zero Operational Transparency</span>
-              <p>No unified tracking; citizens are unaware of where or why their application is blocked.</p>
+              <span className="font-bold text-red-900 block text-sm">4. Zero Operational Transparency</span>
+              <p className="leading-relaxed">No unified tracking; citizens are unaware of where or why their application is blocked.</p>
             </div>
           </div>
         </div>
@@ -93,34 +93,34 @@ export const HowSamavayWorksPage: React.FC = () => {
         {/* AFTER: SAMAVAY INTEROPERABILITY (THE SOLUTION) */}
         <div className="bg-white border border-emerald-200/90 rounded-3xl p-6 sm:p-8 shadow-card space-y-6">
           <div className="flex items-center space-x-3 border-b border-emerald-100 pb-4">
-            <div className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+            <div className="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold flex-shrink-0">
               <CheckCircle2 className="w-6 h-6 text-emerald-700" />
             </div>
             <div>
-              <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">SAMAVAY Ecosystem</span>
+              <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block">SAMAVAY Ecosystem</span>
               <h3 className="text-xl font-bold text-stone-900 font-serif">One Connected Government</h3>
             </div>
           </div>
 
-          <div className="space-y-3.5 text-xs">
+          <div className="space-y-3.5 text-xs sm:text-[13px]">
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-emerald-950 block">1. One Unified Citizen Touchpoint</span>
-              <p>All state and central public services accessible through a single, friendly, accessible citizen portal.</p>
+              <span className="font-bold text-emerald-950 block text-sm">1. One Unified Citizen Touchpoint</span>
+              <p className="leading-relaxed">All state and central public services accessible through a single, friendly, accessible citizen portal.</p>
             </div>
 
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-emerald-950 block">2. 62% Information Reuse & Form Minimization</span>
-              <p>Authoritative government databases pre-fill verified details. Citizens only provide missing fields.</p>
+              <span className="font-bold text-emerald-950 block text-sm">2. 62% Information Reuse & Form Minimization</span>
+              <p className="leading-relaxed">Authoritative government databases pre-fill verified details. Citizens only provide missing fields.</p>
             </div>
 
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-emerald-950 block">3. Automated Cross-Department Orchestration</span>
-              <p>Cross-departmental verifications execute seamlessly via the secure Interoperability Gateway.</p>
+              <span className="font-bold text-emerald-950 block text-sm">3. Automated Cross-Department Orchestration</span>
+              <p className="leading-relaxed">Cross-departmental verifications execute seamlessly via the secure Interoperability Gateway.</p>
             </div>
 
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-emerald-950 block">4. DPDP Consent & High Availability</span>
-              <p>Strict citizen consent enforcement with automatic failovers preventing service interruptions.</p>
+              <span className="font-bold text-emerald-950 block text-sm">4. DPDP Consent & High Availability</span>
+              <p className="leading-relaxed">Strict citizen consent enforcement with automatic failovers preventing service interruptions.</p>
             </div>
           </div>
         </div>
@@ -129,13 +129,13 @@ export const HowSamavayWorksPage: React.FC = () => {
       {/* 3. 5-STAGE CITIZEN INTEROPERABILITY WORKFLOW */}
       <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-card space-y-8 border border-slate-200 relative overflow-hidden">
         <div className="relative z-10 text-center space-y-2 max-w-2xl mx-auto">
-          <span className="text-[11px] font-bold text-gov-800 uppercase tracking-widest bg-gov-50 px-3.5 py-1 rounded-full inline-block border border-gov-200">
+          <span className="text-xs font-bold text-gov-800 uppercase tracking-widest bg-gov-50 px-3.5 py-1 rounded-full inline-block border border-gov-200">
             END-TO-END CITIZEN JOURNEY
           </span>
           <h2 className="text-2xl sm:text-3xl font-black font-serif text-slate-900">
             How An Application Flows Through SAMAVAY
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500">
+          <p className="text-xs sm:text-sm text-slate-600 font-medium">
             A seamless, guided experience designed for complete ease of use.
           </p>
         </div>

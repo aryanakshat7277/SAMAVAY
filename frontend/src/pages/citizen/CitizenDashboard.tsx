@@ -213,14 +213,14 @@ export const CitizenDashboard: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-900 bg-amber-200 px-2 py-0.5 rounded">
+                <span className="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-200 px-2.5 py-0.5 rounded">
                   Action Required
                 </span>
-                <h3 className="text-sm font-bold text-stone-900 font-serif">
+                <h3 className="text-sm sm:text-base font-bold text-stone-900 font-serif">
                   {pendingAction.title}
                 </h3>
               </div>
-              <p className="text-xs text-stone-600 mt-1">
+              <p className="text-xs sm:text-sm text-stone-700 mt-1 font-medium">
                 {pendingAction.description}
               </p>
             </div>
@@ -243,14 +243,14 @@ export const CitizenDashboard: React.FC = () => {
           to="/services"
           className="p-5 bg-white border border-stone-200/90 rounded-2xl shadow-card hover:border-gov-400 hover:shadow-card-hover transition-all duration-200 flex items-center space-x-3.5 group cursor-pointer"
         >
-          <div className="w-11 h-11 rounded-xl bg-gov-50 group-hover:bg-gov-100 text-gov-700 flex items-center justify-center transition">
-            <Compass className="w-5 h-5" />
+          <div className="w-12 h-12 rounded-xl bg-gov-50 group-hover:bg-gov-100 text-gov-700 flex items-center justify-center transition flex-shrink-0">
+            <Compass className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-stone-900 group-hover:text-gov-800 transition font-serif">
+            <h4 className="text-sm font-bold text-stone-900 group-hover:text-gov-800 transition font-serif">
               Explore Services
             </h4>
-            <p className="text-[11px] text-stone-500">Discover 20+ government services</p>
+            <p className="text-xs text-stone-600 font-medium mt-0.5">Discover 38+ government services</p>
           </div>
         </Link>
 
@@ -258,14 +258,14 @@ export const CitizenDashboard: React.FC = () => {
           to="/applications"
           className="p-5 bg-white border border-stone-200/90 rounded-2xl shadow-card hover:border-gov-400 hover:shadow-card-hover transition-all duration-200 flex items-center space-x-3.5 group cursor-pointer"
         >
-          <div className="w-11 h-11 rounded-xl bg-emerald-50 group-hover:bg-emerald-100 text-emerald-700 flex items-center justify-center transition">
-            <FileText className="w-5 h-5" />
+          <div className="w-12 h-12 rounded-xl bg-emerald-50 group-hover:bg-emerald-100 text-emerald-700 flex items-center justify-center transition flex-shrink-0">
+            <FileText className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-stone-900 group-hover:text-emerald-800 transition font-serif">
+            <h4 className="text-sm font-bold text-stone-900 group-hover:text-emerald-800 transition font-serif">
               My Applications
             </h4>
-            <p className="text-[11px] text-stone-500">Track progress & view history ({requests.length})</p>
+            <p className="text-xs text-stone-600 font-medium mt-0.5">Track progress & view history ({requests.length})</p>
           </div>
         </Link>
 
@@ -273,14 +273,14 @@ export const CitizenDashboard: React.FC = () => {
           to="/dashboard/permissions"
           className="p-5 bg-white border border-stone-200/90 rounded-2xl shadow-card hover:border-gov-400 hover:shadow-card-hover transition-all duration-200 flex items-center space-x-3.5 group cursor-pointer"
         >
-          <div className="w-11 h-11 rounded-xl bg-purple-50 group-hover:bg-purple-100 text-purple-700 flex items-center justify-center transition">
-            <ShieldCheck className="w-5 h-5" />
+          <div className="w-12 h-12 rounded-xl bg-purple-50 group-hover:bg-purple-100 text-purple-700 flex items-center justify-center transition flex-shrink-0">
+            <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-stone-900 group-hover:text-purple-800 transition font-serif">
+            <h4 className="text-sm font-bold text-stone-900 group-hover:text-purple-800 transition font-serif">
               Review Permissions
             </h4>
-            <p className="text-[11px] text-stone-500">Manage DPDP data sharing</p>
+            <p className="text-xs text-stone-600 font-medium mt-0.5">Manage DPDP data sharing</p>
           </div>
         </Link>
       </div>
@@ -423,22 +423,22 @@ export const CitizenDashboard: React.FC = () => {
                     className="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-center justify-between text-xs"
                   >
                     <div>
-                      <span className="font-bold text-stone-900">{req.serviceName}</span>
-                      <span className="text-[11px] text-stone-500 block font-mono">{req.applicationNumber}</span>
+                      <span className="font-bold text-stone-900 text-sm font-serif block">{req.serviceName}</span>
+                      <span className="text-xs text-stone-600 block font-mono font-medium">{req.applicationNumber}</span>
                     </div>
                     <div className="flex items-center space-x-2.5">
                       <StatusBadge status={req.status} size="sm" />
                       <button
                         onClick={() => handleOpenDocModal(req, req.status === 'COMPLETED' ? 'CERTIFICATE' : 'ACKNOWLEDGEMENT')}
-                        className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition cursor-pointer"
+                        className="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-bold flex items-center gap-1 transition cursor-pointer"
                         title={req.status === 'COMPLETED' ? 'View Certificate' : 'Print Acknowledgement'}
                       >
-                        <Printer className="w-3 h-3 text-stone-600" />
+                        <Printer className="w-3.5 h-3.5 text-stone-700" />
                         <span>{req.status === 'COMPLETED' ? 'Certificate' : 'Receipt'}</span>
                       </button>
                       <Link
                         to={`/applications?track=${req.applicationNumber}`}
-                        className="text-gov-800 font-bold hover:underline"
+                        className="text-gov-800 font-bold hover:underline text-xs"
                       >
                         View →
                       </Link>
@@ -555,7 +555,7 @@ export const CitizenDashboard: React.FC = () => {
               <ShieldCheck className="w-5 h-5 text-saffron-400" />
               <h4 className="font-bold font-serif text-white text-sm">Sovereign Privacy Guarantee</h4>
             </div>
-            <p className="text-stone-300 leading-relaxed text-[11px]">
+            <p className="text-slate-200 leading-relaxed text-xs font-normal">
               SAMAVAY strictly enforces the <strong>Digital Personal Data Protection (DPDP) Act 2023</strong>. Your data is accessed only when you authorize it, and records are verified without permanent retention.
             </p>
             <div className="pt-2">

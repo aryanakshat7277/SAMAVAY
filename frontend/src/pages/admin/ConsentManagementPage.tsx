@@ -99,13 +99,13 @@ export const ConsentManagementPage: React.FC = () => {
       <Card padding="md" className="space-y-3">
         <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
           <div className="relative w-full sm:w-80">
-            <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-stone-500 absolute left-3 top-2.5" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by citizen, service, or field name..."
-              className="w-full pl-9 pr-3 py-2 text-xs bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
+              className="w-full pl-9 pr-3 py-2 text-sm font-medium bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
             />
           </div>
 
@@ -114,10 +114,10 @@ export const ConsentManagementPage: React.FC = () => {
               <button
                 key={st}
                 onClick={() => setSelectedStatus(st)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                   selectedStatus === st
                     ? 'bg-gov-700 text-white shadow-xs font-bold'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
                 }`}
               >
                 {st === 'ALL' ? 'All Tokens' : st}
@@ -132,7 +132,7 @@ export const ConsentManagementPage: React.FC = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse">
             <thead>
-              <tr className="bg-stone-50/90 border-b border-stone-200 text-[11px] font-bold text-stone-600 uppercase tracking-wider">
+              <tr className="bg-stone-50/90 border-b border-stone-200 text-xs font-bold text-stone-700 uppercase tracking-wider">
                 <th className="py-3.5 px-4">Citizen Applicant</th>
                 <th className="py-3.5 px-4">Authorized Service</th>
                 <th className="py-3.5 px-4">Authorized Data Field</th>
@@ -141,44 +141,44 @@ export const ConsentManagementPage: React.FC = () => {
                 <th className="py-3.5 px-4 text-right">Granted Date</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100 text-stone-800">
+            <tbody className="divide-y divide-stone-100 text-stone-800 font-medium">
               {filteredConsents.length > 0 ? (
                 filteredConsents.map((c) => (
                   <tr key={c.id} className="hover:bg-stone-50/80 transition">
                     <td className="py-3.5 px-4">
                       <span className="font-bold text-stone-900 block">{c.userName || 'Citizen'}</span>
-                      <span className="text-[10px] text-stone-400 font-mono">UID: SAM-CIT-99201</span>
+                      <span className="text-xs text-stone-600 font-mono font-medium">UID: SAM-CIT-99201</span>
                     </td>
                     <td className="py-3.5 px-4 font-semibold text-stone-900 font-serif">
                       {c.serviceName}
                     </td>
                     <td className="py-3.5 px-4">
-                      <span className="font-mono text-gov-800 font-bold bg-gov-50 px-2 py-0.5 rounded border border-gov-200 text-[11px]">
+                      <span className="font-mono text-gov-800 font-bold bg-gov-50 px-2.5 py-0.5 rounded border border-gov-200 text-xs">
                         {c.fieldName}
                       </span>
                     </td>
-                    <td className="py-3.5 px-4 text-stone-600">
+                    <td className="py-3.5 px-4 text-stone-800 font-medium">
                       {c.sourceDepartmentName}
                     </td>
                     <td className="py-3.5 px-4">
                       <span
-                        className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${
+                        className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
                           c.status === 'ACTIVE'
-                            ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
-                            : 'bg-rose-100 text-rose-800 border border-rose-200'
+                            ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
+                            : 'bg-rose-100 text-rose-800 border border-rose-300'
                         }`}
                       >
                         {c.status}
                       </span>
                     </td>
-                    <td className="py-3.5 px-4 text-right text-stone-500 font-mono text-[11px]">
+                    <td className="py-3.5 px-4 text-right text-stone-600 font-mono text-xs font-medium">
                       {new Date(c.grantedAt || Date.now()).toLocaleDateString('en-IN')}
                     </td>
                   </tr>
                 ))
               ) : (
                 <tr>
-                  <td colSpan={6} className="py-8 text-center text-stone-400">
+                  <td colSpan={6} className="py-8 text-center text-stone-500 text-sm">
                     No consent tokens found.
                   </td>
                 </tr>
