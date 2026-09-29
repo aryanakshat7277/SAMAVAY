@@ -83,7 +83,7 @@ export const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Col: Main Headline & Actions */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center space-x-2 bg-gov-100/90 border border-gov-200 px-3.5 py-1.5 rounded-full text-xs font-semibold text-gov-900 shadow-xs">
+              <div className="inline-flex items-center space-x-2 bg-gov-100/90 border border-gov-200 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-gov-900 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • National Digital Public Infrastructure</span>
               </div>
@@ -93,7 +93,7 @@ export const LandingPage: React.FC = () => {
                 <span className="text-gov-800">Government Services.</span>
               </h1>
 
-              <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg lg:text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
                 <strong>SAMAVAY</strong> unites state and central digital platforms to eliminate duplicate document uploads, auto-verify citizen details, and deliver a smooth, unified service experience for every Indian citizen.
               </p>
 
@@ -107,11 +107,11 @@ export const LandingPage: React.FC = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search services (e.g., Property Tax, Driving Licence, Land Mutation...)"
-                  className="w-full px-3 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none"
+                  className="w-full px-3 py-2.5 bg-transparent text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:outline-none font-medium"
                 />
                 <button
                   type="submit"
-                  className="px-5 py-2.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl text-xs font-bold shadow-xs transition flex-shrink-0 cursor-pointer"
+                  className="px-5 py-2.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl text-sm font-bold shadow-xs transition flex-shrink-0 cursor-pointer"
                 >
                   Search
                 </button>
@@ -132,7 +132,7 @@ export const LandingPage: React.FC = () => {
               </div>
 
               {/* Trust Indicators */}
-              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-medium">
+              <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-slate-600 font-semibold">
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" />
                   DPDP Act 2023 Compliant
@@ -230,32 +230,32 @@ export const LandingPage: React.FC = () => {
               <span className="text-3xl sm:text-4xl font-extrabold text-gov-800 font-mono tracking-tight">
                 <AnimatedCounter end={62} suffix="%" />
               </span>
-              <p className="text-sm font-bold text-slate-900">Information Reused</p>
-              <p className="text-xs text-slate-600 font-medium">Zero duplicate citizen entry</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900">Information Reused</p>
+              <p className="text-sm text-slate-600 font-medium">Zero duplicate citizen entry</p>
             </div>
 
             <div className="space-y-1">
               <span className="text-3xl sm:text-4xl font-extrabold text-amber-700 font-mono tracking-tight">
                 4 ➔ 1
               </span>
-              <p className="text-sm font-bold text-slate-900">Touchpoints Unified</p>
-              <p className="text-xs text-slate-600 font-medium">From 4 portals to 1 journey</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900">Touchpoints Unified</p>
+              <p className="text-sm text-slate-600 font-medium">From 4 portals to 1 journey</p>
             </div>
 
             <div className="space-y-1">
               <span className="text-3xl sm:text-4xl font-extrabold text-emerald-800 font-mono tracking-tight">
                 <AnimatedCounter end={98.4} decimals={1} suffix="%" />
               </span>
-              <p className="text-sm font-bold text-slate-900">Integration Reliability</p>
-              <p className="text-xs text-slate-600 font-medium">Across 8 connected nodes</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900">Integration Reliability</p>
+              <p className="text-sm text-slate-600 font-medium">Across 8 connected nodes</p>
             </div>
 
             <div className="space-y-1">
               <span className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-mono tracking-tight">
                 <AnimatedCounter end={1.66} decimals={2} prefix="" suffix="M+" />
               </span>
-              <p className="text-sm font-bold text-slate-900">Transactions Handled</p>
-              <p className="text-xs text-slate-600 font-medium">Sovereign mTLS data gateway</p>
+              <p className="text-sm sm:text-base font-bold text-slate-900">Transactions Handled</p>
+              <p className="text-sm text-slate-600 font-medium">Sovereign mTLS data gateway</p>
             </div>
           </div>
         </div>
@@ -268,13 +268,13 @@ export const LandingPage: React.FC = () => {
       <section className="bg-white border-y border-stone-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3 py-1 rounded-full inline-block">
+            <span className="text-xs font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full inline-block">
               SIMPLE 4-STEP JOURNEY
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 font-serif">
               How You Access Services in SAMAVAY
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="text-sm sm:text-base text-slate-700">
               Zero paper photocopies, zero repeated form filling — powered by national sovereign data exchange.
             </p>
           </div>
@@ -286,24 +286,24 @@ export const LandingPage: React.FC = () => {
               alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
               className="w-full h-auto object-cover max-h-[380px]"
             />
-            <div className="p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
-              <span className="font-bold text-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <div className="p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-slate-700">
+              <span className="font-bold text-slate-800 flex items-center gap-1.5 text-sm sm:text-base">
+                <CheckCircle2 className="w-4.5 h-4.5 text-emerald-600" />
                 Verified Sovereign Data Highway
               </span>
-              <span className="text-[11px] text-slate-500 text-center sm:text-right">
+              <span className="text-xs sm:text-sm text-slate-600 text-center sm:text-right font-medium">
                 1-Click Consent ➔ Official Department Lookups (Revenue, VAHAN, Municipal) ➔ Instant Digital Delivery
               </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
             <div className="p-5 bg-stone-50 border border-stone-200 rounded-2xl space-y-2.5 hover:shadow-card transition">
               <span className="w-8 h-8 rounded-xl bg-gov-700 text-white flex items-center justify-center font-bold text-xs">
                 01
               </span>
-              <h4 className="text-sm font-bold text-stone-900 font-serif">Find a Service</h4>
-              <p className="text-stone-600 leading-relaxed">
+              <h4 className="text-base font-bold text-stone-900 font-serif">Find a Service</h4>
+              <p className="text-stone-700 text-sm leading-relaxed">
                 Search or browse public services with clear eligibility and processing timelines.
               </p>
             </div>
@@ -312,8 +312,8 @@ export const LandingPage: React.FC = () => {
               <span className="w-8 h-8 rounded-xl bg-gov-700 text-white flex items-center justify-center font-bold text-xs">
                 02
               </span>
-              <h4 className="text-sm font-bold text-stone-900 font-serif">SAMAVAY Prepares</h4>
-              <p className="text-stone-600 leading-relaxed">
+              <h4 className="text-base font-bold text-stone-900 font-serif">SAMAVAY Prepares</h4>
+              <p className="text-stone-700 text-sm leading-relaxed">
                 The engine queries authoritative databases to verify available records in real time.
               </p>
             </div>
@@ -322,8 +322,8 @@ export const LandingPage: React.FC = () => {
               <span className="w-8 h-8 rounded-xl bg-gov-700 text-white flex items-center justify-center font-bold text-xs">
                 03
               </span>
-              <h4 className="text-sm font-bold text-stone-900 font-serif">Review & Consent</h4>
-              <p className="text-stone-600 leading-relaxed">
+              <h4 className="text-base font-bold text-stone-900 font-serif">Review & Consent</h4>
+              <p className="text-stone-700 text-sm leading-relaxed">
                 Grant explicit, purpose-bound permission to reuse existing government records under DPDP Act.
               </p>
             </div>
@@ -332,8 +332,8 @@ export const LandingPage: React.FC = () => {
               <span className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
                 04
               </span>
-              <h4 className="text-sm font-bold text-stone-900 font-serif">Track & Complete</h4>
-              <p className="text-stone-600 leading-relaxed">
+              <h4 className="text-base font-bold text-stone-900 font-serif">Track & Complete</h4>
+              <p className="text-stone-700 text-sm leading-relaxed">
                 Monitor status in real time and receive digital certificates directly in your account.
               </p>
             </div>
@@ -350,17 +350,17 @@ export const LandingPage: React.FC = () => {
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3 py-1 rounded-full inline-block">
+            <span className="text-xs font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full inline-block">
               POPULAR CITIZEN SERVICES
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 font-serif">
               Frequently Requested Services
             </h2>
-            <p className="text-xs sm:text-sm text-stone-600">
+            <p className="text-sm sm:text-base text-stone-600 font-medium">
               High-volume public services pre-configured with cross-department data pipelines.
             </p>
           </div>
-          <Link to="/services" className="text-xs font-bold text-gov-800 hover:text-gov-900 inline-flex items-center gap-1">
+          <Link to="/services" className="text-sm font-bold text-gov-800 hover:text-gov-900 inline-flex items-center gap-1">
             View All Services ({totalServicesCount}) →
           </Link>
         </div>
@@ -380,13 +380,13 @@ export const LandingPage: React.FC = () => {
       <section className="bg-white border-t border-stone-200 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3 py-1 rounded-full inline-block">
+            <span className="text-xs font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full inline-block">
               EXPLORE BY PORTFOLIO
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-stone-900 font-serif">
               Interconnected Government Portfolios
             </h2>
-            <p className="text-xs text-stone-600">
+            <p className="text-sm sm:text-base text-stone-600 font-medium">
               Select a domain to explore automated services and cross-department data integrations.
             </p>
           </div>
@@ -412,7 +412,7 @@ export const LandingPage: React.FC = () => {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-3.5 relative z-10">
-            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs font-bold text-amber-900 shadow-2xs">
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs sm:text-sm font-bold text-amber-900 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>भारत सरकार • Sovereign DPI Mesh • DPDP Act 2023</span>
             </div>
@@ -421,7 +421,7 @@ export const LandingPage: React.FC = () => {
               Access Government Services More Simply
             </h2>
 
-            <p className="text-xs sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto font-sans font-medium">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl mx-auto font-sans font-medium">
               Experience the future of Indian Digital Public Infrastructure. No duplicate forms, no manual queues, and complete statutory DPDP consent transparency across all 28 States and 8 Union Territories.
             </p>
           </div>
@@ -440,7 +440,7 @@ export const LandingPage: React.FC = () => {
           </div>
 
           {/* Trust Highlights */}
-          <div className="pt-4 border-t border-stone-200/90 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-700 font-semibold relative z-10">
+          <div className="pt-4 border-t border-stone-200/90 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-700 font-semibold relative z-10">
             <span className="flex items-center gap-1.5 text-emerald-800">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               62% Paperwork Minimized

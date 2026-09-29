@@ -120,11 +120,11 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
       </div>
 
       {/* Interactive Quick Filter Chips */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 relative z-10 text-xs font-bold scrollbar-none">
-        <span className="text-slate-500 mr-1 hidden sm:inline text-xs font-semibold">Inspect Conduit:</span>
+      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 relative z-10 text-xs sm:text-sm font-bold scrollbar-none">
+        <span className="text-slate-600 mr-1 hidden sm:inline text-xs sm:text-sm font-semibold">Inspect Conduit:</span>
         <button
           onClick={() => setActiveNode('ALL')}
-          className={`px-3 py-1 rounded-xl transition-all cursor-pointer ${
+          className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer ${
             activeNode === 'ALL'
               ? 'bg-gov-900 text-white shadow-xs'
               : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100'
@@ -136,13 +136,13 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           <button
             key={n.id}
             onClick={() => setActiveNode(n.id)}
-            className={`px-3 py-1 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
+            className={`px-3.5 py-1.5 rounded-xl transition-all cursor-pointer flex items-center gap-1.5 ${
               activeNode === n.id
                 ? 'bg-gov-900 text-white shadow-xs'
                 : 'bg-white border border-slate-300 text-slate-700 hover:bg-slate-100'
             }`}
           >
-            <n.icon className="w-3.5 h-3.5" />
+            <n.icon className="w-4 h-4" />
             <span>{n.name}</span>
           </button>
         ))}
@@ -254,8 +254,8 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
               </div>
               <div>
                 <span className="text-xs sm:text-sm font-bold text-slate-900 block font-serif">Verified Citizen</span>
-                <span className="text-[11px] font-mono text-slate-500 font-semibold block">UID: •••• 9021</span>
-                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full inline-block mt-1">
+                <span className="text-xs font-mono text-slate-600 font-semibold block">UID: •••• 9021</span>
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 rounded-full inline-block mt-1">
                   DPDP Consented
                 </span>
               </div>
@@ -276,13 +276,13 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
               <Layers className="w-7 h-7 text-saffron-600 animate-pulse" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-black tracking-wider uppercase font-serif text-slate-900 block">
+              <span className="text-sm sm:text-base font-black tracking-wider uppercase font-serif text-slate-900 block">
                 SAMAVAY
               </span>
-              <span className="text-[11px] text-saffron-800 font-bold font-mono">DPI Mesh Gateway</span>
+              <span className="text-xs text-saffron-800 font-bold font-mono">DPI Mesh Gateway</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 rounded-full text-[10px] text-emerald-800 font-mono font-bold shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+            <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 px-3 py-0.5 rounded-full text-xs text-emerald-800 font-mono font-bold shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span>38ms SLA</span>
             </div>
           </div>
@@ -308,9 +308,9 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
                 </div>
                 <div className="overflow-hidden">
                   <div className="flex items-center gap-1">
-                    <span className="text-xs font-bold text-slate-900 truncate font-serif">{n.name}</span>
+                    <span className="text-xs sm:text-sm font-bold text-slate-900 truncate font-serif">{n.name}</span>
                   </div>
-                  <span className="text-[10px] text-slate-500 block truncate font-medium">{n.ministry}</span>
+                  <span className="text-xs text-slate-600 block truncate font-medium">{n.ministry}</span>
                 </div>
               </div>
             );
@@ -322,7 +322,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
       <div className="p-4 sm:p-5 bg-white border-2 border-slate-200 rounded-2xl text-xs sm:text-sm relative z-10 space-y-2.5 shadow-xs">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
           <div className="flex items-center gap-2">
-            <Activity className="w-4.5 h-4.5 text-gov-700" />
+            <Activity className="w-5 h-5 text-gov-700" />
             <h5 className="font-bold text-slate-900 font-serif text-sm sm:text-base">
               {activeNode === 'BHOOMI'
                 ? 'Bhoomi LRS — Department of Revenue'
@@ -339,19 +339,19 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold text-gov-950 bg-gov-50 border border-gov-300 px-3 py-0.5 rounded-full shadow-2xs">
+            <span className="text-xs sm:text-sm font-mono font-bold text-gov-950 bg-gov-50 border border-gov-300 px-3 py-0.5 rounded-full shadow-2xs">
               38ms Latency
             </span>
-            <span className="text-xs font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 px-3 py-0.5 rounded-full shadow-2xs">
+            <span className="text-xs sm:text-sm font-mono font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 px-3 py-0.5 rounded-full shadow-2xs">
               mTLS 1.3
             </span>
           </div>
         </div>
 
         {/* Live Payload Stream Text */}
-        <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs text-slate-800 flex items-center justify-between gap-3">
+        <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl font-mono text-xs sm:text-sm text-slate-800 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 truncate">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex-shrink-0 animate-pulse" />
             <span className="text-gov-800 font-bold font-sans">Verified Payload:</span>
             <span className="text-slate-700 truncate font-semibold">
               {activeNode === 'BHOOMI'
@@ -367,13 +367,13 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
                 : 'Auto-fills and authenticates 62% of citizen fields across 8 authoritative registries.'}
             </span>
           </div>
-          <span className="text-[11px] text-slate-500 font-sans font-semibold flex-shrink-0 hidden sm:inline">
+          <span className="text-xs text-slate-600 font-sans font-semibold flex-shrink-0 hidden sm:inline">
             Zero Local Storage
           </span>
         </div>
 
         {/* Cryptographic Assurance Footnote */}
-        <div className="flex flex-wrap items-center justify-between text-xs text-slate-600 pt-1 font-medium">
+        <div className="flex flex-wrap items-center justify-between text-xs sm:text-sm text-slate-600 pt-1 font-medium">
           <span className="flex items-center gap-1.5 text-emerald-800 font-bold">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             DPDP Act 2023 Enforced — Citizen Consent Revocable Anytime

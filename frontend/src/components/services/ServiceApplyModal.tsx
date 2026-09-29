@@ -248,15 +248,15 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
               </div>
 
               <div>
-                <h4 className="text-lg font-black text-stone-900 font-serif">
+                <h4 className="text-xl font-black text-stone-900 font-serif">
                   Preparing Your Government Service
                 </h4>
-                <p className="text-xs text-stone-600 mt-1">
+                <p className="text-sm text-stone-700 mt-1 font-medium">
                   SAMAVAY Interoperability Core is coordinating with registered government platforms...
                 </p>
               </div>
 
-              <div className="max-w-md mx-auto text-left space-y-3 bg-sandstone-100 border border-stone-200 rounded-2xl p-4 text-xs">
+              <div className="max-w-md mx-auto text-left space-y-3 bg-sandstone-100 border border-stone-200 rounded-2xl p-4 text-xs sm:text-sm">
                 <div className="flex items-center space-x-2.5">
                   <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${prepProgress >= 1 ? 'bg-emerald-600 text-white' : 'bg-stone-200 text-stone-500'}`}>
                     {prepProgress >= 1 ? '✓' : '1'}
@@ -309,10 +309,10 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
               {/* REVIEW INFORMATION ACCESS (PLAIN LANGUAGE CONSENT) */}
               <div className="space-y-3">
                 <div>
-                  <h4 className="text-sm font-bold text-stone-900 font-serif">
+                  <h4 className="text-base font-bold text-stone-900 font-serif">
                     Review Information Access (DPDP Act 2023)
                   </h4>
-                  <p className="text-xs text-stone-600 mt-0.5">
+                  <p className="text-xs sm:text-sm text-stone-700 mt-0.5 font-medium">
                     To eliminate repetitive document uploads, the following records will be queried from authoritative government registries:
                   </p>
                 </div>
@@ -321,7 +321,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                   {[...readinessData.availableRequirements, ...readinessData.consentRequiredRequirements].map((req) => (
                     <div
                       key={req.id}
-                      className="p-3.5 bg-gov-50/60 border border-gov-200 rounded-2xl space-y-2 text-xs"
+                      className="p-3.5 bg-gov-50/60 border border-gov-200 rounded-2xl space-y-2 text-xs sm:text-sm"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div className="flex items-start space-x-2.5">
@@ -329,20 +329,20 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                             type="checkbox"
                             checked={!!consentsGranted[req.id]}
                             onChange={() => handleToggleConsent(req.id)}
-                            className="mt-0.5 rounded border-stone-300 text-gov-700 focus:ring-gov-600 cursor-pointer"
+                            className="mt-0.5 rounded border-stone-300 text-gov-700 focus:ring-gov-600 cursor-pointer w-4 h-4"
                           />
                           <div>
-                            <p className="font-bold text-stone-900 font-serif">{req.fieldName}</p>
-                            <p className="text-[11px] text-stone-600 mt-0.5">
+                            <p className="font-bold text-stone-900 font-serif text-sm sm:text-base">{req.fieldName}</p>
+                            <p className="text-xs text-stone-600 mt-0.5 font-medium">
                               Source: <strong className="text-stone-800">{req.sourceDepartment}</strong> ({req.sourcePlatform})
                             </p>
-                            <p className="text-[11px] text-gov-800 font-medium">
+                            <p className="text-xs text-gov-800 font-semibold mt-0.5">
                               Purpose: {req.purpose || 'Verification for ' + service.name}
                             </p>
                           </div>
                         </div>
 
-                        <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full flex-shrink-0">
+                        <span className="text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full flex-shrink-0">
                           {consentsGranted[req.id] ? 'Access Allowed' : 'Disabled'}
                         </span>
                       </div>
@@ -352,15 +352,15 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                         <button
                           type="button"
                           onClick={() => toggleWhyNeeded(req.id)}
-                          className="text-[11px] font-bold text-gov-700 hover:text-gov-900 inline-flex items-center gap-1 cursor-pointer"
+                          className="text-xs font-bold text-gov-700 hover:text-gov-900 inline-flex items-center gap-1 cursor-pointer"
                         >
                           <HelpCircle className="w-3.5 h-3.5" />
                           <span>Why is this needed?</span>
-                          {showWhyNeeded[req.id] ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                          {showWhyNeeded[req.id] ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                         </button>
 
                         {showWhyNeeded[req.id] && (
-                          <div className="mt-1.5 p-2.5 bg-white border border-stone-200 rounded-xl text-[11px] text-stone-600 leading-relaxed animate-fade-in">
+                          <div className="mt-1.5 p-2.5 bg-white border border-stone-200 rounded-xl text-xs text-stone-700 leading-relaxed animate-fade-in font-medium">
                             {req.fieldName} is required by {service.departmentName} to legally validate your eligibility for {service.name}. Fetching this record directly from {req.sourceDepartment} eliminates manual document scanning and physical attestation.
                           </div>
                         )}
@@ -372,11 +372,11 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
 
               {/* Information Needed from Citizen Notice */}
               {readinessData.missingRequirements.length > 0 && (
-                <div className="p-3 bg-sandstone-100 border border-stone-200 rounded-xl text-xs space-y-1">
-                  <span className="font-bold text-stone-800 block text-[11px] uppercase tracking-wider">
+                <div className="p-3.5 bg-sandstone-100 border border-stone-200 rounded-xl text-xs sm:text-sm space-y-1">
+                  <span className="font-bold text-stone-900 block text-xs uppercase tracking-wider">
                     Only Missing Details Needed in Next Step:
                   </span>
-                  <p className="text-stone-600 font-medium">
+                  <p className="text-stone-700 font-medium">
                     {readinessData.missingRequirements.map((r) => r.fieldName).join(', ')}
                   </p>
                 </div>
@@ -386,14 +386,14 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="px-4 py-2 text-xs font-bold text-stone-700 hover:bg-stone-100 rounded-xl transition cursor-pointer"
+                  className="px-4 py-2 text-sm font-bold text-stone-700 hover:bg-stone-100 rounded-xl transition cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
                   onClick={() => setStep(3)}
-                  className="px-5 py-2 text-xs font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center cursor-pointer"
+                  className="px-5 py-2.5 text-sm font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center cursor-pointer"
                 >
                   Continue to Form
                   <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -404,32 +404,32 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
 
           {/* STEP 3: DYNAMIC FORM ENGINE — ONLY MISSING FIELDS! */}
           {step === 3 && dynamicFormData && (
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+            <form onSubmit={handleSubmit} className="space-y-4 text-xs sm:text-sm">
               {/* Pre-Verified Summary Banner */}
               <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-4 space-y-1.5 text-emerald-950">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-1.5 font-bold text-xs sm:text-sm">
-                    <ShieldCheck className="w-4.5 h-4.5 text-emerald-700" />
+                    <ShieldCheck className="w-5 h-5 text-emerald-700" />
                     <span>Authoritative Information Reused (5 Details)</span>
                   </div>
                   <span className="text-xs font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300">
                     Auto-Filled
                   </span>
                 </div>
-                <p className="text-xs text-emerald-900 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-emerald-900 leading-relaxed font-medium">
                   Citizen Identity, Bhoomi Land RoR, and Aadhaar e-KYC have been matched and attached to your application automatically.
                 </p>
               </div>
 
               {/* Dynamic Missing Fields Section */}
               <div className="space-y-3.5">
-                <h5 className="font-bold text-slate-900 uppercase tracking-wider text-xs">
+                <h5 className="font-bold text-slate-900 uppercase tracking-wider text-xs sm:text-sm">
                   Please Provide the Remaining {(dynamicFormData.requiredFields || []).length} Detail(s):
                 </h5>
 
                 {(dynamicFormData.requiredFields || []).map((field) => (
                   <div key={field.id} className="space-y-1">
-                    <label className="block font-bold text-slate-800 text-xs">
+                    <label className="block font-bold text-slate-800 text-xs sm:text-sm">
                       {field.label} {field.required && <span className="text-rose-600">*</span>}
                     </label>
 
@@ -437,7 +437,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                       <select
                         value={formValues[field.fieldName] || ''}
                         onChange={(e) => handleFieldChange(field.fieldName, e.target.value)}
-                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gov-600 bg-white text-slate-900 text-xs sm:text-sm"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gov-600 bg-white text-slate-900 text-sm sm:text-base font-medium"
                         required={field.required}
                       >
                         <option value="Self Occupied">Self Occupied</option>
@@ -451,12 +451,12 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                         onChange={(e) => handleFieldChange(field.fieldName, e.target.value)}
                         placeholder={field.placeholder || 'Enter value...'}
                         required={field.required}
-                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gov-600 text-slate-900 text-xs sm:text-sm placeholder-slate-400"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gov-600 text-slate-900 text-sm sm:text-base placeholder-slate-400 font-medium"
                       />
                     )}
 
                     {field.helpText && (
-                      <span className="text-xs text-slate-500 font-medium block">{field.helpText}</span>
+                      <span className="text-xs sm:text-sm text-slate-500 font-medium block">{field.helpText}</span>
                     )}
                   </div>
                 ))}
@@ -466,7 +466,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setStep(2)}
-                  className="px-4 py-2 text-xs font-bold text-stone-700 hover:bg-stone-100 rounded-xl transition inline-flex items-center cursor-pointer"
+                  className="px-4 py-2 text-sm font-bold text-stone-700 hover:bg-stone-100 rounded-xl transition inline-flex items-center cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 mr-1.5" />
                   Back
@@ -474,11 +474,11 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="px-6 py-2.5 text-xs font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center disabled:opacity-50 cursor-pointer"
+                  className="px-6 py-2.5 text-sm font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center disabled:opacity-50 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-1.5">
-                      <RefreshCw className="w-3.5 h-3.5 animate-spin" />
+                      <RefreshCw className="w-4 h-4 animate-spin" />
                       Submitting & Orchestrating...
                     </span>
                   ) : (
@@ -500,22 +500,22 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
               </div>
 
               <div>
-                <h4 className="text-xl font-black text-stone-900 font-serif">
+                <h4 className="text-xl sm:text-2xl font-black text-stone-900 font-serif">
                   Application Submitted & Orchestration Initiated
                 </h4>
-                <p className="text-xs text-stone-600 mt-1">
+                <p className="text-xs sm:text-sm text-stone-600 mt-1 font-medium">
                   Your request is queued on the SAMAVAY interoperability mesh.
                 </p>
               </div>
 
-              <div className="p-4 bg-sandstone-100 border border-stone-200 rounded-2xl max-w-md mx-auto space-y-2 text-xs text-left">
+              <div className="p-4 bg-sandstone-100 border border-stone-200 rounded-2xl max-w-md mx-auto space-y-2 text-xs sm:text-sm text-left">
                 <div className="flex justify-between border-b border-stone-200/80 pb-2">
                   <span className="text-stone-500 font-medium">Tracking Number:</span>
-                  <span className="font-mono font-bold text-gov-900 bg-white px-2 py-0.5 rounded border border-stone-200">{createdReq.applicationNumber}</span>
+                  <span className="font-mono font-bold text-gov-900 bg-white px-2.5 py-0.5 rounded border border-stone-200 text-xs sm:text-sm">{createdReq.applicationNumber}</span>
                 </div>
                 <div className="flex justify-between border-b border-stone-200/80 pb-2">
                   <span className="text-stone-500 font-medium">Service:</span>
-                  <span className="font-bold text-stone-800 font-serif">{createdReq.serviceName}</span>
+                  <span className="font-bold text-stone-800 font-serif text-sm sm:text-base">{createdReq.serviceName}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-stone-500 font-medium">Current Stage:</span>
@@ -527,7 +527,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                 <button
                   type="button"
                   onClick={() => setIsSlipModalOpen(true)}
-                  className="px-5 py-2.5 text-xs font-bold text-gov-900 bg-saffron-50 hover:bg-saffron-100 border border-saffron-300 rounded-xl shadow-xs transition inline-flex items-center gap-1.5 cursor-pointer"
+                  className="px-5 py-2.5 text-xs sm:text-sm font-bold text-gov-900 bg-saffron-50 hover:bg-saffron-100 border border-saffron-300 rounded-xl shadow-xs transition inline-flex items-center gap-1.5 cursor-pointer"
                 >
                   <Printer className="w-4 h-4 text-gov-800" />
                   Print Acknowledgement Slip / रसीद
@@ -535,7 +535,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                 <button
                   type="button"
                   onClick={handleFinish}
-                  className="px-6 py-2.5 text-xs font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center gap-1.5 cursor-pointer"
                 >
                   <span>Track Live Progress</span>
                   <ArrowRight className="w-4 h-4" />

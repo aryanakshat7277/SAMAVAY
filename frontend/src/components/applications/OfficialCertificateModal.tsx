@@ -116,89 +116,89 @@ export const OfficialCertificateModal: React.FC<OfficialCertificateModalProps> =
                 National Digital Public Infrastructure • SAMAVAY Interoperability Mesh
               </p>
               <div className="pt-2">
-                <span className="text-base sm:text-lg font-black font-serif text-gov-900 border-y border-gov-200 py-1 px-4 inline-block tracking-tight">
+                <span className="text-base sm:text-xl font-black font-serif text-gov-900 border-y border-gov-200 py-1.5 px-4 inline-block tracking-tight">
                   {isCompleted ? 'डिजिटल सेवा प्रमाण-पत्र / SOVEREIGN DIGITAL CERTIFICATE' : 'नागरिक सेवा पावती / CITIZEN ACKNOWLEDGEMENT SLIP'}
                 </span>
               </div>
-              <p className="text-[10px] text-slate-500 font-mono">
+              <p className="text-xs text-slate-500 font-mono">
                 Official Electronic Document issued pursuant to Section 4 & Section 5 of the Information Technology Act, 2000
               </p>
             </div>
 
             {/* Key Meta Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-5 p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 my-5 p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm">
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-500 block">Application Identifier</span>
-                <span className="font-mono font-bold text-gov-900 text-sm">{request.applicationNumber}</span>
+                <span className="text-xs uppercase font-bold text-slate-500 block">Application Identifier</span>
+                <span className="font-mono font-bold text-gov-900 text-sm sm:text-base">{request.applicationNumber}</span>
               </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-500 block">Submission Date</span>
+                <span className="text-xs uppercase font-bold text-slate-500 block">Submission Date</span>
                 <span className="font-semibold text-slate-800">{formattedDate}</span>
-                <span className="text-[10px] text-slate-500 block font-mono">{formattedTime} IST</span>
+                <span className="text-xs text-slate-500 block font-mono">{formattedTime} IST</span>
               </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-500 block">Current Status</span>
+                <span className="text-xs uppercase font-bold text-slate-500 block">Current Status</span>
                 <span className={`inline-flex items-center gap-1 font-bold ${isCompleted ? 'text-emerald-700' : 'text-gov-800'}`}>
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <CheckCircle2 className="w-4 h-4" />
                   {request.status.replace(/_/g, ' ')}
                 </span>
               </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-500 block">Nodal Department</span>
+                <span className="text-xs uppercase font-bold text-slate-500 block">Nodal Department</span>
                 <span className="font-semibold text-slate-800">{request.departmentName}</span>
               </div>
               <div className="sm:col-span-2">
-                <span className="text-[10px] uppercase font-bold text-slate-500 block">Service Name</span>
-                <span className="font-bold text-gov-900 font-serif">{request.serviceName}</span>
+                <span className="text-xs uppercase font-bold text-slate-500 block">Service Name</span>
+                <span className="font-bold text-gov-900 font-serif text-sm sm:text-base">{request.serviceName}</span>
               </div>
             </div>
 
             {/* Reused Sovereign Registry Verification Breakdown */}
             <div className="space-y-3 my-5">
               <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
-                <h5 className="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
+                <h5 className="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
                   <FileCheck className="w-4 h-4 text-gov-700" />
                   <span>Verified Public Registry Cross-Verification Table</span>
                 </h5>
-                <span className="text-[10px] bg-emerald-50 text-emerald-800 border border-emerald-200 px-2 py-0.5 rounded-full font-bold">
+                <span className="text-xs bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-0.5 rounded-full font-bold">
                   DPDP Act §6 Compliant
                 </span>
               </div>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
-                  <thead className="bg-slate-100 text-[10px] uppercase text-slate-600 font-bold">
+                <table className="w-full text-left text-xs sm:text-sm border border-slate-200 rounded-lg overflow-hidden">
+                  <thead className="bg-slate-100 text-xs uppercase text-slate-700 font-bold">
                     <tr>
-                      <th className="py-2 px-3 border-b border-slate-200">Data Field</th>
-                      <th className="py-2 px-3 border-b border-slate-200">Authoritative Source</th>
-                      <th className="py-2 px-3 border-b border-slate-200">Protocol</th>
-                      <th className="py-2 px-3 border-b border-slate-200 text-right">Verification Status</th>
+                      <th className="py-2.5 px-3 border-b border-slate-200">Data Field</th>
+                      <th className="py-2.5 px-3 border-b border-slate-200">Authoritative Source</th>
+                      <th className="py-2.5 px-3 border-b border-slate-200">Protocol</th>
+                      <th className="py-2.5 px-3 border-b border-slate-200 text-right">Verification Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-200 text-[11px]">
+                  <tbody className="divide-y divide-slate-200 text-xs sm:text-sm">
                     <tr>
-                      <td className="py-2 px-3 font-medium text-slate-800">Aadhaar Identity & Demographics</td>
-                      <td className="py-2 px-3 text-slate-600">UIDAI Sovereign Gateway</td>
-                      <td className="py-2 px-3 font-mono text-[10px] text-slate-500">mTLS PKI_X509</td>
-                      <td className="py-2 px-3 text-right text-emerald-700 font-bold">✓ Pre-Verified</td>
+                      <td className="py-2.5 px-3 font-semibold text-slate-800">Aadhaar Identity & Demographics</td>
+                      <td className="py-2.5 px-3 text-slate-600 font-medium">UIDAI Sovereign Gateway</td>
+                      <td className="py-2.5 px-3 font-mono text-xs text-slate-500">mTLS PKI_X509</td>
+                      <td className="py-2.5 px-3 text-right text-emerald-700 font-bold">✓ Pre-Verified</td>
                     </tr>
                     <tr>
-                      <td className="py-2 px-3 font-medium text-slate-800">Departmental Records & Title RoR</td>
-                      <td className="py-2 px-3 text-slate-600">Bhoomi LRS / SARATHI / VAHAN</td>
-                      <td className="py-2 px-3 font-mono text-[10px] text-slate-500">OpenAPI Spec 3.1</td>
-                      <td className="py-2 px-3 text-right text-emerald-700 font-bold">✓ Pre-Verified</td>
+                      <td className="py-2.5 px-3 font-semibold text-slate-800">Departmental Records & Title RoR</td>
+                      <td className="py-2.5 px-3 text-slate-600 font-medium">Bhoomi LRS / SARATHI / VAHAN</td>
+                      <td className="py-2.5 px-3 font-mono text-xs text-slate-500">OpenAPI Spec 3.1</td>
+                      <td className="py-2.5 px-3 text-right text-emerald-700 font-bold">✓ Pre-Verified</td>
                     </tr>
                     <tr>
-                      <td className="py-2 px-3 font-medium text-slate-800">Bank Seeded Account / Benefit Routing</td>
-                      <td className="py-2 px-3 text-slate-600">PFMS / NPCI Sovereign Bridge</td>
-                      <td className="py-2 px-3 font-mono text-[10px] text-slate-500">ISO-20022</td>
-                      <td className="py-2 px-3 text-right text-emerald-700 font-bold">✓ Active Link</td>
+                      <td className="py-2.5 px-3 font-semibold text-slate-800">Bank Seeded Account / Benefit Routing</td>
+                      <td className="py-2.5 px-3 text-slate-600 font-medium">PFMS / NPCI Sovereign Bridge</td>
+                      <td className="py-2.5 px-3 font-mono text-xs text-slate-500">ISO-20022</td>
+                      <td className="py-2.5 px-3 text-right text-emerald-700 font-bold">✓ Active Link</td>
                     </tr>
                     <tr>
-                      <td className="py-2 px-3 font-medium text-slate-800">Digital Lock Credentials</td>
-                      <td className="py-2 px-3 text-slate-600">DigiLocker National Cloud</td>
-                      <td className="py-2 px-3 font-mono text-[10px] text-slate-500">OAuth 2.0 PKCE</td>
-                      <td className="py-2 px-3 text-right text-emerald-700 font-bold">✓ Verified</td>
+                      <td className="py-2.5 px-3 font-semibold text-slate-800">Digital Lock Credentials</td>
+                      <td className="py-2.5 px-3 text-slate-600 font-medium">DigiLocker National Cloud</td>
+                      <td className="py-2.5 px-3 font-mono text-xs text-slate-500">OAuth 2.0 PKCE</td>
+                      <td className="py-2.5 px-3 text-right text-emerald-700 font-bold">✓ Verified</td>
                     </tr>
                   </tbody>
                 </table>
@@ -288,19 +288,19 @@ export const OfficialCertificateModal: React.FC<OfficialCertificateModalProps> =
 
         {/* Modal Bottom Actions (Hidden in Print) */}
         <div className="print:hidden bg-slate-100 px-6 py-3.5 border-t border-slate-200 flex items-center justify-between">
-          <span className="text-xs text-slate-500">
+          <span className="text-xs sm:text-sm text-slate-600 font-medium">
             Click <strong>Print / Save PDF</strong> to save this document to your device or print directly.
           </span>
           <div className="flex items-center gap-2">
             <button
               onClick={onClose}
-              className="px-4 py-2 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold text-xs rounded-xl transition cursor-pointer"
+              className="px-4 py-2 bg-white hover:bg-slate-50 border border-slate-300 text-slate-700 font-bold text-xs sm:text-sm rounded-xl transition cursor-pointer"
             >
               Close
             </button>
             <button
               onClick={handlePrint}
-              className="px-5 py-2 bg-gov-700 hover:bg-gov-800 text-white font-bold text-xs rounded-xl shadow-gov transition flex items-center gap-1.5 cursor-pointer"
+              className="px-5 py-2 bg-gov-700 hover:bg-gov-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-gov transition flex items-center gap-1.5 cursor-pointer"
             >
               <Printer className="w-4 h-4" />
               <span>Print Document</span>

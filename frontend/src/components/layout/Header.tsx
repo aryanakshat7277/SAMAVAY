@@ -101,14 +101,14 @@ export const Header: React.FC = () => {
                   <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 font-serif leading-none">
                     SAMAVAY
                   </span>
-                  <span className="text-xs font-bold text-gov-800 font-serif">
+                  <span className="text-xs sm:text-sm font-bold text-gov-800 font-serif">
                     (समवाय)
                   </span>
                   <span className="text-[10px] font-extrabold text-saffron-800 bg-saffron-50 border border-saffron-300 px-1.5 py-0.5 rounded uppercase tracking-wider font-mono">
                     DPI
                   </span>
                 </div>
-                <span className="text-xs text-slate-600 font-medium tracking-tight leading-none block mt-1">
+                <span className="text-xs sm:text-[13px] text-slate-600 font-medium tracking-tight leading-none block mt-1">
                   National Interoperability & Citizen Services Mesh
                 </span>
               </div>
@@ -142,7 +142,7 @@ export const Header: React.FC = () => {
               {/* Admin Portal Link */}
               <Link
                 to="/admin/control-center"
-                className="group flex items-center gap-1.5 px-3.5 py-2 bg-gov-950 hover:bg-gov-900 text-white text-xs font-bold rounded-xl transition-all duration-200 shadow-xs border border-gov-800 hover:border-saffron-500/50 hover:shadow-gov-glow"
+                className="group flex items-center gap-1.5 px-3.5 py-2 bg-gov-950 hover:bg-gov-900 text-white text-xs sm:text-sm font-bold rounded-xl transition-all duration-200 shadow-xs border border-gov-800 hover:border-saffron-500/50 hover:shadow-gov-glow"
               >
                 <ShieldCheck className="w-4 h-4 text-saffron-400 group-hover:scale-110 transition-transform" />
                 <span>Admin Console</span>
@@ -169,7 +169,7 @@ export const Header: React.FC = () => {
                   <div className="relative" ref={dropdownRef}>
                     <button
                       onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
-                      className="flex items-center gap-2 pl-2 pr-2.5 py-1.5 rounded-xl border border-slate-300 hover:border-gov-500 hover:bg-slate-50 text-xs font-bold text-slate-800 transition-all duration-150 cursor-pointer"
+                      className="flex items-center gap-2 pl-2 pr-2.5 py-1.5 rounded-xl border border-slate-300 hover:border-gov-500 hover:bg-slate-50 text-xs sm:text-sm font-bold text-slate-800 transition-all duration-150 cursor-pointer"
                     >
                       <div className="w-6.5 h-6.5 rounded-lg bg-gradient-to-br from-gov-700 to-gov-900 text-white flex items-center justify-center font-black text-xs shadow-xs">
                         {user?.fullName?.charAt(0) || 'C'}
@@ -179,7 +179,7 @@ export const Header: React.FC = () => {
                     </button>
 
                     {profileDropdownOpen && (
-                      <div className="absolute right-0 mt-2 w-60 bg-white rounded-2xl shadow-modal border border-slate-200 py-1.5 z-50 animate-fade-in-scale text-xs">
+                      <div className="absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-modal border border-slate-200 py-1.5 z-50 animate-fade-in-scale text-xs sm:text-sm">
                         {/* User info header */}
                         <div className="px-4 py-3 border-b border-slate-100">
                           <div className="flex items-center gap-2.5">
@@ -187,11 +187,11 @@ export const Header: React.FC = () => {
                               {user?.fullName?.charAt(0) || 'C'}
                             </div>
                             <div>
-                              <p className="font-bold text-slate-900 text-sm">{user?.fullName}</p>
+                              <p className="font-bold text-slate-900 text-sm sm:text-base">{user?.fullName}</p>
                               <p className="text-xs text-slate-500 truncate">{user?.email}</p>
                             </div>
                           </div>
-                          <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-gov-800 bg-gov-50 border border-gov-200 px-2 py-0.5 rounded-full">
+                          <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-gov-800 bg-gov-50 border border-gov-200 px-2.5 py-0.5 rounded-full">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                             {user?.role || 'CITIZEN'}
                           </span>
@@ -240,13 +240,13 @@ export const Header: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <Link
                     to="/login"
-                    className="px-4 py-2 text-xs font-bold text-slate-700 hover:text-gov-800 hover:bg-slate-100 rounded-xl transition border border-transparent hover:border-slate-200"
+                    className="px-4 py-2 text-xs sm:text-sm font-bold text-slate-700 hover:text-gov-800 hover:bg-slate-100 rounded-xl transition border border-transparent hover:border-slate-200"
                   >
                     Sign In
                   </Link>
                   <Link
                     to="/register"
-                    className="px-4 py-2 text-xs font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl transition shadow-xs hover:shadow-gov"
+                    className="px-4 py-2 text-xs sm:text-sm font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl transition shadow-xs hover:shadow-gov"
                   >
                     Register →
                   </Link>

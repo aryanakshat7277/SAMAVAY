@@ -58,8 +58,8 @@ const StatBubble: React.FC<{ val: string | number; label: string; delay: number 
     className="flex flex-col items-center gap-0.5 opacity-0 animate-slide-up-fade"
     style={{ animationDelay: `${delay}ms`, animationFillMode: 'forwards' }}
   >
-    <span className="font-black text-slate-900 text-xl font-mono leading-none">{val}</span>
-    <span className="text-slate-600 text-[11px] font-semibold">{label}</span>
+    <span className="font-black text-slate-900 text-2xl font-mono leading-none">{val}</span>
+    <span className="text-slate-700 text-xs sm:text-sm font-semibold">{label}</span>
   </div>
 );
 
@@ -156,7 +156,7 @@ export const ServicesDirectoryPage: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-saffron-500 rounded-full" />
               </span>
             </h1>
-            <p className="text-slate-700 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
+            <p className="text-slate-700 text-base sm:text-lg max-w-xl mx-auto leading-relaxed font-medium">
               All state and central government services in one place — with{' '}
               <strong className="text-saffron-800 font-bold">62% automated data verification</strong>{' '}
               so you never upload the same document twice.
@@ -184,11 +184,11 @@ export const ServicesDirectoryPage: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search services, departments, keywords (e.g. Property Tax, Driving Licence, PM-KISAN...)"
-                className="w-full px-3 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none font-medium"
+                className="w-full px-3 py-2.5 bg-transparent text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:outline-none font-medium"
               />
               {/* Live count pill in search */}
               {!searchQuery && services.length > 0 && (
-                <span className="hidden sm:flex items-center gap-1.5 text-xs text-slate-600 font-semibold pr-3 whitespace-nowrap flex-shrink-0">
+                <span className="hidden sm:flex items-center gap-1.5 text-sm text-slate-700 font-semibold pr-3 whitespace-nowrap flex-shrink-0">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                   {services.length} services available
                 </span>
@@ -214,7 +214,7 @@ export const ServicesDirectoryPage: React.FC = () => {
                 <button
                   key={cat.key}
                   onClick={() => setSelectedCategory(cat.key)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl text-xs sm:text-[13px] font-bold whitespace-nowrap transition-all duration-200 cursor-pointer flex-shrink-0 border-b-2 ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer flex-shrink-0 border-b-2 ${
                     isSelected
                       ? 'bg-white border-b-2 border-gov-700 text-gov-900 shadow-xs'
                       : 'bg-stone-100/90 border-b-2 border-transparent text-stone-600 hover:bg-stone-200 hover:text-stone-900'

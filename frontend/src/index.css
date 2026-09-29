@@ -5,19 +5,23 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-size: 15px;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-[#F8FAFC] text-slate-900 antialiased font-sans;
+    @apply bg-[#F8FAFC] text-slate-900 antialiased font-sans text-base leading-relaxed;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight font-serif;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 

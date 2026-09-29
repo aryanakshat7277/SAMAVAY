@@ -83,14 +83,14 @@ export const MyDataPermissionsPage: React.FC = () => {
 
       {/* ── SUCCESS TOAST ── */}
       {notificationMsg && (
-        <div className="p-4 bg-gov-50 border border-gov-300 rounded-2xl text-xs text-gov-900 flex items-center justify-between shadow-xs animate-slide-in-left">
+        <div className="p-4 bg-gov-50 border border-gov-300 rounded-2xl text-sm text-gov-900 flex items-center justify-between shadow-xs animate-slide-in-left">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-full bg-gov-700 flex items-center justify-center flex-shrink-0">
-              <CheckCircle2 className="w-3.5 h-3.5 text-white" />
+              <CheckCircle2 className="w-4 h-4 text-white" />
             </div>
             <span className="font-semibold">{notificationMsg}</span>
           </div>
-          <button onClick={() => setNotificationMsg('')} className="text-gov-600 hover:text-gov-900">
+          <button onClick={() => setNotificationMsg('')} className="text-gov-600 hover:text-gov-900 cursor-pointer">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -105,14 +105,14 @@ export const MyDataPermissionsPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-xl bg-amber-50 border border-amber-300 flex items-center justify-center">
-                  <ShieldCheck className="w-4.5 h-4.5 text-amber-700" />
+                  <ShieldCheck className="w-5 h-5 text-amber-700" />
                 </div>
-                <span className="text-amber-900 text-xs font-bold uppercase tracking-wider">DPDP Act 2023 — Citizen Rights</span>
+                <span className="text-amber-900 text-xs sm:text-sm font-bold uppercase tracking-wider">DPDP Act 2023 — Citizen Rights</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-serif">
                 You Are in Complete Control of Your Data
               </h2>
-              <p className="text-slate-700 text-sm max-w-lg leading-relaxed font-medium">
+              <p className="text-slate-700 text-sm sm:text-base max-w-lg leading-relaxed font-medium">
                 Under the Digital Personal Data Protection Act 2023, no government service can access your records without
                 your explicit, purpose-bound consent. You may revoke access at any time.
               </p>
@@ -121,12 +121,12 @@ export const MyDataPermissionsPage: React.FC = () => {
             {/* Stats */}
             <div className="flex gap-4 flex-shrink-0">
               <div className="bg-white border-2 border-emerald-200 rounded-2xl p-4 text-center min-w-[84px] shadow-xs">
-                <p className="text-2xl font-black text-emerald-800 font-mono">{activeCount}</p>
-                <p className="text-slate-600 text-xs font-bold mt-0.5">Active</p>
+                <p className="text-2xl sm:text-3xl font-black text-emerald-800 font-mono">{activeCount}</p>
+                <p className="text-slate-700 text-xs sm:text-sm font-bold mt-0.5">Active</p>
               </div>
               <div className="bg-white border-2 border-stone-200 rounded-2xl p-4 text-center min-w-[84px] shadow-xs">
-                <p className="text-2xl font-black text-rose-700 font-mono">{revokedCount}</p>
-                <p className="text-slate-600 text-xs font-bold mt-0.5">Revoked</p>
+                <p className="text-2xl sm:text-3xl font-black text-rose-700 font-mono">{revokedCount}</p>
+                <p className="text-slate-700 text-xs sm:text-sm font-bold mt-0.5">Revoked</p>
               </div>
             </div>
           </div>
@@ -137,9 +137,9 @@ export const MyDataPermissionsPage: React.FC = () => {
               <div key={title} className="bg-white border border-stone-200/90 rounded-xl p-3.5 space-y-1 shadow-2xs">
                 <div className="flex items-center gap-1.5">
                   <Icon className="w-4 h-4 text-gov-700 flex-shrink-0" />
-                  <span className="text-slate-900 text-xs font-bold">{title}</span>
+                  <span className="text-slate-900 text-xs sm:text-sm font-bold">{title}</span>
                 </div>
-                <p className="text-slate-600 text-xs leading-snug font-medium">{desc}</p>
+                <p className="text-slate-600 text-xs sm:text-sm leading-snug font-medium">{desc}</p>
               </div>
             ))}
           </div>
@@ -150,10 +150,10 @@ export const MyDataPermissionsPage: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center justify-between border-b border-stone-200 pb-3">
           <div>
-            <h3 className="font-bold text-stone-900 font-serif text-base">
+            <h3 className="font-bold text-stone-900 font-serif text-base sm:text-lg">
               Active Data Permissions
             </h3>
-            <p className="text-xs text-stone-600 mt-0.5 font-medium">
+            <p className="text-xs sm:text-sm text-stone-600 mt-0.5 font-medium">
               {consents.length} authorization{consents.length !== 1 ? 's' : ''} on record
             </p>
           </div>
@@ -176,7 +176,7 @@ export const MyDataPermissionsPage: React.FC = () => {
               return (
                 <div
                   key={consent.id}
-                  className={`animate-stagger-in bg-white rounded-2xl border text-xs transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover ${
+                  className={`animate-stagger-in bg-white rounded-2xl border text-xs sm:text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover ${
                     isActive ? 'border-stone-200' : 'border-stone-200 opacity-60'
                   }`}
                   style={{ animationDelay: `${i * 80}ms`, opacity: 0 }}
@@ -184,14 +184,14 @@ export const MyDataPermissionsPage: React.FC = () => {
                   {/* Card header */}
                   <div className="p-4 border-b border-stone-100 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${isActive ? 'bg-gov-50' : 'bg-stone-100'}`}>
-                        <Database className={`w-3.5 h-3.5 ${isActive ? 'text-gov-700' : 'text-stone-400'}`} />
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isActive ? 'bg-gov-50' : 'bg-stone-100'}`}>
+                        <Database className={`w-4 h-4 ${isActive ? 'text-gov-700' : 'text-stone-400'}`} />
                       </div>
-                      <span className={`text-xs font-bold ${isActive ? 'text-gov-800' : 'text-stone-500'}`}>
+                      <span className={`text-xs sm:text-sm font-bold ${isActive ? 'text-gov-800' : 'text-stone-500'}`}>
                         {consent.sourceDepartmentName}
                       </span>
                     </div>
-                    <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full ${
+                    <span className={`inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold px-2.5 py-1 rounded-full ${
                       isActive
                         ? 'bg-gov-50 text-gov-800 border border-gov-200'
                         : 'bg-rose-50 text-rose-700 border border-rose-200'
@@ -204,35 +204,35 @@ export const MyDataPermissionsPage: React.FC = () => {
                   {/* Card body */}
                   <div className="p-4 space-y-3">
                     <div>
-                      <h4 className="font-bold text-stone-900 font-serif text-sm">{consent.fieldName}</h4>
-                      <p className="text-xs text-stone-600 mt-0.5 font-medium">
+                      <h4 className="font-bold text-stone-900 font-serif text-sm sm:text-base">{consent.fieldName}</h4>
+                      <p className="text-xs sm:text-sm text-stone-600 mt-0.5 font-medium">
                         Platform: <strong className="text-stone-900 font-bold">{consent.sourcePlatformName}</strong>
                       </p>
                     </div>
 
-                    <div className="p-2.5 bg-sandstone-100 border border-stone-200 rounded-xl space-y-1">
+                    <div className="p-3 bg-sandstone-100 border border-stone-200 rounded-xl space-y-1">
                       <div className="flex items-center gap-1.5">
-                        <Info className="w-3.5 h-3.5 text-stone-500" />
+                        <Info className="w-4 h-4 text-stone-500" />
                         <span className="text-xs font-bold uppercase tracking-wider text-stone-600">
                           Purpose
                         </span>
                       </div>
-                      <p className="text-xs text-stone-800 leading-snug font-medium">
+                      <p className="text-xs sm:text-sm text-stone-800 leading-snug font-medium">
                         {consent.purpose || `Verification for ${consent.serviceName}`}
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-xs text-stone-600 font-medium">
-                      <Clock className="w-3.5 h-3.5 text-stone-500" />
+                    <div className="flex items-center gap-1.5 text-xs sm:text-sm text-stone-600 font-medium">
+                      <Clock className="w-4 h-4 text-stone-500" />
                       Granted {new Date(consent.grantedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
                     </div>
 
                     {isActive && (
                       <button
                         onClick={() => setSelectedConsent(consent)}
-                        className="w-full py-2 px-3 border border-rose-200 text-rose-700 hover:bg-rose-50 hover:border-rose-300 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition cursor-pointer"
+                        className="w-full py-2.5 px-3 border border-rose-200 text-rose-700 hover:bg-rose-50 hover:border-rose-300 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition cursor-pointer"
                       >
-                        <Trash2 className="w-3.5 h-3.5" />
+                        <Trash2 className="w-4 h-4" />
                         Revoke Access
                       </button>
                     )}
@@ -260,37 +260,37 @@ export const MyDataPermissionsPage: React.FC = () => {
                 <AlertTriangle className="w-5 h-5 text-rose-600" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-stone-900 font-serif">Revoke Data Permission?</h3>
-                <p className="text-[11px] text-rose-700 font-medium">This action takes effect immediately</p>
+                <h3 className="text-base sm:text-lg font-bold text-stone-900 font-serif">Revoke Data Permission?</h3>
+                <p className="text-xs text-rose-700 font-medium">This action takes effect immediately</p>
               </div>
             </div>
 
-            <div className="p-5 space-y-4 text-xs">
+            <div className="p-5 space-y-4 text-xs sm:text-sm">
               <p className="text-stone-700 leading-relaxed">
                 Revoke <span className="font-bold text-stone-900">{selectedConsent.serviceName}</span>'s access to your{' '}
                 <span className="font-bold text-gov-800">{selectedConsent.fieldName}</span> records?
               </p>
 
-              <div className="p-3 bg-saffron-50 border border-saffron-200 rounded-xl text-saffron-900 leading-snug">
+              <div className="p-3.5 bg-saffron-50 border border-saffron-200 rounded-xl text-saffron-900 leading-snug font-medium text-xs sm:text-sm">
                 <strong className="font-bold">Impact:</strong> Future applications from this service will require manual document upload instead of auto-verification.
               </div>
 
               <div className="grid grid-cols-2 gap-3 pt-1">
                 <button
                   onClick={() => setSelectedConsent(null)}
-                  className="py-2.5 px-4 border border-stone-300 rounded-xl font-bold text-stone-800 hover:bg-stone-50 transition cursor-pointer"
+                  className="py-2.5 px-4 border border-stone-300 rounded-xl font-bold text-stone-800 hover:bg-stone-50 transition cursor-pointer text-sm"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={() => handleRevoke(selectedConsent.id)}
                   disabled={isRevoking}
-                  className="py-2.5 px-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-bold flex items-center justify-center gap-1.5 transition cursor-pointer disabled:opacity-50"
+                  className="py-2.5 px-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-bold flex items-center justify-center gap-1.5 transition cursor-pointer disabled:opacity-50 text-sm"
                 >
                   {isRevoking ? (
-                    <><RefreshCw className="w-3.5 h-3.5 animate-spin" />Revoking...</>
+                    <><RefreshCw className="w-4 h-4 animate-spin" />Revoking...</>
                   ) : (
-                    <><Trash2 className="w-3.5 h-3.5" />Confirm Revoke</>
+                    <><Trash2 className="w-4 h-4" />Confirm Revoke</>
                   )}
                 </button>
               </div>

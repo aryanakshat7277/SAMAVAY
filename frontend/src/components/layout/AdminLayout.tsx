@@ -104,28 +104,28 @@ export const AdminLayout: React.FC = () => {
       <div className="h-1 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
       {/* Admin Top Sovereign Ribbon */}
-      <div className="bg-[#061e38] text-stone-100 text-xs py-2 px-4 sm:px-6 flex items-center justify-between border-b border-[#0f345c]">
+      <div className="bg-[#061e38] text-stone-100 text-xs sm:text-sm py-2 px-4 sm:px-6 flex items-center justify-between border-b border-[#0f345c]">
         <div className="flex items-center space-x-2.5">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <span className="font-bold tracking-wider font-serif uppercase">SAMAVAY ADMINISTRATION & GATEWAY CONTROL</span>
           <span className="hidden md:inline text-stone-500">|</span>
-          <span className="hidden md:inline text-stone-300 text-[11px]">Production Node • DPDP Act Governed</span>
+          <span className="hidden md:inline text-stone-300 text-xs">Production Node • DPDP Act Governed</span>
         </div>
 
         <div className="flex items-center space-x-4">
           <Link
             to="/how-samavay-works"
-            className="text-amber-300 hover:text-white transition flex items-center space-x-1 font-semibold text-[11px]"
+            className="text-amber-300 hover:text-white transition flex items-center space-x-1 font-semibold text-xs"
           >
             <span>How SAMAVAY Works</span>
-            <Compass className="w-3 h-3 ml-0.5" />
+            <Compass className="w-3.5 h-3.5 ml-0.5" />
           </Link>
           <Link
             to="/dashboard"
-            className="text-stone-300 hover:text-white transition flex items-center space-x-1 font-semibold text-[11px]"
+            className="text-stone-300 hover:text-white transition flex items-center space-x-1 font-semibold text-xs"
           >
             <span>Citizen Portal</span>
-            <ExternalLink className="w-3 h-3 ml-0.5" />
+            <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
           </Link>
         </div>
       </div>
@@ -145,7 +145,7 @@ export const AdminLayout: React.FC = () => {
               </div>
               {!isCollapsed && (
                 <div className="truncate">
-                  <p className="text-sm font-bold text-slate-900 leading-tight font-serif">Admin Console</p>
+                  <p className="text-sm sm:text-base font-bold text-slate-900 leading-tight font-serif">Admin Console</p>
                   <span className="text-xs font-bold text-gov-800 bg-gov-50 border border-gov-200 px-2 py-0.5 rounded uppercase">
                     {user?.role || 'SUPER_ADMIN'}
                   </span>
@@ -182,15 +182,15 @@ export const AdminLayout: React.FC = () => {
                       to={item.path}
                       title={isCollapsed ? item.name : undefined}
                       className={`flex items-center ${
-                        isCollapsed ? 'justify-center px-2 py-2.5' : 'justify-between px-3 py-2'
-                      } rounded-xl text-xs sm:text-[13px] font-semibold transition-all duration-150 ${
+                        isCollapsed ? 'justify-center px-2 py-2.5' : 'justify-between px-3 py-2.5'
+                      } rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 ${
                         active
                           ? 'bg-gov-50 text-gov-900 font-bold border border-gov-300 shadow-xs'
                           : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950'
                       }`}
                     >
                       <div className="flex items-center space-x-2.5">
-                        <Icon className={`w-4 h-4 flex-shrink-0 ${active ? 'text-gov-800' : 'text-slate-500'}`} />
+                        <Icon className={`w-4.5 h-4.5 flex-shrink-0 ${active ? 'text-gov-800' : 'text-slate-500'}`} />
                         {!isCollapsed && <span className="truncate">{item.name}</span>}
                       </div>
                       {!isCollapsed && active && <ChevronRight className="w-4 h-4 text-gov-700 flex-shrink-0" />}

@@ -79,7 +79,7 @@ export const HelpPage: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl font-black text-slate-900 font-serif">
             Help & Support Center
           </h1>
-          <p className="text-slate-700 text-sm max-w-xl mx-auto leading-relaxed font-medium">
+          <p className="text-slate-700 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
             Get answers to common questions about SAMAVAY's interoperability platform or reach out to our
             dedicated government citizen support helplines.
           </p>
@@ -88,23 +88,23 @@ export const HelpPage: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <Link
               to="/services"
-              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
             >
-              <ArrowRight className="w-3.5 h-3.5 text-gov-700" />
+              <ArrowRight className="w-4 h-4 text-gov-700" />
               Browse Services
             </Link>
             <Link
               to="/dashboard"
-              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
             >
-              <ArrowRight className="w-3.5 h-3.5 text-gov-700" />
+              <ArrowRight className="w-4 h-4 text-gov-700" />
               My Dashboard
             </Link>
             <Link
               to="/applications"
-              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
+              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
             >
-              <ArrowRight className="w-3.5 h-3.5 text-gov-700" />
+              <ArrowRight className="w-4 h-4 text-gov-700" />
               Track Applications
             </Link>
           </div>
@@ -123,9 +123,9 @@ export const HelpPage: React.FC = () => {
                 <Icon className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs font-bold text-stone-900 font-serif">{title}</p>
-                <p className="text-sm font-bold text-gov-800 font-mono mt-0.5 leading-tight">{value}</p>
-                <p className="text-[11px] text-stone-500 mt-0.5">{sub}</p>
+                <p className="text-xs sm:text-sm font-bold text-stone-900 font-serif">{title}</p>
+                <p className="text-sm sm:text-base font-bold text-gov-800 font-mono mt-0.5 leading-tight">{value}</p>
+                <p className="text-xs text-stone-600 mt-0.5 font-medium">{sub}</p>
               </div>
             </div>
           ))}
@@ -135,7 +135,7 @@ export const HelpPage: React.FC = () => {
         <div className="space-y-4">
           <div className="flex items-center gap-2 border-b border-stone-200 pb-3">
             <MessageSquare className="w-4 h-4 text-gov-700" />
-            <h3 className="text-base font-bold text-stone-900 font-serif">
+            <h3 className="text-base sm:text-lg font-bold text-stone-900 font-serif">
               Frequently Asked Questions
             </h3>
           </div>
@@ -157,21 +157,21 @@ export const HelpPage: React.FC = () => {
                     <div className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       isOpen ? 'bg-gov-700 text-white' : 'bg-stone-100 text-stone-500'
                     }`}>
-                      <span className="text-[10px] font-black">{String(idx + 1).padStart(2, '0')}</span>
+                      <span className="text-xs font-black">{String(idx + 1).padStart(2, '0')}</span>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-start justify-between gap-3">
-                        <h4 className={`text-xs sm:text-sm font-bold font-serif ${isOpen ? 'text-gov-900' : 'text-stone-900'}`}>
+                        <h4 className={`text-sm sm:text-base font-bold font-serif ${isOpen ? 'text-gov-900' : 'text-stone-900'}`}>
                           {faq.q}
                         </h4>
                         <div className={`p-1 rounded-lg flex-shrink-0 ${isOpen ? 'text-gov-700' : 'text-stone-400'}`}>
                           {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                         </div>
                       </div>
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full mt-1.5 inline-block ${
+                      <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full mt-1.5 inline-block ${
                         isOpen
                           ? 'bg-gov-50 text-gov-700 border border-gov-200'
-                          : 'bg-stone-100 text-stone-500'
+                          : 'bg-stone-100 text-stone-600'
                       }`}>
                         {faq.tag}
                       </span>
@@ -180,7 +180,7 @@ export const HelpPage: React.FC = () => {
 
                   {isOpen && (
                     <div className="px-4 pb-4 pt-0 border-t border-gov-100 animate-slide-up">
-                      <p className="text-xs text-stone-600 leading-relaxed mt-3">{faq.a}</p>
+                      <p className="text-xs sm:text-sm text-stone-700 leading-relaxed mt-3">{faq.a}</p>
                     </div>
                   )}
                 </div>
@@ -197,14 +197,14 @@ export const HelpPage: React.FC = () => {
               <ShieldCheck className="w-6 h-6 text-amber-700" />
             </div>
             <div className="flex-1 space-y-1">
-              <h3 className="text-base font-black text-slate-900 font-serif">Your Privacy is Sovereign</h3>
-              <p className="text-slate-700 text-xs leading-relaxed font-medium">
+              <h3 className="text-base sm:text-lg font-black text-slate-900 font-serif">Your Privacy is Sovereign</h3>
+              <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-medium">
                 SAMAVAY is fully compliant with the Digital Personal Data Protection Act 2023. No data is stored or shared
                 beyond declared service purposes. All processing is auditable and you have the right to access, correct, and erase your data.
               </p>
               <div className="flex flex-wrap gap-2 pt-1.5">
                 {['DPDP Act 2023', 'mTLS Encrypted', 'NIC Hosted', 'PKI Signed Certs'].map(t => (
-                  <span key={t} className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md flex items-center gap-1 shadow-2xs">
+                  <span key={t} className="text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-md flex items-center gap-1 shadow-2xs">
                     <Check className="w-3.5 h-3.5 text-emerald-600" />{t}
                   </span>
                 ))}

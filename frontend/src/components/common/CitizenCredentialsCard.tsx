@@ -44,19 +44,19 @@ export const CitizenCredentialsCard: React.FC = () => {
       {/* 3 Pre-Verified Sovereign Credentials (Large Light Clean Card Aesthetic) */}
       <div className="space-y-3.5 relative z-10">
         {/* 1. UIDAI Aadhaar Verification */}
-        <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 hover:border-emerald-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
+        <div className="p-4 sm:p-5 bg-white border-2 border-slate-200 hover:border-emerald-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
           <div className="flex items-center space-x-3.5">
             <div className="w-12 h-12 rounded-2xl bg-emerald-50 border-2 border-emerald-200 flex items-center justify-center text-emerald-700 flex-shrink-0 shadow-2xs">
               <UserCheck className="w-6 h-6" />
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm sm:text-base font-bold text-slate-900">Aadhaar Identity Authentication</span>
-                <span className="text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 rounded-md">
+                <span className="text-base sm:text-lg font-bold text-slate-900 font-serif">Aadhaar Identity Authentication</span>
+                <span className="text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 rounded-md">
                   UIDAI Verified
                 </span>
               </div>
-              <p className="text-xs sm:text-[13.5px] text-slate-600 font-medium mt-0.5 leading-snug">
+              <p className="text-sm sm:text-[15px] text-slate-700 font-medium mt-1 leading-normal">
                 VID: •••• •••• 9021 • Demographic & Biometric Match Validated
               </p>
             </div>
@@ -65,19 +65,19 @@ export const CitizenCredentialsCard: React.FC = () => {
         </div>
 
         {/* 2. Transport Department SARATHI 4.0 */}
-        <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 hover:border-amber-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
+        <div className="p-4 sm:p-5 bg-white border-2 border-slate-200 hover:border-amber-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
           <div className="flex items-center space-x-3.5">
             <div className="w-12 h-12 rounded-2xl bg-amber-50 border-2 border-amber-200 flex items-center justify-center text-amber-700 flex-shrink-0 shadow-2xs">
               <Car className="w-6 h-6" />
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm sm:text-base font-bold text-slate-900">Driving Licence Endorsement</span>
-                <span className="text-xs font-bold text-amber-800 bg-amber-100 border border-amber-300 px-2.5 py-0.5 rounded-md">
+                <span className="text-base sm:text-lg font-bold text-slate-900 font-serif">Driving Licence Endorsement</span>
+                <span className="text-xs sm:text-sm font-bold text-amber-800 bg-amber-100 border border-amber-300 px-2.5 py-0.5 rounded-md">
                   SARATHI 4.0
                 </span>
               </div>
-              <p className="text-xs sm:text-[13.5px] text-slate-600 font-medium mt-0.5 leading-snug">
+              <p className="text-sm sm:text-[15px] text-slate-700 font-medium mt-1 leading-normal">
                 DL-1420110023412 • Class: LMV/MCWG • Valid Till 2038
               </p>
             </div>
@@ -86,19 +86,19 @@ export const CitizenCredentialsCard: React.FC = () => {
         </div>
 
         {/* 3. Revenue & Land Records (Bhoomi LRS) */}
-        <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 hover:border-blue-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
+        <div className="p-4 sm:p-5 bg-white border-2 border-slate-200 hover:border-blue-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
           <div className="flex items-center space-x-3.5">
             <div className="w-12 h-12 rounded-2xl bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-blue-700 flex-shrink-0 shadow-2xs">
               <Building2 className="w-6 h-6" />
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-sm sm:text-base font-bold text-slate-900">State Land Revenue Record (RoR)</span>
-                <span className="text-xs font-bold text-gov-800 bg-gov-100 border border-gov-300 px-2.5 py-0.5 rounded-md">
+                <span className="text-base sm:text-lg font-bold text-slate-900 font-serif">State Land Revenue Record (RoR)</span>
+                <span className="text-xs sm:text-sm font-bold text-gov-800 bg-gov-100 border border-gov-300 px-2.5 py-0.5 rounded-md">
                   Bhoomi LRS
                 </span>
               </div>
-              <p className="text-xs sm:text-[13.5px] text-slate-600 font-medium mt-0.5 leading-snug">
+              <p className="text-sm sm:text-[15px] text-slate-700 font-medium mt-1 leading-normal">
                 Plot 402/A • Cadastral Survey RoR Verified • Zero Physical Copies
               </p>
             </div>
@@ -108,13 +108,13 @@ export const CitizenCredentialsCard: React.FC = () => {
       </div>
 
       {/* Statutory Footer with Cryptographic Seal */}
-      <div className="pt-3.5 sm:pt-4 border-t-2 border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-slate-700 relative z-10">
+      <div className="pt-3.5 sm:pt-4 border-t-2 border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-700 relative z-10">
         <div className="flex items-center gap-2 text-emerald-800 font-bold">
           <ShieldCheck className="w-5 h-5 text-emerald-700 flex-shrink-0" />
           <span>DPDP Act 2023 Governed</span>
         </div>
         <div className="flex items-center gap-2.5">
-          <span className="text-gov-950 font-bold bg-gov-50 border border-gov-300 px-3 py-1 rounded-lg shadow-2xs">
+          <span className="text-gov-950 font-bold bg-gov-50 border border-gov-300 px-3 py-1 rounded-lg shadow-2xs text-sm">
             62% Paperwork Eliminated
           </span>
           <span className="text-slate-400">•</span>

@@ -193,48 +193,48 @@ export const AdminControlCenterPage: React.FC = () => {
       <Card padding="md" className="space-y-4">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
           <div className="flex items-center space-x-2">
-            <Activity className="w-4 h-4 text-gov-700" />
-            <h3 className="text-sm font-bold text-slate-900 font-serif">
+            <Activity className="w-5 h-5 text-gov-700" />
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 font-serif">
               Current Platform Health Telemetry
             </h3>
           </div>
-          <span className="text-[11px] text-slate-500 font-mono">Statutory Health Engine</span>
+          <span className="text-xs text-slate-600 font-mono font-medium">Statutory Health Engine</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="p-4 bg-emerald-50/80 border border-emerald-200 rounded-2xl flex items-center justify-between">
             <div>
-              <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">Healthy Platforms</span>
-              <span className="text-2xl font-extrabold text-emerald-800 font-mono">
+              <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block">Healthy Platforms</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-emerald-800 font-mono">
                 {summary?.healthyPlatformsCount || 7} Platforms
               </span>
             </div>
-            <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-              <CheckCircle2 className="w-5 h-5 text-emerald-700" />
+            <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+              <CheckCircle2 className="w-6 h-6 text-emerald-700" />
             </div>
           </div>
 
           <div className="p-4 bg-amber-50/80 border border-amber-200 rounded-2xl flex items-center justify-between">
             <div>
-              <span className="text-[10px] font-bold text-amber-800 uppercase tracking-wider block">Requires Attention</span>
-              <span className="text-2xl font-extrabold text-amber-800 font-mono">
+              <span className="text-xs font-bold text-amber-800 uppercase tracking-wider block">Requires Attention</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-amber-800 font-mono">
                 {summary?.attentionRequiredCount || 1} Platform
               </span>
             </div>
-            <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
-              <AlertTriangle className="w-5 h-5 text-amber-700" />
+            <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
+              <AlertTriangle className="w-6 h-6 text-amber-700" />
             </div>
           </div>
 
           <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl flex items-center justify-between">
             <div>
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Unavailable</span>
-              <span className="text-2xl font-extrabold text-slate-700 font-mono">
+              <span className="text-xs font-bold text-slate-600 uppercase tracking-wider block">Unavailable</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-slate-700 font-mono">
                 {summary?.unavailableCount || 0} Platforms
               </span>
             </div>
-            <div className="w-9 h-9 rounded-xl bg-slate-200 text-slate-600 flex items-center justify-center font-bold">
-              <ShieldCheck className="w-5 h-5 text-slate-600" />
+            <div className="w-10 h-10 rounded-xl bg-slate-200 text-slate-600 flex items-center justify-center font-bold">
+              <ShieldCheck className="w-6 h-6 text-slate-600" />
             </div>
           </div>
         </div>
@@ -245,15 +245,15 @@ export const AdminControlCenterPage: React.FC = () => {
         {/* Left Column: Live Activity Feed (System Events) */}
         <Card padding="md" className="space-y-4">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <h3 className="text-sm font-bold text-slate-900 font-serif">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 font-serif">
               Live Interoperability System Events
             </h3>
-            <Link to="/admin/monitoring" className="text-xs text-gov-700 hover:text-gov-900 font-semibold inline-flex items-center">
-              View All <ArrowRight className="w-3.5 h-3.5 ml-1" />
+            <Link to="/admin/monitoring" className="text-xs sm:text-sm text-gov-700 hover:text-gov-900 font-bold inline-flex items-center">
+              View All <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
 
-          <div className="space-y-2.5 text-xs max-h-[340px] overflow-y-auto pr-1">
+          <div className="space-y-2.5 text-xs sm:text-sm max-h-[340px] overflow-y-auto pr-1">
             {summary?.recentEvents && summary.recentEvents.length > 0 ? (
               summary.recentEvents.map((evt) => (
                 <div
@@ -262,7 +262,7 @@ export const AdminControlCenterPage: React.FC = () => {
                 >
                   <div className="flex items-center space-x-2.5 overflow-hidden">
                     <span
-                      className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                      className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${
                         evt.severity === 'WARNING'
                           ? 'bg-amber-500'
                           : evt.severity === 'ERROR'
@@ -270,15 +270,15 @@ export const AdminControlCenterPage: React.FC = () => {
                           : 'bg-emerald-500'
                       }`}
                     />
-                    <span className="font-medium text-slate-800 truncate">{evt.message}</span>
+                    <span className="font-semibold text-slate-800 truncate">{evt.message}</span>
                   </div>
-                  <span className="text-[10px] text-slate-400 font-mono whitespace-nowrap">
+                  <span className="text-xs text-slate-500 font-mono whitespace-nowrap">
                     {new Date(evt.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </span>
                 </div>
               ))
             ) : (
-              <p className="text-slate-400 text-center py-6">No recent system events.</p>
+              <p className="text-slate-500 text-center py-6 text-sm">No recent system events.</p>
             )}
           </div>
         </Card>
@@ -288,15 +288,15 @@ export const AdminControlCenterPage: React.FC = () => {
           {/* Active Alerts */}
           <Card padding="md" className="space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <h3 className="text-sm font-bold text-slate-900 font-serif">
+              <h3 className="text-base sm:text-lg font-bold text-slate-900 font-serif">
                 Active Operational Alerts ({summary?.activeAlerts?.length || 0})
               </h3>
-              <Link to="/admin/alerts" className="text-xs text-gov-700 hover:text-gov-900 font-semibold inline-flex items-center">
-                Alert Center <ArrowRight className="w-3.5 h-3.5 ml-1" />
+              <Link to="/admin/alerts" className="text-xs sm:text-sm text-gov-700 hover:text-gov-900 font-bold inline-flex items-center">
+                Alert Center <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
-            <div className="space-y-3 text-xs">
+            <div className="space-y-3 text-xs sm:text-sm">
               {summary?.activeAlerts && summary.activeAlerts.length > 0 ? (
                 summary.activeAlerts.map((alt) => (
                   <div
@@ -306,25 +306,25 @@ export const AdminControlCenterPage: React.FC = () => {
                     <div className="flex items-start justify-between">
                       <div>
                         <div className="flex items-center space-x-2">
-                          <span className="text-[10px] font-bold bg-amber-200 text-amber-900 px-2 py-0.5 rounded">
+                          <span className="text-xs font-bold bg-amber-200 text-amber-900 px-2 py-0.5 rounded">
                             {alt.priority}
                           </span>
-                          <h4 className="font-bold text-slate-900">{alt.title}</h4>
+                          <h4 className="font-bold text-slate-900 text-sm sm:text-base">{alt.title}</h4>
                         </div>
-                        <p className="text-[11px] text-slate-600 mt-1">{alt.message}</p>
+                        <p className="text-xs sm:text-sm text-slate-700 mt-1 leading-relaxed">{alt.message}</p>
                       </div>
                     </div>
 
                     <div className="flex justify-end space-x-2 pt-2 border-t border-amber-200">
                       <button
                         onClick={() => handleReviewAlert(alt.id)}
-                        className="px-2.5 py-1 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 text-[11px] font-semibold rounded-lg transition"
+                        className="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold rounded-lg transition cursor-pointer"
                       >
                         Review
                       </button>
                       <button
                         onClick={() => handleResolveAlert(alt.id)}
-                        className="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-semibold rounded-lg shadow-xs transition"
+                        className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs sm:text-sm font-semibold rounded-lg shadow-xs transition cursor-pointer"
                       >
                         Resolve
                       </button>
@@ -332,10 +332,10 @@ export const AdminControlCenterPage: React.FC = () => {
                   </div>
                 ))
               ) : (
-                <div className="p-6 text-center text-slate-400 space-y-1">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-500 mx-auto" />
-                  <p className="font-semibold text-slate-700 text-xs">Everything Looks Good</p>
-                  <p className="text-[11px] text-slate-400">No active operational alerts at the moment.</p>
+                <div className="p-6 text-center text-slate-500 space-y-1">
+                  <CheckCircle2 className="w-7 h-7 text-emerald-600 mx-auto" />
+                  <p className="font-bold text-slate-800 text-sm sm:text-base">Everything Looks Good</p>
+                  <p className="text-xs sm:text-sm text-slate-500">No active operational alerts at the moment.</p>
                 </div>
               )}
             </div>
@@ -343,28 +343,28 @@ export const AdminControlCenterPage: React.FC = () => {
 
           {/* Downstream Service Impact Highlight Widget */}
           {summary?.serviceImpactHighlight && (
-            <div className="bg-gov-50/80 border border-gov-300 rounded-2xl p-5 space-y-3 text-xs">
+            <div className="bg-gov-50/80 border border-gov-300 rounded-2xl p-5 space-y-3 text-xs sm:text-sm">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-gov-800 bg-white border border-gov-200 px-2 py-0.5 rounded">
+                <span className="text-xs font-bold uppercase tracking-wider text-gov-800 bg-white border border-gov-200 px-2.5 py-0.5 rounded">
                   Departmental Dependency Mapping
                 </span>
-                <span className="text-[10px] font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded">
+                <span className="text-xs font-bold text-rose-700 bg-rose-100 px-2.5 py-0.5 rounded">
                   Platform Requires Attention
                 </span>
               </div>
 
               <div>
-                <h4 className="font-bold text-slate-900 font-serif">{summary.serviceImpactHighlight.platformName}</h4>
-                <p className="text-[11px] text-slate-600 mt-0.5">
+                <h4 className="font-bold text-slate-900 font-serif text-sm sm:text-base">{summary.serviceImpactHighlight.platformName}</h4>
+                <p className="text-xs sm:text-sm text-slate-700 mt-1 leading-relaxed">
                   Latency elevated to 1.8s. <strong>{summary.serviceImpactHighlight.impactedServicesCount} citizen service(s)</strong> evaluated with automatic failovers standby.
                 </p>
               </div>
 
               <Link
                 to="/admin/platform-status"
-                className="text-gov-800 font-bold hover:underline inline-flex items-center text-[11px]"
+                className="text-gov-800 font-bold hover:underline inline-flex items-center text-xs sm:text-sm"
               >
-                Inspect Downstream Service Impact <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                Inspect Downstream Service Impact <ArrowRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
           )}
@@ -373,17 +373,17 @@ export const AdminControlCenterPage: React.FC = () => {
 
       {/* 5. QUICK ACTIONS BANNER (PART 12) */}
       <Card padding="md" className="space-y-4">
-        <h3 className="text-sm font-bold text-slate-900 font-serif">
+        <h3 className="text-base sm:text-lg font-bold text-slate-900 font-serif">
           Governance & Orchestration Quick Actions
         </h3>
 
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 text-xs sm:text-sm">
           <Link
             to="/admin/demo"
             className="p-4 bg-gov-50/80 hover:bg-gov-100/90 border border-gov-200 rounded-2xl text-center font-semibold text-gov-900 transition-all flex flex-col items-center space-y-2 hover:shadow-xs group"
           >
-            <div className="w-9 h-9 rounded-xl bg-gov-200/70 text-gov-800 flex items-center justify-center group-hover:scale-105 transition">
-              <Play className="w-4 h-4 fill-current" />
+            <div className="w-10 h-10 rounded-xl bg-gov-200/70 text-gov-800 flex items-center justify-center group-hover:scale-105 transition">
+              <Play className="w-4.5 h-4.5 fill-current" />
             </div>
             <span className="font-bold">Simulation Console</span>
           </Link>
@@ -392,8 +392,8 @@ export const AdminControlCenterPage: React.FC = () => {
             to="/admin/platforms"
             className="p-4 bg-slate-50/80 hover:bg-slate-100 border border-slate-200 rounded-2xl text-center font-semibold text-slate-800 transition-all flex flex-col items-center space-y-2 hover:shadow-xs group"
           >
-            <div className="w-9 h-9 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
-              <Plus className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
+              <Plus className="w-4.5 h-4.5" />
             </div>
             <span className="font-bold">Register Platform</span>
           </Link>
@@ -402,8 +402,8 @@ export const AdminControlCenterPage: React.FC = () => {
             to="/admin/integrations"
             className="p-4 bg-slate-50/80 hover:bg-slate-100 border border-slate-200 rounded-2xl text-center font-semibold text-slate-800 transition-all flex flex-col items-center space-y-2 hover:shadow-xs group"
           >
-            <div className="w-9 h-9 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
-              <Layers className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
+              <Layers className="w-4.5 h-4.5" />
             </div>
             <span className="font-bold">Manage Integrations</span>
           </Link>
@@ -412,8 +412,8 @@ export const AdminControlCenterPage: React.FC = () => {
             to="/admin/platform-status"
             className="p-4 bg-slate-50/80 hover:bg-slate-100 border border-slate-200 rounded-2xl text-center font-semibold text-slate-800 transition-all flex flex-col items-center space-y-2 hover:shadow-xs group"
           >
-            <div className="w-9 h-9 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
-              <Activity className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
+              <Activity className="w-4.5 h-4.5" />
             </div>
             <span className="font-bold">Platform Health</span>
           </Link>
@@ -422,8 +422,8 @@ export const AdminControlCenterPage: React.FC = () => {
             to="/admin/analytics"
             className="p-4 bg-slate-50/80 hover:bg-slate-100 border border-slate-200 rounded-2xl text-center font-semibold text-slate-800 transition-all flex flex-col items-center space-y-2 hover:shadow-xs group"
           >
-            <div className="w-9 h-9 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
-              <BarChart3 className="w-4 h-4" />
+            <div className="w-10 h-10 rounded-xl bg-slate-200 text-slate-700 flex items-center justify-center group-hover:scale-105 transition">
+              <BarChart3 className="w-4.5 h-4.5" />
             </div>
             <span className="font-bold">Interoperability Analytics</span>
           </Link>

@@ -41,7 +41,7 @@ export const OfficialNoticeTicker: React.FC = () => {
     <div
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="bg-white border-y border-slate-200 shadow-2xs text-xs py-2 px-4 sm:px-6 flex items-center justify-between gap-4 select-none"
+      className="bg-white border-y border-slate-200 shadow-2xs text-sm py-2.5 px-4 sm:px-6 flex items-center justify-between gap-4 select-none"
     >
       {/* Left Label */}
       <div className="flex items-center gap-2 flex-shrink-0">
@@ -49,22 +49,22 @@ export const OfficialNoticeTicker: React.FC = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600" />
         </span>
-        <span className="font-serif font-black text-gov-950 text-xs tracking-wide uppercase flex items-center gap-1.5">
-          <Bell className="w-3.5 h-3.5 text-saffron-600" />
+        <span className="font-serif font-black text-gov-950 text-xs sm:text-sm tracking-wide uppercase flex items-center gap-1.5">
+          <Bell className="w-4 h-4 text-saffron-600" />
           नवीनतम सूचनाएं / LATEST UPDATES:
         </span>
       </div>
 
       {/* Center Scrolling / Rotating Notice */}
       <div className="flex-1 overflow-hidden">
-        <div className="truncate text-slate-800 text-xs sm:text-[13px]">
+        <div className="truncate text-slate-800 text-sm sm:text-[14.5px]">
           <span className="font-bold text-xs text-gov-900 bg-gov-50 border border-gov-300 px-2 py-0.5 rounded mr-2 font-mono">
             {notices[currentNoticeIndex].tag}
           </span>
           <span className="font-semibold text-slate-800">{notices[currentNoticeIndex].text}</span>
           <Link
             to={notices[currentNoticeIndex].link}
-            className="text-gov-800 hover:text-gov-950 font-bold ml-2 underline text-xs inline-flex items-center gap-0.5"
+            className="text-gov-800 hover:text-gov-950 font-bold ml-2 underline text-sm inline-flex items-center gap-0.5"
           >
             <span>Read Details</span>
             <ChevronRight className="w-3.5 h-3.5" />

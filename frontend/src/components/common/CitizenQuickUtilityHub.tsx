@@ -228,9 +228,9 @@ export const CitizenQuickUtilityHub: React.FC = () => {
           </div>
 
           {/* SLA Badge */}
-          <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-800 self-start sm:self-auto shadow-2xs">
+          <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-300 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-emerald-800 self-start sm:self-auto shadow-2xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <Clock className="w-3.5 h-3.5 text-emerald-700" />
+            <Clock className="w-4 h-4 text-emerald-700" />
             <span>Real-time Gateway Response: <strong>&lt; 50ms</strong></span>
           </div>
         </div>
@@ -239,49 +239,49 @@ export const CitizenQuickUtilityHub: React.FC = () => {
         <div className="flex items-center gap-1.5 sm:gap-2 mt-5 p-1.5 bg-slate-100/90 rounded-2xl border border-slate-200/90 overflow-x-auto pb-1.5 scrollbar-none">
           <button
             onClick={() => setActiveTab('track')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'track'
                 ? 'bg-gov-800 text-white shadow-xs'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <Search className={`w-3.5 h-3.5 ${activeTab === 'track' ? 'text-saffron-400' : 'text-slate-500'}`} />
+            <Search className={`w-4 h-4 ${activeTab === 'track' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Track Application (आवेदन स्थिति)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('verify')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'verify'
                 ? 'bg-gov-800 text-white shadow-xs'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <Award className={`w-3.5 h-3.5 ${activeTab === 'verify' ? 'text-saffron-400' : 'text-slate-500'}`} />
+            <Award className={`w-4 h-4 ${activeTab === 'verify' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Verify Certificate (प्रमाण पत्र सत्यापन)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('telemetry')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'telemetry'
                 ? 'bg-gov-800 text-white shadow-xs'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <Activity className={`w-3.5 h-3.5 ${activeTab === 'telemetry' ? 'text-saffron-400' : 'text-slate-500'}`} />
+            <Activity className={`w-4 h-4 ${activeTab === 'telemetry' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Registry Mesh Telemetry (रजिस्ट्री स्थिति)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('grievance')}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'grievance'
                 ? 'bg-gov-800 text-white shadow-xs'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <HelpCircle className={`w-3.5 h-3.5 ${activeTab === 'grievance' ? 'text-saffron-400' : 'text-slate-500'}`} />
+            <HelpCircle className={`w-4 h-4 ${activeTab === 'grievance' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Lodge Grievance / जन शिकायत (CPGRAMS)</span>
           </button>
         </div>
@@ -293,10 +293,10 @@ export const CitizenQuickUtilityHub: React.FC = () => {
         {activeTab === 'track' && (
           <div className="space-y-6">
             <div className="max-w-2xl">
-              <h3 className="text-base font-bold text-slate-900 font-serif">
+              <h3 className="text-lg font-bold text-slate-900 font-serif">
                 Track Application Status Across All 28 States & UTs
               </h3>
-              <p className="text-xs text-slate-600 mt-1">
+              <p className="text-sm text-slate-700 mt-1">
                 Enter your 16-character SAMAVAY Reference Number or Department Token to view real-time stage scrutiny.
               </p>
             </div>
@@ -310,39 +310,39 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                   value={trackQuery}
                   onChange={(e) => setTrackQuery(e.target.value)}
                   placeholder="Enter Application ID (e.g., SAM-2026-09841)"
-                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600 focus:border-transparent shadow-2xs"
+                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600 focus:border-transparent shadow-2xs"
                 />
               </div>
               <button
                 type="submit"
-                className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
+                className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-sm font-bold shadow-xs transition flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
               >
                 <span>Check Status</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </form>
 
             {/* Quick Demo ID Badges */}
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
-              <span className="font-bold text-xs text-slate-800">Sample Records:</span>
+            <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
+              <span className="font-bold text-sm text-slate-800">Sample Records:</span>
               <button
                 type="button"
                 onClick={() => handleQuickTrack('SAM-2026-09841')}
-                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs sm:text-sm font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 SAM-2026-09841 (Driving Licence • Completed)
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickTrack('SAM-2026-10234')}
-                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs sm:text-sm font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 SAM-2026-10234 (Property Tax • Processing)
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickTrack('SAM-2026-11490')}
-                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs sm:text-sm font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 SAM-2026-11490 (Income Cert • Under Review)
               </button>
@@ -355,10 +355,10 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono font-bold text-xs sm:text-sm text-gov-900 bg-gov-50 border border-gov-200 px-2.5 py-0.5 rounded-lg">
+                      <span className="font-mono font-bold text-sm text-gov-900 bg-gov-50 border border-gov-200 px-3 py-1 rounded-lg">
                         {trackedResult.applicationNumber}
                       </span>
-                      <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase ${
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase ${
                         trackedResult.status === 'COMPLETED'
                           ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
                           : trackedResult.status === 'PROCESSING'
@@ -368,11 +368,11 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                         {trackedResult.status}
                       </span>
                     </div>
-                    <h4 className="text-base font-bold text-slate-900 font-serif">
+                    <h4 className="text-lg font-bold text-slate-900 font-serif">
                       {trackedResult.serviceName}
                     </h4>
-                    <p className="text-xs text-slate-500">
-                      Issuing Department: <strong>{trackedResult.departmentName}</strong>
+                    <p className="text-sm text-slate-600">
+                      Issuing Department: <strong className="text-slate-800">{trackedResult.departmentName}</strong>
                     </p>
                   </div>
 
@@ -384,9 +384,9 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                           setDocModalMode('CERTIFICATE');
                           setIsDocModalOpen(true);
                         }}
-                        className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center gap-1.5 cursor-pointer"
+                        className="px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-sm font-bold shadow-xs transition flex items-center gap-2 cursor-pointer"
                       >
-                        <Award className="w-3.5 h-3.5" />
+                        <Award className="w-4 h-4" />
                         <span>View Official Certificate</span>
                       </button>
                     ) : (
@@ -395,9 +395,9 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                           setDocModalMode('ACKNOWLEDGEMENT');
                           setIsDocModalOpen(true);
                         }}
-                        className="px-4 py-2 bg-gov-700 hover:bg-gov-800 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center gap-1.5 cursor-pointer"
+                        className="px-4 py-2.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl text-sm font-bold shadow-xs transition flex items-center gap-2 cursor-pointer"
                       >
-                        <Printer className="w-3.5 h-3.5" />
+                        <Printer className="w-4 h-4" />
                         <span>Print Acknowledgement Slip</span>
                       </button>
                     )}
@@ -406,24 +406,24 @@ export const CitizenQuickUtilityHub: React.FC = () => {
 
                 {/* Milestone Stepper */}
                 <div className="space-y-2">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-600">
                     Statutory Progress Pipeline
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
+                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs sm:text-sm">
                     <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1">
-                      <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-[11px]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-xs sm:text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                         <span>1. Submission</span>
                       </div>
-                      <p className="text-[10px] text-emerald-700">Digital request recorded with timestamp</p>
+                      <p className="text-xs text-emerald-800 font-medium">Digital request recorded with timestamp</p>
                     </div>
 
                     <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1">
-                      <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-[11px]">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      <div className="flex items-center gap-1.5 text-emerald-800 font-bold text-xs sm:text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                         <span>2. Interop Verification</span>
                       </div>
-                      <p className="text-[10px] text-emerald-700">Authoritative database match successful</p>
+                      <p className="text-xs text-emerald-800 font-medium">Authoritative database match successful</p>
                     </div>
 
                     <div className={`p-3 rounded-xl space-y-1 border ${
@@ -431,15 +431,15 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                         ? 'bg-emerald-50 border-emerald-200'
                         : 'bg-blue-50 border-blue-200'
                     }`}>
-                      <div className="flex items-center gap-1.5 font-bold text-[11px] text-slate-800">
+                      <div className="flex items-center gap-1.5 font-bold text-xs sm:text-sm text-slate-800">
                         {trackedResult.status === 'COMPLETED' ? (
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                         ) : (
-                          <RefreshCw className="w-3.5 h-3.5 text-blue-600 animate-spin" />
+                          <RefreshCw className="w-4 h-4 text-blue-600 animate-spin flex-shrink-0" />
                         )}
                         <span>3. Officer Scrutiny</span>
                       </div>
-                      <p className="text-[10px] text-slate-600">
+                      <p className="text-xs text-slate-700 font-medium">
                         {trackedResult.currentStage || 'Authority review active'}
                       </p>
                     </div>
@@ -447,17 +447,17 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                     <div className={`p-3 rounded-xl space-y-1 border ${
                       trackedResult.status === 'COMPLETED'
                         ? 'bg-emerald-50 border-emerald-200'
-                        : 'bg-slate-100 border-slate-200 opacity-60'
+                        : 'bg-slate-100 border-slate-200 opacity-75'
                     }`}>
-                      <div className="flex items-center gap-1.5 font-bold text-[11px] text-slate-800">
+                      <div className="flex items-center gap-1.5 font-bold text-xs sm:text-sm text-slate-800">
                         {trackedResult.status === 'COMPLETED' ? (
-                          <Award className="w-3.5 h-3.5 text-emerald-600" />
+                          <Award className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                         ) : (
-                          <Clock className="w-3.5 h-3.5 text-slate-400" />
+                          <Clock className="w-4 h-4 text-slate-400 flex-shrink-0" />
                         )}
                         <span>4. Digital Issuance</span>
                       </div>
-                      <p className="text-[10px] text-slate-600">
+                      <p className="text-xs text-slate-700 font-medium">
                         {trackedResult.status === 'COMPLETED' ? 'Delivered to DigiLocker' : 'Awaiting signoff'}
                       </p>
                     </div>
@@ -466,10 +466,10 @@ export const CitizenQuickUtilityHub: React.FC = () => {
 
                 {/* Scrutiny Remarks */}
                 {trackedResult.remarks && (
-                  <div className="bg-slate-50 border border-slate-200 p-3 rounded-xl text-xs text-slate-600 flex items-start gap-2">
+                  <div className="bg-slate-50 border border-slate-200 p-3 rounded-xl text-sm text-slate-700 flex items-start gap-2">
                     <ShieldCheck className="w-4 h-4 text-gov-700 flex-shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-slate-800">Official Scrutiny Note: </strong>
+                      <strong className="text-slate-900 font-semibold">Official Scrutiny Note: </strong>
                       <span>{trackedResult.remarks}</span>
                     </div>
                   </div>
@@ -480,8 +480,8 @@ export const CitizenQuickUtilityHub: React.FC = () => {
             {trackSearched && !trackedResult && (
               <div className="p-6 bg-white border border-rose-200 rounded-2xl text-center space-y-2">
                 <AlertCircle className="w-8 h-8 text-rose-500 mx-auto" />
-                <h4 className="text-sm font-bold text-slate-800">No Record Found</h4>
-                <p className="text-xs text-slate-500 max-w-md mx-auto">
+                <h4 className="text-base font-bold text-slate-900">No Record Found</h4>
+                <p className="text-sm text-slate-600 max-w-md mx-auto">
                   Please verify your Application ID format or check if you applied using a different citizen mobile number.
                 </p>
               </div>
@@ -493,10 +493,10 @@ export const CitizenQuickUtilityHub: React.FC = () => {
         {activeTab === 'verify' && (
           <div className="space-y-6">
             <div className="max-w-2xl">
-              <h3 className="text-base font-bold text-slate-900 font-serif">
+              <h3 className="text-lg font-bold text-slate-900 font-serif">
                 Instant Cryptographic Certificate & QR Verification
               </h3>
-              <p className="text-xs text-slate-600 mt-1">
+              <p className="text-sm text-slate-700 mt-1">
                 Verify the authenticity of digital certificates issued across Transport, Municipal, and Revenue departments under Section 4 & 5 of the IT Act 2000.
               </p>
             </div>
@@ -509,20 +509,20 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                   value={certQuery}
                   onChange={(e) => setCertQuery(e.target.value)}
                   placeholder="Enter Certificate ID / QR Hash (e.g., CERT-SAM-2026-09841)"
-                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600 focus:border-transparent shadow-2xs"
+                  className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600 focus:border-transparent shadow-2xs"
                 />
               </div>
               <button
                 type="submit"
-                className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
+                className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-sm font-bold shadow-xs transition flex items-center justify-center gap-2 cursor-pointer flex-shrink-0"
               >
                 <span>Verify Credential</span>
-                <CheckCircle2 className="w-3.5 h-3.5" />
+                <CheckCircle2 className="w-4 h-4" />
               </button>
             </form>
 
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-              <span className="font-semibold text-[11px] text-slate-600">Sample Certificate:</span>
+            <div className="flex flex-wrap items-center gap-2 text-sm text-slate-700">
+              <span className="font-bold text-sm text-slate-800">Sample Certificate:</span>
               <button
                 type="button"
                 onClick={() => {
@@ -538,7 +538,7 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                     hash: 'SHA256:7f83b1657ff18e920d3f23a54b38d3885c86807f433'
                   });
                 }}
-                className="px-2.5 py-1 bg-white border border-slate-200 hover:border-gov-400 text-slate-700 rounded-lg font-mono text-[11px] transition cursor-pointer hover:bg-gov-50"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs sm:text-sm font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 CERT-SAM-2026-09841 (SARATHI 4.0 Verified)
               </button>
@@ -552,44 +552,44 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                       <CheckCircle2 className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest font-mono">
+                      <span className="text-xs font-bold text-emerald-800 uppercase tracking-widest font-mono">
                         VERIFICATION RESULT: AUTHENTIC & VALID
                       </span>
-                      <h4 className="text-base font-bold text-slate-900 font-serif">
+                      <h4 className="text-lg font-bold text-slate-900 font-serif">
                         Government Sovereign Digital Credential
                       </h4>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-full text-xs font-bold">
+                  <span className="px-3 py-1.5 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-full text-xs sm:text-sm font-bold">
                     IT ACT 2000 COMPLIANT
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                  <div className="p-3 bg-slate-50 rounded-xl space-y-0.5">
-                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Beneficiary Name</span>
-                    <p className="font-bold text-slate-900 text-sm">{certResult.beneficiary}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                  <div className="p-3.5 bg-slate-50 rounded-xl space-y-1">
+                    <span className="text-xs text-slate-600 uppercase font-semibold">Beneficiary Name</span>
+                    <p className="font-bold text-slate-900 text-sm sm:text-base">{certResult.beneficiary}</p>
                   </div>
-                  <div className="p-3 bg-slate-50 rounded-xl space-y-0.5">
-                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Service Scheme</span>
-                    <p className="font-bold text-slate-900 text-sm">{certResult.serviceName}</p>
+                  <div className="p-3.5 bg-slate-50 rounded-xl space-y-1">
+                    <span className="text-xs text-slate-600 uppercase font-semibold">Service Scheme</span>
+                    <p className="font-bold text-slate-900 text-sm sm:text-base">{certResult.serviceName}</p>
                   </div>
-                  <div className="p-3 bg-slate-50 rounded-xl space-y-0.5">
-                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Issuing Authority</span>
-                    <p className="font-semibold text-slate-800">{certResult.authority}</p>
+                  <div className="p-3.5 bg-slate-50 rounded-xl space-y-1">
+                    <span className="text-xs text-slate-600 uppercase font-semibold">Issuing Authority</span>
+                    <p className="font-semibold text-slate-800 text-sm">{certResult.authority}</p>
                   </div>
-                  <div className="p-3 bg-slate-50 rounded-xl space-y-0.5">
-                    <span className="text-[10px] text-slate-500 uppercase font-semibold">Cryptographic Hash</span>
-                    <p className="font-mono text-[10px] text-slate-600 truncate">{certResult.hash}</p>
+                  <div className="p-3.5 bg-slate-50 rounded-xl space-y-1">
+                    <span className="text-xs text-slate-600 uppercase font-semibold">Cryptographic Hash</span>
+                    <p className="font-mono text-xs text-slate-700 break-all">{certResult.hash}</p>
                   </div>
                 </div>
 
-                <div className="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-slate-200">
-                  <span className="flex items-center gap-1.5">
+                <div className="pt-2 flex items-center justify-between text-sm text-slate-700 border-t border-slate-200">
+                  <span className="flex items-center gap-1.5 font-medium">
                     <ShieldCheck className="w-4 h-4 text-emerald-600" />
                     Root CA: Controller of Certifying Authorities (CCA India)
                   </span>
-                  <span className="font-mono text-[11px] text-slate-600">Issued: {certResult.issueDate}</span>
+                  <span className="font-mono text-xs sm:text-sm text-slate-600 font-medium">Issued: {certResult.issueDate}</span>
                 </div>
               </div>
             )}
@@ -597,8 +597,8 @@ export const CitizenQuickUtilityHub: React.FC = () => {
             {certSearched && !certResult && (
               <div className="p-6 bg-white border border-rose-200 rounded-2xl text-center space-y-2">
                 <AlertCircle className="w-8 h-8 text-rose-500 mx-auto" />
-                <h4 className="text-sm font-bold text-slate-800">Invalid Credential Reference</h4>
-                <p className="text-xs text-slate-500 max-w-md mx-auto">
+                <h4 className="text-base font-bold text-slate-900">Invalid Credential Reference</h4>
+                <p className="text-sm text-slate-600 max-w-md mx-auto">
                   The specified Certificate ID could not be validated against the National PKI registry. Ensure the ID matches your official document header.
                 </p>
               </div>
@@ -611,10 +611,10 @@ export const CitizenQuickUtilityHub: React.FC = () => {
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="text-base font-bold text-slate-900 font-serif">
+                <h3 className="text-lg font-bold text-slate-900 font-serif">
                   National Digital Public Infrastructure (DPI) Mesh Status
                 </h3>
-                <p className="text-xs text-slate-600 mt-1">
+                <p className="text-sm text-slate-700 mt-1">
                   Live latency and throughput telemetry across sovereign department nodes connected to SAMAVAY.
                 </p>
               </div>
@@ -623,9 +623,9 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                 type="button"
                 onClick={handlePingMesh}
                 disabled={isPinging}
-                className="px-4 py-2 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center gap-2 cursor-pointer disabled:opacity-50 self-start sm:self-auto"
+                className="px-4 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-sm font-bold shadow-xs transition flex items-center gap-2 cursor-pointer disabled:opacity-50 self-start sm:self-auto"
               >
-                <RefreshCw className={`w-3.5 h-3.5 ${isPinging ? 'animate-spin' : ''}`} />
+                <RefreshCw className={`w-4 h-4 ${isPinging ? 'animate-spin' : ''}`} />
                 <span>{isPinging ? 'Pinging Sovereign Mesh...' : 'Ping Network Nodes'}</span>
               </button>
             </div>
@@ -635,40 +635,40 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                 <div key={i} className="bg-white border border-slate-200 rounded-2xl p-4 shadow-2xs space-y-3">
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900 line-clamp-1">{node.name}</h4>
-                      <p className="text-[10px] text-slate-500">{node.department}</p>
+                      <h4 className="text-sm sm:text-base font-bold text-slate-900 line-clamp-1">{node.name}</h4>
+                      <p className="text-xs text-slate-600 mt-0.5">{node.department}</p>
                     </div>
-                    <span className="flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full flex-shrink-0">
+                    <span className="flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full flex-shrink-0">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       {node.status}
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 text-[11px] pt-1 border-t border-slate-100">
+                  <div className="grid grid-cols-2 gap-2 text-xs pt-1 border-t border-slate-100">
                     <div>
-                      <span className="text-[10px] text-slate-400 block">Response Latency</span>
-                      <span className="font-mono font-bold text-gov-800">{node.latencyMs} ms</span>
+                      <span className="text-xs text-slate-500 block font-medium">Response Latency</span>
+                      <span className="font-mono font-bold text-sm text-gov-800">{node.latencyMs} ms</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-slate-400 block">Monthly Uptime</span>
-                      <span className="font-mono font-bold text-slate-700">{node.uptime}</span>
+                      <span className="text-xs text-slate-500 block font-medium">Monthly Uptime</span>
+                      <span className="font-mono font-bold text-sm text-slate-800">{node.uptime}</span>
                     </div>
                   </div>
 
-                  <div className="text-[10px] text-slate-500 font-mono flex items-center justify-between pt-1">
+                  <div className="text-xs text-slate-600 font-mono flex items-center justify-between pt-1">
                     <span>Protocol: {node.protocol}</span>
-                    <span className="text-emerald-600 font-semibold">Active</span>
+                    <span className="text-emerald-700 font-bold">Active</span>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-500 pt-2">
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-gov-700" />
+            <div className="flex items-center justify-between text-sm text-slate-700 pt-2">
+              <span className="flex items-center gap-1.5 font-medium">
+                <ShieldCheck className="w-4 h-4 text-gov-700" />
                 All nodes authenticated with mTLS Certificate Authority
               </span>
-              <span className="font-mono text-[11px]">Last checked: {lastPingTime}</span>
+              <span className="font-mono text-xs sm:text-sm text-slate-600 font-medium">Last checked: {lastPingTime}</span>
             </div>
           </div>
         )}
@@ -677,10 +677,10 @@ export const CitizenQuickUtilityHub: React.FC = () => {
         {activeTab === 'grievance' && (
           <div className="space-y-6">
             <div className="max-w-2xl">
-              <h3 className="text-base font-bold text-slate-900 font-serif">
+              <h3 className="text-lg font-bold text-slate-900 font-serif">
                 Centralized Public Grievance Redress and Monitoring System (CPGRAMS)
               </h3>
-              <p className="text-xs text-slate-600 mt-1">
+              <p className="text-sm text-slate-700 mt-1">
                 Lodge an official grievance regarding service delays, document verification issues, or inter-department portal coordination.
               </p>
             </div>
@@ -694,15 +694,15 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                   <span className="text-xs font-bold text-emerald-800 uppercase tracking-widest font-mono">
                     Grievance Registered Successfully
                   </span>
-                  <h4 className="text-lg font-bold text-slate-900 font-serif">
+                  <h4 className="text-xl font-bold text-slate-900 font-serif">
                     Official CPGRAMS Token Generated
                   </h4>
                   <div className="py-2">
-                    <span className="inline-block px-4 py-1.5 bg-slate-100 border border-slate-300 rounded-xl font-mono font-bold text-sm text-gov-900">
+                    <span className="inline-block px-4 py-1.5 bg-slate-100 border border-slate-300 rounded-xl font-mono font-bold text-base text-gov-900">
                       {grievanceSubmitted}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-600 max-w-md mx-auto">
+                  <p className="text-sm text-slate-700 max-w-md mx-auto leading-relaxed">
                     Your grievance has been transmitted to the designated Public Grievance Officer, MeitY. Standard statutory resolution window is 48 working hours.
                   </p>
                 </div>
@@ -713,7 +713,7 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                     setGrievanceDesc('');
                     setGrievanceRefNo('');
                   }}
-                  className="px-5 py-2 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-xs font-bold transition cursor-pointer"
+                  className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-sm font-bold transition cursor-pointer"
                 >
                   Lodge Another Query
                 </button>
@@ -721,12 +721,12 @@ export const CitizenQuickUtilityHub: React.FC = () => {
             ) : (
               <form onSubmit={handleGrievanceSubmit} className="space-y-4 max-w-2xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold text-slate-700">Concerned Department</label>
+                  <div className="space-y-1.5">
+                    <label className="text-xs sm:text-sm font-bold text-slate-700">Concerned Department</label>
                     <select
                       value={grievanceDept}
                       onChange={(e) => setGrievanceDept(e.target.value)}
-                      className="w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-gov-600"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-gov-600"
                     >
                       <option>Transport Department (RTO / SARATHI)</option>
                       <option>Revenue & Land Records (Bhoomi / RoR)</option>
@@ -737,12 +737,12 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                     </select>
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="text-xs font-bold text-slate-700">Issue Category</label>
+                  <div className="space-y-1.5">
+                    <label className="text-xs sm:text-sm font-bold text-slate-700">Issue Category</label>
                     <select
                       value={grievanceCategory}
                       onChange={(e) => setGrievanceCategory(e.target.value)}
-                      className="w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-gov-600"
+                      className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-gov-600"
                     >
                       <option>Interoperability Verification Delay</option>
                       <option>Registry Data Mismatch</option>
@@ -753,34 +753,34 @@ export const CitizenQuickUtilityHub: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700">Application / Reference ID (Optional)</label>
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold text-slate-700">Application / Reference ID (Optional)</label>
                   <input
                     type="text"
                     value={grievanceRefNo}
                     onChange={(e) => setGrievanceRefNo(e.target.value)}
                     placeholder="e.g. SAM-2026-09841"
-                    className="w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600"
+                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600"
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700">Description of Issue</label>
+                <div className="space-y-1.5">
+                  <label className="text-xs sm:text-sm font-bold text-slate-700">Description of Issue</label>
                   <textarea
                     rows={3}
                     value={grievanceDesc}
                     onChange={(e) => setGrievanceDesc(e.target.value)}
                     placeholder="Please provide concise facts regarding the problem encountered..."
-                    className="w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600 resize-none"
+                    className="w-full px-3.5 py-2.5 bg-white border border-slate-300 rounded-xl text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-gov-600 resize-none"
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-xs font-bold shadow-xs transition flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-6 py-2.5 bg-gov-800 hover:bg-gov-900 text-white rounded-xl text-sm font-bold shadow-xs transition flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Send className="w-3.5 h-3.5" />
+                  <Send className="w-4 h-4" />
                   <span>Transmit Grievance to Nodal Officer</span>
                 </button>
               </form>

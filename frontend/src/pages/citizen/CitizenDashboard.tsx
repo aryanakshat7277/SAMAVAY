@@ -158,17 +158,17 @@ export const CitizenDashboard: React.FC = () => {
 
         <div className="space-y-2 relative z-10">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-bold text-gov-800 bg-gov-50 px-3 py-1 rounded-full border border-gov-200 flex items-center gap-1.5">
+            <span className="text-xs sm:text-sm font-bold text-gov-800 bg-gov-50 px-3 py-1 rounded-full border border-gov-200 flex items-center gap-1.5">
               <UserCheck className="w-4 h-4 text-gov-700" />
               Verified Citizen Profile
             </span>
             <span className="text-xs text-slate-300">|</span>
-            <span className="text-xs text-slate-600 font-mono font-semibold">UID: SAM-CIT-99201</span>
+            <span className="text-xs sm:text-sm text-slate-700 font-mono font-bold">UID: SAM-CIT-99201</span>
             <span className="text-xs text-slate-300">|</span>
-            <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-300 flex items-center gap-1">
+            <span className="text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-300 flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Aadhaar e-KYC Seeded
             </span>
-            <span className="text-xs font-bold text-blue-900 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-300 flex items-center gap-1">
+            <span className="text-xs sm:text-sm font-bold text-blue-900 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-300 flex items-center gap-1">
               <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" /> DigiLocker Linked
             </span>
           </div>
@@ -176,14 +176,14 @@ export const CitizenDashboard: React.FC = () => {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">
             {getGreeting()}, {user?.fullName || 'Citizen'}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-700 max-w-2xl leading-relaxed font-normal">
             Sovereign Citizen Access Portal. Access departmental registries, track service requests in real-time, and manage your statutory DPDP data sharing authorizations.
           </p>
         </div>
 
         {/* Quick Search & Application Track Form */}
         <form onSubmit={handleTrackSubmit} className="flex-shrink-0 w-full md:w-80 relative z-10">
-          <label className="block text-xs font-bold text-slate-800 mb-1.5">
+          <label className="block text-xs sm:text-sm font-bold text-slate-800 mb-1.5">
             Track Any Application Instantly
           </label>
           <div className="relative flex items-center shadow-xs">
@@ -192,11 +192,11 @@ export const CitizenDashboard: React.FC = () => {
               value={trackInput}
               onChange={(e) => setTrackInput(e.target.value)}
               placeholder="e.g. SAM-2026-10234"
-              className="w-full pl-3.5 pr-20 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
+              className="w-full pl-3.5 pr-20 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600 font-medium"
             />
             <button
               type="submit"
-              className="absolute right-1 px-3.5 py-1.5 bg-gov-700 hover:bg-gov-800 text-white rounded-lg text-xs font-bold shadow-xs transition cursor-pointer"
+              className="absolute right-1 px-3.5 py-1.5 bg-gov-700 hover:bg-gov-800 text-white rounded-lg text-xs sm:text-sm font-bold shadow-xs transition cursor-pointer"
             >
               Track
             </button>
@@ -216,11 +216,11 @@ export const CitizenDashboard: React.FC = () => {
                 <span className="text-xs font-bold uppercase tracking-wider text-amber-900 bg-amber-200 px-2.5 py-0.5 rounded">
                   Action Required
                 </span>
-                <h3 className="text-sm sm:text-base font-bold text-stone-900 font-serif">
+                <h3 className="text-base sm:text-lg font-bold text-stone-900 font-serif">
                   {pendingAction.title}
                 </h3>
               </div>
-              <p className="text-xs sm:text-sm text-stone-700 mt-1 font-medium">
+              <p className="text-sm sm:text-base text-stone-700 mt-1 font-medium">
                 {pendingAction.description}
               </p>
             </div>
@@ -247,10 +247,10 @@ export const CitizenDashboard: React.FC = () => {
             <Compass className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-stone-900 group-hover:text-gov-800 transition font-serif">
+            <h4 className="text-base font-bold text-stone-900 group-hover:text-gov-800 transition font-serif">
               Explore Services
             </h4>
-            <p className="text-xs text-stone-600 font-medium mt-0.5">Discover 58+ sovereign government services</p>
+            <p className="text-sm text-stone-600 font-medium mt-0.5">Discover 58+ sovereign government services</p>
           </div>
         </Link>
 
@@ -262,10 +262,10 @@ export const CitizenDashboard: React.FC = () => {
             <FileText className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-stone-900 group-hover:text-emerald-800 transition font-serif">
+            <h4 className="text-base font-bold text-stone-900 group-hover:text-emerald-800 transition font-serif">
               My Applications
             </h4>
-            <p className="text-xs text-stone-600 font-medium mt-0.5">Track progress & view history ({requests.length})</p>
+            <p className="text-sm text-stone-600 font-medium mt-0.5">Track progress & view history ({requests.length})</p>
           </div>
         </Link>
 
@@ -277,10 +277,10 @@ export const CitizenDashboard: React.FC = () => {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-stone-900 group-hover:text-purple-800 transition font-serif">
+            <h4 className="text-base font-bold text-stone-900 group-hover:text-purple-800 transition font-serif">
               Review Permissions
             </h4>
-            <p className="text-xs text-stone-600 font-medium mt-0.5">Manage DPDP data sharing</p>
+            <p className="text-sm text-stone-600 font-medium mt-0.5">Manage DPDP data sharing</p>
           </div>
         </Link>
       </div>
@@ -413,24 +413,24 @@ export const CitizenDashboard: React.FC = () => {
           {/* Quick List of Other Applications */}
           {requests.length > 1 && (
             <div className="bg-white border border-stone-200/90 rounded-2xl p-5 shadow-card space-y-3">
-              <h4 className="text-xs font-bold text-stone-900 font-serif">
+              <h4 className="text-sm font-bold text-stone-900 font-serif">
                 Other Recent Applications
               </h4>
               <div className="space-y-2">
                 {requests.slice(1, 4).map((req) => (
                   <div
                     key={req.id}
-                    className="p-3 bg-stone-50 border border-stone-200 rounded-xl flex items-center justify-between text-xs"
+                    className="p-3.5 bg-stone-50 border border-stone-200 rounded-xl flex items-center justify-between text-xs sm:text-sm"
                   >
                     <div>
-                      <span className="font-bold text-stone-900 text-sm font-serif block">{req.serviceName}</span>
-                      <span className="text-xs text-stone-600 block font-mono font-medium">{req.applicationNumber}</span>
+                      <span className="font-bold text-stone-900 text-sm sm:text-base font-serif block">{req.serviceName}</span>
+                      <span className="text-xs sm:text-sm text-stone-600 block font-mono font-medium">{req.applicationNumber}</span>
                     </div>
                     <div className="flex items-center space-x-2.5">
                       <StatusBadge status={req.status} size="sm" />
                       <button
                         onClick={() => handleOpenDocModal(req, req.status === 'COMPLETED' ? 'CERTIFICATE' : 'ACKNOWLEDGEMENT')}
-                        className="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs font-bold flex items-center gap-1 transition cursor-pointer"
+                        className="px-2.5 py-1 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-1 transition cursor-pointer"
                         title={req.status === 'COMPLETED' ? 'View Certificate' : 'Print Acknowledgement'}
                       >
                         <Printer className="w-3.5 h-3.5 text-stone-700" />
@@ -438,7 +438,7 @@ export const CitizenDashboard: React.FC = () => {
                       </button>
                       <Link
                         to={`/applications?track=${req.applicationNumber}`}
-                        className="text-gov-800 font-bold hover:underline text-xs"
+                        className="text-gov-800 font-bold hover:underline text-xs sm:text-sm"
                       >
                         View →
                       </Link>
@@ -550,21 +550,22 @@ export const CitizenDashboard: React.FC = () => {
           <ConnectedPlatformsWidget platforms={platforms} />
 
           {/* Privacy & DPI Assurance Card */}
-          <div className="bg-gradient-to-br from-gov-900 to-gov-950 text-white rounded-3xl p-6 shadow-card space-y-3 text-xs border border-gov-800">
-            <div className="flex items-center space-x-2">
-              <ShieldCheck className="w-5 h-5 text-saffron-400" />
-              <h4 className="font-bold font-serif text-white text-sm">Sovereign Privacy Guarantee</h4>
+          <div className="bg-gradient-to-br from-amber-50/80 via-white to-orange-50/50 text-slate-900 rounded-3xl p-6 shadow-card space-y-3.5 border-2 border-stone-200/90 relative overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+            <div className="flex items-center space-x-2 pt-0.5">
+              <ShieldCheck className="w-5 h-5 text-amber-700" />
+              <h4 className="font-bold font-serif text-slate-900 text-base">Sovereign Privacy Guarantee</h4>
             </div>
-            <p className="text-slate-200 leading-relaxed text-xs font-normal">
+            <p className="text-slate-700 leading-relaxed text-sm font-medium">
               SAMAVAY strictly enforces the <strong>Digital Personal Data Protection (DPDP) Act 2023</strong>. Your data is accessed only when you authorize it, and records are verified without permanent retention.
             </p>
-            <div className="pt-2">
+            <div className="pt-2 border-t border-stone-200">
               <Link
                 to="/dashboard/permissions"
-                className="text-saffron-300 hover:text-white font-bold inline-flex items-center gap-1 text-xs"
+                className="text-amber-900 hover:text-amber-950 font-bold inline-flex items-center gap-1.5 text-sm"
               >
                 <span>Manage DPDP Authorizations</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-amber-700" />
               </Link>
             </div>
           </div>

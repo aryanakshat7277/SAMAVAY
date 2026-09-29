@@ -80,18 +80,18 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onApply }) =>
         {/* Service Title */}
         <Link
           to={`/services/${service.id}`}
-          className="text-base font-bold text-slate-900 group-hover:text-gov-800 transition font-serif line-clamp-2 min-h-[2.8rem] block leading-snug"
+          className="text-base sm:text-[17px] font-bold text-slate-900 group-hover:text-gov-800 transition font-serif line-clamp-2 min-h-[3rem] block leading-snug"
         >
           {service.name}
         </Link>
 
         {/* Short Description */}
-        <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-normal">
+        <p className="text-sm text-slate-700 line-clamp-2 leading-relaxed font-normal min-h-[2.5rem]">
           {service.description}
         </p>
 
         {/* Meta badges: Processing days & Fee */}
-        <div className="flex flex-wrap items-center gap-4 text-xs text-slate-700 pt-3 border-t border-slate-100">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-700 pt-3 border-t border-slate-100">
           <div className="flex items-center space-x-1.5 text-slate-700 font-medium">
             <Clock className="w-4 h-4 text-slate-500" />
             <span>~{service.estimatedProcessingDays} {service.estimatedProcessingDays === 1 ? 'day' : 'days'} delivery</span>
@@ -107,7 +107,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onApply }) =>
       <div className="bg-slate-50 px-5 py-3 border-t border-slate-200 flex items-center justify-between gap-2">
         <Link
           to={`/services/${service.id}`}
-          className="text-xs font-bold text-gov-800 hover:text-gov-950 transition flex items-center group-hover:translate-x-0.5"
+          className="text-sm font-semibold text-gov-800 hover:text-gov-950 transition flex items-center group-hover:translate-x-0.5"
         >
           <span>View Details</span>
           <ArrowRight className="w-3.5 h-3.5 ml-1 text-gov-700" />
@@ -115,7 +115,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onApply }) =>
 
         <button
           onClick={() => (onApply ? onApply(service) : null)}
-          className="text-xs font-bold px-4 py-1.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl shadow-xs hover:shadow-gov transition cursor-pointer"
+          className="text-sm font-semibold px-4 py-1.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl shadow-xs hover:shadow-gov transition cursor-pointer"
         >
           Start Service
         </button>

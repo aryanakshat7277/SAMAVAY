@@ -53,27 +53,27 @@ export const Footer: React.FC = () => {
                 <NationalEmblem size="sm" variant="gold" />
               </div>
               <div>
-                <span className="text-xl font-black text-white font-serif tracking-tight">SAMAVAY</span>
-                <span className="text-xs text-amber-300 font-bold ml-2 uppercase tracking-wider bg-amber-900/40 border border-amber-700/50 px-2 py-0.5 rounded">
+                <span className="text-xl sm:text-2xl font-black text-white font-serif tracking-tight">SAMAVAY</span>
+                <span className="text-xs sm:text-sm text-amber-300 font-bold ml-2 uppercase tracking-wider bg-amber-900/40 border border-amber-700/50 px-2 py-0.5 rounded">
                   DPI Interoperability
                 </span>
               </div>
             </div>
-            <p className="text-slate-300 text-xs leading-relaxed max-w-sm font-normal">
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-sm font-normal">
               Connecting sovereign state and central government platforms behind one unified experience. Eliminating duplicate documentation and fragmented citizen navigation.
             </p>
-            <div className="text-xs text-slate-300 pt-2 space-y-1">
+            <div className="text-xs sm:text-sm text-slate-300 pt-2 space-y-1">
               <p className="font-bold text-amber-300">National Digital Public Infrastructure (DPI)</p>
-              <p className="text-xs text-slate-300">Ministry of Electronics & Information Technology • Republic of India</p>
+              <p className="text-xs sm:text-sm text-slate-300">Ministry of Electronics & Information Technology • Republic of India</p>
             </div>
           </div>
 
           {/* Col 2: Citizen Portals */}
           <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3 font-serif">
+            <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-3 font-serif">
               Key Services
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300 font-medium">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300 font-medium">
               <li>
                 <Link to="/services" className="hover:text-white transition">Property Tax & Municipal</Link>
               </li>
@@ -97,10 +97,10 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Departments */}
           <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3 font-serif">
+            <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-3 font-serif">
               Departments
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300 font-medium">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300 font-medium">
               <li>
                 <Link to="/services?category=MUNICIPAL" className="hover:text-white transition">Municipal Corporation</Link>
               </li>
@@ -132,10 +132,10 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: Platform & Support */}
           <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3 font-serif">
+            <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-3 font-serif">
               System & Support
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300 font-medium">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300 font-medium">
               <li>
                 <Link to="/how-samavay-works" className="hover:text-white transition">How SAMAVAY Works</Link>
               </li>
@@ -160,9 +160,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Sovereign Disclaimer */}
-        <div className="border-t border-[#0f345c] mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-slate-300 gap-3">
+        <div className="border-t border-[#0f345c] mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm text-slate-300 gap-3">
           <p>© 2026 SAMAVAY — National Digital Public Infrastructure (DPI) Initiative. Republic of India.</p>
-          <div className="flex space-x-4 text-xs font-medium text-slate-300">
+          <div className="flex space-x-4 text-xs sm:text-sm font-medium text-slate-300">
             <Link to="/help" className="hover:text-white">Privacy Policy</Link>
             <span>•</span>
             <Link to="/help" className="hover:text-white">Terms of Service</Link>

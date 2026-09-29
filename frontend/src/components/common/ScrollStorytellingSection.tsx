@@ -77,14 +77,14 @@ export const ScrollStorytellingSection: React.FC = () => {
           </div>
 
           {/* 3 Siloed Portals Visual */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
             <div className="p-5 bg-rose-50/50 border border-rose-200 rounded-2xl space-y-3">
               <div className="flex justify-between items-center">
-                <span className="font-bold text-rose-900">Portal 1: Revenue</span>
-                <span className="text-[10px] bg-rose-200 text-rose-900 font-bold px-2 py-0.5 rounded">Isolated</span>
+                <span className="font-bold text-rose-900 text-base">Portal 1: Revenue</span>
+                <span className="text-xs bg-rose-200 text-rose-900 font-bold px-2 py-0.5 rounded">Isolated</span>
               </div>
-              <p className="text-slate-600 text-[11px]">Separate login, manual land deed scanning, physical inquiry.</p>
-              <div className="p-2.5 bg-white border border-rose-100 rounded-xl font-mono text-[10px] text-slate-500 space-y-1">
+              <p className="text-slate-700 text-xs sm:text-sm">Separate login, manual land deed scanning, physical inquiry.</p>
+              <div className="p-3 bg-white border border-rose-100 rounded-xl font-mono text-xs text-slate-600 space-y-1">
                 <div>• Enters Name & Aadhaar #</div>
                 <div>• Enters Address Proof</div>
                 <div>• Uploads Survey Map</div>
@@ -93,11 +93,11 @@ export const ScrollStorytellingSection: React.FC = () => {
 
             <div className="p-5 bg-rose-50/50 border border-rose-200 rounded-2xl space-y-3">
               <div className="flex justify-between items-center">
-                <span className="font-bold text-rose-900">Portal 2: Municipal</span>
-                <span className="text-[10px] bg-rose-200 text-rose-900 font-bold px-2 py-0.5 rounded">Isolated</span>
+                <span className="font-bold text-rose-900 text-base">Portal 2: Municipal</span>
+                <span className="text-xs bg-rose-200 text-rose-900 font-bold px-2 py-0.5 rounded">Isolated</span>
               </div>
-              <p className="text-slate-600 text-[11px]">Repeated form entry for property assessment and tax clearance.</p>
-              <div className="p-2.5 bg-white border border-rose-100 rounded-xl font-mono text-[10px] text-slate-500 space-y-1">
+              <p className="text-slate-700 text-xs sm:text-sm">Repeated form entry for property assessment and tax clearance.</p>
+              <div className="p-3 bg-white border border-rose-100 rounded-xl font-mono text-xs text-slate-600 space-y-1">
                 <div className="text-rose-700 font-bold">⚠️ RE-ENTERS SAME Name & Aadhaar</div>
                 <div className="text-rose-700 font-bold">⚠️ RE-UPLOADS Address Proof</div>
                 <div>• Enters Ward ID</div>
@@ -106,11 +106,11 @@ export const ScrollStorytellingSection: React.FC = () => {
 
             <div className="p-5 bg-rose-50/50 border border-rose-200 rounded-2xl space-y-3">
               <div className="flex justify-between items-center">
-                <span className="font-bold text-rose-900">Portal 3: Transport</span>
-                <span className="text-[10px] bg-rose-200 text-rose-900 font-bold px-2 py-0.5 rounded">Isolated</span>
+                <span className="font-bold text-rose-900 text-base">Portal 3: Transport</span>
+                <span className="text-xs bg-rose-200 text-rose-900 font-bold px-2 py-0.5 rounded">Isolated</span>
               </div>
-              <p className="text-slate-600 text-[11px]">Separate credential, physical NOC submission at local RTO.</p>
-              <div className="p-2.5 bg-white border border-rose-100 rounded-xl font-mono text-[10px] text-slate-500 space-y-1">
+              <p className="text-slate-700 text-xs sm:text-sm">Separate credential, physical NOC submission at local RTO.</p>
+              <div className="p-3 bg-white border border-rose-100 rounded-xl font-mono text-xs text-slate-600 space-y-1">
                 <div className="text-rose-700 font-bold">⚠️ RE-ENTERS SAME Details (3rd Time)</div>
                 <div>• Physical Driving Record Verification</div>
                 <div>• 14–21 Days Processing Queue</div>
@@ -127,49 +127,55 @@ export const ScrollStorytellingSection: React.FC = () => {
                 <CheckCircle2 className="w-7 h-7" />
               </div>
               <div>
-                <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">
+                <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block">
                   SAMAVAY INTEROPERABILITY DPI
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 font-serif">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 font-serif">
                   1 Touchpoint • 62% Authoritative Information Reused
                 </h3>
               </div>
             </div>
-            <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full self-start md:self-auto">
+            <span className="text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full self-start md:self-auto">
               Automated mTLS Verification & DPDP Compliant
             </span>
           </div>
 
           {/* Unified Architecture Pipeline */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center text-xs">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch text-sm">
             {/* Step 1: Citizen */}
-            <div className="md:col-span-4 p-5 bg-gov-50/80 border border-gov-200 rounded-2xl space-y-2">
-              <span className="text-[10px] font-bold text-gov-800 uppercase tracking-wider block">Single Touchpoint</span>
-              <h4 className="text-sm font-bold text-slate-900 font-serif">1 Citizen Portal & Account</h4>
-              <p className="text-slate-600 text-[11px]">
-                Citizen selects any service. Identity, land records, and vehicle particulars are checked simultaneously.
-              </p>
+            <div className="md:col-span-4 p-5 bg-gov-50/80 border border-gov-200 rounded-2xl space-y-2 flex flex-col justify-between">
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-gov-800 uppercase tracking-wider block">Single Touchpoint</span>
+                <h4 className="text-base font-bold text-slate-900 font-serif">1 Citizen Portal & Account</h4>
+                <p className="text-slate-700 text-sm leading-relaxed">
+                  Citizen selects any service. Identity, land records, and vehicle particulars are checked simultaneously.
+                </p>
+              </div>
             </div>
 
             {/* Step 2: SAMAVAY Mesh */}
-            <div className="md:col-span-4 p-5 bg-gradient-to-br from-gov-900 to-gov-950 text-white rounded-2xl space-y-2 shadow-md">
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] font-bold text-gov-300 uppercase tracking-wider">Interoperability Core</span>
-                <Layers className="w-4 h-4 text-gov-300" />
+            <div className="md:col-span-4 p-5 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/60 border-2 border-saffron-400 text-slate-900 rounded-2xl space-y-2 shadow-sm flex flex-col justify-between">
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-xs font-bold text-amber-900 uppercase tracking-wider">Interoperability Core</span>
+                  <Layers className="w-4 h-4 text-amber-700" />
+                </div>
+                <h4 className="text-base font-bold text-slate-900 font-serif">Sovereign Interoperability Gateway</h4>
+                <p className="text-slate-700 text-sm leading-relaxed">
+                  Reuses 5 authoritative details from Bhoomi & Municipal platforms. Dynamic forms ask only for 2 missing inputs.
+                </p>
               </div>
-              <h4 className="text-sm font-bold text-white font-serif">Sovereign Interoperability Gateway</h4>
-              <p className="text-slate-300 text-[11px]">
-                Reuses 5 authoritative details from Bhoomi & Municipal platforms. Dynamic forms ask only for 2 missing inputs.
-              </p>
             </div>
 
             {/* Step 3: Fast Completion */}
-            <div className="md:col-span-4 p-5 bg-emerald-50/80 border border-emerald-200 rounded-2xl space-y-2">
-              <span className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider block">Digital Delivery</span>
-              <h4 className="text-sm font-bold text-slate-900 font-serif">Instant Verification & Certificate</h4>
-              <p className="text-slate-600 text-[11px]">
-                Time reduced from 14 days to 5 minutes. Certificate digitally signed and synced to DigiLocker.
-              </p>
+            <div className="md:col-span-4 p-5 bg-emerald-50/80 border border-emerald-200 rounded-2xl space-y-2 flex flex-col justify-between">
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block">Digital Delivery</span>
+                <h4 className="text-base font-bold text-slate-900 font-serif">Instant Verification & Certificate</h4>
+                <p className="text-slate-700 text-sm leading-relaxed">
+                  Time reduced from 14 days to 5 minutes. Certificate digitally signed and synced to DigiLocker.
+                </p>
+              </div>
             </div>
           </div>
         </div>

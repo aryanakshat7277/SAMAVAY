@@ -162,17 +162,17 @@ export const CategoryVisualGrid: React.FC = () => {
               </div>
 
               <div>
-                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-serif group-hover:text-gov-800 transition">
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 font-serif group-hover:text-gov-800 transition">
                   {cat.title}
                 </h4>
-                <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1 font-medium">
+                <p className="text-sm text-slate-700 line-clamp-2 leading-relaxed mt-1 font-medium">
                   {cat.subtitle}
                 </p>
               </div>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-gov-800">
-              <span className="text-xs uppercase tracking-wider">Access Interoperable Portal</span>
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-sm font-bold text-gov-800">
+              <span className="text-sm uppercase tracking-wider">Access Interoperable Portal</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </div>
           </Link>

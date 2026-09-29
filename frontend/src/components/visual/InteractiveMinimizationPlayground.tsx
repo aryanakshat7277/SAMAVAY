@@ -238,32 +238,32 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
         <div className="lg:col-span-5 bg-stone-50 border border-red-200/80 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-stone-200">
-              <span className="text-xs font-bold text-red-700 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                <AlertCircle className="w-3.5 h-3.5 text-red-600 flex-shrink-0" />
+              <span className="text-sm font-bold text-red-700 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+                <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
                 Traditional Process
               </span>
-              <span className="text-[10px] text-stone-500 font-bold">4 Disconnected Portals</span>
+              <span className="text-xs text-stone-600 font-bold">4 Disconnected Portals</span>
             </div>
 
             <div className="grid grid-cols-2 gap-3 my-4">
-              <div className="bg-white p-3 rounded-xl border border-stone-200 text-center">
-                <span className="text-2xl font-black text-red-600 font-mono">{activeScenario.totalFields}</span>
-                <p className="text-[10px] text-stone-500 font-medium mt-0.5">Manual Inputs Needed</p>
+              <div className="bg-white p-3.5 rounded-xl border border-stone-200 text-center">
+                <span className="text-3xl font-black text-red-600 font-mono">{activeScenario.totalFields}</span>
+                <p className="text-xs text-stone-600 font-medium mt-1">Manual Inputs Needed</p>
               </div>
-              <div className="bg-white p-3 rounded-xl border border-stone-200 text-center">
-                <span className="text-2xl font-black text-red-600 font-mono">{activeScenario.oldCopiesNeeded}</span>
-                <p className="text-[10px] text-stone-500 font-medium mt-0.5">Photocopies Uploaded</p>
+              <div className="bg-white p-3.5 rounded-xl border border-stone-200 text-center">
+                <span className="text-3xl font-black text-red-600 font-mono">{activeScenario.oldCopiesNeeded}</span>
+                <p className="text-xs text-stone-600 font-medium mt-1">Photocopies Uploaded</p>
               </div>
             </div>
 
-            <div className="space-y-2 text-xs">
-              <span className="text-[10px] font-bold text-stone-500 uppercase tracking-wider block">
+            <div className="space-y-2 text-sm">
+              <span className="text-xs font-bold text-stone-600 uppercase tracking-wider block">
                 Required Manual Typing:
               </span>
-              <ul className="space-y-1.5 text-stone-600 text-[11px]">
+              <ul className="space-y-1.5 text-stone-700 text-xs sm:text-sm">
                 {activeScenario.reusedFieldNames.map((f, idx) => (
-                  <li key={idx} className="flex items-start gap-2 bg-white p-2 rounded-lg border border-stone-200 text-red-950">
-                    <FileText className="w-3.5 h-3.5 text-red-500 flex-shrink-0 mt-0.5" />
+                  <li key={idx} className="flex items-start gap-2 bg-white p-2.5 rounded-xl border border-stone-200 text-red-950 font-medium">
+                    <FileText className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
                     <span>{f} (Must retype manually)</span>
                   </li>
                 ))}
@@ -271,21 +271,21 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-3 border-t border-stone-200 flex justify-between items-center text-xs font-bold text-stone-600">
+          <div className="pt-3 border-t border-stone-200 flex justify-between items-center text-sm font-bold text-stone-700">
             <span>Average Processing Delay:</span>
-            <span className="text-red-700 font-mono text-sm">{activeScenario.oldTimeDays}</span>
+            <span className="text-red-700 font-mono text-base">{activeScenario.oldTimeDays}</span>
           </div>
         </div>
 
         {/* Center: Transformation Bridge Arrow */}
         <div className="lg:col-span-2 flex flex-col items-center justify-center gap-2 py-4">
-          <div className="w-12 h-12 rounded-2xl bg-gov-800 text-white flex items-center justify-center font-bold shadow-gov">
-            <Activity className="w-6 h-6 text-saffron-400 animate-pulse" />
+          <div className="w-13 h-13 rounded-2xl bg-gov-800 text-white flex items-center justify-center font-bold shadow-gov p-2">
+            <Activity className="w-7 h-7 text-saffron-400 animate-pulse" />
           </div>
-          <span className="text-[10px] font-mono font-bold text-gov-800 uppercase tracking-widest text-center">
+          <span className="text-xs font-mono font-bold text-gov-800 uppercase tracking-widest text-center">
             SAMAVAY DPI
           </span>
-          <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black font-mono">
+          <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-black font-mono">
             +{reusePercentage}% AUTO
           </span>
         </div>
@@ -294,38 +294,38 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
         <div className="lg:col-span-5 bg-blue-50/50 border-2 border-blue-500/50 rounded-2xl p-5 space-y-4 flex flex-col justify-between shadow-xs">
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-blue-200">
-              <span className="text-xs font-bold text-gov-800 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+              <span className="text-sm font-bold text-gov-800 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 SAMAVAY Sovereign Mesh
               </span>
-              <span className="text-[10px] bg-blue-100 text-gov-900 font-black px-2 py-0.5 rounded-full font-mono">
+              <span className="text-xs bg-blue-100 text-gov-900 font-black px-2.5 py-0.5 rounded-full font-mono">
                 {reusePercentage}% REUSED
               </span>
             </div>
 
             <div className="grid grid-cols-2 gap-3 my-4">
-              <div className="bg-white p-3 rounded-xl border border-emerald-200 text-center">
-                <span className="text-2xl font-black text-emerald-700 font-mono">{activeScenario.reusedFields}</span>
-                <p className="text-[10px] text-stone-600 font-medium mt-0.5">Pre-Verified from Registries</p>
+              <div className="bg-white p-3.5 rounded-xl border border-emerald-200 text-center">
+                <span className="text-3xl font-black text-emerald-700 font-mono">{activeScenario.reusedFields}</span>
+                <p className="text-xs text-stone-600 font-medium mt-1">Pre-Verified from Registries</p>
               </div>
-              <div className="bg-white p-3 rounded-xl border border-emerald-200 text-center">
-                <span className="text-2xl font-black text-saffron-600 font-mono">{activeScenario.citizenFields.length}</span>
-                <p className="text-[10px] text-stone-600 font-medium mt-0.5">Missing Inputs Left</p>
+              <div className="bg-white p-3.5 rounded-xl border border-emerald-200 text-center">
+                <span className="text-3xl font-black text-saffron-600 font-mono">{activeScenario.citizenFields.length}</span>
+                <p className="text-xs text-stone-600 font-medium mt-1">Missing Inputs Left</p>
               </div>
             </div>
 
-            <div className="space-y-2 text-xs">
-              <span className="text-[10px] font-bold text-emerald-900 uppercase tracking-wider block">
+            <div className="space-y-2 text-sm">
+              <span className="text-xs font-bold text-emerald-900 uppercase tracking-wider block">
                 Auto-Retrieved via DPDP Token:
               </span>
-              <ul className="space-y-1.5 text-stone-700 text-[11px]">
+              <ul className="space-y-1.5 text-stone-700 text-xs sm:text-sm">
                 {activeScenario.reusedFieldNames.map((f, idx) => (
-                  <li key={idx} className="flex items-center justify-between bg-white/90 p-2 rounded-lg border border-emerald-200 text-emerald-900">
+                  <li key={idx} className="flex items-center justify-between bg-white/90 p-2.5 rounded-xl border border-emerald-200 text-emerald-950">
                     <span className="flex items-center gap-2">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                      <span className="font-medium">{f}</span>
+                      <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                      <span className="font-semibold">{f}</span>
                     </span>
-                    <span className="text-[9px] bg-emerald-100 text-emerald-800 font-mono px-1.5 py-0.5 rounded font-bold">
+                    <span className="text-xs bg-emerald-100 text-emerald-800 font-mono px-2 py-0.5 rounded font-bold">
                       VERIFIED
                     </span>
                   </li>
@@ -334,9 +334,9 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
             </div>
           </div>
 
-          <div className="pt-3 border-t border-emerald-200 flex justify-between items-center text-xs font-bold text-stone-700">
+          <div className="pt-3 border-t border-emerald-200 flex justify-between items-center text-sm font-bold text-stone-700">
             <span>Execution Delivery:</span>
-            <span className="text-emerald-700 font-mono text-sm">{activeScenario.newTimeMins} (Instant)</span>
+            <span className="text-emerald-700 font-mono text-base">{activeScenario.newTimeMins} (Instant)</span>
           </div>
         </div>
       </div>

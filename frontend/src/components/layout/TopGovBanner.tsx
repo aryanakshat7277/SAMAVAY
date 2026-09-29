@@ -13,11 +13,11 @@ export const TopGovBanner: React.FC = () => {
 
   React.useEffect(() => {
     if (textSize === 'large') {
-      document.documentElement.style.fontSize = '17px';
+      document.documentElement.style.fontSize = '18px';
     } else if (textSize === 'small') {
-      document.documentElement.style.fontSize = '13.5px';
-    } else {
       document.documentElement.style.fontSize = '15px';
+    } else {
+      document.documentElement.style.fontSize = '16px';
     }
     localStorage.setItem('samavay_text_size', textSize);
   }, [textSize]);
