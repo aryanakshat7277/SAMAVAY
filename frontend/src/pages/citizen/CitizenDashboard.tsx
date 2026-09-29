@@ -18,7 +18,6 @@ import {
   HelpCircle,
   Clock,
   ArrowRight,
-  Sparkles,
   Layers,
   CheckCircle2,
   AlertCircle,

@@ -29,7 +29,7 @@ import {
   BarChart3,
   Play,
   Lightbulb,
-  Sparkles,
+  Compass,
   PanelLeftClose,
   PanelLeftOpen
 } from 'lucide-react';
@@ -111,10 +111,10 @@ export const AdminLayout: React.FC = () => {
         <div className="flex items-center space-x-4">
           <Link
             to="/how-samavay-works"
-            className="text-saffron-300 hover:text-white transition flex items-center space-x-1 font-semibold text-[11px]"
+            className="text-amber-300 hover:text-white transition flex items-center space-x-1 font-semibold text-[11px]"
           >
             <span>How SAMAVAY Works</span>
-            <Sparkles className="w-3 h-3 ml-0.5" />
+            <Compass className="w-3 h-3 ml-0.5" />
           </Link>
           <Link
             to="/dashboard"

@@ -14,7 +14,7 @@ import {
   Layers,
   FileText,
   Clock,
-  Sparkles,
+  Compass,
   ExternalLink,
   Users,
   Server,
@@ -117,7 +117,7 @@ export const LandingPage: React.FC = () => {
                   </Button>
                 </Link>
                 <Link to="/how-samavay-works">
-                  <Button variant="outline" size="md" icon={Sparkles}>
+                  <Button variant="outline" size="md" icon={Compass}>
                     How SAMAVAY Works
                   </Button>
                 </Link>

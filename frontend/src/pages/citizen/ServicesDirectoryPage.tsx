@@ -7,7 +7,7 @@ import { ServiceApplyModal } from '../../components/services/ServiceApplyModal';
 import { EmptyState } from '../../components/common/EmptyState';
 import {
   Compass, Filter, Building2, Car, Landmark,
-  HeartPulse, GraduationCap, HandHeart, Layers, Sparkles,
+  HeartPulse, GraduationCap, HandHeart, Layers, HelpCircle, CheckCircle2,
   Search, X, Star, SlidersHorizontal, ArrowRight
 } from 'lucide-react';
 
@@ -184,9 +184,9 @@ export const ServicesDirectoryPage: React.FC = () => {
               />
               {/* Live count pill in search */}
               {!searchQuery && services.length > 0 && (
-                <span className="hidden sm:flex items-center gap-1 text-[10px] text-stone-400 font-medium pr-2 whitespace-nowrap flex-shrink-0">
-                  <Sparkles className="w-3 h-3 text-saffron-400" />
-                  {services.length} services
+                <span className="hidden sm:flex items-center gap-1 text-[10px] text-stone-500 font-medium pr-2 whitespace-nowrap flex-shrink-0">
+                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                  {services.length} services available
                 </span>
               )}
               {searchQuery && (
@@ -342,8 +342,8 @@ export const ServicesDirectoryPage: React.FC = () => {
         {/* Bottom CTA strip */}
         {!isLoading && filteredServices.length > 0 && (
           <div className="flex items-center justify-center pt-2 pb-4">
-            <div className="flex items-center gap-2 text-[11px] text-stone-400 font-medium">
-              <Sparkles className="w-3 h-3 text-saffron-400" />
+            <div className="flex items-center gap-2 text-[11px] text-stone-500 font-medium">
+              <HelpCircle className="w-3.5 h-3.5 text-gov-700" />
               Can't find what you need?{' '}
               <button
                 onClick={() => searchInputRef.current?.focus()}

@@ -7,7 +7,6 @@ import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
 import { EmptyState } from '../../components/common/EmptyState';
 import {
-  Sparkles,
   TrendingUp,
   AlertTriangle,
   CheckCircle2,

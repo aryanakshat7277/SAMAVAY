@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, CheckCircle2, FileText, ArrowRight, ShieldCheck, Database } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, FileText, ArrowRight, Database } from 'lucide-react';
 
 interface FormMinimizationBannerProps {
   totalRequired: number;
@@ -17,7 +17,7 @@ export const FormMinimizationBanner: React.FC<FormMinimizationBannerProps> = ({
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-2xl bg-gov-700 text-white flex items-center justify-center shadow-gov">
-            <Sparkles className="w-5 h-5 text-saffron-400" />
+            <ShieldCheck className="w-5 h-5 text-amber-300" />
           </div>
           <div>
             <h4 className="text-sm font-black text-stone-900 font-serif">

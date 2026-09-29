@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Compass, FileCheck, ShieldCheck, Zap, CheckCircle2,
   ArrowRight, Landmark, Building2, Car, HeartPulse,
-  GraduationCap, Layers, Sparkles, Database, Lock,
+  GraduationCap, Layers, Database, Lock,
   Activity, Server, Globe
 } from 'lucide-react';
 import { PageHeader } from '../../components/common/PageHeader';
@@ -95,7 +95,7 @@ export const HowItWorksPage: React.FC = () => {
       <div className="bg-gradient-to-b from-gov-50/70 via-white to-[#F8FAFC] border-b border-slate-200 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center space-y-4">
           <div className="inline-flex items-center gap-2 bg-gov-100 border border-gov-200 text-gov-900 text-[10px] font-bold px-3.5 py-1.5 rounded-full">
-            <Sparkles className="w-3.5 h-3.5 text-gov-700" />
+            <Compass className="w-3.5 h-3.5 text-gov-700" />
             CITIZEN ARCHITECTURE & INTEROPERABILITY GUIDE
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-serif leading-tight">

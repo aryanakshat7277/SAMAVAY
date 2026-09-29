@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Sparkles, Play, CheckCircle2, ShieldCheck, Database, Server,
+  Play, CheckCircle2, ShieldCheck, Database, Server,
   Lock, RefreshCw, Zap, ArrowRight, Check, Activity, FileCheck, Landmark,
-  Clock, FileText, CheckCircle, AlertCircle, ArrowUpRight, Award, UserCheck
+  Clock, FileText, CheckCircle, AlertCircle, ArrowUpRight, Award, UserCheck, Layers
 } from 'lucide-react';
 
 interface SimulationScenario {
@@ -133,7 +133,7 @@ export const NationalInteroperabilityShowcase: React.FC = () => {
         <div className="space-y-2 max-w-2xl">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[11px] font-bold text-gov-800 uppercase tracking-widest bg-gov-50 px-3 py-1 rounded-full border border-gov-200/70 inline-flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-gov-700" />
+              <Layers className="w-3.5 h-3.5 text-gov-700" />
               National DPI Interoperability Demo
             </span>
             <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">

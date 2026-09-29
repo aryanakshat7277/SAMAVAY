@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Landmark, Bell, User as UserIcon, Menu, X, LogOut,
-  FileText, LayoutDashboard, Layers, Lock, ShieldCheck,
-  Sparkles, ChevronDown, Globe
+  ShieldCheck, LayoutDashboard, FileText, Lock, ChevronDown, Globe
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useNotifications } from '../../context/NotificationContext';

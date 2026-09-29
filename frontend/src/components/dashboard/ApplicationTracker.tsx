@@ -6,7 +6,6 @@ import {
   FileCheck,
   ShieldCheck,
   Building2,
-  Sparkles,
   Database,
   ArrowRight,
   Info

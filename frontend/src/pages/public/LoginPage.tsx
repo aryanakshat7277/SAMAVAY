@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Landmark, Eye, EyeOff, ShieldCheck, ArrowRight, UserCheck,
-  AlertCircle, Sparkles, Lock, Building2, Globe, Check,
+  AlertCircle, Zap, Lock, Building2, Globe, Check,
   FileText, RefreshCw
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
@@ -242,7 +242,7 @@ export const LoginPage: React.FC = () => {
           >
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-xl bg-gov-100 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-gov-700 group-hover:scale-110 transition-transform" />
+                <Zap className="w-4 h-4 text-gov-700 group-hover:scale-110 transition-transform" />
               </div>
               <div className="text-left">
                 <p className="font-bold text-stone-900">

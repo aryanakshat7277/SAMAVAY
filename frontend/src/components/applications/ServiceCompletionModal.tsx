@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, ShieldCheck, Download, ArrowRight, X, FileText, Landmark, Sparkles } from 'lucide-react';
+import { CheckCircle2, ShieldCheck, Download, ArrowRight, X, FileText, Landmark } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface ServiceCompletionModalProps {

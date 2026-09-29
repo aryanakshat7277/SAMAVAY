@@ -13,7 +13,7 @@ import {
   CheckCircle2,
   Database,
   Layers,
-  Sparkles,
+  Landmark,
   ArrowDown,
   Lock,
   Zap,
@@ -119,7 +119,7 @@ export const ServiceMappingPage: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center justify-center space-x-2 text-gov-800 text-xs font-bold mb-1">
-                  <Sparkles className="w-4 h-4" />
+                  <Landmark className="w-4 h-4" />
                   <span>CITIZEN SERVICE TOUCHPOINT</span>
                 </div>
                 <h4 className="text-sm font-bold text-slate-900 font-serif">{selectedService.name}</h4>

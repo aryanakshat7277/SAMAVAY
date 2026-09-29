@@ -8,7 +8,6 @@ import { MetricCard } from '../../components/common/MetricCard';
 import { AnimatedCounter } from '../../components/visual/AnimatedCounter';
 import {
   BarChart3,
-  Sparkles,
   Layers,
   ArrowRight,
   ShieldCheck,
@@ -68,8 +67,8 @@ export const AdminAnalyticsPage: React.FC = () => {
               <span className="text-[11px] font-bold text-saffron-300 uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full border border-white/10">
                 Core Interoperability Impact
               </span>
-              <div className="w-8 h-8 rounded-xl bg-saffron-500/20 border border-saffron-400/30 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-saffron-400 animate-pulse" />
+              <div className="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center">
+                <Zap className="w-4 h-4 text-amber-400" />
               </div>
             </div>
 

@@ -5,11 +5,11 @@ import {
   Car,
   Building2,
   Lock,
-  Sparkles,
   ShieldCheck,
   Zap,
   CheckCircle2,
-  FileText
+  FileText,
+  Layers
 } from 'lucide-react';
 
 export const InteroperabilityHeroGraphic: React.FC = () => {
@@ -137,7 +137,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer group animate-float-gentle"
         >
           <div className="w-20 h-20 rounded-3xl bg-gov-950 border-2 border-gov-500 shadow-xl flex flex-col items-center justify-center text-white transition-all group-hover:scale-110 ring-4 ring-gov-100">
-            <Sparkles className="w-6 h-6 text-saffron-400 mb-0.5 animate-pulse" />
+            <Layers className="w-6 h-6 text-saffron-400 mb-0.5 animate-pulse" />
             <span className="text-[10px] font-extrabold tracking-wider uppercase font-serif text-white">SAMAVAY</span>
             <span className="text-[8px] text-gov-300 font-semibold">Core Mesh</span>
           </div>

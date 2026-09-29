@@ -16,7 +16,6 @@ import {
   FileText,
   AlertCircle,
   HelpCircle,
-  Sparkles,
   Building2,
   Lock,
   ArrowRight

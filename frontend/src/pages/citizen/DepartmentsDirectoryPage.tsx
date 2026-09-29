@@ -4,7 +4,7 @@ import { Department } from '../../types';
 import { DepartmentCard } from '../../components/services/DepartmentCard';
 import { PageHeader } from '../../components/common/PageHeader';
 import { Card } from '../../components/common/Card';
-import { Building2, Layers, Search, Sparkles } from 'lucide-react';
+import { Building2, Layers, Search } from 'lucide-react';
 
 export const DepartmentsDirectoryPage: React.FC = () => {
   const [departments, setDepartments] = useState<Department[]>([]);

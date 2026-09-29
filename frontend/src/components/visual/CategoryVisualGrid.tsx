@@ -7,8 +7,7 @@ import {
   HeartPulse,
   GraduationCap,
   Users,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 
 export const CategoryVisualGrid: React.FC = () => {

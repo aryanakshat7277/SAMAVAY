@@ -7,7 +7,6 @@ import {
   Building2,
   ChevronUp,
   ChevronDown,
-  Sparkles,
   ExternalLink,
   Sliders,
   CheckCircle2,

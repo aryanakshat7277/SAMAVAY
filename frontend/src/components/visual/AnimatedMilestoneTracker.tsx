@@ -6,7 +6,6 @@ import {
   ShieldCheck,
   FileCheck,
   Send,
-  Sparkles,
   ArrowRight,
   AlertCircle
 } from 'lucide-react';

@@ -11,7 +11,7 @@ import {
   Building2,
   Car,
   Landmark,
-  Sparkles,
+  FileCheck,
   AlertCircle
 } from 'lucide-react';
 import { Button } from '../common/Button';
@@ -132,9 +132,9 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
       {/* Header with Badges */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-100 pb-5">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-saffron-50 border border-saffron-200 text-saffron-800 text-[10px] font-bold uppercase tracking-wider mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-saffron-600" />
-            <span>Interactive SIH Simulator</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gov-50 border border-gov-200 text-gov-800 text-[10px] font-bold uppercase tracking-wider mb-2">
+            <FileCheck className="w-3.5 h-3.5 text-gov-700" />
+            <span>Interactive DPI Verification Simulator</span>
           </div>
           <h3 className="text-xl sm:text-2xl font-bold font-serif text-stone-900">
             Form Minimization & Interoperability Playground

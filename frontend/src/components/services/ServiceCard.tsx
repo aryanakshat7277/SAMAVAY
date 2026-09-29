@@ -11,8 +11,7 @@ import {
   Landmark,
   HeartPulse,
   GraduationCap,
-  HandHeart,
-  Sparkles
+  HandHeart
 } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -53,9 +52,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onApply }) =>
           </div>
 
           {service.isPopular && (
-            <span className="text-[11px] font-bold text-saffron-800 bg-saffron-50 border border-saffron-200 px-2.5 py-0.5 rounded-full flex items-center gap-1">
-              <Sparkles className="w-3 h-3 text-saffron-600" />
-              Popular
+            <span className="text-[11px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full flex items-center gap-1">
+              <CheckCircle2 className="w-3 h-3 text-amber-600" />
+              Verified DPI
             </span>
           )}
         </div>

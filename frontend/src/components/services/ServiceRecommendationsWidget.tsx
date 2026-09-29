@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { orchestrationApi } from '../../services/api';
 import { GovernmentService } from '../../types';
-import { Sparkles, ArrowRight, Building2 } from 'lucide-react';
+import { Layers, ArrowRight, Building2 } from 'lucide-react';
 import { Card } from '../common/Card';
 
 interface ServiceRecommendationsWidgetProps {
@@ -29,7 +29,7 @@ export const ServiceRecommendationsWidget: React.FC<ServiceRecommendationsWidget
   return (
     <Card padding="lg" className="space-y-4 bg-white border-stone-200 shadow-card">
       <div className="flex items-center space-x-2 text-gov-800">
-        <Sparkles className="w-5 h-5 text-saffron-500" />
+        <Layers className="w-5 h-5 text-gov-700" />
         <h3 className="text-sm font-bold text-stone-900 font-serif">
           Related Connected Government Services
         </h3>

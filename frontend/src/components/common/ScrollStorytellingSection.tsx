@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   Layers,
   ArrowRight,
-  Sparkles,
   FileText,
   Building2,
   Server,
@@ -157,7 +156,7 @@ export const ScrollStorytellingSection: React.FC = () => {
             <div className="md:col-span-4 p-5 bg-gradient-to-br from-gov-900 to-gov-950 text-white rounded-2xl space-y-2 shadow-md">
               <div className="flex justify-between items-center">
                 <span className="text-[10px] font-bold text-gov-300 uppercase tracking-wider">Interoperability Core</span>
-                <Sparkles className="w-4 h-4 text-gov-300" />
+                <Layers className="w-4 h-4 text-gov-300" />
               </div>
               <h4 className="text-sm font-bold text-white font-serif">Autonomous Gateway Mesh</h4>
               <p className="text-slate-300 text-[11px]">

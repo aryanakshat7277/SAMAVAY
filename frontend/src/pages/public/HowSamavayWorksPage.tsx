@@ -6,7 +6,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   XCircle,
-  Sparkles,
   Building2,
   Server,
   Lock,

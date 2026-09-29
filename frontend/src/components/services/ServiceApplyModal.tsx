@@ -14,7 +14,6 @@ import {
   Check,
   Database,
   Lock,
-  Sparkles,
   Server,
   Layers,
   AlertCircle,
@@ -178,16 +177,17 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
     <div className="fixed inset-0 z-50 overflow-y-auto bg-stone-900/70 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl max-w-2xl w-full shadow-modal border border-stone-200 overflow-hidden animate-fade-in-scale">
         {/* Modal Header */}
-        <div className="bg-gov-950 text-white px-6 py-4 flex items-center justify-between border-b border-gov-800">
+        <div className="bg-gov-900 text-white px-6 py-4 flex items-center justify-between border-b border-gov-800 relative">
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
           <div>
-            <span className="text-[10px] font-bold text-saffron-400 uppercase tracking-widest">
+            <span className="text-[10px] font-bold text-amber-300 uppercase tracking-widest block">
               {service.departmentName}
             </span>
-            <h3 className="text-base font-bold leading-snug font-serif">{service.name}</h3>
+            <h3 className="text-base font-bold leading-snug font-serif mt-0.5">{service.name}</h3>
           </div>
           <button
             onClick={onClose}
-            className="text-stone-400 hover:text-white p-1 rounded-xl transition cursor-pointer"
+            className="text-slate-300 hover:text-white p-1 rounded-xl transition cursor-pointer"
             aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
@@ -195,12 +195,12 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
         </div>
 
         {/* 4-Step Progress Indicator */}
-        <div className="bg-sandstone-100 px-6 py-3 border-b border-stone-200 flex items-center justify-between text-xs font-medium">
+        <div className="bg-slate-50 px-6 py-3 border-b border-slate-200 flex items-center justify-between text-xs font-medium">
           <div className={`flex items-center space-x-1.5 ${step >= 1 ? 'text-gov-800 font-bold' : 'text-stone-400'}`}>
             <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-mono ${step >= 1 ? 'bg-gov-700 text-white shadow-xs' : 'bg-stone-200 text-stone-600'}`}>
               1
             </span>
-            <span className="hidden sm:inline">Preparation</span>
+            <span className="hidden sm:inline">Verification</span>
           </div>
 
           <div className="w-6 h-0.5 bg-stone-300"></div>
@@ -236,8 +236,8 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
           {/* STEP 1: SERVICE PREPARATION & READINESS ANIMATION */}
           {step === 1 && (
             <div className="py-6 space-y-6 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-gov-50 border border-gov-200 text-gov-800 flex items-center justify-center mx-auto shadow-gov">
-                <Sparkles className="w-8 h-8 text-gov-700 animate-pulse" />
+              <div className="w-16 h-16 rounded-2xl bg-gov-50 border border-gov-200 text-gov-800 flex items-center justify-center mx-auto shadow-sm">
+                <ShieldCheck className="w-8 h-8 text-gov-700 animate-pulse" />
               </div>
 
               <div>

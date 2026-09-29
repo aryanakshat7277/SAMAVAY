@@ -17,7 +17,6 @@ import {
   Database,
   Search,
   RefreshCw,
-  Sparkles,
   Lock
 } from 'lucide-react';
 
