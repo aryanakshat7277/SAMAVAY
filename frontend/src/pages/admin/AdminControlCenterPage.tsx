@@ -114,7 +114,7 @@ export const AdminControlCenterPage: React.FC = () => {
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-              Centralized administrative telemetry monitoring mTLS encrypted peer-to-peer registry exchanges between Revenue, Transport, Municipal, Welfare, Health, and Education nodes across India.
+              Centralized administrative telemetry monitoring mTLS encrypted peer-to-peer registry exchanges between Revenue, Transport, Municipal, Welfare, Health, Agriculture, Food, Labour, Finance, and Renewable Energy nodes across India.
             </p>
           </div>
 
@@ -155,7 +155,7 @@ export const AdminControlCenterPage: React.FC = () => {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
         <MetricCard
           label="Departments"
-          value={summary?.totalDepartments || 6}
+          value={summary?.totalDepartments || 12}
           icon={Building2}
           subtext="100% Interconnected"
           highlightColor="blue"
@@ -163,7 +163,7 @@ export const AdminControlCenterPage: React.FC = () => {
 
         <MetricCard
           label="Platforms"
-          value={summary?.registeredPlatforms || 8}
+          value={summary?.registeredPlatforms || 14}
           icon={Server}
           subtext="State & Central DPI"
           highlightColor="blue"
@@ -171,7 +171,7 @@ export const AdminControlCenterPage: React.FC = () => {
 
         <MetricCard
           label="Active Integrations"
-          value={summary?.activeIntegrations || 8}
+          value={summary?.activeIntegrations || 14}
           icon={Layers}
           subtext="mTLS PKI_X509 Secured"
           highlightColor="emerald"
@@ -179,7 +179,7 @@ export const AdminControlCenterPage: React.FC = () => {
 
         <MetricCard
           label="Service Workflows"
-          value={summary?.activeWorkflows || 5}
+          value={summary?.activeWorkflows || 8}
           icon={Cpu}
           subtext="Automated Orchestrations"
           highlightColor="purple"

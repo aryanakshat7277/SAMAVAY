@@ -429,7 +429,7 @@ export const LandingPage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2 relative z-10">
             <Link to="/services">
               <Button variant="white" size="lg" icon={ArrowRight} iconPosition="right">
-                Explore All 38+ Services
+                Explore All 58+ Sovereign Services
               </Button>
             </Link>
             <Link to="/admin/control-center">

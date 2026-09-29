@@ -64,7 +64,7 @@ export const PlatformRegistryPage: React.FC = () => {
           label="Registered Platforms"
           value={platforms.length}
           icon={Server}
-          subtext="6 Core Ministries"
+          subtext="12 Sovereign Ministries"
           highlightColor="emerald"
         />
 

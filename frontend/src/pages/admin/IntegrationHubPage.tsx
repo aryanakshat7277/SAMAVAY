@@ -56,6 +56,12 @@ export const IntegrationHubPage: React.FC = () => {
     'Academic Marks & Bonafide',
     'Health Insurance Registry',
     'Disability & Pension Registry',
+    'Farmland Title & Agri Records',
+    'Ration & Food Security Entitlement',
+    'EPFO & Unorganized Worker ID',
+    'Commercial GST & Tax Compliance',
+    'Maternal Nutrition & Poshan Record',
+    'Electricity Consumer & Solar Metering',
     'Digital Document Hash'
   ];
 

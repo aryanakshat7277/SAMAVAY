@@ -10,11 +10,11 @@ export const controlCenterApi = {
       // fallback
     }
     return {
-      totalDepartments: 6,
-      registeredPlatforms: 8,
-      activeIntegrations: 8,
-      activeWorkflows: 5,
-      healthyPlatformsCount: 7,
+      totalDepartments: 12,
+      registeredPlatforms: 14,
+      activeIntegrations: 14,
+      activeWorkflows: 8,
+      healthyPlatformsCount: 13,
       attentionRequiredCount: 1,
       unavailableCount: 0,
       recentEvents: [

@@ -155,7 +155,7 @@ export const AdminAnalyticsPage: React.FC = () => {
 
         <MetricCard
           label="Active Platforms"
-          value={analytics?.activePlatformConnections || 8}
+          value={analytics?.activePlatformConnections || 14}
           icon={Layers}
           subtext="Production Pipes"
           highlightColor="saffron"
@@ -236,7 +236,7 @@ export const AdminAnalyticsPage: React.FC = () => {
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
           <span className="font-bold">Interoperability Telemetry Grid: OPERATIONAL</span>
           <span className="text-gov-400 hidden sm:inline">|</span>
-          <span className="text-gov-300 hidden sm:inline">8 Active Sovereign Nodes Monitored</span>
+          <span className="text-gov-300 hidden sm:inline">14 Active Sovereign Nodes Monitored</span>
         </div>
         <div className="text-gov-400 text-[11px] font-mono">
           Last Synced: {new Date().toLocaleTimeString()}

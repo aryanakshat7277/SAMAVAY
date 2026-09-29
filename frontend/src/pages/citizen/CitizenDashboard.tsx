@@ -76,7 +76,7 @@ export const CitizenDashboard: React.FC = () => {
       subtitle: 'Authoritative state registries auto-populate verified citizen credentials with 1-click consent.',
       image: banner1,
       link: '/services',
-      btnText: 'Explore 38+ Services',
+      btnText: 'Explore 58+ Services',
       tag: 'INDIA STACK • DPI'
     },
     {
@@ -250,7 +250,7 @@ export const CitizenDashboard: React.FC = () => {
             <h4 className="text-sm font-bold text-stone-900 group-hover:text-gov-800 transition font-serif">
               Explore Services
             </h4>
-            <p className="text-xs text-stone-600 font-medium mt-0.5">Discover 38+ government services</p>
+            <p className="text-xs text-stone-600 font-medium mt-0.5">Discover 58+ sovereign government services</p>
           </div>
         </Link>
 

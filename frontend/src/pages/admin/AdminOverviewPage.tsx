@@ -86,7 +86,7 @@ export const AdminOverviewPage: React.FC = () => {
           label="Registered Platforms"
           value={summary?.totalPlatforms || platforms.length}
           icon={Server}
-          subtext="Across 6 Ministries"
+          subtext="Across 12 Sovereign Ministries"
           highlightColor="emerald"
         />
 
