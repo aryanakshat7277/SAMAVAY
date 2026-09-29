@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sandstone-100 text-stone-900 antialiased font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-stone-900 tracking-tight;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   ACCESSIBLE FOCUS
+   ───────────────────────────────────────────── */
+*:focus-visible {
+  @apply outline-none ring-2 ring-gov-700 ring-offset-2 ring-offset-sandstone-100;
+}
+
+/* ─────────────────────────────────────────────
+   SOVEREIGN SURFACE UTILITIES
+   ───────────────────────────────────────────── */
+.gov-card {
+  @apply bg-white border border-stone-200/80 rounded-2xl shadow-card transition-all duration-200;
+}
+.gov-card-hover {
+  @apply gov-card hover:border-gov-400/70 hover:shadow-card-hover hover:-translate-y-1;
+}
+.gov-badge {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+
+/* ─────────────────────────────────────────────
+   ATMOSPHERIC BACKGROUNDS
+   ───────────────────────────────────────────── */
+.bg-gov-grid {
+  background-image: radial-gradient(rgba(27, 92, 67, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.bg-gov-radial {
+  background: radial-gradient(circle at 50% 0%, rgba(27, 92, 67, 0.06) 0%, transparent 70%);
+}
+.bg-gov-mesh {
+  background-color: #faf8f5;
+  background-image:
+    linear-gradient(rgba(27, 92, 67, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 92, 67, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bg-scan-lines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(27,92,67,0.015) 2px,
+    rgba(27,92,67,0.015) 4px
+  );
+}
+
+/* ─────────────────────────────────────────────
+   KEYFRAME ANIMATIONS
+   ───────────────────────────────────────────── */
+
+/* Dash flow for SVG pipeline lines */
+@keyframes dashFlow {
+  from { stroke-dashoffset: 40; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes dashFlowReverse {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 40; }
+}
+
+/* Node pulse glow */
+@keyframes pulseNode {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.08); opacity: 0.82; }
+}
+
+/* Gentle float */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Word / char reveal */
+@keyframes slideUpFade {
+  0%   { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  0%   { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  0%   { opacity: 0; transform: translateX(20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade in scale */
+@keyframes fadeInScale {
+  0%   { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Border pulse / glow ring */
+@keyframes borderPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(27, 92, 67, 0); }
+  50%       { box-shadow: 0 0 0 4px rgba(27, 92, 67, 0.15); }
+}
+
+/* Progress bar fill */
+@keyframes progressFill {
+  0%   { width: 0%; }
+  100% { width: var(--target-width, 62%); }
+}
+
+/* Scanline sweep for terminal/data views */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); opacity: 0.05; }
+  100% { transform: translateY(100vh); opacity: 0.05; }
+}
+
+/* Blink cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Arc draw for circular gauges */
+@keyframes arcDraw {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: var(--arc-target, 38); }
+}
+
+/* Stagger fade for list items */
+@keyframes staggerIn {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Rolling number */
+@keyframes rollUp {
+  0%   { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Tricolor bar sweep */
+@keyframes tricolorSweep {
+  0%   { width: 0; }
+  100% { width: 100%; }
+}
+
+/* ─────────────────────────────────────────────
+   ANIMATION UTILITY CLASSES
+   ───────────────────────────────────────────── */
+.animate-dash-flow         { stroke-dasharray: 6 6; animation: dashFlow 2s linear infinite; }
+.animate-dash-flow-fast    { stroke-dasharray: 6 6; animation: dashFlow 1.1s linear infinite; }
+.animate-dash-reverse      { stroke-dasharray: 6 6; animation: dashFlowReverse 2s linear infinite; }
+.animate-pulse-node        { animation: pulseNode 3s ease-in-out infinite; }
+.animate-float-gentle      { animation: floatGentle 5s ease-in-out infinite; }
+.animate-slide-up-fade     { animation: slideUpFade 0.5s ease-out forwards; }
+.animate-slide-in-left     { animation: slideInLeft 0.4s ease-out forwards; }
+.animate-slide-in-right    { animation: slideInRight 0.4s ease-out forwards; }
+.animate-fade-in-scale     { animation: fadeInScale 0.35s ease-out forwards; }
+.animate-border-pulse      { animation: borderPulse 2s ease-in-out infinite; }
+.animate-blink-cursor      { animation: blink 1s step-end infinite; }
+.animate-arc-draw          { animation: arcDraw 1.2s ease-out forwards; }
+.animate-stagger-in        { animation: staggerIn 0.4s ease-out forwards; }
+.animate-tricolor-sweep    { animation: tricolorSweep 0.8s ease-out forwards; }
+
+/* Skeleton shimmer overlay */
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #e7e5e4 25%, #f5f5f4 50%, #e7e5e4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Stagger delay utilities */
+.delay-75  { animation-delay: 75ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* ─────────────────────────────────────────────
+   INTERACTIVE ELEMENT ENHANCEMENTS
+   ───────────────────────────────────────────── */
+
+/* Button ripple setup */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.btn-ripple:active::after {
+  opacity: 1;
+}
+
+/* Animated underline for links */
+.link-animated {
+  position: relative;
+}
+.link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 0.25s ease;
+}
+.link-animated:hover::after {
+  width: 100%;
+}
+
+/* Progress line fill */
+.progress-fill {
+  animation: progressFill 1s ease-out forwards;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #1b5c43, #d97706);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* Terminal / code view */
+.terminal-view {
+  background: #092119;
+  color: #86efac;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* High-contrast table row */
+.table-row-gov:hover {
+  background: rgba(27, 92, 67, 0.04);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLLBAR
+   ───────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #f5f5f4; }
+::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+
+/* ─────────────────────────────────────────────
+   REDUCED MOTION
+   ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   PRINT
+   ───────────────────────────────────────────── */
+@media print {
+  body { background: white !important; }
+  .no-print { display: none !important; }
+}
