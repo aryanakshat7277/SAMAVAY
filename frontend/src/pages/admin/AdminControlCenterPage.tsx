@@ -110,7 +110,7 @@ export const AdminControlCenterPage: React.FC = () => {
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black font-serif text-white tracking-tight drop-shadow-sm">
-              Autonomous Cross-Departmental Interoperability Pipeline
+              National Cross-Departmental Interoperability Pipeline
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
@@ -198,7 +198,7 @@ export const AdminControlCenterPage: React.FC = () => {
               Current Platform Health Telemetry
             </h3>
           </div>
-          <span className="text-[11px] text-slate-500 font-mono">Autonomous Health Engine</span>
+          <span className="text-[11px] text-slate-500 font-mono">Statutory Health Engine</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -346,7 +346,7 @@ export const AdminControlCenterPage: React.FC = () => {
             <div className="bg-gov-50/80 border border-gov-300 rounded-2xl p-5 space-y-3 text-xs">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-gov-800 bg-white border border-gov-200 px-2 py-0.5 rounded">
-                  Dependency Intelligence
+                  Departmental Dependency Mapping
                 </span>
                 <span className="text-[10px] font-bold text-rose-700 bg-rose-100 px-2 py-0.5 rounded">
                   Platform Requires Attention

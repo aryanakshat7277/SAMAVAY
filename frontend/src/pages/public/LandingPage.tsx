@@ -33,8 +33,8 @@ import { GovernmentPortalSlideshow } from '../../components/common/GovernmentPor
 import { OfficialNoticeTicker } from '../../components/common/OfficialNoticeTicker';
 import { NationalEmblem } from '../../components/common/NationalEmblem';
 import { CitizenQuickUtilityHub } from '../../components/common/CitizenQuickUtilityHub';
+import { CitizenCredentialsCard } from '../../components/common/CitizenCredentialsCard';
 import { AnimatedCounter, CategoryVisualGrid, NationalInteroperabilityShowcase, InteractiveMinimizationPlayground } from '../../components/visual';
-import heroCitizenImg from '../../assets/hero_citizen_dpi.jpg';
 import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
 
 export const LandingPage: React.FC = () => {
@@ -156,8 +156,8 @@ export const LandingPage: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
                   <div className="flex items-center space-x-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[10px] font-bold font-mono tracking-wider text-saffron-300 uppercase">
-                      SOVEREIGN DPI CONSOLE
+                    <span className="text-[10px] font-bold font-sans tracking-wider text-saffron-300 uppercase">
+                      NATIONAL DPI GATEWAY
                     </span>
                   </div>
 
@@ -171,7 +171,7 @@ export const LandingPage: React.FC = () => {
                           : 'text-slate-300 hover:text-white'
                       }`}
                     >
-                      Citizen Experience
+                      Citizen Credentials
                     </button>
                     <button
                       type="button"
@@ -183,32 +183,13 @@ export const LandingPage: React.FC = () => {
                       }`}
                     >
                       <Network className="w-3.5 h-3.5" />
-                      <span>Network Mesh</span>
+                      <span>Interoperability Grid</span>
                     </button>
                   </div>
                 </div>
 
                 {heroViewMode === 'visual' ? (
-                  <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-white/10 group">
-                    <img
-                      src={heroCitizenImg}
-                      alt="Indian citizens accessing unified public services through SAMAVAY"
-                      className="w-full h-auto object-cover rounded-2xl"
-                    />
-                    {/* Dark Glass Floating Badges (Zero blinding white glare) */}
-                    <div className="absolute top-3 left-3 bg-gov-950/85 backdrop-blur-md px-3 py-1.5 rounded-xl border border-emerald-500/40 shadow-sm flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[11px] font-bold text-emerald-300">DigiLocker & Aadhaar Verified</span>
-                    </div>
-
-                    <div className="absolute bottom-3 left-3 right-3 bg-gov-950/90 backdrop-blur-md text-white p-3 rounded-xl border border-white/15 flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2">
-                        <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                        <span className="font-semibold text-[11px] text-slate-200">DPDP Act 2023 Compliant</span>
-                      </div>
-                      <span className="text-[11px] font-bold text-saffron-300 font-mono">62% Form Work Saved</span>
-                    </div>
-                  </div>
+                  <CitizenCredentialsCard />
                 ) : (
                   <InteroperabilityHeroGraphic />
                 )}
@@ -272,7 +253,7 @@ export const LandingPage: React.FC = () => {
                 <AnimatedCounter end={1.66} decimals={2} prefix="" suffix="M+" />
               </span>
               <p className="text-xs font-semibold text-stone-800">Transactions Handled</p>
-              <p className="text-[10px] text-stone-500">Autonomous mTLS pipeline</p>
+              <p className="text-[10px] text-stone-500">Sovereign mTLS data gateway</p>
             </div>
           </div>
         </div>

@@ -31,7 +31,7 @@ export const HowSamavayWorksPage: React.FC = () => {
           How SAMAVAY Solves Government Platform Fragmentation
         </h1>
         <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-          From disconnected departmental silos to an interoperable, privacy-preserving digital public infrastructure uniting citizens, ministries, and autonomous service workflows.
+          From disconnected departmental silos to an interoperable, privacy-preserving digital public infrastructure uniting citizens, ministries, and connected service workflows.
         </p>
       </div>
 
@@ -115,7 +115,7 @@ export const HowSamavayWorksPage: React.FC = () => {
 
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">
               <span className="font-bold text-emerald-950 block">3. Automated Cross-Department Orchestration</span>
-              <p>Cross-departmental verifications execute autonomously via the secure Interoperability Gateway.</p>
+              <p>Cross-departmental verifications execute seamlessly via the secure Interoperability Gateway.</p>
             </div>
 
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">

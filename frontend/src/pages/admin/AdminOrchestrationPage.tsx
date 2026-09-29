@@ -67,7 +67,7 @@ export const AdminOrchestrationPage: React.FC = () => {
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* 1. PAGE HEADER */}
       <PageHeader
-        category="AUTONOMOUS CROSS-DEPARTMENT ORCHESTRATION"
+        category="INTER-DEPARTMENTAL WORKFLOW ORCHESTRATION"
         categoryIcon={Cpu}
         title="Service Orchestrator Console"
         description="Real-time telemetry of cross-platform workflow executions, automated registry lookups, and inter-department coordination."

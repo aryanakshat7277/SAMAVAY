@@ -35,7 +35,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
             <h4 className="text-xs font-bold text-white font-serif tracking-wide">
               National Interoperability Mesh
             </h4>
-            <p className="text-[10px] text-slate-300 font-mono">Autonomous mTLS Data Pipeline</p>
+            <p className="text-[10px] text-slate-300 font-mono">Sovereign mTLS Data Gateway</p>
           </div>
         </div>
 
@@ -203,7 +203,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
               ? 'e-NagarPalika Municipal Tax Gateway'
               : activeNode === 'CITIZEN'
               ? 'Single Citizen Identity & DPDP Consent Gate'
-              : 'Autonomous Cross-Registry Interoperability Pipeline'}
+              : 'National Cross-Registry Interoperability Gateway'}
           </span>
           <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-500/30 px-2 py-0.5 rounded-full">
             38ms Latency

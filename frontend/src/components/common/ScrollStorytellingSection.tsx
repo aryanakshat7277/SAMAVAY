@@ -157,7 +157,7 @@ export const ScrollStorytellingSection: React.FC = () => {
                 <span className="text-[10px] font-bold text-gov-300 uppercase tracking-wider">Interoperability Core</span>
                 <Layers className="w-4 h-4 text-gov-300" />
               </div>
-              <h4 className="text-sm font-bold text-white font-serif">Autonomous Gateway Mesh</h4>
+              <h4 className="text-sm font-bold text-white font-serif">Sovereign Interoperability Gateway</h4>
               <p className="text-slate-300 text-[11px]">
                 Reuses 5 authoritative details from Bhoomi & Municipal platforms. Dynamic forms ask only for 2 missing inputs.
               </p>

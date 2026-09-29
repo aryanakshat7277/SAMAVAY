@@ -141,7 +141,7 @@ export const AdminAnalyticsPage: React.FC = () => {
           label="Total Applications"
           value={analytics?.totalServiceRequests || 1483}
           icon={Users}
-          subtext="Autonomous Ingestion"
+          subtext="Direct Registry Ingestion"
           highlightColor="emerald"
         />
 

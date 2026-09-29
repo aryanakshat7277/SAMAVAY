@@ -59,7 +59,7 @@ export const TelemetryRadarWidget: React.FC = () => {
             <h4 className="text-xs font-bold text-stone-900 font-serif">
               National Mesh Live Telemetry & Radar Stream
             </h4>
-            <p className="text-[10px] text-stone-500">Autonomous Health & Traffic Monitor</p>
+            <p className="text-[10px] text-stone-500">National Registry Health & Traffic Telemetry</p>
           </div>
         </div>
 

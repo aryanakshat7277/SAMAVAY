@@ -60,13 +60,13 @@ export const AdminInsightsPage: React.FC = () => {
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* 1. PAGE HEADER */}
       <PageHeader
-        category="ACTIONABLE INTEROPERABILITY INTELLIGENCE"
+        category="INTEROPERABILITY DIRECTORY & ANALYTICS"
         categoryIcon={Lightbulb}
-        title="Interoperability Intelligence & Analytics"
+        title="Interoperability Insights & Analytics"
         description="System-generated telemetry insights, service optimization opportunities, platform reliability warnings, and measurable citizen impact."
         actions={
           <Button variant="outline" size="sm" onClick={loadInsights} icon={RefreshCw} isLoading={isLoading}>
-            Refresh Intelligence
+            Refresh Insights
           </Button>
         }
       />
