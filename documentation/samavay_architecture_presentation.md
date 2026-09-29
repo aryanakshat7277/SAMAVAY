@@ -1,17 +1,16 @@
-# 🇮🇳 SAMAVAY (समवाय) — SIH26129 Final Presentation Deck
-## Smart India Hackathon 2026 | Grand Finale Presentation
-**Problem Statement ID:** SIH26129  
-**Problem Title:** System Integration and Interoperability Among Government Digital Platforms  
+# 🇮🇳 SAMAVAY (समवाय) — National DPI Architecture & Interoperability Presentation Deck
+## Unified Digital Public Infrastructure | Architecture & Governance Presentation
+**Subject Area:** System Integration and Interoperability Among Government Digital Platforms  
 **Platform Name:** SAMAVAY — National Digital Public Infrastructure for Interoperable Governance  
 **Theme:** Smart Governance & Digital Public Infrastructure (DPI)
 
 ---
 
-## 📋 Presentation Deck Overview (10-Slide Standard SIH Format)
+## 📋 Presentation Deck Overview (10-Slide Standard DPI Format)
 
 ```mermaid
 flowchart LR
-    S1["Slide 1: Title & Identity"] --> S2["Slide 2: Problem Statement"]
+    S1["Slide 1: Title & Identity"] --> S2["Slide 2: Interoperability Bottleneck"]
     S2 --> S3["Slide 3: Proposed Solution (SAMAVAY)"]
     S3 --> S4["Slide 4: Technical Architecture"]
     S4 --> S5["Slide 5: Key Innovation (62% Auto-Reuse)"]
@@ -19,7 +18,7 @@ flowchart LR
     S6 --> S7["Slide 7: Live Demo Walkthrough"]
     S7 --> S8["Slide 8: Scalability & Tech Stack"]
     S8 --> S9["Slide 9: Impact & Feasibility"]
-    S9 --> S10["Slide 10: Roadmap & Q&A Defense"]
+    S9 --> S10["Slide 10: Roadmap & Technical Discussion"]
 ```
 
 ---
@@ -30,11 +29,11 @@ flowchart LR
 
 #### 🎯 Visual Layout
 - **Background**: Deep Midnight Pine (`#092119`) with subtle golden tricolor watermark ribbon.
-- **Top Badge**: `SMART INDIA HACKATHON 2026 — FINALE EVALUATION`
+- **Top Badge**: `GOVERNMENT OF INDIA • NATIONAL DIGITAL PUBLIC INFRASTRUCTURE`
 - **Main Heading**: **SAMAVAY (समवाय)**
 - **Sub-heading**: *India's Unified Digital Public Infrastructure for Government Interoperability & Seamless Citizen Services*
-- **Problem Statement ID**: `SIH26129`
-- **Team Info**: Team ID, Team Leader, Presenters, and Mentor Name.
+- **Ecosystem Focus**: `National Interoperability & System Integration`
+- **Team Info**: System Architects, Engineers, and Domain Advisors.
 - **Key Tagline**: *"Zero Duplicate Entry. 62% Automated Verification. 100% DPDP 2023 Compliant."*
 
 #### 🎙️ Speaker Notes (30 Seconds)
@@ -61,7 +60,7 @@ flowchart LR
 > **72% of citizen application fields are already present in authoritative state or central databases, yet citizens spend 14+ days manually procuring certificates.**
 
 #### 🎙️ Speaker Notes (45 Seconds)
-> *"Under Problem Statement SIH26129, the root bottleneck is not a lack of digitalization—India has world-class systems like Bhoomi, VAHAN, and e-NagarPalika. The problem is **data isolation**. Each platform operates as a silo. A citizen building a house must manually carry physical certificates between municipal authorities, revenue departments, and power corporations. SAMAVAY solves this by creating an automated, consent-governed semantic interoperability layer."*
+> *"In the Indian digital governance ecosystem, the root bottleneck is not a lack of digitalization—India has world-class systems like Bhoomi, VAHAN, and e-NagarPalika. The problem is **data isolation**. Each platform operates as a silo. A citizen building a house must manually carry physical certificates between municipal authorities, revenue departments, and power corporations. SAMAVAY solves this by creating an automated, consent-governed semantic interoperability layer."*
 
 ---
 
@@ -226,7 +225,7 @@ sequenceDiagram
 ### SLIDE 7: Live System Demonstration & Evaluation Scenarios
 
 #### 🎯 Visual Layout
-- **Live SIH Demo Console Walkthrough**:
+- **Live DPI Demonstration Console Walkthrough**:
   - **Scenario 1**: Seamless Happy Flow (Bhoomi + e-NagarPalika auto-linkage in 42ms).
   - **Scenario 2**: DPDP Consent Gate Enforcement (Access paused until citizen approves).
   - **Scenario 3**: Form Minimization (Dynamic suppression of 5 out of 8 fields).
@@ -235,7 +234,7 @@ sequenceDiagram
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│  LIVE SIH26129 EVALUATOR CONSOLE — MISSION CONTROL                    │
+│  LIVE NATIONAL DPI SIMULATION CONSOLE — MISSION CONTROL               │
 ├────────────────────────────────────────────────────────────────────────┤
 │  [SCENARIO 1] Normal Interoperability Flow       ➔ [EXECUTED: 42ms]  ✓ │
 │  [SCENARIO 2] DPDP Consent Required Enforced     ➔ [PAUSED & PROMPTED]│
@@ -246,7 +245,7 @@ sequenceDiagram
 ```
 
 #### 🎙️ Speaker Notes (90 Seconds — Transition to Live Software Demo)
-> *"We will now demonstrate SAMAVAY live on `localhost:5173`. We have built a dedicated **Interactive SIH Demonstration Console** featuring 5 pre-configured evaluation scenarios. Watch as we trigger Scenario 4: we simulate a failure on the primary transport gateway. The system instantly detects the timeout, circuit-breaks the connection, and engages the DigiLocker fallback proxy with zero data loss to the citizen."*
+> *"We will now demonstrate SAMAVAY live on `localhost:5173`. We have built a dedicated **Interactive DPI Simulation Console** featuring 5 pre-configured evaluation scenarios. Watch as we trigger Scenario 4: we simulate a failure on the primary transport gateway. The system instantly detects the timeout, circuit-breaks the connection, and engages the DigiLocker fallback proxy with zero data loss to the citizen."*
 
 ---
 
@@ -325,5 +324,5 @@ sequenceDiagram
 | **Citizen 1-Click Demo Login** | [http://localhost:5173/login](http://localhost:5173/login) | Click *"1-Click Citizen Demo"* button |
 | **Service Application Flow** | [http://localhost:5173/services](http://localhost:5173/services) | Click *"Start Service"* on Property Tax / Land Mutation |
 | **DPDP Consent Permissions** | [http://localhost:5173/dashboard/permissions](http://localhost:5173/dashboard/permissions) | Show active authorizations and demonstrate Revocation Modal |
-| **SIH Evaluator Mission Control** | [http://localhost:5173/admin/demo](http://localhost:5173/admin/demo) | Execute Scenarios 1 through 5 with live telemetry logs |
+| **DPI Simulation Console** | [http://localhost:5173/admin/demo](http://localhost:5173/admin/demo) | Execute Scenarios 1 through 5 with live telemetry logs |
 | **Backend REST API Telemetry** | [http://localhost:8080/api/platforms](http://localhost:8080/api/platforms) | Show JSON responses from all 8 connected sovereign registries |

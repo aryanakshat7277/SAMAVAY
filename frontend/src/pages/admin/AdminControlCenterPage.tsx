@@ -70,7 +70,7 @@ export const AdminControlCenterPage: React.FC = () => {
           <>
             <Link to="/admin/demo">
               <Button variant="primary" size="sm" icon={Play}>
-                Launch SIH Demo Mode
+                Launch Simulation Console
               </Button>
             </Link>
             <Button variant="outline" size="sm" onClick={loadData} icon={RefreshCw}>
@@ -385,7 +385,7 @@ export const AdminControlCenterPage: React.FC = () => {
             <div className="w-9 h-9 rounded-xl bg-gov-200/70 text-gov-800 flex items-center justify-center group-hover:scale-105 transition">
               <Play className="w-4 h-4 fill-current" />
             </div>
-            <span className="font-bold">SIH Demo Console</span>
+            <span className="font-bold">Simulation Console</span>
           </Link>
 
           <Link

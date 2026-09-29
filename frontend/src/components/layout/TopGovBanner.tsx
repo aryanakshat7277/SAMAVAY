@@ -67,7 +67,7 @@ export const TopGovBanner: React.FC = () => {
 
             <span className="hidden xl:inline text-stone-500">•</span>
             <span className="hidden xl:inline text-stone-300 text-[10px]">
-              Digital Public Infrastructure • Interoperability Ecosystem (SIH26129)
+              Digital Public Infrastructure • National Interoperability Ecosystem
             </span>
           </div>
         </div>

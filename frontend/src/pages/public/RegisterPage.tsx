@@ -88,7 +88,7 @@ export const RegisterPage: React.FC = () => {
             </div>
             <div>
               <span className="text-white font-black text-lg font-serif">SAMAVAY</span>
-              <p className="text-gov-300 text-[10px] font-medium">National DPI • SIH26129</p>
+              <p className="text-gov-300 text-[10px] font-medium">National Digital Public Infrastructure</p>
             </div>
           </div>
 

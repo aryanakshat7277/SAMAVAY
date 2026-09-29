@@ -44,7 +44,7 @@ export const PlatformRegistryPage: React.FC = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* 1. Header */}
       <PageHeader
-        category="INTEROPERABILITY & PLATFORM REGISTRY (SIH26129)"
+        category="NATIONAL INTEROPERABILITY & PLATFORM REGISTRY"
         categoryIcon={Layers}
         title="Connected Government Digital Platforms"
         description="Architectural registry of sovereign departmental systems communicating via SAMAVAY secure data exchange pipelines."

@@ -85,14 +85,14 @@ export const AdminDemoModePage: React.FC = () => {
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* 1. PAGE HEADER */}
       <PageHeader
-        category="SMART INDIA HACKATHON 2026 EVALUATION ENGINE"
+        category="NATIONAL DPI INTEROPERABILITY SIMULATION ENGINE"
         categoryIcon={Activity}
-        title="Interactive SIH Demonstration Console"
+        title="Interactive DPI Simulation & Verification Console"
         description="Execute live end-to-end interoperability scenarios, test platform timeouts, evaluate DPDP consent gates, and trigger automatic gateway failovers."
         badge={
           <span className="bg-saffron-50 border border-saffron-300 text-saffron-800 px-3 py-1 rounded-full text-xs font-bold inline-flex items-center gap-1.5">
             <span className="w-2 h-2 rounded-full bg-saffron-500 animate-ping" />
-            Live SIH Demo Mode Active
+            Live Simulation Engine Active
           </span>
         }
       />
@@ -111,7 +111,7 @@ export const AdminDemoModePage: React.FC = () => {
           </div>
         </div>
         <span className="hidden sm:inline-flex text-[10px] font-bold uppercase tracking-widest text-saffron-400 bg-white/10 px-3 py-1 rounded-full border border-white/10">
-          Evaluator Mode
+          Simulation Mode
         </span>
       </div>
 
@@ -119,7 +119,7 @@ export const AdminDemoModePage: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center justify-between border-b border-stone-200 pb-2">
           <h3 className="text-sm font-bold text-stone-900 font-serif">
-            SIH Live Presentation Scenarios (Click to Execute)
+            Live Gateway Verification Scenarios (Click to Execute)
           </h3>
           <span className="text-[11px] font-medium text-stone-500">Instant Execution & Response Telemetry</span>
         </div>

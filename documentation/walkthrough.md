@@ -1,5 +1,5 @@
 # SAMAVAY — Complete God-Level UI/UX & Interactive DPI Transformation
-## Smart India Hackathon 2026 | Problem Statement: SIH26129
+## National Digital Public Infrastructure (DPI) Platform
 
 ---
 

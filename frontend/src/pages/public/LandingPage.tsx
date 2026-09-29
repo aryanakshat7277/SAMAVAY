@@ -83,7 +83,7 @@ export const LandingPage: React.FC = () => {
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 bg-gov-100/90 border border-gov-200 px-3.5 py-1.5 rounded-full text-xs font-semibold text-gov-900 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>Smart India Hackathon 2026 • Problem ID SIH26129</span>
+                <span>राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • National Digital Public Infrastructure</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] font-serif">

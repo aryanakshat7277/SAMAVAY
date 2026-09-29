@@ -9,7 +9,7 @@ import { Card } from '../../components/common/Card';
 
 const faqs = [
   {
-    q: 'What is SAMAVAY and how does it solve platform fragmentation (SIH26129)?',
+    q: 'What is SAMAVAY and how does it solve government platform fragmentation?',
     a: 'SAMAVAY is a unified Digital Public Infrastructure (DPI) interoperability platform. Instead of requiring citizens to visit separate websites for Municipal, Transport, Revenue, Health, and Welfare services with different logins, SAMAVAY provides a single entry point where data is verified automatically across departmental databases with zero duplicate submissions.',
     tag: 'Platform',
   },

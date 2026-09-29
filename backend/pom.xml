@@ -15,7 +15,7 @@
     <artifactId>samavay</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>samavay</name>
-    <description>SAMAVAY - Unified Government Digital Services and Interoperability Platform (SIH26129)</description>
+    <description>SAMAVAY - Unified Government Digital Services and Interoperability Platform</description>
 
     <properties>
         <java.version>21</java.version>

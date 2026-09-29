@@ -86,14 +86,14 @@ export const PersonaSwitcher: React.FC = () => {
           )}
         </button>
 
-        {/* Quick Jump to SIH Evaluator Console */}
+        {/* Quick Jump to DPI Simulation Console */}
         <button
           onClick={() => navigate('/admin/demo')}
           className="bg-gov-800 hover:bg-gov-900 text-white px-3.5 py-2.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 border border-gov-700 cursor-pointer hidden md:flex"
-          title="Jump directly to SIH Interactive Evaluation Scenarios"
+          title="Jump directly to Interactive Simulation Scenarios"
         >
           <Play className="w-3 h-3 text-saffron-400 fill-current" />
-          <span>Evaluation Scenarios</span>
+          <span>Simulation Scenarios</span>
         </button>
       </div>
 
@@ -104,7 +104,7 @@ export const PersonaSwitcher: React.FC = () => {
           <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-1 rounded-full bg-gov-50 text-gov-800 text-[10px] font-bold border border-gov-200">
-                SIH DEMO PERSONA SELECTOR
+                OFFICIAL ROLE & PERSONA SELECTOR
               </span>
             </div>
             <button

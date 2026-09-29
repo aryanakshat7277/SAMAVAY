@@ -27,7 +27,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         return null;
       }
     }
-    // Default demo citizen user logged in for immediate hackathon experience
+    // Default demo citizen user logged in for immediate testing experience
     return {
       id: 1,
       fullName: 'Aarav Sharma',

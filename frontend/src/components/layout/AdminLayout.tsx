@@ -48,7 +48,7 @@ export const AdminLayout: React.FC = () => {
       title: 'OVERVIEW',
       items: [
         { name: 'Control Center', path: '/admin/control-center', icon: LayoutDashboard },
-        { name: 'SIH Demo Mode', path: '/admin/demo', icon: Play },
+        { name: 'Simulation Console', path: '/admin/demo', icon: Play },
         { name: 'Service Insights', path: '/admin/insights', icon: Lightbulb },
         { name: 'Interoperability Analytics', path: '/admin/analytics', icon: BarChart3 },
       ]

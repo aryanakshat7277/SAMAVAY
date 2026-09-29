@@ -1,11 +1,11 @@
 # SAMAVAY (समवाय) — One Connected Government. Simpler Services for Every Citizen.
 
-> **Smart India Hackathon 2026 — Problem Statement ID: SIH26129**  
-> **Theme:** System integration and interoperability among government digital platforms, resulting in fragmented service delivery.  
+> **National Digital Public Infrastructure (DPI) Platform**  
+> **Mission:** System integration and interoperability among government digital platforms to eliminate fragmented service delivery.  
 > 
 > 🔗 **Live GitHub Repository**: [https://github.com/aryanakshat7277/SAMAVAY](https://github.com/aryanakshat7277/SAMAVAY)  
 > 🌐 **Live Deployed Web Application**: [https://aryanakshat7277.github.io/SAMAVAY/](https://aryanakshat7277.github.io/SAMAVAY/)  
-> 📑 **Interactive SIH Presentation Deck**: [https://aryanakshat7277.github.io/SAMAVAY/presentation.html](https://aryanakshat7277.github.io/SAMAVAY/presentation.html)  
+> 📑 **Interactive Architecture & Governance Presentation**: [https://aryanakshat7277.github.io/SAMAVAY/presentation.html](https://aryanakshat7277.github.io/SAMAVAY/presentation.html)  
 
 ---
 
@@ -64,7 +64,7 @@
 - Employs fallback strategies (controlled retries up to 2 times, then switches to secondary replica).
 - Logs metadata audit records with zero raw PII exposure.
 
-### 2. Platform Connector Framework (`org.sih.samavay.connector.*`)
+### 2. Platform Connector Framework
 - Implementations for Revenue, Transport, Municipal, and Citizen Profile platforms.
 - Supports simulation modes: `NORMAL`, `SLOW`, `UNAVAILABLE`, `CONSENT_REQUIRED`, `FAILURE`.
 
@@ -113,10 +113,10 @@
 ## 📂 Project Structure
 
 ```text
-GOVSYNC/
+SAMAVAY/
 ├── backend/                         # Spring Boot 3.4.3 Backend
 │   ├── pom.xml
-│   └── src/main/java/org/sih/samavay/
+│   └── src/main/java/org/samavay/
 │       ├── SamavayApplication.java
 │       ├── config/                  # SecurityConfig, JwtService, DataInitializer
 │       ├── controller/              # AdminPlatformController, AdminIntegrationController,
@@ -196,9 +196,9 @@ npm run dev
 - `POST /api/consents` — Grant citizen data reuse consent
 - `PUT /api/consents/{id}/revoke` — Revoke citizen data consent
 
-### Administration, Governance & SIH Demo APIs
+### Administration, Governance & Simulation APIs
 - `GET /api/admin/control-center/summary` — Master administration overview telemetry
-- `POST /api/admin/demo/scenario/{scenarioId}` — Execute 5 SIH demonstration scenarios
+- `POST /api/admin/demo/scenario/{scenarioId}` — Execute 5 interoperability simulation scenarios
 - `PUT /api/admin/demo/platform-mode` — Configure connector simulation mode (`NORMAL`, `SLOW`, `UNAVAILABLE`, `FAILURE`, `CONSENT_REQUIRED`)
 - `GET /api/admin/insights` — System-generated smart insights & optimization opportunities
 - `POST /api/gateway/request` — Interoperability gateway cross-platform request dispatch

@@ -1,7 +1,7 @@
 @echo off
 title SAMAVAY Platform Launcher
 echo ===================================================
-echo     SAMAVAY (SIH26129) - 1-Click Platform Launcher
+echo     SAMAVAY - 1-Click Platform Launcher
 echo ===================================================
 echo.
 

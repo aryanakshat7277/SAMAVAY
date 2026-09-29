@@ -63,8 +63,8 @@ export const Footer: React.FC = () => {
               Connecting sovereign state and central government platforms behind one unified experience. Eliminating duplicate documentation and fragmented citizen navigation.
             </p>
             <div className="text-xs text-slate-400 pt-2 space-y-1">
-              <p className="font-bold text-amber-300">Smart India Hackathon 2026</p>
-              <p className="text-[11px]">Problem Statement ID: SIH26129 — System Integration & Interoperability</p>
+              <p className="font-bold text-amber-300">National Digital Public Infrastructure (DPI)</p>
+              <p className="text-[11px]">Ministry of Electronics & Information Technology • Republic of India</p>
             </div>
           </div>
 

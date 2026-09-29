@@ -25,7 +25,7 @@ export const HowSamavayWorksPage: React.FC = () => {
       {/* 1. HERO SECTION */}
       <div className="text-center max-w-3xl mx-auto space-y-4">
         <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full inline-block">
-          SMART INDIA HACKATHON 2026 — PROBLEM ID SIH26129
+          DIGITAL PUBLIC INFRASTRUCTURE — NATIONAL SOVEREIGN ARCHITECTURE
         </span>
         <h1 className="text-3xl sm:text-5xl font-black text-stone-900 font-serif leading-tight">
           How SAMAVAY Solves Government Platform Fragmentation

@@ -281,7 +281,7 @@ export const OfficialCertificateModal: React.FC<OfficialCertificateModalProps> =
             {/* Bottom Official Disclaimer */}
             <div className="mt-6 pt-3 border-t border-slate-100 text-[9px] text-slate-400 text-center space-y-0.5">
               <p>This is a computer-generated official document. No physical signature is required under Rule 3 of the Information Technology (Certifying Authorities) Rules, 2000.</p>
-              <p>National Citizen Helpline: 1800-11-7262 | SAMAVAY Interoperability Node: ID-SIH26129</p>
+              <p>National Citizen Helpline: 1800-11-7262 | SAMAVAY Interoperability Node: NOD-IND-7262</p>
             </div>
           </div>
         </div>

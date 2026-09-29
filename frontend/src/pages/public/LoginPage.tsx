@@ -138,7 +138,7 @@ export const LoginPage: React.FC = () => {
             </div>
             <div>
               <span className="text-white font-black text-lg font-serif">SAMAVAY</span>
-              <p className="text-gov-300 text-[10px] font-medium">National DPI • SIH26129</p>
+              <p className="text-gov-300 text-[10px] font-medium">National Digital Public Infrastructure</p>
             </div>
           </div>
 
@@ -248,7 +248,7 @@ export const LoginPage: React.FC = () => {
                 <p className="font-bold text-stone-900">
                   {loginRole === 'CITIZEN' ? '1-Click Citizen Demo Login' : '1-Click Admin Console Access'}
                 </p>
-                <p className="text-[10px] text-stone-500 font-medium">Pre-filled demo credentials for SIH evaluation</p>
+                <p className="text-[10px] text-stone-500 font-medium">Instant pre-filled credentials for demonstration & testing</p>
               </div>
             </div>
             <ArrowRight className="w-4 h-4 text-gov-700 group-hover:translate-x-0.5 transition-transform" />
