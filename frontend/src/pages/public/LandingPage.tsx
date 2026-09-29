@@ -146,29 +146,29 @@ export const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Col: Interactive Visual Hero Showcase (Dark Sovereign Console to eliminate harsh white contrast) */}
+            {/* Right Col: Interactive Visual Hero Showcase (Proper Light Theme Design) */}
             <div className="lg:col-span-5 flex flex-col items-center w-full">
-              <div className="w-full max-w-lg bg-gradient-to-br from-gov-950 via-[#071d33] to-[#041224] p-3 sm:p-4 rounded-3xl border border-gov-700/80 shadow-2xl ring-1 ring-white/10 text-white relative">
+              <div className="w-full max-w-lg bg-white p-3.5 sm:p-4 rounded-3xl border-2 border-slate-200/90 shadow-card text-slate-900 relative">
                 {/* Tricolor Ribbon on Bezel */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] rounded-t-3xl" />
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] rounded-t-3xl" />
 
                 {/* Bezel Header & Toggle Switch */}
-                <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+                <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/80 pt-1">
                   <div className="flex items-center space-x-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[10px] font-bold font-sans tracking-wider text-saffron-300 uppercase">
-                      NATIONAL DPI GATEWAY
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[10px] font-bold font-serif tracking-wider text-slate-800 uppercase">
+                      राष्ट्रीय नागरिक वॉल्ट • DPI GATEWAY
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-1 p-0.5 bg-black/40 rounded-xl border border-white/10">
+                  <div className="flex items-center gap-1 p-0.5 bg-slate-100 rounded-xl border border-slate-200">
                     <button
                       type="button"
                       onClick={() => setHeroViewMode('visual')}
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                         heroViewMode === 'visual'
-                          ? 'bg-saffron-500 text-gov-950 font-black shadow-xs'
-                          : 'text-slate-300 hover:text-white'
+                          ? 'bg-gov-800 text-white shadow-xs'
+                          : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
                       Citizen Credentials
@@ -178,8 +178,8 @@ export const LandingPage: React.FC = () => {
                       onClick={() => setHeroViewMode('mesh')}
                       className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                         heroViewMode === 'mesh'
-                          ? 'bg-saffron-500 text-gov-950 font-black shadow-xs'
-                          : 'text-slate-300 hover:text-white'
+                          ? 'bg-gov-800 text-white shadow-xs'
+                          : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
                       <Network className="w-3.5 h-3.5" />
