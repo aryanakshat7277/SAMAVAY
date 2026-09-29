@@ -3,24 +3,15 @@ import { Languages, ShieldCheck, PhoneCall, Eye, Sun, Moon } from 'lucide-react'
 import { NationalEmblem } from '../common/NationalEmblem';
 
 export const TopGovBanner: React.FC = () => {
-  const [textSize, setTextSize] = useState<'normal' | 'large' | 'small'>(() => {
-    return (localStorage.getItem('samavay_text_size') as 'normal' | 'large' | 'small') || 'normal';
-  });
   const [lang, setLang] = useState<'EN' | 'HI' | 'TA' | 'BN'>('EN');
   const [highContrast, setHighContrast] = useState(() => {
     return localStorage.getItem('samavay_high_contrast') === 'true';
   });
 
   React.useEffect(() => {
-    if (textSize === 'large') {
-      document.documentElement.style.fontSize = '18px';
-    } else if (textSize === 'small') {
-      document.documentElement.style.fontSize = '15px';
-    } else {
-      document.documentElement.style.fontSize = '16px';
-    }
-    localStorage.setItem('samavay_text_size', textSize);
-  }, [textSize]);
+    document.documentElement.style.fontSize = '18px';
+    localStorage.removeItem('samavay_text_size');
+  }, []);
 
   React.useEffect(() => {
     if (highContrast) {
@@ -30,16 +21,6 @@ export const TopGovBanner: React.FC = () => {
     }
     localStorage.setItem('samavay_high_contrast', String(highContrast));
   }, [highContrast]);
-
-  const cycleTextSize = () => {
-    if (textSize === 'normal') {
-      setTextSize('large');
-    } else if (textSize === 'large') {
-      setTextSize('small');
-    } else {
-      setTextSize('normal');
-    }
-  };
 
   const toggleHighContrast = () => {
     setHighContrast(!highContrast);
@@ -115,20 +96,6 @@ export const TopGovBanner: React.FC = () => {
           >
             <Eye className="w-3.5 h-3.5" />
             <span className="hidden lg:inline text-xs font-semibold">Contrast</span>
-          </button>
-
-          <span className="text-slate-500">|</span>
-
-          {/* Text Size (A- / A / A+) */}
-          <button
-            onClick={cycleTextSize}
-            className="text-slate-200 hover:text-white transition flex items-center space-x-1 font-bold cursor-pointer px-2 py-0.5 rounded hover:bg-white/10 text-xs border border-transparent hover:border-white/20"
-            title="Adjust text sizing (A- / A / A+)"
-          >
-            <span className="font-mono">Text: </span>
-            <span className="font-mono font-black text-saffron-400">
-              {textSize === 'normal' ? 'A (100%)' : textSize === 'large' ? 'A+ (115%)' : 'A- (90%)'}
-            </span>
           </button>
 
           <span className="text-slate-500">|</span>
