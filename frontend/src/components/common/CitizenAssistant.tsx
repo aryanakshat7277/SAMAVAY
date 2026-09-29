@@ -286,7 +286,7 @@ export const CitizenAssistant: React.FC = () => {
 
                 {msg.sender === 'citizen' && (
                   <div className="w-7 h-7 rounded-xl bg-slate-700 text-white flex-shrink-0 flex items-center justify-center font-bold text-[10px]">
-                    👤
+                    <User className="w-3.5 h-3.5 text-white" />
                   </div>
                 )}
               </div>

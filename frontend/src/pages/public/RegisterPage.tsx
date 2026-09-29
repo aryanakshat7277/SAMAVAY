@@ -2,24 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   Landmark, ShieldCheck, ArrowRight, AlertCircle, Check,
-  Lock, Globe, RefreshCw, Eye, EyeOff, User as UserIcon
+  Lock, Globe, RefreshCw, Eye, EyeOff, User as UserIcon, FileCheck
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { Input } from '../../components/common/Input';
 
 const benefits = [
   {
-    icon: '🔄',
+    icon: RefreshCw,
     title: 'Zero Duplicate Uploads',
     desc: 'Your Aadhaar, PAN, and land records are auto-fetched and verified from source databases.',
   },
   {
-    icon: '🛡️',
+    icon: ShieldCheck,
     title: '62% Auto-Verified Data',
     desc: 'Over half your application data is pre-filled from SAMAVAY\'s connected government registries.',
   },
   {
-    icon: '⚖️',
+    icon: Lock,
     title: 'DPDP Act 2023 Protected',
     desc: 'Your data is never stored beyond the stated purpose. You can revoke consent anytime.',
   },
@@ -111,7 +111,7 @@ export const RegisterPage: React.FC = () => {
 
             {/* Benefit cards */}
             <div className="space-y-3">
-              {benefits.map(({ icon, title, desc }, i) => (
+              {benefits.map(({ icon: Icon, title, desc }, i) => (
                 <div
                   key={title}
                   className={`flex gap-3 p-4 bg-white/6 border border-white/10 rounded-2xl transition-all duration-500 ${
@@ -119,7 +119,9 @@ export const RegisterPage: React.FC = () => {
                   }`}
                   style={{ transitionDelay: `${(i + 1) * 150}ms` }}
                 >
-                  <span className="text-xl flex-shrink-0">{icon}</span>
+                  <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 text-saffron-400">
+                    <Icon className="w-4 h-4" />
+                  </div>
                   <div>
                     <p className="text-white font-bold text-xs">{title}</p>
                     <p className="text-gov-400 text-[11px] mt-0.5 leading-snug">{desc}</p>

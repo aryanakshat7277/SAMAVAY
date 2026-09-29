@@ -15,7 +15,6 @@ import {
   ArrowRight,
   ShieldCheck,
   RefreshCw,
-  Zap,
   Info,
   Building2,
   Database

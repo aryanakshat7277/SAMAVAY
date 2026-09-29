@@ -17,7 +17,7 @@ import {
   X,
   RefreshCw,
   Server,
-  Zap,
+  Activity,
   Search
 } from 'lucide-react';
 
@@ -78,7 +78,7 @@ export const DataExchangePage: React.FC = () => {
       <Card padding="md" variant="highlight" className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Zap className="w-4 h-4 text-gov-700" />
+            <Activity className="w-4 h-4 text-gov-700" />
             <h4 className="text-xs font-bold text-slate-900 font-serif">
               Live Gateway Pipeline Stream
             </h4>

@@ -3,7 +3,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   Database,
-  Zap,
   Lock,
   ArrowRight,
   Info,

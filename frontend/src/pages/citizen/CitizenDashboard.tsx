@@ -27,7 +27,6 @@ import {
   Building2,
   ExternalLink,
   ShieldAlert,
-  Zap,
   TrendingUp,
   UserCheck,
   ChevronLeft,

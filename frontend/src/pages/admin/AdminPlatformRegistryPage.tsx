@@ -20,7 +20,6 @@ import {
   Layers,
   ArrowRight,
   Search,
-  Zap,
   Lock
 } from 'lucide-react';
 

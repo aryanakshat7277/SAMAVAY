@@ -21,7 +21,6 @@ import {
   Building2,
   Cpu,
   RefreshCw,
-  Zap,
   Play,
   FileCheck,
   BarChart3,
@@ -138,7 +137,7 @@ export const AdminControlCenterPage: React.FC = () => {
               </span>
             </div>
             <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-              ✓
+              <CheckCircle2 className="w-5 h-5 text-emerald-700" />
             </div>
           </div>
 
@@ -150,7 +149,7 @@ export const AdminControlCenterPage: React.FC = () => {
               </span>
             </div>
             <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
-              !
+              <AlertTriangle className="w-5 h-5 text-amber-700" />
             </div>
           </div>
 
@@ -162,7 +161,7 @@ export const AdminControlCenterPage: React.FC = () => {
               </span>
             </div>
             <div className="w-9 h-9 rounded-xl bg-slate-200 text-slate-600 flex items-center justify-center font-bold">
-              0
+              <ShieldCheck className="w-5 h-5 text-slate-600" />
             </div>
           </div>
         </div>

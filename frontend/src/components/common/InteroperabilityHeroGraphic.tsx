@@ -6,7 +6,7 @@ import {
   Building2,
   Lock,
   ShieldCheck,
-  Zap,
+  Activity,
   CheckCircle2,
   FileText,
   Layers
@@ -187,7 +187,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
       <div className="p-3 bg-stone-50 border border-stone-200 rounded-2xl text-xs relative z-10 space-y-1">
         <div className="flex items-center justify-between">
           <span className="font-bold text-stone-900 font-serif flex items-center gap-1.5">
-            <Zap className="w-3.5 h-3.5 text-gov-700" />
+            <Activity className="w-3.5 h-3.5 text-gov-700" />
             {activeNode === 'REVENUE'
               ? 'Bhoomi Land Records Registry (Revenue)'
               : activeNode === 'TRANSPORT'

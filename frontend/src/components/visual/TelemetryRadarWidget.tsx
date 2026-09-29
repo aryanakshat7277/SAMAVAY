@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   Activity,
   Server,
-  Zap,
   ShieldCheck,
   Radio,
   Clock,
@@ -103,7 +102,7 @@ export const TelemetryRadarWidget: React.FC = () => {
         <div className="md:col-span-5 p-5 bg-[#062648] text-stone-100 rounded-2xl shadow-md border border-gov-800 space-y-4 text-xs">
           <div className="flex items-center justify-between border-b border-gov-800 pb-2">
             <span className="text-[10px] font-bold uppercase tracking-wider text-saffron-400 flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-saffron-400" />
+              <Activity className="w-3.5 h-3.5 text-saffron-400" />
               Live Telemetry Log
             </span>
             <span className="text-[9px] font-mono text-stone-400">mTLS Encrypted</span>

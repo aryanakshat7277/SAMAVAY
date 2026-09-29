@@ -16,7 +16,6 @@ import {
   Landmark,
   ArrowDown,
   Lock,
-  Zap,
   Activity
 } from 'lucide-react';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   Play, CheckCircle2, ShieldCheck, Database, Server,
-  Lock, RefreshCw, Zap, ArrowRight, Check, Activity, FileCheck, Landmark,
+  Lock, RefreshCw, ArrowRight, Check, Activity, FileCheck, Landmark,
   Clock, FileText, CheckCircle, AlertCircle, ArrowUpRight, Award, UserCheck, Layers
 } from 'lucide-react';
 

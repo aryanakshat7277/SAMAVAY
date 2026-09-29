@@ -10,7 +10,6 @@ import {
   LayoutDashboard,
   Server,
   Layers,
-  Zap,
   Activity,
   ArrowRight,
   ShieldCheck,

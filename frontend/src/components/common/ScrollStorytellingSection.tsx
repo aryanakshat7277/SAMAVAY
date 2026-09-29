@@ -8,7 +8,6 @@ import {
   Building2,
   Server,
   Lock,
-  Zap,
   Users
 } from 'lucide-react';
 import { Card } from './Card';

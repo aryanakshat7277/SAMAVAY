@@ -4,7 +4,8 @@ import {
   CheckCircle2,
   Clock,
   FileText,
-  Zap,
+  Play,
+  Activity,
   Layers,
   ArrowRight,
   Database,
@@ -21,7 +22,7 @@ interface ServiceDemoScenario {
   name: string;
   dept: string;
   category: string;
-  icon: string;
+  icon: React.ElementType;
   totalFields: number;
   reusedFields: number;
   reusedSources: string[];
@@ -40,7 +41,7 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
       name: 'Property Tax Assessment & Mutation',
       dept: 'Revenue & Municipal Administration',
       category: 'Land & Property',
-      icon: '🏛️',
+      icon: Building2,
       totalFields: 8,
       reusedFields: 5,
       reusedSources: ['Bhoomi LRS', 'DigiLocker', 'UIDAI e-KYC'],
@@ -62,7 +63,7 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
       name: 'Driving Licence Renewal & Address Update',
       dept: 'Transport Department',
       category: 'Transport',
-      icon: '🚗',
+      icon: Car,
       totalFields: 7,
       reusedFields: 5,
       reusedSources: ['SARATHI 4.0', 'UIDAI Aadhaar', 'DigiLocker'],
@@ -84,7 +85,7 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
       name: 'PM-KISAN Direct Farmer Assistance',
       dept: 'Agriculture & Social Welfare',
       category: 'Welfare',
-      icon: '🌾',
+      icon: Landmark,
       totalFields: 9,
       reusedFields: 6,
       reusedSources: ['Bhoomi LRS', 'PFMS', 'NPCI Aadhaar Bridge'],
@@ -157,7 +158,7 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
             </>
           ) : (
             <>
-              <Zap className="w-4 h-4 text-saffron-400 fill-current" />
+              <Play className="w-4 h-4 text-saffron-400 fill-current" />
               <span>Simulate Live Probe</span>
             </>
           )}
@@ -181,7 +182,11 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
                   : 'bg-stone-50 border-stone-200 text-stone-600 hover:bg-stone-100 hover:text-stone-900'
               }`}
             >
-              <span className="text-base">{sc.icon}</span>
+              <div className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                isSelected ? 'bg-gov-100 text-gov-800' : 'bg-stone-200/70 text-stone-600'
+              }`}>
+                <sc.icon className="w-4 h-4" />
+              </div>
               <div className="text-left">
                 <span className="block">{sc.name}</span>
                 <span className="text-[10px] text-stone-400 font-normal">{sc.dept}</span>
@@ -234,7 +239,8 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-stone-200">
               <span className="text-xs font-bold text-red-700 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                <span>❌</span> Traditional Process
+                <AlertCircle className="w-3.5 h-3.5 text-red-600 flex-shrink-0" />
+                Traditional Process
               </span>
               <span className="text-[10px] text-stone-500 font-bold">4 Disconnected Portals</span>
             </div>
@@ -257,7 +263,7 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
               <ul className="space-y-1.5 text-stone-600 text-[11px]">
                 {activeScenario.reusedFieldNames.map((f, idx) => (
                   <li key={idx} className="flex items-start gap-2 bg-white p-2 rounded-lg border border-stone-200 text-red-950">
-                    <span className="text-red-500 font-bold">✍️</span>
+                    <FileText className="w-3.5 h-3.5 text-red-500 flex-shrink-0 mt-0.5" />
                     <span>{f} (Must retype manually)</span>
                   </li>
                 ))}
@@ -274,7 +280,7 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
         {/* Center: Transformation Bridge Arrow */}
         <div className="lg:col-span-2 flex flex-col items-center justify-center gap-2 py-4">
           <div className="w-12 h-12 rounded-2xl bg-gov-800 text-white flex items-center justify-center font-bold shadow-gov">
-            <Zap className="w-6 h-6 text-saffron-400 fill-current animate-pulse" />
+            <Activity className="w-6 h-6 text-saffron-400 animate-pulse" />
           </div>
           <span className="text-[10px] font-mono font-bold text-gov-800 uppercase tracking-widest text-center">
             SAMAVAY DPI
@@ -289,7 +295,8 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-blue-200">
               <span className="text-xs font-bold text-gov-800 uppercase tracking-wider flex items-center gap-1.5 font-mono">
-                <span>✅</span> SAMAVAY Sovereign Mesh
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                SAMAVAY Sovereign Mesh
               </span>
               <span className="text-[10px] bg-blue-100 text-gov-900 font-black px-2 py-0.5 rounded-full font-mono">
                 {reusePercentage}% REUSED

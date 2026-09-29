@@ -20,9 +20,11 @@ import {
   HelpCircle,
   ChevronDown,
   ChevronUp,
-  RefreshCw
+  RefreshCw,
+  Printer
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { OfficialCertificateModal } from '../applications/OfficialCertificateModal';
 
 interface ServiceApplyModalProps {
   service: GovernmentService;
@@ -65,6 +67,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
   const [applicantPhone, setApplicantPhone] = useState(user?.mobileNumber || '9876543210');
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [createdReq, setCreatedReq] = useState<ServiceRequest | null>(null);
+  const [isSlipModalOpen, setIsSlipModalOpen] = useState<boolean>(false);
 
   // Load Readiness and simulate the preparation steps
   useEffect(() => {
@@ -520,17 +523,38 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                 </div>
               </div>
 
-              <button
-                onClick={handleFinish}
-                className="px-6 py-2.5 text-xs font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center cursor-pointer"
-              >
-                Track Live Progress
-                <ArrowRight className="w-4 h-4 ml-1.5" />
-              </button>
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setIsSlipModalOpen(true)}
+                  className="px-5 py-2.5 text-xs font-bold text-gov-900 bg-saffron-50 hover:bg-saffron-100 border border-saffron-300 rounded-xl shadow-xs transition inline-flex items-center gap-1.5 cursor-pointer"
+                >
+                  <Printer className="w-4 h-4 text-gov-800" />
+                  Print Acknowledgement Slip / रसीद
+                </button>
+                <button
+                  type="button"
+                  onClick={handleFinish}
+                  className="px-6 py-2.5 text-xs font-bold text-white bg-gov-700 hover:bg-gov-800 rounded-xl shadow-gov transition inline-flex items-center gap-1.5 cursor-pointer"
+                >
+                  <span>Track Live Progress</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           )}
         </div>
       </div>
+
+      {/* Official Government Acknowledgement Slip Modal */}
+      {createdReq && (
+        <OfficialCertificateModal
+          isOpen={isSlipModalOpen}
+          onClose={() => setIsSlipModalOpen(false)}
+          request={createdReq}
+          mode="ACKNOWLEDGEMENT"
+        />
+      )}
     </div>
   );
 };

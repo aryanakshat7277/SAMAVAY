@@ -12,7 +12,6 @@ import {
   RefreshCw,
   ShieldAlert,
   Server,
-  Zap,
   Clock,
   ArrowRight,
   ShieldCheck,
@@ -87,7 +86,7 @@ export const AdminDemoModePage: React.FC = () => {
       {/* 1. PAGE HEADER */}
       <PageHeader
         category="SMART INDIA HACKATHON 2026 EVALUATION ENGINE"
-        categoryIcon={Zap}
+        categoryIcon={Activity}
         title="Interactive SIH Demonstration Console"
         description="Execute live end-to-end interoperability scenarios, test platform timeouts, evaluate DPDP consent gates, and trigger automatic gateway failovers."
         badge={

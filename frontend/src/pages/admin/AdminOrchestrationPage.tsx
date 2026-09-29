@@ -16,7 +16,6 @@ import {
   Clock,
   AlertTriangle,
   RefreshCw,
-  Zap,
   Activity,
   Server,
   Network,

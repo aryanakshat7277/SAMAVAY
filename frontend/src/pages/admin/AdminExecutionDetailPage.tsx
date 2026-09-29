@@ -15,7 +15,6 @@ import {
   CheckCircle2,
   Layers,
   Activity,
-  Zap,
   Check
 } from 'lucide-react';
 

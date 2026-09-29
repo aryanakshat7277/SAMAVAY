@@ -9,7 +9,6 @@ import {
   Layers,
   Activity,
   ShieldCheck,
-  Zap,
   Server,
   ArrowRight,
   Database,
@@ -72,7 +71,7 @@ export const PlatformRegistryPage: React.FC = () => {
         <MetricCard
           label="Active Data Pipes"
           value={connections.length}
-          icon={Zap}
+          icon={Activity}
           subtext="mTLS Gateway Connections"
           highlightColor="emerald"
         />

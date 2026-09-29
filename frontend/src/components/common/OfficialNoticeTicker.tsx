@@ -27,9 +27,22 @@ const notices = [
 
 export const OfficialNoticeTicker: React.FC = () => {
   const [currentNoticeIndex, setCurrentNoticeIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  React.useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentNoticeIndex((prev) => (prev + 1) % notices.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused]);
 
   return (
-    <div className="bg-white border-y border-slate-200 shadow-2xs text-xs py-2 px-4 sm:px-6 flex items-center justify-between gap-4">
+    <div
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className="bg-white border-y border-slate-200 shadow-2xs text-xs py-2 px-4 sm:px-6 flex items-center justify-between gap-4 select-none"
+    >
       {/* Left Label */}
       <div className="flex items-center gap-2 flex-shrink-0">
         <span className="flex h-2 w-2 relative">

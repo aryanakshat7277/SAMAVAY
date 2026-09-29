@@ -18,7 +18,6 @@ import {
   ExternalLink,
   Users,
   Server,
-  Zap,
   Check,
   Lock,
   Network
@@ -33,6 +32,7 @@ import { ScrollStorytellingSection } from '../../components/common/ScrollStoryte
 import { GovernmentPortalSlideshow } from '../../components/common/GovernmentPortalSlideshow';
 import { OfficialNoticeTicker } from '../../components/common/OfficialNoticeTicker';
 import { NationalEmblem } from '../../components/common/NationalEmblem';
+import { CitizenQuickUtilityHub } from '../../components/common/CitizenQuickUtilityHub';
 import { AnimatedCounter, CategoryVisualGrid, NationalInteroperabilityShowcase, InteractiveMinimizationPlayground } from '../../components/visual';
 import heroCitizenImg from '../../assets/hero_citizen_dpi.jpg';
 import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
@@ -218,6 +218,11 @@ export const LandingPage: React.FC = () => {
           </span>
         </div>
         <GovernmentPortalSlideshow />
+      </section>
+
+      {/* 2.5. NATIONAL CITIZEN QUICK UTILITY HUB (TRACK, VERIFY, TELEMETRY, GRIEVANCE) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+        <CitizenQuickUtilityHub />
       </section>
 
       {/* 3. LIVE DPI METRICS TICKER WITH ANIMATED COUNTERS */}

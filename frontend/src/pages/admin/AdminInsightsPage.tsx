@@ -14,7 +14,6 @@ import {
   Layers,
   RefreshCw,
   Lightbulb,
-  Zap,
   Server,
   Activity,
   Compass

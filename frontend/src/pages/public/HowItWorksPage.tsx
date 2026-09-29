@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Compass, FileCheck, ShieldCheck, Zap, CheckCircle2,
+  Compass, FileCheck, ShieldCheck, CheckCircle2,
   ArrowRight, Landmark, Building2, Car, HeartPulse,
   GraduationCap, Layers, Database, Lock,
   Activity, Server, Globe

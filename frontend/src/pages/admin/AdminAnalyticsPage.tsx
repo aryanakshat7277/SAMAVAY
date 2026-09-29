@@ -15,7 +15,7 @@ import {
   Clock,
   TrendingUp,
   RefreshCw,
-  Zap,
+  FileCheck,
   Building2,
   Users,
   Activity,
@@ -68,7 +68,7 @@ export const AdminAnalyticsPage: React.FC = () => {
                 Core Interoperability Impact
               </span>
               <div className="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-amber-400" />
+                <TrendingUp className="w-4 h-4 text-amber-400" />
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export const AdminAnalyticsPage: React.FC = () => {
         <MetricCard
           label="Total Requirements"
           value={analytics?.totalRequirementsAnalyzed || 1000}
-          icon={Zap}
+          icon={FileCheck}
           subtext="Analyzed Data Fields"
           highlightColor="emerald"
         />

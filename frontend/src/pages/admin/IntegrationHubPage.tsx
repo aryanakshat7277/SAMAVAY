@@ -15,7 +15,6 @@ import {
   X,
   Check,
   RefreshCw,
-  Zap,
   Activity,
   ChevronRight,
   Database,

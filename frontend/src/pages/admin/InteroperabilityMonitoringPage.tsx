@@ -10,7 +10,6 @@ import {
   Activity,
   ShieldCheck,
   Server,
-  Zap,
   Clock,
   ArrowRight,
   RefreshCw,

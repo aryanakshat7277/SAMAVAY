@@ -11,7 +11,6 @@ import {
   Server,
   ArrowLeft,
   ShieldCheck,
-  Zap,
   Activity,
   Layers,
   CheckCircle2,
