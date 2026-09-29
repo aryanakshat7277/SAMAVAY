@@ -193,33 +193,33 @@ export const InteractiveMinimizationPlayground: React.FC = () => {
 
       {/* Live Probe Pipeline Telemetry (Animated when simulating) */}
       {isRunningProbe && (
-        <div className="p-4 bg-gov-950 text-white rounded-2xl border border-gov-800 space-y-3 animate-fade-in">
-          <div className="flex items-center justify-between text-xs border-b border-gov-800 pb-2">
-            <span className="font-mono text-saffron-400 font-bold flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              mTLS Interoperability Gateway Dispatch
+        <div className="p-4 bg-slate-50 text-slate-900 rounded-2xl border border-slate-200 space-y-3 animate-fade-in shadow-xs">
+          <div className="flex items-center justify-between text-xs border-b border-slate-200 pb-2">
+            <span className="font-bold text-gov-800 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              Sovereign Registry Connection Active
             </span>
-            <span className="font-mono text-[10px] text-stone-400">Target: {activeScenario.name}</span>
+            <span className="text-[11px] text-slate-500 font-medium">Target: {activeScenario.name}</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
-            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 1 ? 'bg-gov-900 border-emerald-500/50 text-emerald-300' : 'bg-gov-950 border-gov-800 text-stone-500'}`}>
-              <span className="font-mono text-[10px] block">STEP 01</span>
+            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 1 ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-white border-slate-200 text-slate-400'}`}>
+              <span className="font-bold text-[10px] text-gov-700 block">STEP 01</span>
               <p className="font-bold">DPDP Purpose Gating</p>
               <p className="text-[10px] opacity-80">Sec 7 Consent Verified</p>
             </div>
-            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 2 ? 'bg-gov-900 border-emerald-500/50 text-emerald-300' : 'bg-gov-950 border-gov-800 text-stone-500'}`}>
-              <span className="font-mono text-[10px] block">STEP 02</span>
+            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 2 ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-white border-slate-200 text-slate-400'}`}>
+              <span className="font-bold text-[10px] text-gov-700 block">STEP 02</span>
               <p className="font-bold">Bhoomi / SARATHI</p>
               <p className="text-[10px] opacity-80">Cadastral Hash in 38ms</p>
             </div>
-            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 3 ? 'bg-gov-900 border-emerald-500/50 text-emerald-300' : 'bg-gov-950 border-gov-800 text-stone-500'}`}>
-              <span className="font-mono text-[10px] block">STEP 03</span>
+            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 3 ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-white border-slate-200 text-slate-400'}`}>
+              <span className="font-bold text-[10px] text-gov-700 block">STEP 03</span>
               <p className="font-bold">DigiLocker / UIDAI</p>
               <p className="text-[10px] opacity-80">Title Deed Matched</p>
             </div>
-            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 4 ? 'bg-gov-900 border-emerald-500/50 text-emerald-300' : 'bg-gov-950 border-gov-800 text-stone-500'}`}>
-              <span className="font-mono text-[10px] block">STEP 04</span>
+            <div className={`p-2.5 rounded-xl border transition-all ${probeStep >= 4 ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-white border-slate-200 text-slate-400'}`}>
+              <span className="font-bold text-[10px] text-gov-700 block">STEP 04</span>
               <p className="font-bold">Form Minimization</p>
               <p className="text-[10px] opacity-80">{activeScenario.reusedFields} Fields Suppressed</p>
             </div>

@@ -20,7 +20,8 @@ import {
   Server,
   Zap,
   Check,
-  Lock
+  Lock,
+  Network
 } from 'lucide-react';
 import { servicesApi, departmentsApi } from '../../services/api';
 import { GovernmentService, Department } from '../../types';
@@ -30,6 +31,8 @@ import { ServiceApplyModal } from '../../components/services/ServiceApplyModal';
 import { InteroperabilityHeroGraphic } from '../../components/common/InteroperabilityHeroGraphic';
 import { ScrollStorytellingSection } from '../../components/common/ScrollStorytellingSection';
 import { AnimatedCounter, CategoryVisualGrid, NationalInteroperabilityShowcase, InteractiveMinimizationPlayground } from '../../components/visual';
+import heroCitizenImg from '../../assets/hero_citizen_dpi.jpg';
+import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -38,6 +41,7 @@ export const LandingPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedService, setSelectedService] = useState<GovernmentService | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [heroViewMode, setHeroViewMode] = useState<'visual' | 'mesh'>('visual');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,7 +70,7 @@ export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-gov-50/80 via-white to-[#F8FAFC] pt-12 pb-20 border-b border-slate-200">
+      <section className="relative overflow-hidden bg-gradient-to-b from-gov-50/70 via-white to-[#F8FAFC] pt-12 pb-20 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Col: Main Headline & Actions */}
@@ -99,7 +103,7 @@ export const LandingPage: React.FC = () => {
                 />
                 <button
                   type="submit"
-                  className="px-5 py-2.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl text-xs font-bold shadow-xs transition flex-shrink-0"
+                  className="px-5 py-2.5 bg-gov-700 hover:bg-gov-800 text-white rounded-xl text-xs font-bold shadow-xs transition flex-shrink-0 cursor-pointer"
                 >
                   Search
                 </button>
@@ -136,9 +140,59 @@ export const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Col: Interoperability Mesh Interactive Graphic */}
-            <div className="lg:col-span-5 flex justify-center">
-              <InteroperabilityHeroGraphic />
+            {/* Right Col: Interactive Visual Hero Showcase */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              {/* Toggle Switch */}
+              <div className="flex items-center gap-1.5 p-1 bg-slate-200/80 rounded-2xl mb-3 shadow-2xs self-center">
+                <button
+                  type="button"
+                  onClick={() => setHeroViewMode('visual')}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                    heroViewMode === 'visual'
+                      ? 'bg-white text-slate-900 shadow-xs'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  Citizen Experience
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setHeroViewMode('mesh')}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                    heroViewMode === 'mesh'
+                      ? 'bg-white text-slate-900 shadow-xs'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
+                >
+                  <Network className="w-3.5 h-3.5" />
+                  <span>Network Mesh</span>
+                </button>
+              </div>
+
+              {heroViewMode === 'visual' ? (
+                <div className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-card border border-slate-200/90 bg-white group">
+                  <img
+                    src={heroCitizenImg}
+                    alt="Indian citizens accessing unified public services through SAMAVAY"
+                    className="w-full h-auto object-cover rounded-3xl"
+                  />
+                  {/* Floating Badges */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[11px] font-bold text-slate-800">DigiLocker & Aadhaar Verified</span>
+                  </div>
+
+                  <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md text-white p-3 rounded-2xl border border-white/10 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                      <span className="font-semibold text-[11px]">DPDP Act 2023 Compliant</span>
+                    </div>
+                    <span className="text-[11px] font-bold text-amber-300">62% Form Work Saved</span>
+                  </div>
+                </div>
+              ) : (
+                <InteroperabilityHeroGraphic />
+              )}
             </div>
           </div>
         </div>
@@ -157,7 +211,7 @@ export const LandingPage: React.FC = () => {
             </div>
 
             <div className="space-y-1">
-              <span className="text-3xl sm:text-4xl font-extrabold text-saffron-600 font-mono tracking-tight">
+              <span className="text-3xl sm:text-4xl font-extrabold text-amber-600 font-mono tracking-tight">
                 4 ➔ 1
               </span>
               <p className="text-xs font-semibold text-stone-800">Touchpoints Unified</p>
@@ -186,9 +240,9 @@ export const LandingPage: React.FC = () => {
       {/* 3. INTERACTIVE SCROLL STORYTELLING COMPARISON (SECTION 6) */}
       <ScrollStorytellingSection />
 
-      {/* 4. 4-STEP HOW IT WORKS SECTION */}
+      {/* 4. 4-STEP HOW IT WORKS SECTION WITH VISUAL DPI ARCHITECTURE */}
       <section className="bg-white border-y border-stone-200 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3 py-1 rounded-full inline-block">
               SIMPLE 4-STEP JOURNEY
@@ -196,6 +250,27 @@ export const LandingPage: React.FC = () => {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-stone-900 font-serif">
               How You Access Services in SAMAVAY
             </h2>
+            <p className="text-xs sm:text-sm text-slate-600">
+              Zero paper photocopies, zero repeated form filling — powered by national sovereign data exchange.
+            </p>
+          </div>
+
+          {/* Visual Architecture Concept Banner */}
+          <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50/50 max-w-4xl mx-auto">
+            <img
+              src={dpiDataFlowImg}
+              alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
+              className="w-full h-auto object-cover max-h-[380px]"
+            />
+            <div className="p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
+              <span className="font-bold text-slate-800 flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                Verified Sovereign Data Highway
+              </span>
+              <span className="text-[11px] text-slate-500 text-center sm:text-right">
+                1-Click Consent ➔ Official Department Lookups (Revenue, VAHAN, Municipal) ➔ Instant Digital Delivery
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
@@ -303,12 +378,12 @@ export const LandingPage: React.FC = () => {
 
       {/* 8. FINAL CALL TO ACTION */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-gov-900 to-gov-950 text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-gov-lg relative overflow-hidden border border-gov-800">
+        <div className="bg-gradient-to-br from-gov-900 to-gov-800 text-white rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-gov-lg relative overflow-hidden border border-gov-700">
           <div className="max-w-2xl mx-auto space-y-3">
             <h2 className="text-2xl sm:text-4xl font-black font-serif">
               Access Government Services More Simply
             </h2>
-            <p className="text-xs sm:text-sm text-gov-200 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gov-100 leading-relaxed">
               Experience the future of Indian Digital Public Infrastructure. No duplicate forms, no manual queues, and complete privacy transparency.
             </p>
           </div>

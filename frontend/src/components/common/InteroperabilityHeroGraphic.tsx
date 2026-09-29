@@ -50,11 +50,11 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           <defs>
             {/* Gradients */}
             <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1b5c43" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#092119" stopOpacity="0.9" />
+              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#003366" stopOpacity="0.9" />
             </linearGradient>
             <linearGradient id="revenueGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#1b5c43" />
+              <stop offset="0%" stopColor="#0054a3" />
               <stop offset="100%" stopColor="#d97706" />
             </linearGradient>
           </defs>
@@ -65,7 +65,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
             y1="140"
             x2="200"
             y2="140"
-            stroke="#a8a29e"
+            stroke="#94a3b8"
             strokeWidth="2"
             strokeDasharray="4 4"
             className={isTransmitting ? 'animate-dash-flow' : ''}
@@ -77,7 +77,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
             y1="140"
             x2="330"
             y2="60"
-            stroke="#1b5c43"
+            stroke="#0284c7"
             strokeWidth="2"
             strokeDasharray="5 5"
             className={isTransmitting ? 'animate-dash-flow' : ''}
@@ -110,8 +110,8 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           {/* Traveling Data Packet Circles (Simulated telemetry) */}
           {isTransmitting && (
             <>
-              <circle cx="135" cy="140" r="3.5" fill="#1b5c43" className="animate-pulse" />
-              <circle cx="265" cy="100" r="3.5" fill="#1b5c43" className="animate-pulse" />
+              <circle cx="135" cy="140" r="3.5" fill="#0284c7" className="animate-pulse" />
+              <circle cx="265" cy="100" r="3.5" fill="#0284c7" className="animate-pulse" />
               <circle cx="270" cy="140" r="3.5" fill="#d97706" className="animate-pulse" />
               <circle cx="265" cy="180" r="3.5" fill="#b45309" className="animate-pulse" />
             </>

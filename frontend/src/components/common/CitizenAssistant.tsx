@@ -143,32 +143,32 @@ export const CitizenAssistant: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="group relative flex items-center gap-3 bg-gradient-to-r from-gov-950 via-gov-900 to-gov-800 text-white pl-3.5 pr-4 py-3 rounded-full shadow-2xl border-2 border-saffron-500/50 hover:border-saffron-400 hover:shadow-gov-glow transition-all duration-300 cursor-pointer"
+          className="group relative flex items-center gap-2.5 bg-gov-900 hover:bg-gov-950 text-white pl-3 pr-4 py-2.5 rounded-full shadow-xl hover:shadow-2xl border border-gov-700/80 transition-all duration-200 cursor-pointer"
           title="Open SAMAVAY Saathi (AI Citizen Assistant)"
         >
           {/* Emblem Icon / Bot Avatar */}
           <div className="relative">
-            <div className="w-8 h-8 rounded-full bg-saffron-500/20 border border-saffron-400/50 flex items-center justify-center">
+            <div className="w-7 h-7 rounded-full bg-saffron-500/20 border border-saffron-400/40 flex items-center justify-center">
               <NationalEmblem size="sm" variant="gold" />
             </div>
-            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-gov-950 animate-ping" />
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-gov-950 animate-pulse" />
           </div>
 
           <div className="text-left">
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-black tracking-tight font-serif text-white">
+              <span className="text-xs font-bold tracking-tight font-serif text-white">
                 समवाय साथी
               </span>
               <span className="text-[9px] bg-saffron-500/30 text-saffron-300 px-1.5 py-0.2 rounded font-mono font-bold">
-                AI SAATHI
+                AI GUIDE
               </span>
             </div>
             <p className="text-[10px] text-stone-300 font-medium">
-              Citizen Digital Guide
+              Citizen Digital Assistant
             </p>
           </div>
 
-          <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-saffron-500 group-hover:text-gov-950 transition-colors">
+          <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-saffron-500 group-hover:text-gov-950 transition-colors ml-0.5">
             <Sparkles className="w-3.5 h-3.5 text-saffron-400 group-hover:text-gov-950" />
           </div>
         </button>

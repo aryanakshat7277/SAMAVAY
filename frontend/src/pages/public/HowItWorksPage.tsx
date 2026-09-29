@@ -9,15 +9,16 @@ import {
 import { PageHeader } from '../../components/common/PageHeader';
 import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
+import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
 
 // ── Connected platforms
 const platforms = [
   { name: 'Bhoomi LRS',       domain: 'Revenue & Land',     color: 'bg-gov-700',    delay: 0 },
   { name: 'SARATHI 4.0',      domain: 'Transport',          color: 'bg-gov-800',    delay: 100 },
   { name: 'VAHAN',            domain: 'Vehicle Registry',   color: 'bg-gov-600',    delay: 200 },
-  { name: 'e-NagarPalika',    domain: 'Municipal',          color: 'bg-saffron-700',delay: 300 },
+  { name: 'e-NagarPalika',    domain: 'Municipal',          color: 'bg-amber-600',  delay: 300 },
   { name: 'DigiLocker',       domain: 'Document Store',     color: 'bg-gov-800',    delay: 400 },
-  { name: 'National Registry',domain: 'Citizen ID',         color: 'bg-gov-950',    delay: 500 },
+  { name: 'UIDAI Sovereign',  domain: 'Citizen Identity',   color: 'bg-emerald-600',delay: 500 },
 ];
 
 const steps = [
@@ -37,8 +38,8 @@ const steps = [
     title: 'Automated Data Preparation',
     subtitle: '62% Auto-Verified Information',
     description:
-      'SAMAVAY queries authoritative registries (Bhoomi LRS, SARATHI/VAHAN, e-NagarPalika) via secure mTLS-encrypted data pipelines. Verified citizen fields are auto-populated — reducing form burden by up to 62%.',
-    tags: ['Zero Duplicate Entry', 'mTLS Encrypted', 'Real-Time Verification'],
+      'SAMAVAY queries authoritative registries (Bhoomi LRS, SARATHI/VAHAN, e-NagarPalika) via secure data pipelines. Verified citizen fields are auto-populated — reducing form burden by up to 62%.',
+    tags: ['Zero Duplicate Entry', 'Encrypted Pipeline', 'Real-Time Verification'],
     color: 'gov',
   },
   {
@@ -89,22 +90,20 @@ export const HowItWorksPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-sandstone-100">
-      {/* ── DARK HERO ── */}
-      <div className="bg-gov-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gov-grid opacity-25" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-gov-200 text-[10px] font-bold px-3.5 py-1.5 rounded-full">
-            <Sparkles className="w-3 h-3 text-saffron-400" />
+    <div className="min-h-screen bg-[#F8FAFC]">
+      {/* ── CLEAN LIGHT HERO ── */}
+      <div className="bg-gradient-to-b from-gov-50/70 via-white to-[#F8FAFC] border-b border-slate-200 relative overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center space-y-4">
+          <div className="inline-flex items-center gap-2 bg-gov-100 border border-gov-200 text-gov-900 text-[10px] font-bold px-3.5 py-1.5 rounded-full">
+            <Sparkles className="w-3.5 h-3.5 text-gov-700" />
             CITIZEN ARCHITECTURE & INTEROPERABILITY GUIDE
           </div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-serif leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 font-serif leading-tight">
             How SAMAVAY Works
           </h1>
-          <p className="text-gov-300 text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
             A modern interoperability layer bridging disconnected departmental systems into one seamless citizen portal —
-            powered by secure mTLS pipelines and governed by the DPDP Act 2023.
+            powered by secure data exchange pipelines and governed by the DPDP Act 2023.
           </p>
 
           {/* Connected platform nodes strip */}
@@ -112,29 +111,49 @@ export const HowItWorksPage: React.FC = () => {
             {platforms.map(({ name, domain, color, delay }) => (
               <div
                 key={name}
-                className="flex items-center gap-1.5 bg-white/8 border border-white/12 rounded-xl px-3 py-1.5 animate-fade-in"
+                className="flex items-center gap-1.5 bg-white border border-slate-200 shadow-2xs rounded-xl px-3 py-1.5 animate-fade-in"
                 style={{ animationDelay: `${delay}ms` }}
               >
                 <div className={`w-2 h-2 rounded-full ${color} animate-pulse`} />
-                <span className="text-[10px] font-bold text-white">{name}</span>
-                <span className="text-[10px] text-gov-400 hidden sm:inline">· {domain}</span>
+                <span className="text-[11px] font-bold text-slate-800">{name}</span>
+                <span className="text-[10px] text-slate-500 hidden sm:inline">· {domain}</span>
               </div>
             ))}
-            <div className="flex items-center gap-1.5 bg-saffron-500/20 border border-saffron-400/30 rounded-xl px-3 py-1.5">
-              <div className="w-2 h-2 rounded-full bg-saffron-400 animate-pulse" />
-              <span className="text-[10px] font-black text-saffron-300">SAMAVAY Hub</span>
+            <div className="flex items-center gap-1.5 bg-gov-50 border border-gov-300 rounded-xl px-3 py-1.5 shadow-2xs">
+              <div className="w-2 h-2 rounded-full bg-gov-700 animate-pulse" />
+              <span className="text-[11px] font-black text-gov-800">SAMAVAY DPI Hub</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── VISUAL ARCHITECTURE BANNER ── */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+        <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-card bg-white">
+          <img
+            src={dpiDataFlowImg}
+            alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
+            className="w-full h-auto object-cover max-h-[380px]"
+          />
+          <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
+            <span className="font-bold text-slate-800 flex items-center gap-1.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              Direct Sovereign Data Exchange
+            </span>
+            <span className="text-[11px] text-slate-500 text-center sm:text-right">
+              Citizen 1-Click Consent ➔ Official Department Lookups ➔ Zero Photocopies
+            </span>
           </div>
         </div>
       </div>
 
       {/* ── 4-STEP JOURNEY ── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="text-center mb-10">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-gov-700 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full">
+        <div className="text-center mb-10 space-y-2">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full">
             SIMPLE 4-STEP PROCESS
           </span>
-          <h2 className="text-2xl sm:text-3xl font-black text-stone-900 font-serif mt-3">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">
             Your Journey Through SAMAVAY
           </h2>
         </div>
@@ -142,7 +161,7 @@ export const HowItWorksPage: React.FC = () => {
         {/* Steps with connecting pipe */}
         <div className="relative">
           {/* Vertical connecting line */}
-          <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gov-200 hidden md:block" />
+          <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-slate-200 hidden md:block" />
 
           <div className="space-y-6">
             {steps.map((step, i) => {
@@ -163,45 +182,45 @@ export const HowItWorksPage: React.FC = () => {
                   {/* Step number node */}
                   <div className="relative flex-shrink-0 hidden md:flex flex-col items-center">
                     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center font-black text-white text-lg font-serif shadow-gov z-10 ${
-                      isLast ? 'bg-gradient-to-br from-gov-600 to-gov-800' : 'bg-gov-950'
+                      isLast ? 'bg-gradient-to-br from-gov-700 to-emerald-700' : 'bg-gov-800'
                     }`}>
                       <Icon className="w-7 h-7" />
                     </div>
                     {!isLast && (
-                      <div className="w-0.5 flex-1 bg-gov-200 mt-2 min-h-[2rem]" />
+                      <div className="w-0.5 flex-1 bg-slate-200 mt-2 min-h-[2rem]" />
                     )}
                   </div>
 
                   {/* Step content card */}
                   <div className={`flex-1 pb-2 bg-white border rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 ${
-                    isLast ? 'border-gov-300' : 'border-stone-200'
+                    isLast ? 'border-emerald-300 ring-1 ring-emerald-300/30' : 'border-slate-200'
                   }`}>
                     {/* Card top stripe */}
-                    <div className={`h-1 w-full ${isLast ? 'bg-gradient-to-r from-gov-600 to-gov-800' : 'bg-gov-200'}`} />
+                    <div className={`h-1 w-full ${isLast ? 'bg-gradient-to-r from-gov-700 to-emerald-600' : 'bg-gov-700'}`} />
 
                     <div className="p-5 space-y-3">
                       <div className="flex items-start gap-3">
                         {/* Mobile icon */}
                         <div className={`md:hidden w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                          isLast ? 'bg-gov-100 text-gov-800' : 'bg-stone-100 text-stone-700'
+                          isLast ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-700'
                         }`}>
                           <Icon className="w-5 h-5" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-baseline gap-2">
-                            <span className="text-[10px] font-black text-stone-400 font-mono">{step.number}</span>
-                            <h3 className="text-base font-bold text-stone-900 font-serif">{step.title}</h3>
+                            <span className="text-[10px] font-black text-slate-400 font-mono">{step.number}</span>
+                            <h3 className="text-base font-bold text-slate-900 font-serif">{step.title}</h3>
                           </div>
                           <p className="text-[11px] font-semibold text-gov-700 mt-0.5">{step.subtitle}</p>
                         </div>
                         {isLast && (
-                          <span className="bg-gov-50 border border-gov-200 text-gov-800 text-[10px] font-black px-2.5 py-1 rounded-full flex-shrink-0">
-                            ✓ Complete
+                          <span className="bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-full flex-shrink-0">
+                            ✓ Instant Certificate
                           </span>
                         )}
                       </div>
 
-                      <p className="text-xs text-stone-600 leading-relaxed">{step.description}</p>
+                      <p className="text-xs text-slate-600 leading-relaxed">{step.description}</p>
 
                       <div className="flex flex-wrap gap-1.5 pt-0.5">
                         {step.tags.map((tag) => (
@@ -209,10 +228,10 @@ export const HowItWorksPage: React.FC = () => {
                             key={tag}
                             className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${
                               step.color === 'saffron'
-                                ? 'bg-saffron-50 text-saffron-800 border border-saffron-200'
+                                ? 'bg-amber-50 text-amber-800 border border-amber-200'
                                 : step.color === 'emerald'
-                                ? 'bg-gov-50 text-gov-800 border border-gov-200'
-                                : 'bg-stone-100 text-stone-700'
+                                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                                : 'bg-slate-100 text-slate-700 border border-slate-200'
                             }`}
                           >
                             {tag}
@@ -228,33 +247,30 @@ export const HowItWorksPage: React.FC = () => {
         </div>
 
         {/* ── TECH ARCHITECTURE STRIP ── */}
-        <div className="mt-12 bg-gov-950 rounded-3xl overflow-hidden relative">
-          <div className="absolute inset-0 bg-gov-grid opacity-20" />
-          <div className="relative p-6 sm:p-8 text-center space-y-4">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-gov-200 text-[10px] font-bold px-3.5 py-1.5 rounded-full">
-              <Server className="w-3 h-3" />
-              TECHNICAL FOUNDATION
-            </div>
-            <h3 className="text-xl font-black text-white font-serif">
-              Built on Open Government Standards
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                'ABDM-FHIR Protocol', 'mTLS PKI_X509', 'OAuth 2.0 Federated Auth',
-                'REST/OpenAPI Gateway', 'Spring Boot Backend', 'DigiLocker API',
-                'DPDP Act 2023', 'Aadhaar eKYC'
-              ].map((tech) => (
-                <span key={tech} className="bg-white/8 border border-white/12 text-gov-200 text-[10px] font-bold px-3 py-1.5 rounded-lg">
-                  {tech}
-                </span>
-              ))}
-            </div>
+        <div className="mt-12 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-card text-center space-y-4 relative overflow-hidden">
+          <div className="inline-flex items-center gap-2 bg-gov-50 border border-gov-200 text-gov-800 text-[10px] font-bold px-3.5 py-1.5 rounded-full">
+            <Server className="w-3.5 h-3.5 text-gov-700" />
+            OPEN CITIZEN STANDARDS
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 font-serif">
+            Built on Open National Standards
+          </h3>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {[
+              'DPDP Act 2023 Compliant', 'mTLS PKI_X509 Security', 'DigiLocker Ecosystem',
+              'OpenAPI Gateway', 'Spring Boot 3.3 Sovereign Core', 'React 19 Frontend',
+              'Aadhaar e-KYC Ready', 'Bhoomi & SARATHI Connectors'
+            ].map((tech) => (
+              <span key={tech} className="bg-slate-50 border border-slate-200 text-slate-700 text-[11px] font-semibold px-3 py-1.5 rounded-xl">
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
 
         {/* ── CTA ── */}
         <div className="text-center mt-10 space-y-3">
-          <h3 className="text-lg font-bold text-stone-900 font-serif">Ready to experience SAMAVAY?</h3>
+          <h3 className="text-lg font-bold text-slate-900 font-serif">Ready to experience SAMAVAY?</h3>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link to="/services">
               <Button variant="primary" size="lg" icon={ArrowRight} iconPosition="right">
