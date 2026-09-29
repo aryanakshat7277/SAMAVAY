@@ -144,7 +144,7 @@ export const GovernmentPortalSlideshow: React.FC = () => {
       <div className="absolute top-0 left-0 right-0 h-1.5 z-30 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
       {/* Main Slide Carousel Track */}
-      <div className="relative h-[440px] sm:h-[480px] lg:h-[510px] w-full overflow-hidden">
+      <div className="relative min-h-[480px] sm:min-h-[460px] lg:h-[500px] w-full overflow-hidden bg-stone-50">
         {slides.map((slide, index) => {
           const isActive = index === currentSlide;
           const TagIcon = slide.categoryIcon;
@@ -152,26 +152,15 @@ export const GovernmentPortalSlideshow: React.FC = () => {
           return (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              className={`absolute inset-0 flex flex-col lg:flex-row transition-opacity duration-700 ease-in-out ${
                 isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              {/* Slide Background Image */}
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover object-center transform transition-transform duration-[6500ms] ease-out scale-100 group-hover:scale-105"
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-
-              {/* Light Sovereign Gradient Overlay for Crisp Text Contrast */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/30 sm:bg-gradient-to-r sm:from-white/98 sm:via-white/92 sm:to-white/20" />
-
-              {/* Slide Foreground Content */}
-              <div className="absolute inset-0 z-20 flex flex-col justify-end sm:justify-center p-6 sm:p-12 lg:p-16 max-w-3xl">
-                <div className="space-y-4">
+              {/* Left Column: 100% Solid Opaque Content Card (Zero Text Overlapping) */}
+              <div className="w-full lg:w-7/12 p-6 sm:p-10 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-amber-50/95 via-white to-stone-50 border-b lg:border-b-0 lg:border-r border-stone-200/90 z-10">
+                <div className="space-y-4 max-w-xl">
                   {/* Category Pill with Icon */}
-                  <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-2xs backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-2xs">
                     <TagIcon className="w-3.5 h-3.5 text-amber-700" />
                     <span>{slide.categoryTag}</span>
                   </div>
@@ -182,12 +171,12 @@ export const GovernmentPortalSlideshow: React.FC = () => {
                   </h2>
 
                   {/* Slide Description */}
-                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl font-medium">
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
                     {slide.subtitle}
                   </p>
 
                   {/* Actions & Metrics Row */}
-                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <div className="flex flex-wrap items-center gap-3 pt-2">
                     <Link
                       to={slide.primaryAction.path}
                       className="px-5 py-2.5 bg-gradient-to-r from-gov-700 to-gov-800 hover:from-gov-800 hover:to-gov-900 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
@@ -206,7 +195,7 @@ export const GovernmentPortalSlideshow: React.FC = () => {
                     )}
 
                     {/* Sovereign Metric Badge */}
-                    <div className="hidden md:flex items-center gap-2 pl-3 border-l border-stone-300 text-xs sm:text-sm">
+                    <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-stone-300 text-xs sm:text-sm">
                       <span className="text-slate-600 font-medium">{slide.metricsBadge.label}:</span>
                       <span className="font-mono font-bold text-gov-800 bg-amber-50 px-2.5 py-1 rounded border border-amber-200 shadow-2xs">
                         {slide.metricsBadge.value}
@@ -214,6 +203,16 @@ export const GovernmentPortalSlideshow: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Right Column: Clean Picture Column (No Text on Top) */}
+              <div className="w-full lg:w-5/12 relative h-64 lg:h-auto overflow-hidden bg-stone-100 flex-1">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover object-center transform transition-transform duration-[6500ms] ease-out scale-100 group-hover:scale-105"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
               </div>
             </div>
           );

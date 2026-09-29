@@ -312,38 +312,43 @@ export const CitizenDashboard: React.FC = () => {
         {/* Tricolor Ribbon */}
         <div className="absolute top-0 left-0 right-0 h-1.5 z-30 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
-        <div className="relative h-60 sm:h-64 w-full overflow-hidden">
+        <div className="relative min-h-[290px] sm:min-h-[280px] md:h-72 w-full overflow-hidden bg-stone-50">
           {dashboardBanners.map((slide, idx) => (
             <div
               key={idx}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 flex flex-col md:flex-row transition-opacity duration-700 ease-in-out ${
                 idx === dashboardSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/88 to-transparent flex flex-col justify-center px-6 sm:px-12 max-w-2xl text-slate-900">
+              {/* Left Column: 100% Solid Opaque Content Card (Zero Text Overlapping) */}
+              <div className="w-full md:w-7/12 lg:w-1/2 p-6 sm:p-8 flex flex-col justify-center bg-gradient-to-br from-amber-50/95 via-white to-stone-50 border-b md:border-b-0 md:border-r border-stone-200/90 z-10">
                 <span className="inline-block text-xs font-bold tracking-wider uppercase text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md mb-2 border border-amber-300 w-fit shadow-2xs">
                   {slide.tag}
                 </span>
-                <h3 className="text-lg sm:text-2xl font-bold font-serif leading-snug text-slate-900 mb-1.5">
+                <h3 className="text-xl sm:text-2xl font-black font-serif leading-snug text-slate-900 mb-2">
                   {slide.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-700 line-clamp-2 mb-4 leading-relaxed font-sans font-medium">
+                <p className="text-xs sm:text-sm text-slate-700 line-clamp-2 mb-4 leading-relaxed font-medium">
                   {slide.subtitle}
                 </p>
                 <div>
                   <Link
                     to={slide.link}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-gov-700 hover:bg-gov-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-gov-700 hover:bg-gov-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition cursor-pointer"
                   >
                     <span>{slide.btnText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
+              </div>
+
+              {/* Right Column: Clean Photographic Visual (No text overlaid on people) */}
+              <div className="w-full md:w-5/12 lg:w-1/2 relative h-48 md:h-auto overflow-hidden bg-stone-100 flex-1">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
           ))}
@@ -352,20 +357,20 @@ export const CitizenDashboard: React.FC = () => {
           <button
             onClick={() => setDashboardSlide((prev) => (prev - 1 + dashboardBanners.length) % dashboardBanners.length)}
             aria-label="Previous Slide"
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={() => setDashboardSlide((prev) => (prev + 1) % dashboardBanners.length)}
             aria-label="Next Slide"
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
 
           {/* Indicators & Counter */}
-          <div className="absolute bottom-3 right-6 z-20 flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-stone-200 shadow-2xs">
+          <div className="absolute bottom-3 right-6 z-20 flex items-center space-x-2 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full border border-stone-200 shadow-2xs">
             <span className="text-[11px] font-mono font-bold text-slate-600">
               0{dashboardSlide + 1} / 0{dashboardBanners.length}
             </span>
