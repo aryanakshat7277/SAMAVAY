@@ -1,7 +1,10 @@
-# SAMAVAY — One Connected Government. Simpler Services for Every Citizen.
+# SAMAVAY (समवाय) — One Connected Government. Simpler Services for Every Citizen.
 
-> **Smart India Hackathon 2026 — Problem Statement ID: SIH26129**
-> **Theme:** System integration and interoperability among government digital platforms, resulting in fragmented service delivery.
+> **Smart India Hackathon 2026 — Problem Statement ID: SIH26129**  
+> **Theme:** System integration and interoperability among government digital platforms, resulting in fragmented service delivery.  
+> 
+> 🔗 **Live GitHub Repository**: [https://github.com/aryanakshat7277/SAMAVAY](https://github.com/aryanakshat7277/SAMAVAY)  
+> 🌐 **Live Interactive SIH Presentation**: [https://aryanakshat7277.github.io/SAMAVAY/](https://aryanakshat7277.github.io/SAMAVAY/)  
 
 ---
 
