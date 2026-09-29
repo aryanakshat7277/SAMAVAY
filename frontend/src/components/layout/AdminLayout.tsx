@@ -48,7 +48,7 @@ export const AdminLayout: React.FC = () => {
       items: [
         { name: 'Control Center', path: '/admin/control-center', icon: LayoutDashboard },
         { name: 'SIH Demo Mode', path: '/admin/demo', icon: Play },
-        { name: 'Smart Insights', path: '/admin/insights', icon: Lightbulb },
+        { name: 'Service Intelligence', path: '/admin/insights', icon: Lightbulb },
         { name: 'Interoperability Analytics', path: '/admin/analytics', icon: BarChart3 },
       ]
     },
@@ -100,7 +100,7 @@ export const AdminLayout: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#FAF8F5] flex flex-col font-sans">
       {/* Admin Top Sovereign Ribbon */}
-      <div className="bg-[#092119] text-stone-100 text-xs py-2 px-4 sm:px-6 flex items-center justify-between border-b border-[#164a37]">
+      <div className="bg-[#061e38] text-stone-100 text-xs py-2 px-4 sm:px-6 flex items-center justify-between border-b border-[#0f345c]">
         <div className="flex items-center space-x-2.5">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span className="font-bold tracking-wider font-serif uppercase">SAMAVAY ADMINISTRATION & GATEWAY CONTROL</span>

@@ -100,8 +100,8 @@ export const TelemetryRadarWidget: React.FC = () => {
         </div>
 
         {/* Right: Live Event Telemetry Stream Ticker (Col 5) */}
-        <div className="md:col-span-5 p-5 bg-[#092119] text-stone-100 rounded-2xl shadow-md border border-[#164a37] space-y-4 text-xs">
-          <div className="flex items-center justify-between border-b border-[#164a37] pb-2">
+        <div className="md:col-span-5 p-5 bg-[#062648] text-stone-100 rounded-2xl shadow-md border border-gov-800 space-y-4 text-xs">
+          <div className="flex items-center justify-between border-b border-gov-800 pb-2">
             <span className="text-[10px] font-bold uppercase tracking-wider text-saffron-400 flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5 text-saffron-400" />
               Live Telemetry Log

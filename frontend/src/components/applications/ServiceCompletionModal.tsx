@@ -75,12 +75,12 @@ export const ServiceCompletionModal: React.FC<ServiceCompletionModalProps> = ({
           <button
             onClick={() => {
               onClose();
-              navigate('/applications');
+              navigate(`/applications?track=${encodeURIComponent(applicationNumber)}`);
             }}
             className="w-full py-2.5 px-4 bg-white border border-stone-300 hover:bg-stone-50 text-stone-800 font-bold text-xs rounded-xl transition inline-flex items-center justify-center cursor-pointer shadow-xs"
           >
             <FileText className="w-4 h-4 mr-1.5 text-gov-700" />
-            Track Application
+            Track & View Receipt
           </button>
           <button
             onClick={() => {

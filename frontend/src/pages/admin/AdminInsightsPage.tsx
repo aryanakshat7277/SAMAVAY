@@ -63,11 +63,11 @@ export const AdminInsightsPage: React.FC = () => {
       <PageHeader
         category="ACTIONABLE INTEROPERABILITY INTELLIGENCE"
         categoryIcon={Lightbulb}
-        title="Smart Interoperability Insights"
+        title="Interoperability Intelligence & Analytics"
         description="System-generated telemetry insights, service optimization opportunities, platform reliability warnings, and measurable citizen impact."
         actions={
           <Button variant="outline" size="sm" onClick={loadInsights} icon={RefreshCw} isLoading={isLoading}>
-            Refresh Insights
+            Refresh Intelligence
           </Button>
         }
       />

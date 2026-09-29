@@ -21,8 +21,8 @@ const DPIMeshSVG: React.FC = () => (
   <svg viewBox="0 0 400 400" className="w-full h-full" aria-hidden>
     <defs>
       <radialGradient id="meshGrad" cx="50%" cy="50%" r="50%">
-        <stop offset="0%"   stopColor="#1b5c43" stopOpacity="0.18" />
-        <stop offset="100%" stopColor="#092119" stopOpacity="0" />
+        <stop offset="0%"   stopColor="#0284c7" stopOpacity="0.22" />
+        <stop offset="100%" stopColor="#062648" stopOpacity="0" />
       </radialGradient>
     </defs>
     <rect width="400" height="400" fill="url(#meshGrad)" />
@@ -30,25 +30,25 @@ const DPIMeshSVG: React.FC = () => (
     {/* Grid lines */}
     {[50,100,150,200,250,300,350].map(v => (
       <React.Fragment key={v}>
-        <line x1={v} y1={0} x2={v} y2={400} stroke="#1b5c43" strokeWidth="0.4" strokeOpacity="0.25" />
-        <line x1={0} y1={v} x2={400} y2={v} stroke="#1b5c43" strokeWidth="0.4" strokeOpacity="0.25" />
+        <line x1={v} y1={0} x2={v} y2={400} stroke="#38bdf8" strokeWidth="0.4" strokeOpacity="0.25" />
+        <line x1={0} y1={v} x2={400} y2={v} stroke="#38bdf8" strokeWidth="0.4" strokeOpacity="0.25" />
       </React.Fragment>
     ))}
 
     {/* Animated data flow lines */}
-    <path d="M 80 80 Q 200 120 320 200" stroke="#6ab596" strokeWidth="1.5" fill="none" strokeDasharray="6 4" className="animate-dash-flow" />
-    <path d="M 80 200 Q 180 150 320 120" stroke="#d97706" strokeWidth="1.5" fill="none" strokeDasharray="6 4" className="animate-dash-flow-fast" />
-    <path d="M 80 320 Q 200 280 320 300" stroke="#6ab596" strokeWidth="1.5" fill="none" strokeDasharray="6 4" className="animate-dash-flow" style={{animationDelay:'1s'}} />
+    <path d="M 80 80 Q 200 120 320 200" stroke="#38bdf8" strokeWidth="1.5" fill="none" strokeDasharray="6 4" className="animate-dash-flow" />
+    <path d="M 80 200 Q 180 150 320 120" stroke="#f59e0b" strokeWidth="1.5" fill="none" strokeDasharray="6 4" className="animate-dash-flow-fast" />
+    <path d="M 80 320 Q 200 280 320 300" stroke="#38bdf8" strokeWidth="1.5" fill="none" strokeDasharray="6 4" className="animate-dash-flow" style={{animationDelay:'1s'}} />
 
     {/* Platform nodes */}
     {[
-      { cx: 80,  cy: 80,  label: 'Bhoomi',    color: '#1b5c43' },
-      { cx: 80,  cy: 200, label: 'SARATHI',   color: '#164a37' },
-      { cx: 80,  cy: 320, label: 'DigiLocker',color: '#113a2c' },
-      { cx: 320, cy: 120, label: 'Municipal', color: '#277355' },
-      { cx: 320, cy: 200, label: 'Health',    color: '#1b5c43' },
-      { cx: 320, cy: 300, label: 'Welfare',   color: '#164a37' },
-      { cx: 200, cy: 200, label: 'SAMAVAY',   color: '#092119' },
+      { cx: 80,  cy: 80,  label: 'Bhoomi',    color: '#0369a1' },
+      { cx: 80,  cy: 200, label: 'SARATHI',   color: '#0284c7' },
+      { cx: 80,  cy: 320, label: 'DigiLocker',color: '#075985' },
+      { cx: 320, cy: 120, label: 'Municipal', color: '#0c4a6e' },
+      { cx: 320, cy: 200, label: 'Health',    color: '#0284c7' },
+      { cx: 320, cy: 300, label: 'Welfare',   color: '#0369a1' },
+      { cx: 200, cy: 200, label: 'SAMAVAY',   color: '#0054a3' },
     ].map(({ cx, cy, label, color }) => (
       <g key={label} className="animate-pulse-node" style={{animationDelay: `${Math.random()*2}s`}}>
         <circle cx={cx} cy={cy} r={label === 'SAMAVAY' ? 22 : 14} fill={color} fillOpacity="0.9" />
@@ -62,7 +62,7 @@ const DPIMeshSVG: React.FC = () => (
     {/* Connecting lines from center to all */}
     {[[80,80],[80,200],[80,320],[320,120],[320,200],[320,300]].map(([x,y], i) => (
       <line key={i} x1={200} y1={200} x2={x} y2={y}
-        stroke="#6ab596" strokeWidth="0.8" strokeOpacity="0.4" strokeDasharray="4 4"
+        stroke="#38bdf8" strokeWidth="0.8" strokeOpacity="0.4" strokeDasharray="4 4"
         className="animate-dash-flow" style={{animationDelay:`${i*0.3}s`}}
       />
     ))}

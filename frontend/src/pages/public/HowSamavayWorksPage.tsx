@@ -113,7 +113,7 @@ export const HowSamavayWorksPage: React.FC = () => {
             </div>
 
             <div className="p-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl space-y-1 text-stone-700">
-              <span className="font-bold text-emerald-950 block">3. Intelligent Service Orchestration</span>
+              <span className="font-bold text-emerald-950 block">3. Automated Cross-Department Orchestration</span>
               <p>Cross-departmental verifications execute autonomously via the secure Interoperability Gateway.</p>
             </div>
 

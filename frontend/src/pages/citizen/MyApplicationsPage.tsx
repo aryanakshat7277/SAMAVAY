@@ -10,6 +10,7 @@ import { PageHeader } from '../../components/common/PageHeader';
 import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
 import { EmptyState } from '../../components/common/EmptyState';
+import { OfficialCertificateModal } from '../../components/applications/OfficialCertificateModal';
 import {
   FileText,
   Clock,
@@ -37,6 +38,8 @@ export const MyApplicationsPage: React.FC = () => {
   const [selectedStatus, setSelectedStatus] = useState<string>('ALL');
   const [activeRequest, setActiveRequest] = useState<ServiceRequest | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isDocModalOpen, setIsDocModalOpen] = useState<boolean>(false);
+  const [docModalMode, setDocModalMode] = useState<'ACKNOWLEDGEMENT' | 'CERTIFICATE'>('ACKNOWLEDGEMENT');
 
   useEffect(() => {
     const loadRequests = async () => {
@@ -88,8 +91,15 @@ export const MyApplicationsPage: React.FC = () => {
   });
 
   const handlePrintAcknowledgement = (req: ServiceRequest) => {
-    alert(`Generating official citizen acknowledgement receipt for ${req.applicationNumber} (${req.serviceName}). Opening print view...`);
-    window.print();
+    setActiveRequest(req);
+    setDocModalMode('ACKNOWLEDGEMENT');
+    setIsDocModalOpen(true);
+  };
+
+  const handleViewCertificate = (req: ServiceRequest) => {
+    setActiveRequest(req);
+    setDocModalMode('CERTIFICATE');
+    setIsDocModalOpen(true);
   };
 
   return (
@@ -222,7 +232,7 @@ export const MyApplicationsPage: React.FC = () => {
                         variant="success"
                         size="sm"
                         icon={Download}
-                        onClick={() => alert(`Downloading digitally signed certificate for ${activeRequest.applicationNumber}`)}
+                        onClick={() => handleViewCertificate(activeRequest)}
                       >
                         Download Digital Certificate
                       </Button>
@@ -246,6 +256,16 @@ export const MyApplicationsPage: React.FC = () => {
           actionText="Browse Services"
           onAction={() => navigate('/services')}
           actionIcon={Compass}
+        />
+      )}
+
+      {/* Official Government Document & Certificate Modal */}
+      {activeRequest && (
+        <OfficialCertificateModal
+          isOpen={isDocModalOpen}
+          onClose={() => setIsDocModalOpen(false)}
+          request={activeRequest}
+          mode={docModalMode}
         />
       )}
     </div>

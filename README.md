@@ -4,7 +4,8 @@
 > **Theme:** System integration and interoperability among government digital platforms, resulting in fragmented service delivery.  
 > 
 > 🔗 **Live GitHub Repository**: [https://github.com/aryanakshat7277/SAMAVAY](https://github.com/aryanakshat7277/SAMAVAY)  
-> 🌐 **Live Interactive SIH Presentation**: [https://aryanakshat7277.github.io/SAMAVAY/](https://aryanakshat7277.github.io/SAMAVAY/)  
+> 🌐 **Live Deployed Web Application**: [https://aryanakshat7277.github.io/SAMAVAY/](https://aryanakshat7277.github.io/SAMAVAY/)  
+> 📑 **Interactive SIH Presentation Deck**: [https://aryanakshat7277.github.io/SAMAVAY/presentation.html](https://aryanakshat7277.github.io/SAMAVAY/presentation.html)  
 
 ---
 
@@ -18,7 +19,7 @@
 
 ---
 
-## 🌟 Phase 3 Key Features & Architecture (Core Intelligence & Orchestration)
+## 🌟 Key Features & Architecture (Orchestration & Interoperability)
 
 ### 1. Service Readiness Checker (`GET /api/services/{id}/readiness`)
 - Dynamic 4-step preparation animation:
@@ -39,7 +40,7 @@
 - Autonomous multi-stage execution across departments and registries.
 - Dual-perspective translation: Reassuring, simple phrasing for citizens (*"Waiting for Department Review"*, *"Cross-Registry Verification Complete"*) and detailed technical telemetry for admins (`mTLS PKI_X509 Verified: RoR matched in 38ms`).
 
-### 4. Smart Next Action Engine (`GET /api/service-requests/{id}/next-action`)
+### 4. Citizen Action & Guidance Engine (`GET /api/service-requests/{id}/next-action`)
 - Displays contextual **Action Required** banners on the Citizen Dashboard when consent or additional input is needed.
 - In-flight **Continue Your Services** cards to directly resume submissions.
 

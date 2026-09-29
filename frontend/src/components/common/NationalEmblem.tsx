@@ -3,7 +3,7 @@ import React from 'react';
 interface NationalEmblemProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'gold' | 'monochrome' | 'emerald';
+  variant?: 'gold' | 'monochrome' | 'emerald' | 'navy';
 }
 
 export const NationalEmblem: React.FC<NationalEmblemProps> = ({
@@ -36,6 +36,12 @@ export const NationalEmblem: React.FC<NationalEmblemProps> = ({
       secondary: '#22c55e',
       accent: '#14532d',
       motto: '#15803d'
+    },
+    navy: {
+      primary: '#0054a3',
+      secondary: '#36a6f6',
+      accent: '#062648',
+      motto: '#054785'
     }
   };
 

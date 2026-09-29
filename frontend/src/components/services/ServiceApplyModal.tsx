@@ -170,7 +170,11 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
 
   const handleFinish = () => {
     onClose();
-    navigate('/applications');
+    if (createdReq?.applicationNumber) {
+      navigate(`/applications?track=${encodeURIComponent(createdReq.applicationNumber)}`);
+    } else {
+      navigate('/applications');
+    }
   };
 
   return (

@@ -55,7 +55,7 @@ export const InformationMinimizationVisualizer: React.FC<{ serviceName?: string 
             </span>
           </div>
           <h3 className="text-xl font-bold text-stone-900 font-serif">
-            Intelligent Data Availability Breakdown
+            Authoritative Cross-Department Data Mapping
           </h3>
           <p className="text-xs text-stone-600">
             Authoritative state databases pre-verify <strong>{autoFilledCount} out of {totalCount} fields</strong>, requiring you to enter only <strong>{totalCount - autoFilledCount} missing details</strong>.
