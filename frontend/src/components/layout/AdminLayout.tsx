@@ -33,6 +33,7 @@ import {
   PanelLeftClose,
   PanelLeftOpen
 } from 'lucide-react';
+import { NationalEmblem } from '../common/NationalEmblem';
 
 export const AdminLayout: React.FC = () => {
   const { user, logout } = useAuth();
@@ -99,6 +100,9 @@ export const AdminLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] flex flex-col font-sans">
+      {/* Top Tricolor Sovereign Micro-Line */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+
       {/* Admin Top Sovereign Ribbon */}
       <div className="bg-[#061e38] text-stone-100 text-xs py-2 px-4 sm:px-6 flex items-center justify-between border-b border-[#0f345c]">
         <div className="flex items-center space-x-2.5">
@@ -136,8 +140,8 @@ export const AdminLayout: React.FC = () => {
           {/* Admin Header / Role Card */}
           <div className="p-4 border-b border-stone-100 flex items-center justify-between">
             <div className="flex items-center space-x-3 overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-gov-900 text-white flex items-center justify-center font-bold shadow-xs flex-shrink-0">
-                <Landmark className="w-5 h-5 text-saffron-400" />
+              <div className="w-10 h-10 rounded-xl bg-gov-900 text-white flex items-center justify-center font-bold shadow-xs flex-shrink-0 p-1">
+                <NationalEmblem size="sm" variant="gold" />
               </div>
               {!isCollapsed && (
                 <div className="truncate">

@@ -76,7 +76,7 @@ export const LandingPage: React.FC = () => {
       <OfficialNoticeTicker />
 
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-gov-50/70 via-white to-[#F8FAFC] pt-12 pb-16 border-b border-slate-200">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-100/90 via-gov-50/30 to-[#F8FAFC] pt-12 pb-16 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Col: Main Headline & Actions */}
@@ -146,59 +146,73 @@ export const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Col: Interactive Visual Hero Showcase */}
-            <div className="lg:col-span-5 flex flex-col items-center">
-              {/* Toggle Switch */}
-              <div className="flex items-center gap-1.5 p-1 bg-slate-200/80 rounded-2xl mb-3 shadow-2xs self-center">
-                <button
-                  type="button"
-                  onClick={() => setHeroViewMode('visual')}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                    heroViewMode === 'visual'
-                      ? 'bg-white text-slate-900 shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  Citizen Experience
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setHeroViewMode('mesh')}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
-                    heroViewMode === 'mesh'
-                      ? 'bg-white text-slate-900 shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  <Network className="w-3.5 h-3.5" />
-                  <span>Network Mesh</span>
-                </button>
-              </div>
+            {/* Right Col: Interactive Visual Hero Showcase (Dark Sovereign Console to eliminate harsh white contrast) */}
+            <div className="lg:col-span-5 flex flex-col items-center w-full">
+              <div className="w-full max-w-lg bg-gradient-to-br from-gov-950 via-[#071d33] to-[#041224] p-3 sm:p-4 rounded-3xl border border-gov-700/80 shadow-2xl ring-1 ring-white/10 text-white relative">
+                {/* Tricolor Ribbon on Bezel */}
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] rounded-t-3xl" />
 
-              {heroViewMode === 'visual' ? (
-                <div className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-card border border-slate-200/90 bg-white group">
-                  <img
-                    src={heroCitizenImg}
-                    alt="Indian citizens accessing unified public services through SAMAVAY"
-                    className="w-full h-auto object-cover rounded-3xl"
-                  />
-                  {/* Floating Badges */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-[11px] font-bold text-slate-800">DigiLocker & Aadhaar Verified</span>
+                {/* Bezel Header & Toggle Switch */}
+                <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-[10px] font-bold font-mono tracking-wider text-saffron-300 uppercase">
+                      SOVEREIGN DPI CONSOLE
+                    </span>
                   </div>
 
-                  <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md text-white p-3 rounded-2xl border border-white/10 flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                      <span className="font-semibold text-[11px]">DPDP Act 2023 Compliant</span>
-                    </div>
-                    <span className="text-[11px] font-bold text-amber-300">62% Form Work Saved</span>
+                  <div className="flex items-center gap-1 p-0.5 bg-black/40 rounded-xl border border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => setHeroViewMode('visual')}
+                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        heroViewMode === 'visual'
+                          ? 'bg-saffron-500 text-gov-950 font-black shadow-xs'
+                          : 'text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      Citizen Experience
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setHeroViewMode('mesh')}
+                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                        heroViewMode === 'mesh'
+                          ? 'bg-saffron-500 text-gov-950 font-black shadow-xs'
+                          : 'text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      <Network className="w-3.5 h-3.5" />
+                      <span>Network Mesh</span>
+                    </button>
                   </div>
                 </div>
-              ) : (
-                <InteroperabilityHeroGraphic />
-              )}
+
+                {heroViewMode === 'visual' ? (
+                  <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-white/10 group">
+                    <img
+                      src={heroCitizenImg}
+                      alt="Indian citizens accessing unified public services through SAMAVAY"
+                      className="w-full h-auto object-cover rounded-2xl"
+                    />
+                    {/* Dark Glass Floating Badges (Zero blinding white glare) */}
+                    <div className="absolute top-3 left-3 bg-gov-950/85 backdrop-blur-md px-3 py-1.5 rounded-xl border border-emerald-500/40 shadow-sm flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[11px] font-bold text-emerald-300">DigiLocker & Aadhaar Verified</span>
+                    </div>
+
+                    <div className="absolute bottom-3 left-3 right-3 bg-gov-950/90 backdrop-blur-md text-white p-3 rounded-xl border border-white/15 flex items-center justify-between text-xs">
+                      <div className="flex items-center gap-2">
+                        <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                        <span className="font-semibold text-[11px] text-slate-200">DPDP Act 2023 Compliant</span>
+                      </div>
+                      <span className="text-[11px] font-bold text-saffron-300 font-mono">62% Form Work Saved</span>
+                    </div>
+                  </div>
+                ) : (
+                  <InteroperabilityHeroGraphic />
+                )}
+              </div>
             </div>
           </div>
         </div>

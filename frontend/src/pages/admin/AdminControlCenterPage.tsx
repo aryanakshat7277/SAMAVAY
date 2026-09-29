@@ -8,6 +8,8 @@ import { Card } from '../../components/common/Card';
 import { PageHeader } from '../../components/common/PageHeader';
 import { MetricCard } from '../../components/common/MetricCard';
 import { TelemetryRadarWidget } from '../../components/visual';
+import { NationalEmblem } from '../../components/common/NationalEmblem';
+import adminHighwayImg from '../../assets/gov_banner_3.jpg';
 import {
   LayoutDashboard,
   Server,
@@ -77,6 +79,77 @@ export const AdminControlCenterPage: React.FC = () => {
           </>
         }
       />
+
+      {/* 1.5 NATIONAL DPI COMMAND HIGHWAY VISUAL BANNER */}
+      <div className="relative rounded-3xl overflow-hidden border border-gov-800 shadow-2xl bg-gov-950 text-white select-none">
+        {/* Tricolor Sovereign Top Bar */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 z-20 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+
+        {/* Background Image with Gradient Mask */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={adminHighwayImg}
+            alt="National DPI Interoperability Mesh Highway"
+            className="w-full h-full object-cover opacity-25 filter saturate-150"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gov-950 via-gov-950/85 to-gov-900/70" />
+        </div>
+
+        {/* Banner Content */}
+        <div className="relative z-10 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-bold font-mono">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                SOVEREIGN MESH ONLINE (8 REGISTRIES)
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-saffron-500/20 border border-saffron-400/40 text-saffron-300 text-xs font-bold font-mono">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                DPDP ACT 2023 GOVERNED
+              </span>
+            </div>
+
+            <h2 className="text-xl sm:text-2xl font-black font-serif text-white tracking-tight drop-shadow-sm">
+              Autonomous Cross-Departmental Interoperability Pipeline
+            </h2>
+
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+              Centralized administrative telemetry monitoring mTLS encrypted peer-to-peer registry exchanges between Revenue, Transport, Municipal, Welfare, Health, and Education nodes across India.
+            </p>
+          </div>
+
+          {/* Quick Metrics & Actions Widget */}
+          <div className="flex flex-col sm:flex-row md:flex-col gap-3 flex-shrink-0">
+            <div className="bg-white/10 backdrop-blur-md border border-white/15 p-4 rounded-2xl text-xs space-y-1">
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-slate-300 font-medium">Gateway Speed:</span>
+                <span className="font-mono font-bold text-emerald-300 text-sm">38ms Avg</span>
+              </div>
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-slate-300 font-medium">Daily Transactions:</span>
+                <span className="font-mono font-bold text-saffron-300 text-sm">4.82M Req</span>
+              </div>
+              <div className="flex items-center justify-between gap-4">
+                <span className="text-slate-300 font-medium">PKI Security:</span>
+                <span className="font-mono font-bold text-white text-sm">X.509 Active</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <Link to="/admin/platform-status" className="flex-1">
+                <Button variant="white" size="sm" icon={Activity} className="w-full justify-center">
+                  Platform Status
+                </Button>
+              </Link>
+              <Link to="/admin/analytics" className="flex-1">
+                <Button variant="dark-outline" size="sm" icon={BarChart3} className="w-full justify-center">
+                  Analytics
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* 2. SYSTEM OVERVIEW METRIC TILES (PART 12) */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">

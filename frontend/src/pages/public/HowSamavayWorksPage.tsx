@@ -17,6 +17,7 @@ import {
 import { Button } from '../../components/common/Button';
 import { Card } from '../../components/common/Card';
 import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
+import banner2 from '../../assets/gov_banner_2.jpg';
 
 export const HowSamavayWorksPage: React.FC = () => {
   return (
@@ -179,6 +180,28 @@ export const HowSamavayWorksPage: React.FC = () => {
               Application is tracked live across stages and digitally delivered upon approval.
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Visual Showcase: Paperless Digital Verification */}
+      <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-card bg-slate-900 text-white max-w-4xl mx-auto select-none">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] z-20" />
+        <img
+          src={banner2}
+          alt="DigiLocker Paperless Governance Experience"
+          className="w-full h-auto object-cover max-h-[320px] opacity-40 filter saturate-150"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-gov-950 via-gov-950/75 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10 space-y-2">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-bold text-emerald-300 w-fit">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>DPDP ACT 2023 & IT ACT 2000 COMPLIANT</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black font-serif text-white">
+            62% Document Submissions Eliminated at Source
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
+            By connecting directly to authoritative state databases (VAHAN, Bhoomi, e-NagarPalika), citizens never have to scan or re-upload documents the Government of India already maintains.
+          </p>
         </div>
       </div>
 
