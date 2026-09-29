@@ -201,86 +201,87 @@ export const CitizenQuickUtilityHub: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200/90 shadow-card overflow-hidden">
+    <div className="bg-white rounded-3xl border-2 border-slate-200/90 shadow-card overflow-hidden text-slate-900">
       {/* Top Header Strip with Tricolor Accent */}
-      <div className="relative bg-gradient-to-r from-gov-950 via-gov-900 to-gov-850 text-white p-5 sm:p-6 border-b border-gov-800">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+      <div className="relative bg-gradient-to-b from-slate-50/90 via-white to-slate-50/50 p-5 sm:p-6 border-b border-slate-200">
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
         
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
           <div className="flex items-center space-x-3.5">
-            <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center p-1 border border-white/20">
+            <div className="w-11 h-11 rounded-2xl bg-gov-900 text-white flex items-center justify-center p-1.5 shadow-sm ring-1 ring-gov-700/40">
               <NationalEmblem size="sm" variant="gold" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="text-[10px] font-bold text-saffron-400 uppercase tracking-widest font-mono">
+                <span className="text-[10px] font-bold text-saffron-700 uppercase tracking-widest font-mono">
                   त्वरित नागरिक सेवाएं
                 </span>
-                <span className="text-white/40">•</span>
-                <span className="text-[10px] text-stone-300 font-mono">
+                <span className="text-slate-300">•</span>
+                <span className="text-[10px] text-slate-500 font-mono font-semibold">
                   GIGW 3.0 CITIZEN UTILITY HUB
                 </span>
               </div>
-              <h2 className="text-lg sm:text-xl font-bold font-serif text-white tracking-tight">
+              <h2 className="text-lg sm:text-xl font-extrabold font-serif text-slate-900 tracking-tight">
                 National Citizen Quick Services & Verification Portal
               </h2>
             </div>
           </div>
 
           {/* SLA Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/15 px-3 py-1.5 rounded-xl text-xs text-stone-200 self-start sm:self-auto">
-            <Clock className="w-3.5 h-3.5 text-saffron-400" />
-            <span>Real-time Response: <strong>&lt; 50ms</strong></span>
+          <div className="inline-flex items-center space-x-2 bg-emerald-50 border border-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-800 self-start sm:self-auto shadow-2xs">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <Clock className="w-3.5 h-3.5 text-emerald-700" />
+            <span>Real-time Gateway Response: <strong>&lt; 50ms</strong></span>
           </div>
         </div>
 
-        {/* Tab Navigation Navigation Bar */}
-        <div className="flex items-center space-x-2 mt-5 overflow-x-auto pb-1 scrollbar-none">
+        {/* Tab Navigation Navigation Bar (Light Clean Government Switcher) */}
+        <div className="flex items-center gap-1.5 sm:gap-2 mt-5 p-1.5 bg-slate-100/90 rounded-2xl border border-slate-200/90 overflow-x-auto pb-1.5 scrollbar-none">
           <button
             onClick={() => setActiveTab('track')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'track'
-                ? 'bg-saffron-500 text-gov-950 shadow-md font-black'
-                : 'bg-white/10 text-stone-200 hover:bg-white/20'
+                ? 'bg-gov-800 text-white shadow-xs'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <Search className="w-3.5 h-3.5" />
+            <Search className={`w-3.5 h-3.5 ${activeTab === 'track' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Track Application (आवेदन स्थिति)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('verify')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'verify'
-                ? 'bg-saffron-500 text-gov-950 shadow-md font-black'
-                : 'bg-white/10 text-stone-200 hover:bg-white/20'
+                ? 'bg-gov-800 text-white shadow-xs'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <Award className="w-3.5 h-3.5" />
+            <Award className={`w-3.5 h-3.5 ${activeTab === 'verify' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Verify Certificate (प्रमाण पत्र सत्यापन)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('telemetry')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'telemetry'
-                ? 'bg-saffron-500 text-gov-950 shadow-md font-black'
-                : 'bg-white/10 text-stone-200 hover:bg-white/20'
+                ? 'bg-gov-800 text-white shadow-xs'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <Activity className="w-3.5 h-3.5" />
+            <Activity className={`w-3.5 h-3.5 ${activeTab === 'telemetry' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Registry Mesh Telemetry (रजिस्ट्री स्थिति)</span>
           </button>
 
           <button
             onClick={() => setActiveTab('grievance')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer flex-shrink-0 ${
+            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer flex-shrink-0 ${
               activeTab === 'grievance'
-                ? 'bg-saffron-500 text-gov-950 shadow-md font-black'
-                : 'bg-white/10 text-stone-200 hover:bg-white/20'
+                ? 'bg-gov-800 text-white shadow-xs'
+                : 'text-slate-700 hover:text-slate-900 hover:bg-white/80'
             }`}
           >
-            <HelpCircle className="w-3.5 h-3.5" />
+            <HelpCircle className={`w-3.5 h-3.5 ${activeTab === 'grievance' ? 'text-saffron-400' : 'text-slate-500'}`} />
             <span>Lodge Grievance / जन शिकायत (CPGRAMS)</span>
           </button>
         </div>
