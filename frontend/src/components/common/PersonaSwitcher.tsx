@@ -3,16 +3,19 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Users,
   ShieldAlert,
+  ShieldCheck,
   UserCheck,
   Building2,
   ChevronUp,
   ChevronDown,
   ExternalLink,
-  Sliders,
   CheckCircle2,
-  Zap,
   Lock,
-  X
+  X,
+  Play,
+  Layers,
+  FileCheck,
+  Activity
 } from 'lucide-react';
 import { useAuth, PersonaType } from '../../context/AuthContext';
 
@@ -49,17 +52,23 @@ export const PersonaSwitcher: React.FC = () => {
                   ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'
                   : currentRole === 'DEPARTMENT_ADMIN'
                   ? 'bg-amber-100 text-amber-800 border border-amber-300'
-                  : 'bg-indigo-100 text-indigo-800 border border-indigo-300'
+                  : 'bg-gov-100 text-gov-800 border border-gov-300'
               }`}
             >
-              {currentRole === 'CITIZEN' ? '👤' : currentRole === 'DEPARTMENT_ADMIN' ? '🏛️' : '⚡'}
+              {currentRole === 'CITIZEN' ? (
+                <UserCheck className="w-3.5 h-3.5" />
+              ) : currentRole === 'DEPARTMENT_ADMIN' ? (
+                <Building2 className="w-3.5 h-3.5" />
+              ) : (
+                <ShieldCheck className="w-3.5 h-3.5" />
+              )}
             </div>
             <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-500 rounded-full border border-white animate-pulse" />
           </div>
 
           <div className="text-left hidden sm:block">
             <span className="text-[9px] uppercase tracking-wider text-slate-400 font-bold block leading-none">
-              DEMO PERSONA
+              STAKEHOLDER ROLE
             </span>
             <span className="text-xs font-bold text-slate-800 leading-tight block mt-0.5">
               {currentRole === 'CITIZEN'
@@ -83,8 +92,8 @@ export const PersonaSwitcher: React.FC = () => {
           className="bg-gov-800 hover:bg-gov-900 text-white px-3.5 py-2.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 border border-gov-700 cursor-pointer hidden md:flex"
           title="Jump directly to SIH Interactive Evaluation Scenarios"
         >
-          <Zap className="w-3.5 h-3.5 text-saffron-400 fill-current" />
-          <span>SIH Scenarios</span>
+          <Play className="w-3 h-3 text-saffron-400 fill-current" />
+          <span>Evaluation Scenarios</span>
         </button>
       </div>
 
@@ -123,7 +132,7 @@ export const PersonaSwitcher: React.FC = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center font-bold text-base shadow-xs">
-                  🧑‍🌾
+                  <UserCheck className="w-4 h-4 text-emerald-700" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
@@ -153,7 +162,7 @@ export const PersonaSwitcher: React.FC = () => {
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300 text-amber-800 flex items-center justify-center font-bold text-base shadow-xs">
-                  🏛️
+                  <Building2 className="w-4 h-4 text-amber-700" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
@@ -177,18 +186,18 @@ export const PersonaSwitcher: React.FC = () => {
               onClick={() => handleSelectPersona('SUPER_ADMIN', '/admin/control-center')}
               className={`w-full text-left p-3 rounded-2xl border transition-all flex items-center justify-between cursor-pointer ${
                 currentRole === 'SUPER_ADMIN'
-                  ? 'bg-indigo-50/70 border-indigo-400 ring-2 ring-indigo-400/20 shadow-xs'
+                  ? 'bg-gov-50/70 border-gov-400 ring-2 ring-gov-400/20 shadow-xs'
                   : 'bg-slate-50/60 border-slate-200 hover:bg-slate-100/70 hover:border-slate-300'
               }`}
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-indigo-100 border border-indigo-300 text-indigo-800 flex items-center justify-center font-bold text-base shadow-xs">
-                  ⚡
+                <div className="w-9 h-9 rounded-xl bg-gov-100 border border-gov-300 text-gov-800 flex items-center justify-center font-bold text-base shadow-xs">
+                  <ShieldCheck className="w-4 h-4 text-gov-800" />
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-xs font-bold text-slate-900">Super Admin / Evaluator</span>
-                    <span className="text-[9px] bg-indigo-100 text-indigo-800 px-1.5 py-0.2 rounded font-mono font-bold">
+                    <span className="text-[9px] bg-gov-100 text-gov-800 px-1.5 py-0.2 rounded font-mono font-bold">
                       Mission Director
                     </span>
                   </div>
@@ -198,7 +207,7 @@ export const PersonaSwitcher: React.FC = () => {
                 </div>
               </div>
               {currentRole === 'SUPER_ADMIN' && (
-                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+                <CheckCircle2 className="w-4 h-4 text-gov-700" />
               )}
             </button>
           </div>
@@ -206,7 +215,7 @@ export const PersonaSwitcher: React.FC = () => {
           {/* Quick Teleport Links for Jury */}
           <div className="border-t border-slate-100 pt-3">
             <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 block mb-2">
-              Jury Instant Teleport Links:
+              Evaluation Quick Links:
             </span>
             <div className="grid grid-cols-2 gap-1.5 text-[11px]">
               <button
@@ -216,7 +225,8 @@ export const PersonaSwitcher: React.FC = () => {
                 }}
                 className="px-2.5 py-1.5 bg-slate-50 hover:bg-slate-100 rounded-xl text-slate-700 hover:text-slate-900 transition flex items-center gap-1.5 border border-slate-200 cursor-pointer text-left"
               >
-                <span>🧪 5 Live Scenarios</span>
+                <Layers className="w-3.5 h-3.5 text-gov-700" />
+                <span>5 Live Scenarios</span>
               </button>
               <button
                 onClick={() => {
@@ -225,7 +235,8 @@ export const PersonaSwitcher: React.FC = () => {
                 }}
                 className="px-2.5 py-1.5 bg-slate-50 hover:bg-slate-100 rounded-xl text-slate-700 hover:text-slate-900 transition flex items-center gap-1.5 border border-slate-200 cursor-pointer text-left"
               >
-                <span>📝 Auto-Fill Form</span>
+                <FileCheck className="w-3.5 h-3.5 text-emerald-700" />
+                <span>Auto-Fill Form</span>
               </button>
               <button
                 onClick={() => {
@@ -234,7 +245,8 @@ export const PersonaSwitcher: React.FC = () => {
                 }}
                 className="px-2.5 py-1.5 bg-slate-50 hover:bg-slate-100 rounded-xl text-slate-700 hover:text-slate-900 transition flex items-center gap-1.5 border border-slate-200 cursor-pointer text-left"
               >
-                <span>🛡️ DPDP Permissions</span>
+                <Lock className="w-3.5 h-3.5 text-gov-700" />
+                <span>DPDP Permissions</span>
               </button>
               <button
                 onClick={() => {
@@ -243,7 +255,8 @@ export const PersonaSwitcher: React.FC = () => {
                 }}
                 className="px-2.5 py-1.5 bg-slate-50 hover:bg-slate-100 rounded-xl text-slate-700 hover:text-slate-900 transition flex items-center gap-1.5 border border-slate-200 cursor-pointer text-left"
               >
-                <span>📡 Platform Status</span>
+                <Activity className="w-3.5 h-3.5 text-blue-700" />
+                <span>Platform Status</span>
               </button>
             </div>
           </div>

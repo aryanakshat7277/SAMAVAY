@@ -29,8 +29,23 @@ import {
   ShieldAlert,
   Zap,
   TrendingUp,
-  UserCheck
+  UserCheck,
+  ChevronLeft,
+  ChevronRight,
+  Car,
+  FileCheck,
+  Printer,
+  Award,
+  Pause,
+  Play
 } from 'lucide-react';
+import { NationalEmblem } from '../../components/common/NationalEmblem';
+import { OfficialNoticeTicker } from '../../components/common/OfficialNoticeTicker';
+import { OfficialCertificateModal } from '../../components/applications/OfficialCertificateModal';
+import banner1 from '../../assets/gov_banner_1.jpg';
+import banner2 from '../../assets/gov_banner_2.jpg';
+import banner3 from '../../assets/gov_banner_3.jpg';
+import banner4 from '../../assets/gov_banner_4.jpg';
 
 export const CitizenDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -43,6 +58,53 @@ export const CitizenDashboard: React.FC = () => {
   const [trackInput, setTrackInput] = useState('');
   const [selectedService, setSelectedService] = useState<GovernmentService | null>(null);
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
+
+  const [dashboardSlide, setDashboardSlide] = useState(0);
+  const [isSlidePlaying, setIsSlidePlaying] = useState(true);
+  const [docModalOpen, setDocModalOpen] = useState(false);
+  const [selectedDocRequest, setSelectedDocRequest] = useState<ServiceRequest | null>(null);
+  const [docModalMode, setDocModalMode] = useState<'ACKNOWLEDGEMENT' | 'CERTIFICATE'>('ACKNOWLEDGEMENT');
+
+  const handleOpenDocModal = (req: ServiceRequest, mode: 'ACKNOWLEDGEMENT' | 'CERTIFICATE') => {
+    setSelectedDocRequest(req);
+    setDocModalMode(mode);
+    setDocModalOpen(true);
+  };
+
+  const dashboardBanners = [
+    {
+      title: 'Digital Public Infrastructure: 62% Paperwork Eliminated',
+      subtitle: 'Authoritative state registries auto-populate verified citizen credentials with 1-click consent.',
+      image: banner1,
+      link: '/services',
+      btnText: 'Explore 20+ Services',
+      tag: 'INDIA STACK • DPI'
+    },
+    {
+      title: 'DigiLocker Verified Instant Certificate Delivery',
+      subtitle: 'Digitally signed certificates issued with full legal validity under IT Act 2000 Section 4 & 5.',
+      image: banner2,
+      link: '/applications',
+      btnText: 'View My Documents',
+      tag: 'DIGILOCKER • ZERO PAPER'
+    },
+    {
+      title: 'Sovereign Interoperability Highway & Registry Mesh',
+      subtitle: 'mTLS PKI encrypted connections unifying Transport, Revenue, and Municipal systems.',
+      image: banner3,
+      link: '/dashboard/permissions',
+      btnText: 'Manage Permissions',
+      tag: 'DPDP ACT 2023'
+    },
+    {
+      title: 'Farmer Welfare & PM-KISAN Instant Benefit Transfers',
+      subtitle: 'Direct benefits routed to Aadhaar-seeded accounts with automated land verification.',
+      image: banner4,
+      link: '/services',
+      btnText: 'Check Eligibility',
+      tag: 'DBT SCHEMES'
+    }
+  ];
 
   useEffect(() => {
     const loadDashboardData = async () => {
@@ -57,6 +119,14 @@ export const CitizenDashboard: React.FC = () => {
     };
     loadDashboardData();
   }, [user]);
+
+  useEffect(() => {
+    if (!isSlidePlaying) return;
+    const timer = setInterval(() => {
+      setDashboardSlide((prev) => (prev + 1) % dashboardBanners.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [isSlidePlaying, dashboardBanners.length]);
 
   const activeRequest = requests.find((r) => r.status === 'PROCESSING' || r.status === 'UNDER_REVIEW') || requests[0];
   const pendingAction = actions.find((a) => a.status === 'PENDING');
@@ -76,29 +146,44 @@ export const CitizenDashboard: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-      {/* 1. TOP WELCOME SECTION */}
-      <div className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-8 shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div className="space-y-1.5">
-          <div className="flex items-center space-x-2">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+      {/* Official Government Live Announcements */}
+      <OfficialNoticeTicker />
+
+      {/* 1. TOP WELCOME SECTION WITH SOVEREIGN ACCENTS */}
+      <div className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-8 shadow-card flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden">
+        {/* Ashoka Lion Subtle Watermark */}
+        <div className="absolute right-6 -bottom-6 opacity-[0.04] pointer-events-none hidden lg:block">
+          <NationalEmblem size="xl" variant="navy" />
+        </div>
+
+        <div className="space-y-2 relative z-10">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-[11px] font-bold text-gov-800 bg-gov-50 px-2.5 py-0.5 rounded-full border border-gov-200 flex items-center gap-1">
               <UserCheck className="w-3.5 h-3.5 text-gov-700" />
               Verified Citizen Profile
             </span>
             <span className="text-xs text-stone-300">|</span>
             <span className="text-xs text-stone-500 font-mono">UID: SAM-CIT-99201</span>
+            <span className="text-xs text-stone-300">|</span>
+            <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 flex items-center gap-1">
+              <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Aadhaar e-KYC Seeded
+            </span>
+            <span className="text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200 flex items-center gap-1">
+              <CheckCircle2 className="w-3 h-3 text-blue-600" /> DigiLocker Linked
+            </span>
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 font-serif">
             {getGreeting()}, {user?.fullName || 'Citizen'}
           </h1>
-          <p className="text-xs sm:text-sm text-stone-600">
-            Manage your government services, authorizations, and applications from one unified place.
+          <p className="text-xs sm:text-sm text-stone-600 max-w-2xl">
+            Sovereign Citizen Access Portal. Access departmental registries, track service requests in real-time, and manage your statutory DPDP data sharing authorizations.
           </p>
         </div>
 
         {/* Quick Search & Application Track Form */}
-        <form onSubmit={handleTrackSubmit} className="flex-shrink-0 w-full md:w-80">
+        <form onSubmit={handleTrackSubmit} className="flex-shrink-0 w-full md:w-80 relative z-10">
           <label className="block text-xs font-semibold text-stone-700 mb-1.5">
             Track Any Application Instantly
           </label>
@@ -201,6 +286,83 @@ export const CitizenDashboard: React.FC = () => {
         </Link>
       </div>
 
+      {/* 3.5. NATIONAL GOVERNMENT SCHEMES & DPI SPOTLIGHT CAROUSEL */}
+      <div 
+        className="relative rounded-3xl overflow-hidden shadow-card border border-stone-200/90 bg-gov-950 group"
+        onMouseEnter={() => setIsSlidePlaying(false)}
+        onMouseLeave={() => setIsSlidePlaying(true)}
+      >
+        {/* Tricolor Ribbon */}
+        <div className="absolute top-0 left-0 right-0 h-1 z-30 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+
+        <div className="relative h-60 sm:h-64 w-full overflow-hidden">
+          {dashboardBanners.map((slide, idx) => (
+            <div
+              key={idx}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                idx === dashboardSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover object-center brightness-90"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-gov-950/95 via-gov-950/80 to-transparent flex flex-col justify-center px-6 sm:px-12 max-w-2xl text-white">
+                <span className="inline-block text-[10px] font-bold tracking-widest uppercase text-saffron-400 bg-white/10 px-2.5 py-1 rounded-md mb-2 border border-white/10 w-fit">
+                  {slide.tag}
+                </span>
+                <h3 className="text-lg sm:text-2xl font-bold font-serif leading-snug text-white mb-1.5 drop-shadow-sm">
+                  {slide.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-200 line-clamp-2 mb-4 leading-relaxed font-sans">
+                  {slide.subtitle}
+                </p>
+                <div>
+                  <Link
+                    to={slide.link}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-saffron-500 hover:bg-saffron-600 text-gov-950 font-bold text-xs rounded-xl shadow-xs transition cursor-pointer"
+                  >
+                    <span>{slide.btnText}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+
+          {/* Carousel Arrows */}
+          <button
+            onClick={() => setDashboardSlide((prev) => (prev - 1 + dashboardBanners.length) % dashboardBanners.length)}
+            aria-label="Previous Slide"
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition cursor-pointer"
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+          <button
+            onClick={() => setDashboardSlide((prev) => (prev + 1) % dashboardBanners.length)}
+            aria-label="Next Slide"
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition cursor-pointer"
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+
+          {/* Indicators */}
+          <div className="absolute bottom-3 right-6 z-20 flex items-center space-x-1.5">
+            {dashboardBanners.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setDashboardSlide(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  i === dashboardSlide ? 'w-6 bg-saffron-400' : 'w-2 bg-white/50 hover:bg-white/80'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* 4. ACTIVE APPLICATIONS TRACKING */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Col: Active Application Tracker */}
@@ -222,12 +384,23 @@ export const CitizenDashboard: React.FC = () => {
           </div>
 
           {activeRequest ? (
-            <AnimatedMilestoneTracker
-              applicationNumber={activeRequest.applicationNumber}
-              serviceName={activeRequest.serviceName}
-              currentStageName={activeRequest.currentStage}
-              submittedAt={activeRequest.submittedAt}
-            />
+            <div className="space-y-4">
+              <AnimatedMilestoneTracker
+                applicationNumber={activeRequest.applicationNumber}
+                serviceName={activeRequest.serviceName}
+                currentStageName={activeRequest.currentStage}
+                submittedAt={activeRequest.submittedAt}
+              />
+              <div className="flex justify-end gap-2">
+                <button
+                  onClick={() => handleOpenDocModal(activeRequest, activeRequest.status === 'COMPLETED' ? 'CERTIFICATE' : 'ACKNOWLEDGEMENT')}
+                  className="px-3.5 py-1.5 bg-gov-50 hover:bg-gov-100 text-gov-900 border border-gov-200 rounded-xl text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
+                >
+                  <Printer className="w-3.5 h-3.5 text-gov-700" />
+                  <span>{activeRequest.status === 'COMPLETED' ? 'View Sovereign Certificate' : 'Print Official Acknowledgement'}</span>
+                </button>
+              </div>
+            </div>
           ) : (
             <EmptyState
               title="No Applications Yet"
@@ -254,8 +427,16 @@ export const CitizenDashboard: React.FC = () => {
                       <span className="font-bold text-stone-900">{req.serviceName}</span>
                       <span className="text-[11px] text-stone-500 block font-mono">{req.applicationNumber}</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2.5">
                       <StatusBadge status={req.status} size="sm" />
+                      <button
+                        onClick={() => handleOpenDocModal(req, req.status === 'COMPLETED' ? 'CERTIFICATE' : 'ACKNOWLEDGEMENT')}
+                        className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 rounded-lg text-[11px] font-semibold flex items-center gap-1 transition cursor-pointer"
+                        title={req.status === 'COMPLETED' ? 'View Certificate' : 'Print Acknowledgement'}
+                      >
+                        <Printer className="w-3 h-3 text-stone-600" />
+                        <span>{req.status === 'COMPLETED' ? 'Certificate' : 'Receipt'}</span>
+                      </button>
                       <Link
                         to={`/applications?track=${req.applicationNumber}`}
                         className="text-gov-800 font-bold hover:underline"
@@ -276,8 +457,8 @@ export const CitizenDashboard: React.FC = () => {
           <div className="bg-white border border-stone-200/90 rounded-3xl p-5 shadow-card space-y-3.5">
             <div className="flex items-center justify-between border-b border-stone-100 pb-2.5">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-gov-800 font-bold text-xs">
-                  🇮🇳
+                <div className="w-8 h-8 rounded-xl bg-gov-50 border border-gov-200 flex items-center justify-center text-gov-800 font-bold text-xs">
+                  <ShieldCheck className="w-4 h-4 text-gov-800" />
                 </div>
                 <div>
                   <h4 className="font-bold font-serif text-stone-900 text-xs">
@@ -296,8 +477,10 @@ export const CitizenDashboard: React.FC = () => {
             <div className="space-y-2 text-xs">
               {/* Aadhaar e-KYC */}
               <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">🪪</span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
+                    <Lock className="w-3.5 h-3.5" />
+                  </div>
                   <div>
                     <span className="font-bold text-stone-800 block text-[11px]">Aadhaar e-KYC</span>
                     <span className="text-[10px] text-stone-400 font-mono">XXXX-XXXX-8821 (Biometric Linked)</span>
@@ -310,8 +493,10 @@ export const CitizenDashboard: React.FC = () => {
 
               {/* Bhoomi Land Record */}
               <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">🌾</span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                    <Layers className="w-3.5 h-3.5" />
+                  </div>
                   <div>
                     <span className="font-bold text-stone-800 block text-[11px]">Bhoomi LRS Cadastral</span>
                     <span className="text-[10px] text-stone-400 font-mono">Plot #44/2A • Khata #8849</span>
@@ -324,8 +509,10 @@ export const CitizenDashboard: React.FC = () => {
 
               {/* SARATHI Transport */}
               <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">🚗</span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0">
+                    <Car className="w-3.5 h-3.5" />
+                  </div>
                   <div>
                     <span className="font-bold text-stone-800 block text-[11px]">SARATHI Driving Licence</span>
                     <span className="text-[10px] text-stone-400 font-mono">DL #KA-05-2018-00912 (LMV)</span>
@@ -338,8 +525,10 @@ export const CitizenDashboard: React.FC = () => {
 
               {/* DigiLocker Vault */}
               <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm">📂</span>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center flex-shrink-0">
+                    <FileCheck className="w-3.5 h-3.5" />
+                  </div>
                   <div>
                     <span className="font-bold text-stone-800 block text-[11px]">DigiLocker Ecosystem</span>
                     <span className="text-[10px] text-stone-400 font-mono">4 Issued Certificates Synced</span>
@@ -392,6 +581,19 @@ export const CitizenDashboard: React.FC = () => {
             setIsApplyModalOpen(false);
             setSelectedService(null);
           }}
+        />
+      )}
+
+      {/* Official Government Document & Certificate Modal */}
+      {selectedDocRequest && (
+        <OfficialCertificateModal
+          isOpen={docModalOpen}
+          onClose={() => {
+            setDocModalOpen(false);
+            setSelectedDocRequest(null);
+          }}
+          request={selectedDocRequest}
+          mode={docModalMode}
         />
       )}
     </div>

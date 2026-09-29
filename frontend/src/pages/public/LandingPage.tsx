@@ -30,6 +30,8 @@ import { ServiceCard } from '../../components/services/ServiceCard';
 import { ServiceApplyModal } from '../../components/services/ServiceApplyModal';
 import { InteroperabilityHeroGraphic } from '../../components/common/InteroperabilityHeroGraphic';
 import { ScrollStorytellingSection } from '../../components/common/ScrollStorytellingSection';
+import { GovernmentPortalSlideshow } from '../../components/common/GovernmentPortalSlideshow';
+import { OfficialNoticeTicker } from '../../components/common/OfficialNoticeTicker';
 import { AnimatedCounter, CategoryVisualGrid, NationalInteroperabilityShowcase, InteractiveMinimizationPlayground } from '../../components/visual';
 import heroCitizenImg from '../../assets/hero_citizen_dpi.jpg';
 import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
@@ -69,8 +71,11 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
+      {/* Official Government Announcements Ticker */}
+      <OfficialNoticeTicker />
+
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-gov-50/70 via-white to-[#F8FAFC] pt-12 pb-20 border-b border-slate-200">
+      <section className="relative overflow-hidden bg-gradient-to-b from-gov-50/70 via-white to-[#F8FAFC] pt-12 pb-16 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Col: Main Headline & Actions */}
@@ -198,8 +203,24 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. LIVE DPI METRICS TICKER WITH ANIMATED COUNTERS */}
-      <section className="bg-white border-b border-stone-200 py-8">
+      {/* 2. OFFICIAL NATIONAL DIGITAL PUBLIC INFRASTRUCTURE SLIDESHOW */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex items-center justify-between mb-3.5">
+          <div className="flex items-center space-x-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-saffron-500 animate-pulse" />
+            <h3 className="text-xs sm:text-sm font-bold font-serif uppercase tracking-widest text-slate-800">
+              राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • National DPI Spotlight
+            </h3>
+          </div>
+          <span className="text-[10px] text-slate-500 font-mono hidden sm:inline">
+            Government of India Initiative • DPDP Act 2023 Governed
+          </span>
+        </div>
+        <GovernmentPortalSlideshow />
+      </section>
+
+      {/* 3. LIVE DPI METRICS TICKER WITH ANIMATED COUNTERS */}
+      <section className="bg-white border-y border-stone-200 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="space-y-1">
