@@ -8,7 +8,7 @@ import { EmptyState } from '../../components/common/EmptyState';
 import {
   Compass, Filter, Building2, Car, Landmark,
   HeartPulse, GraduationCap, HandHeart, Layers, HelpCircle, CheckCircle2,
-  Search, X, Star, SlidersHorizontal, ArrowRight
+  Search, X, TrendingUp, SlidersHorizontal, ArrowRight
 } from 'lucide-react';
 
 // ── Category definitions (same keys as original) ───────────────────────────────
@@ -289,8 +289,8 @@ export const ServicesDirectoryPage: React.FC = () => {
                   : 'bg-white text-stone-600 border-stone-200 hover:bg-stone-50 hover:border-saffron-300 shadow-xs'
               }`}
             >
-              <Star className={`w-3.5 h-3.5 transition-all duration-200 ${
-                popularOnly ? 'text-saffron-600 fill-saffron-400 scale-110' : 'text-stone-400'
+              <TrendingUp className={`w-3.5 h-3.5 transition-all duration-200 ${
+                popularOnly ? 'text-saffron-600 scale-110' : 'text-stone-400'
               }`} />
               Popular Only
             </button>
