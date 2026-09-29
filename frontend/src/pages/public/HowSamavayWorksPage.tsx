@@ -184,24 +184,28 @@ export const HowSamavayWorksPage: React.FC = () => {
       </div>
 
       {/* Visual Showcase: Paperless Digital Verification */}
-      <div className="relative rounded-3xl overflow-hidden border border-slate-800 shadow-card bg-slate-900 text-white max-w-4xl mx-auto select-none">
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] z-20" />
-        <img
-          src={banner2}
-          alt="DigiLocker Paperless Governance Experience"
-          className="w-full h-auto object-cover max-h-[320px] opacity-40 filter saturate-150"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gov-950 via-gov-950/75 to-transparent flex flex-col justify-end p-6 sm:p-8 z-10 space-y-2">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full text-xs font-bold text-emerald-300 w-fit">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>DPDP ACT 2023 & IT ACT 2000 COMPLIANT</span>
+      <div className="relative rounded-3xl overflow-hidden border-2 border-stone-200/90 shadow-card bg-gradient-to-br from-amber-50/70 via-white to-stone-50 text-slate-900 max-w-4xl mx-auto select-none">
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] z-20" />
+        <div className="p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6">
+          <div className="w-full md:w-1/2 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex-shrink-0">
+            <img
+              src={banner2}
+              alt="DigiLocker Paperless Governance Experience"
+              className="w-full h-48 sm:h-56 object-cover"
+            />
           </div>
-          <h3 className="text-xl sm:text-2xl font-black font-serif text-white">
-            62% Document Submissions Eliminated at Source
-          </h3>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl">
-            By connecting directly to authoritative state databases (VAHAN, Bhoomi, e-NagarPalika), citizens never have to scan or re-upload documents the Government of India already maintains.
-          </p>
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full text-xs font-bold text-emerald-800 w-fit shadow-2xs">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span>DPDP ACT 2023 & IT ACT 2000 COMPLIANT</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black font-serif text-slate-900">
+              62% Document Submissions Eliminated at Source
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+              By connecting directly to authoritative state databases (VAHAN, Bhoomi, e-NagarPalika, DigiLocker), citizens never have to scan or re-upload documents the Government of India already maintains.
+            </p>
+          </div>
         </div>
       </div>
 

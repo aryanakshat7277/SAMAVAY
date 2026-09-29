@@ -58,8 +58,8 @@ const StatBubble: React.FC<{ val: string | number; label: string; delay: number 
     className="flex flex-col items-center gap-0.5 opacity-0 animate-slide-up-fade"
     style={{ animationDelay: `${delay}ms`, animationFillMode: 'forwards' }}
   >
-    <span className="font-black text-white text-xl font-mono leading-none">{val}</span>
-    <span className="text-gov-400 text-[10px] font-medium">{label}</span>
+    <span className="font-black text-slate-900 text-xl font-mono leading-none">{val}</span>
+    <span className="text-slate-600 text-[11px] font-semibold">{label}</span>
   </div>
 );
 
@@ -127,57 +127,54 @@ export const ServicesDirectoryPage: React.FC = () => {
     <div className="min-h-screen bg-[#F8FAFC]">
 
       {/* ═══════════════════════════════════════════════════════════════════════
-          HERO — dark sovereign panel
+          HERO — Sovereign Light Panel
       ═══════════════════════════════════════════════════════════════════════ */}
-      <div className="relative bg-gov-950 overflow-hidden">
-        {/* Atmospheric layers */}
-        <div className="absolute inset-0 bg-gov-grid opacity-30" />
-        <div className="absolute inset-0 bg-gov-radial" />
-        {/* Saffron glow arc — decorative */}
-        <div
-          className="absolute -top-32 -right-40 w-[480px] h-[480px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(217,119,6,0.07) 0%, transparent 70%)' }}
-        />
+      <div className="relative bg-gradient-to-b from-[#F7F4EE] via-[#FAF8F5] to-white border-b-2 border-stone-200/90 overflow-hidden">
+        {/* Tricolor Ribbon */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+        
+        {/* Atmospheric grid layer */}
+        <div className="absolute inset-0 bg-gov-grid opacity-15 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-0">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-0">
 
           {/* Badge */}
           <div className={`flex justify-center transition-all duration-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-gov-100 text-xs font-bold px-4 py-1.5 rounded-full mb-5">
-              <Compass className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold px-4 py-1.5 rounded-full mb-4 shadow-2xs">
+              <Compass className="w-3.5 h-3.5 text-amber-700" />
               UNIFIED GOVERNMENT SERVICES DIRECTORY
-              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse ml-1" />
+              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse ml-1" />
             </div>
           </div>
 
           {/* Headline */}
           <div className={`text-center space-y-3 transition-all duration-600 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-serif leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 font-serif leading-tight tracking-tight">
               Find Government{' '}
-              <span className="text-saffron-400 relative inline-block">
+              <span className="text-saffron-800 relative inline-block">
                 Services
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-saffron-500/40 rounded-full" />
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-saffron-500 rounded-full" />
               </span>
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-normal">
+            <p className="text-slate-700 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-medium">
               All state and central government services in one place — with{' '}
-              <strong className="text-saffron-400 font-bold">62% automated data verification</strong>{' '}
+              <strong className="text-saffron-800 font-bold">62% automated data verification</strong>{' '}
               so you never upload the same document twice.
             </p>
           </div>
 
           {/* Stats row */}
-          <div className="flex flex-wrap justify-center gap-8 pt-6">
+          <div className="flex flex-wrap justify-center gap-8 pt-5">
             <StatBubble val={services.length || '—'} label="Services Available" delay={200} />
-            <div className="w-px bg-white/10 self-stretch" />
+            <div className="w-px bg-stone-300 self-stretch" />
             <StatBubble val={departments.length || '—'} label="Departments Connected" delay={350} />
-            <div className="w-px bg-white/10 self-stretch" />
+            <div className="w-px bg-stone-300 self-stretch" />
             <StatBubble val="62%" label="Auto-Verified Data" delay={500} />
           </div>
 
           {/* Hero search bar */}
           <div className="mt-7 max-w-2xl mx-auto">
-            <div className="relative flex items-center bg-white rounded-2xl shadow-2xl p-1.5 ring-1 ring-white/20 focus-within:ring-2 focus-within:ring-saffron-400 transition-all duration-300 group">
+            <div className="relative flex items-center bg-white rounded-2xl shadow-md border-2 border-stone-300 p-1.5 ring-0 focus-within:border-gov-600 focus-within:ring-2 focus-within:ring-gov-100 transition-all duration-200 group">
               <div className="pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-gov-700 transition-colors">
                 <Search className="w-5 h-5" />
               </div>
@@ -187,7 +184,7 @@ export const ServicesDirectoryPage: React.FC = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search services, departments, keywords (e.g. Property Tax, Driving Licence, PM-KISAN...)"
-                className="w-full px-3 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none"
+                className="w-full px-3 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none font-medium"
               />
               {/* Live count pill in search */}
               {!searchQuery && services.length > 0 && (
@@ -199,7 +196,7 @@ export const ServicesDirectoryPage: React.FC = () => {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="p-1.5 text-slate-400 hover:text-slate-700 rounded-xl mr-0.5 hover:bg-slate-100 transition flex-shrink-0"
+                  className="p-1.5 text-slate-400 hover:text-slate-700 rounded-xl mr-0.5 hover:bg-slate-100 transition flex-shrink-0 cursor-pointer"
                   aria-label="Clear search"
                 >
                   <X className="w-4 h-4" />
@@ -219,8 +216,8 @@ export const ServicesDirectoryPage: React.FC = () => {
                   onClick={() => setSelectedCategory(cat.key)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl text-xs sm:text-[13px] font-bold whitespace-nowrap transition-all duration-200 cursor-pointer flex-shrink-0 border-b-2 ${
                     isSelected
-                      ? 'bg-[#F8FAFC] border-[#F8FAFC] text-slate-900 shadow-[0_-6px_14px_rgba(0,0,0,0.18)]'
-                      : 'bg-white/10 border-transparent text-slate-300 hover:bg-white/18 hover:text-white'
+                      ? 'bg-white border-b-2 border-gov-700 text-gov-900 shadow-xs'
+                      : 'bg-stone-100/90 border-b-2 border-transparent text-stone-600 hover:bg-stone-200 hover:text-stone-900'
                   }`}
                   style={{ animationDelay: `${idx * 40}ms` }}
                 >

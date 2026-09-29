@@ -60,38 +60,38 @@ export const AdminAnalyticsPage: React.FC = () => {
       {/* 2. 2 HERO CARDS: INFORMATION REUSE RATE (62%) & FRAGMENTATION REDUCTION */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* HERO 1: 62% INFORMATION REUSE RATE */}
-        <div className="bg-gradient-to-br from-gov-950 via-gov-900 to-gov-800 text-white rounded-3xl p-6 sm:p-8 shadow-gov-lg relative overflow-hidden space-y-5 border border-gov-700/50">
-          <div className="absolute inset-0 bg-gov-grid opacity-20 pointer-events-none" />
+        <div className="bg-gradient-to-br from-amber-50/70 via-white to-stone-50 text-slate-900 rounded-3xl p-6 sm:p-8 shadow-card relative overflow-hidden space-y-5 border-2 border-stone-200/90">
+          <div className="absolute inset-0 bg-gov-grid opacity-15 pointer-events-none" />
           <div className="relative z-10">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-bold text-saffron-300 uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full border border-white/10">
+              <span className="text-[11px] font-bold text-saffron-800 uppercase tracking-wider bg-amber-50 px-3 py-1 rounded-full border border-amber-300">
                 Core Interoperability Impact
               </span>
-              <div className="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-400/30 flex items-center justify-center">
-                <TrendingUp className="w-4 h-4 text-amber-400" />
+              <div className="w-8 h-8 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center">
+                <TrendingUp className="w-4 h-4 text-amber-700" />
               </div>
             </div>
 
             <div className="mt-4">
               <div className="flex items-baseline space-x-2">
-                <span className="text-5xl sm:text-6xl font-black tracking-tight font-mono text-white">
+                <span className="text-5xl sm:text-6xl font-black tracking-tight font-mono text-slate-900">
                   <AnimatedCounter end={reuseRate} suffix="%" />
                 </span>
-                <span className="text-gov-300 text-sm font-semibold">Information Auto-Reused</span>
+                <span className="text-gov-800 text-sm font-bold">Information Auto-Reused</span>
               </div>
-              <p className="text-xs sm:text-sm text-gov-200 mt-2 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-700 mt-2 leading-relaxed font-medium">
                 Out of <strong>1,000</strong> required citizen data fields across active services, <strong>620 records</strong> were verified and auto-populated from sovereign platforms without requiring manual document uploads.
               </p>
             </div>
 
-            <div className="pt-4 mt-2 border-t border-white/15 grid grid-cols-2 gap-4 text-xs">
+            <div className="pt-4 mt-2 border-t border-stone-200/80 grid grid-cols-2 gap-4 text-xs">
               <div>
-                <span className="text-gov-400 block text-[11px] font-medium">Total Analyzed Fields</span>
-                <span className="font-bold text-white font-mono text-base">1,000 Records</span>
+                <span className="text-slate-500 block text-[11px] font-medium">Total Analyzed Fields</span>
+                <span className="font-bold text-slate-900 font-mono text-base">1,000 Records</span>
               </div>
               <div>
-                <span className="text-gov-400 block text-[11px] font-medium">Zero-Entry Reused</span>
-                <span className="font-bold text-saffron-400 font-mono text-base">620 Records</span>
+                <span className="text-slate-500 block text-[11px] font-medium">Zero-Entry Reused</span>
+                <span className="font-bold text-saffron-800 font-mono text-base">620 Records</span>
               </div>
             </div>
           </div>
@@ -231,14 +231,14 @@ export const AdminAnalyticsPage: React.FC = () => {
       </Card>
 
       {/* 5. LIVE SYSTEM STATUS FOOTER BANNER */}
-      <div className="p-4 bg-gov-950 rounded-2xl border border-gov-800 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+      <div className="p-4 bg-white rounded-2xl border-2 border-stone-200/90 text-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs shadow-xs">
         <div className="flex items-center gap-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-          <span className="font-bold">Interoperability Telemetry Grid: OPERATIONAL</span>
-          <span className="text-gov-400 hidden sm:inline">|</span>
-          <span className="text-gov-300 hidden sm:inline">14 Active Sovereign Nodes Monitored</span>
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="font-bold text-slate-900 font-serif">Interoperability Telemetry Grid: OPERATIONAL</span>
+          <span className="text-slate-300 hidden sm:inline">|</span>
+          <span className="text-slate-600 font-semibold hidden sm:inline">14 Active Sovereign Nodes Monitored</span>
         </div>
-        <div className="text-gov-400 text-[11px] font-mono">
+        <div className="text-slate-500 text-[11px] font-mono font-medium">
           Last Synced: {new Date().toLocaleTimeString()}
         </div>
       </div>

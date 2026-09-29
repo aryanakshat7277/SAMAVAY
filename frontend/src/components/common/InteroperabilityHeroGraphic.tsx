@@ -92,7 +92,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
       {/* Official Government Header (Aligned with Citizen Credentials) */}
       <div className="flex items-center justify-between border-b-2 border-slate-200/90 pb-4 relative z-10 gap-3">
         <div className="flex items-center space-x-3.5">
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gov-900 text-white flex items-center justify-center p-2.5 shadow-md ring-2 ring-gov-700/50 flex-shrink-0">
+          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border-2 border-amber-500/70 text-amber-700 flex items-center justify-center p-2 shadow-sm ring-2 ring-amber-100 flex-shrink-0">
             <NationalEmblem size="md" variant="gold" />
           </div>
           <div>
@@ -269,20 +269,20 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           onMouseEnter={() => setActiveNode('SAMAVAY')}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 cursor-pointer group"
         >
-          <div className={`p-4 sm:p-5 rounded-3xl bg-gov-950 border-2 border-saffron-400 shadow-2xl transition-all duration-200 flex flex-col items-center text-center space-y-2 ring-4 ring-gov-100/90 ${
-            activeNode === 'SAMAVAY' || activeNode === 'ALL' ? 'scale-105' : 'hover:scale-105'
+          <div className={`p-4 sm:p-5 rounded-3xl bg-gradient-to-b from-amber-50/95 via-white to-orange-50/60 border-2 border-saffron-500 shadow-xl transition-all duration-200 flex flex-col items-center text-center space-y-2 ring-4 ring-saffron-200/70 ${
+            activeNode === 'SAMAVAY' || activeNode === 'ALL' ? 'scale-105 shadow-2xl' : 'hover:scale-105'
           }`}>
-            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gov-800 border-2 border-saffron-400 flex items-center justify-center text-saffron-400 shadow-inner group-hover:rotate-6 transition-transform">
-              <Layers className="w-7 h-7 text-saffron-400 animate-pulse" />
+            <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-amber-50 border-2 border-saffron-500 flex items-center justify-center text-saffron-700 shadow-inner group-hover:rotate-6 transition-transform">
+              <Layers className="w-7 h-7 text-saffron-600 animate-pulse" />
             </div>
             <div>
-              <span className="text-xs sm:text-sm font-black tracking-wider uppercase font-serif text-white block">
+              <span className="text-xs sm:text-sm font-black tracking-wider uppercase font-serif text-slate-900 block">
                 SAMAVAY
               </span>
-              <span className="text-[11px] text-saffron-300 font-bold font-mono">DPI Mesh Gateway</span>
+              <span className="text-[11px] text-saffron-800 font-bold font-mono">DPI Mesh Gateway</span>
             </div>
-            <div className="flex items-center gap-1.5 bg-white/10 px-2.5 py-0.5 rounded-full text-[10px] text-emerald-400 font-mono font-bold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 rounded-full text-[10px] text-emerald-800 font-mono font-bold shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
               <span>38ms SLA</span>
             </div>
           </div>

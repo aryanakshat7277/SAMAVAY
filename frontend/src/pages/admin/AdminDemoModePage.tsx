@@ -98,19 +98,19 @@ export const AdminDemoModePage: React.FC = () => {
       />
 
       {/* 2. DEMONSTRATION NOTICE CARD */}
-      <div className="bg-gov-950 text-white rounded-3xl p-5 border border-gov-800 flex items-center justify-between gap-4 text-xs shadow-gov">
+      <div className="bg-gradient-to-r from-amber-50/70 via-white to-stone-50 text-slate-900 rounded-3xl p-5 border-2 border-stone-200/90 flex items-center justify-between gap-4 text-xs shadow-card">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0">
-            <Terminal className="w-5 h-5 text-saffron-400" />
+          <div className="w-10 h-10 rounded-2xl bg-amber-50 border border-amber-300 flex items-center justify-center flex-shrink-0">
+            <Terminal className="w-5 h-5 text-amber-700" />
           </div>
           <div>
-            <p className="font-bold text-white font-serif">Demonstration Telemetry Engine Active</p>
-            <p className="text-gov-300 text-[11px] leading-snug mt-0.5">
+            <p className="font-bold text-slate-900 font-serif">Demonstration Telemetry Engine Active</p>
+            <p className="text-slate-600 text-[11px] leading-snug mt-0.5 font-medium">
               All scenarios trigger live event stream packets on the Interoperability Gateway, simulate real-time PKI handshakes, and emit citizen stage updates.
             </p>
           </div>
         </div>
-        <span className="hidden sm:inline-flex text-[10px] font-bold uppercase tracking-widest text-saffron-400 bg-white/10 px-3 py-1 rounded-full border border-white/10">
+        <span className="hidden sm:inline-flex text-[10px] font-bold uppercase tracking-wider text-amber-900 bg-amber-50 px-3 py-1 rounded-full border border-amber-300 shadow-2xs">
           Simulation Mode
         </span>
       </div>

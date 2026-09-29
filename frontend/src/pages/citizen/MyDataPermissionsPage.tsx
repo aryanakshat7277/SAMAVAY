@@ -97,21 +97,22 @@ export const MyDataPermissionsPage: React.FC = () => {
       )}
 
       {/* ── DPDP RIGHTS HEADER CARD ── */}
-      <div className="bg-gov-950 rounded-3xl overflow-hidden relative">
-        <div className="absolute inset-0 bg-gov-grid opacity-20" />
+      <div className="bg-gradient-to-br from-amber-50/70 via-white to-stone-50 rounded-3xl border-2 border-stone-200/90 shadow-card overflow-hidden relative">
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+        <div className="absolute inset-0 bg-gov-grid opacity-15 pointer-events-none" />
         <div className="relative p-6 sm:p-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="space-y-2">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-saffron-500/20 border border-saffron-400/30 flex items-center justify-center">
-                  <ShieldCheck className="w-4.5 h-4.5 text-saffron-400" />
+                <div className="w-8 h-8 rounded-xl bg-amber-50 border border-amber-300 flex items-center justify-center">
+                  <ShieldCheck className="w-4.5 h-4.5 text-amber-700" />
                 </div>
-                <span className="text-saffron-300 text-xs font-bold uppercase tracking-widest">DPDP Act 2023 — Citizen Rights</span>
+                <span className="text-amber-900 text-xs font-bold uppercase tracking-wider">DPDP Act 2023 — Citizen Rights</span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-white font-serif">
+              <h2 className="text-xl sm:text-2xl font-black text-slate-900 font-serif">
                 You Are in Complete Control of Your Data
               </h2>
-              <p className="text-gov-200 text-sm max-w-lg leading-relaxed font-normal">
+              <p className="text-slate-700 text-sm max-w-lg leading-relaxed font-medium">
                 Under the Digital Personal Data Protection Act 2023, no government service can access your records without
                 your explicit, purpose-bound consent. You may revoke access at any time.
               </p>
@@ -119,13 +120,13 @@ export const MyDataPermissionsPage: React.FC = () => {
 
             {/* Stats */}
             <div className="flex gap-4 flex-shrink-0">
-              <div className="bg-white/8 border border-white/12 rounded-2xl p-4 text-center min-w-[80px]">
-                <p className="text-2xl font-black text-white font-mono">{activeCount}</p>
-                <p className="text-gov-300 text-xs font-semibold mt-0.5">Active</p>
+              <div className="bg-white border-2 border-emerald-200 rounded-2xl p-4 text-center min-w-[84px] shadow-xs">
+                <p className="text-2xl font-black text-emerald-800 font-mono">{activeCount}</p>
+                <p className="text-slate-600 text-xs font-bold mt-0.5">Active</p>
               </div>
-              <div className="bg-white/8 border border-white/12 rounded-2xl p-4 text-center min-w-[80px]">
-                <p className="text-2xl font-black text-rose-400 font-mono">{revokedCount}</p>
-                <p className="text-gov-300 text-xs font-semibold mt-0.5">Revoked</p>
+              <div className="bg-white border-2 border-stone-200 rounded-2xl p-4 text-center min-w-[84px] shadow-xs">
+                <p className="text-2xl font-black text-rose-700 font-mono">{revokedCount}</p>
+                <p className="text-slate-600 text-xs font-bold mt-0.5">Revoked</p>
               </div>
             </div>
           </div>
@@ -133,12 +134,12 @@ export const MyDataPermissionsPage: React.FC = () => {
           {/* Rights strip */}
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
             {dpdpRights.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="bg-white/6 border border-white/10 rounded-xl p-3 space-y-1">
+              <div key={title} className="bg-white border border-stone-200/90 rounded-xl p-3.5 space-y-1 shadow-2xs">
                 <div className="flex items-center gap-1.5">
-                  <Icon className="w-4 h-4 text-gov-300" />
-                  <span className="text-white text-xs font-bold">{title}</span>
+                  <Icon className="w-4 h-4 text-gov-700 flex-shrink-0" />
+                  <span className="text-slate-900 text-xs font-bold">{title}</span>
                 </div>
-                <p className="text-gov-200 text-xs leading-snug font-normal">{desc}</p>
+                <p className="text-slate-600 text-xs leading-snug font-medium">{desc}</p>
               </div>
             ))}
           </div>

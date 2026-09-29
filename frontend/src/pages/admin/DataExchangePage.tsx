@@ -99,8 +99,8 @@ export const DataExchangePage: React.FC = () => {
             <div className="absolute top-1/2 -translate-y-1/2 left-1/3 w-3 h-3 rounded-full bg-gov-600 animate-pulse"></div>
           </div>
 
-          <div className="px-3 py-1.5 bg-gov-950 text-white rounded-xl text-[11px] font-bold font-serif flex-shrink-0 flex items-center gap-1.5">
-            <Lock className="w-3.5 h-3.5 text-gov-300" />
+          <div className="px-3 py-1.5 bg-amber-50 text-amber-950 border border-amber-300 rounded-xl text-[11px] font-bold font-serif flex-shrink-0 flex items-center gap-1.5 shadow-2xs">
+            <Lock className="w-3.5 h-3.5 text-amber-700" />
             <span>SAMAVAY Gateway</span>
           </div>
 

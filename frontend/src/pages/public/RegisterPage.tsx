@@ -75,35 +75,36 @@ export const RegisterPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-sandstone-100 grid lg:grid-cols-2">
       {/* ── LEFT PANEL ── */}
-      <div className="hidden lg:flex flex-col bg-gov-950 relative overflow-hidden">
+      <div className="hidden lg:flex flex-col bg-gradient-to-br from-[#F7F4EE] via-[#FAF8F5] to-[#F1ECE1] border-r-2 border-stone-200/90 relative overflow-hidden text-slate-900">
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] absolute top-0 left-0 right-0 z-20" />
+        
         {/* Atmospheric grid */}
-        <div className="absolute inset-0 bg-gov-grid opacity-40" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gov-radial" />
+        <div className="absolute inset-0 bg-gov-grid opacity-15 pointer-events-none" />
 
         <div className="relative z-10 flex flex-col justify-between h-full p-10">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
-              <Landmark className="w-5 h-5 text-saffron-400" />
+            <div className="w-11 h-11 rounded-2xl bg-white border-2 border-amber-400 shadow-sm flex items-center justify-center p-1.5">
+              <Landmark className="w-6 h-6 text-amber-700" />
             </div>
             <div>
-              <span className="text-white font-black text-lg font-serif">SAMAVAY</span>
-              <p className="text-gov-200 text-xs font-medium">National Digital Public Infrastructure</p>
+              <span className="text-slate-900 font-black text-xl font-serif">SAMAVAY</span>
+              <p className="text-slate-600 text-xs font-semibold">National Digital Public Infrastructure</p>
             </div>
           </div>
 
           {/* Center content */}
           <div className={`space-y-8 transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
             <div>
-              <div className="inline-flex items-center gap-2 bg-saffron-500/20 border border-saffron-400/30 text-saffron-300 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
-                <span className="w-1.5 h-1.5 bg-saffron-400 rounded-full animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-full mb-4 shadow-2xs">
+                <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse" />
                 JOIN 1.66 MILLION CITIZENS
               </div>
-              <h2 className="text-3xl font-black text-white font-serif leading-tight">
+              <h2 className="text-3xl font-black text-slate-900 font-serif leading-tight">
                 India's Unified<br />
-                <span className="text-saffron-400">Government Service Platform</span>
+                <span className="text-saffron-800">Government Service Platform</span>
               </h2>
-              <p className="text-gov-200 text-sm mt-3 leading-relaxed max-w-sm font-normal">
+              <p className="text-slate-700 text-sm mt-3 leading-relaxed max-w-sm font-medium">
                 Register once. Access all state and central government services with automatic
                 data verification and zero repeated uploads.
               </p>
@@ -114,17 +115,17 @@ export const RegisterPage: React.FC = () => {
               {benefits.map(({ icon: Icon, title, desc }, i) => (
                 <div
                   key={title}
-                  className={`flex gap-3 p-4 bg-white/6 border border-white/10 rounded-2xl transition-all duration-500 ${
+                  className={`flex gap-3 p-4 bg-white border border-stone-200/90 rounded-2xl shadow-xs transition-all duration-500 ${
                     mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
                   }`}
                   style={{ transitionDelay: `${(i + 1) * 150}ms` }}
                 >
-                  <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center flex-shrink-0 text-saffron-400">
+                  <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0 text-amber-700">
                     <Icon className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <p className="text-white font-bold text-sm font-serif">{title}</p>
-                    <p className="text-gov-200 text-xs mt-0.5 leading-snug font-normal">{desc}</p>
+                    <p className="text-slate-900 font-bold text-sm font-serif">{title}</p>
+                    <p className="text-slate-600 text-xs mt-0.5 leading-snug font-medium">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -132,10 +133,10 @@ export const RegisterPage: React.FC = () => {
           </div>
 
           {/* Bottom trust strip */}
-          <div className="flex flex-wrap gap-3 text-xs text-gov-300 font-semibold">
-            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />Ministry of Electronics & IT</span>
-            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />NIC Hosted</span>
-            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />DigiLocker Integration</span>
+          <div className="flex flex-wrap gap-4 text-xs text-slate-700 font-bold">
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-600" />Ministry of Electronics & IT</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-600" />NIC Hosted</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-600" />DigiLocker Integration</span>
           </div>
         </div>
       </div>
@@ -146,8 +147,8 @@ export const RegisterPage: React.FC = () => {
 
           {/* Mobile logo */}
           <div className="lg:hidden flex items-center gap-2.5 mb-2">
-            <div className="w-9 h-9 rounded-xl bg-gov-950 flex items-center justify-center">
-              <Landmark className="w-4 h-4 text-saffron-400" />
+            <div className="w-9 h-9 rounded-xl bg-white border border-amber-400 shadow-xs flex items-center justify-center">
+              <Landmark className="w-4 h-4 text-amber-700" />
             </div>
             <span className="font-black text-stone-900 font-serif text-lg">SAMAVAY</span>
           </div>

@@ -402,55 +402,55 @@ export const LandingPage: React.FC = () => {
 
       {/* 8. FINAL CALL TO ACTION — NATIONAL DPI CONSOLE */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-gov-950 via-gov-900 to-gov-850 text-white rounded-3xl p-8 sm:p-14 text-center space-y-7 shadow-2xl relative overflow-hidden border border-gov-700/80">
+        <div className="bg-gradient-to-br from-amber-50/80 via-white to-orange-50/50 text-slate-900 rounded-3xl p-8 sm:p-14 text-center space-y-7 shadow-card relative overflow-hidden border-2 border-stone-200/90">
           {/* Authentic Tricolor Sovereign Top Ribbon */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
           {/* Ashoka Lion Subtle Watermark */}
-          <div className="absolute right-4 -bottom-10 opacity-10 pointer-events-none hidden sm:block">
+          <div className="absolute right-4 -bottom-10 opacity-[0.04] pointer-events-none hidden sm:block">
             <NationalEmblem size="xl" variant="navy" />
           </div>
 
           <div className="max-w-3xl mx-auto space-y-3.5 relative z-10">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1 rounded-full text-xs font-semibold text-saffron-300 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 px-3.5 py-1 rounded-full text-xs font-bold text-amber-900 shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>भारत सरकार • Sovereign DPI Mesh • DPDP Act 2023</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black font-serif text-white tracking-tight drop-shadow-md">
+            <h2 className="text-3xl sm:text-5xl font-black font-serif text-slate-900 tracking-tight">
               Access Government Services More Simply
             </h2>
 
-            <p className="text-xs sm:text-base text-stone-200 leading-relaxed max-w-2xl mx-auto font-sans">
+            <p className="text-xs sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto font-sans font-medium">
               Experience the future of Indian Digital Public Infrastructure. No duplicate forms, no manual queues, and complete statutory DPDP consent transparency across all 28 States and 8 Union Territories.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2 relative z-10">
             <Link to="/services">
-              <Button variant="white" size="lg" icon={ArrowRight} iconPosition="right">
+              <Button variant="primary" size="lg" icon={ArrowRight} iconPosition="right">
                 Explore All 58+ Sovereign Services
               </Button>
             </Link>
             <Link to="/admin/control-center">
-              <Button variant="dark-outline" size="lg" icon={ShieldCheck}>
+              <Button variant="outline" size="lg" icon={ShieldCheck}>
                 Admin & Evaluator Console
               </Button>
             </Link>
           </div>
 
           {/* Trust Highlights */}
-          <div className="pt-4 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-stone-300 font-medium relative z-10">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+          <div className="pt-4 border-t border-stone-200/90 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-700 font-semibold relative z-10">
+            <span className="flex items-center gap-1.5 text-emerald-800">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               62% Paperwork Minimized
             </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-saffron-400" />
+            <span className="flex items-center gap-1.5 text-amber-900">
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
               DigiLocker & Aadhaar Linked
             </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-blue-400" />
+            <span className="flex items-center gap-1.5 text-blue-900">
+              <CheckCircle2 className="w-4 h-4 text-blue-600" />
               IT Act 2000 Legal Validity
             </span>
           </div>

@@ -67,18 +67,19 @@ export const HelpPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-sandstone-100">
-      {/* ── DARK HERO ── */}
-      <div className="bg-gov-950 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gov-grid opacity-20" />
+      {/* ── LIGHT SOVEREIGN HERO ── */}
+      <div className="relative bg-gradient-to-b from-[#F7F4EE] via-[#FAF8F5] to-white border-b-2 border-stone-200/90 overflow-hidden">
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
+        <div className="absolute inset-0 bg-gov-grid opacity-15 pointer-events-none" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center space-y-3">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-gov-200 text-[10px] font-bold px-3.5 py-1.5 rounded-full">
-            <HelpCircle className="w-3 h-3" />
+          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold px-3.5 py-1.5 rounded-full shadow-2xs">
+            <HelpCircle className="w-3.5 h-3.5 text-amber-700" />
             CITIZEN ASSISTANCE & FAQ
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black text-white font-serif">
+          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 font-serif">
             Help & Support Center
           </h1>
-          <p className="text-gov-300 text-sm max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-700 text-sm max-w-xl mx-auto leading-relaxed font-medium">
             Get answers to common questions about SAMAVAY's interoperability platform or reach out to our
             dedicated government citizen support helplines.
           </p>
@@ -87,23 +88,23 @@ export const HelpPage: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-3 pt-2">
             <Link
               to="/services"
-              className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white text-[11px] font-bold px-4 py-2 rounded-xl hover:bg-white/15 transition"
+              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
             >
-              <ArrowRight className="w-3.5 h-3.5 text-saffron-400" />
+              <ArrowRight className="w-3.5 h-3.5 text-gov-700" />
               Browse Services
             </Link>
             <Link
               to="/dashboard"
-              className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white text-[11px] font-bold px-4 py-2 rounded-xl hover:bg-white/15 transition"
+              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
             >
-              <ArrowRight className="w-3.5 h-3.5 text-saffron-400" />
+              <ArrowRight className="w-3.5 h-3.5 text-gov-700" />
               My Dashboard
             </Link>
             <Link
               to="/applications"
-              className="flex items-center gap-1.5 bg-white/10 border border-white/20 text-white text-[11px] font-bold px-4 py-2 rounded-xl hover:bg-white/15 transition"
+              className="flex items-center gap-1.5 bg-white border border-stone-300 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl hover:bg-stone-50 transition shadow-xs cursor-pointer"
             >
-              <ArrowRight className="w-3.5 h-3.5 text-saffron-400" />
+              <ArrowRight className="w-3.5 h-3.5 text-gov-700" />
               Track Applications
             </Link>
           </div>
@@ -189,22 +190,22 @@ export const HelpPage: React.FC = () => {
         </div>
 
         {/* ── DPDP PRIVACY ASSURANCE CARD ── */}
-        <div className="bg-gov-950 rounded-3xl p-6 sm:p-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gov-grid opacity-20" />
+        <div className="bg-gradient-to-br from-amber-50/70 via-white to-stone-50 rounded-3xl p-6 sm:p-8 relative overflow-hidden border-2 border-stone-200/90 shadow-card">
+          <div className="h-1 w-full absolute top-0 left-0 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
           <div className="relative flex flex-col sm:flex-row sm:items-center gap-5">
-            <div className="w-12 h-12 rounded-2xl bg-saffron-500/20 border border-saffron-400/30 flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="w-6 h-6 text-saffron-400" />
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 border border-amber-300 flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-6 h-6 text-amber-700" />
             </div>
             <div className="flex-1 space-y-1">
-              <h3 className="text-base font-black text-white font-serif">Your Privacy is Sovereign</h3>
-              <p className="text-gov-300 text-xs leading-relaxed">
+              <h3 className="text-base font-black text-slate-900 font-serif">Your Privacy is Sovereign</h3>
+              <p className="text-slate-700 text-xs leading-relaxed font-medium">
                 SAMAVAY is fully compliant with the Digital Personal Data Protection Act 2023. No data is stored or shared
                 beyond declared service purposes. All processing is auditable and you have the right to access, correct, and erase your data.
               </p>
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className="flex flex-wrap gap-2 pt-1.5">
                 {['DPDP Act 2023', 'mTLS Encrypted', 'NIC Hosted', 'PKI Signed Certs'].map(t => (
-                  <span key={t} className="text-[10px] font-bold text-gov-200 flex items-center gap-1">
-                    <Check className="w-3 h-3 text-emerald-400" />{t}
+                  <span key={t} className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md flex items-center gap-1 shadow-2xs">
+                    <Check className="w-3.5 h-3.5 text-emerald-600" />{t}
                   </span>
                 ))}
               </div>

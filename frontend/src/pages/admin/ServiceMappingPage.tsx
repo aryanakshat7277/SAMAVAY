@@ -132,16 +132,16 @@ export const ServiceMappingPage: React.FC = () => {
               <div
                 onMouseEnter={() => setHoveredNode('GATEWAY')}
                 onMouseLeave={() => setHoveredNode(null)}
-                className={`px-6 py-3 bg-gov-950 text-white rounded-2xl shadow-xl border-2 border-gov-500 flex items-center space-x-3 cursor-pointer transition-all duration-200 ${
-                  hoveredNode === 'GATEWAY' ? 'scale-110 ring-4 ring-gov-200' : ''
+                className={`px-6 py-3 bg-gradient-to-b from-amber-50 via-white to-orange-50/50 text-slate-900 rounded-2xl shadow-md border-2 border-saffron-500 flex items-center space-x-3 cursor-pointer transition-all duration-200 ${
+                  hoveredNode === 'GATEWAY' ? 'scale-110 ring-4 ring-amber-200' : ''
                 }`}
               >
-                <div className="w-8 h-8 rounded-xl bg-gov-800 flex items-center justify-center">
-                  <Network className="w-4 h-4 text-gov-300 animate-pulse" />
+                <div className="w-8 h-8 rounded-xl bg-amber-50 border border-amber-300 flex items-center justify-center">
+                  <Network className="w-4 h-4 text-amber-700 animate-pulse" />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10px] font-bold uppercase text-gov-300 block">Orchestrator</span>
-                  <span className="text-xs font-bold font-serif">SAMAVAY Gateway</span>
+                  <span className="text-[10px] font-bold uppercase text-saffron-800 block">Orchestrator</span>
+                  <span className="text-xs font-bold font-serif text-slate-900">SAMAVAY Gateway</span>
                 </div>
               </div>
             </div>
