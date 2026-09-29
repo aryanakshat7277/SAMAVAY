@@ -6,6 +6,14 @@
 > 🔗 **Live GitHub Repository**: [https://github.com/aryanakshat7277/SAMAVAY](https://github.com/aryanakshat7277/SAMAVAY)  
 > 🌐 **Live Deployed Web Application**: [https://aryanakshat7277.github.io/SAMAVAY/](https://aryanakshat7277.github.io/SAMAVAY/)  
 > 📑 **Interactive Architecture & Governance Presentation**: [https://aryanakshat7277.github.io/SAMAVAY/presentation.html](https://aryanakshat7277.github.io/SAMAVAY/presentation.html)  
+> 
+> <p align="left">
+>   <a href="https://aryanakshat7277.github.io/SAMAVAY/" target="_blank">
+>     <img src="assets/samavay_live_qr.png" alt="Scan QR Code for SAMAVAY Live Web App" width="150" height="150" />
+>   </a>
+>   <br />
+>   <sub>📱 <em>Scan to open live deployment on mobile</em></sub>
+> </p>
 
 ---
 
