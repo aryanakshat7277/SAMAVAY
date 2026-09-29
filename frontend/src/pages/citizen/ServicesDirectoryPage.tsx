@@ -8,18 +8,25 @@ import { EmptyState } from '../../components/common/EmptyState';
 import {
   Compass, Filter, Building2, Car, Landmark,
   HeartPulse, GraduationCap, HandHeart, Layers, HelpCircle, CheckCircle2,
-  Search, X, TrendingUp, SlidersHorizontal, ArrowRight
+  Search, X, TrendingUp, SlidersHorizontal, ArrowRight,
+  Sprout, ShoppingBag, HardHat, Coins, Baby, Zap
 } from 'lucide-react';
 
-// ── Category definitions (same keys as original) ───────────────────────────────
+// ── Category definitions (all 12 sovereign ministries) ───────────────────────────────
 const categories = [
-  { key: 'ALL',       label: 'All Services',  icon: Layers,        color: 'text-stone-500'   },
-  { key: 'MUNICIPAL', label: 'Municipal',     icon: Building2,     color: 'text-gov-700'     },
-  { key: 'TRANSPORT', label: 'Transport',     icon: Car,           color: 'text-gov-600'     },
-  { key: 'REVENUE',   label: 'Revenue & Land',icon: Landmark,      color: 'text-saffron-700' },
-  { key: 'HEALTH',    label: 'Health',        icon: HeartPulse,    color: 'text-rose-700'    },
-  { key: 'EDUCATION', label: 'Education',     icon: GraduationCap, color: 'text-gov-600'     },
-  { key: 'WELFARE',   label: 'Social Welfare',icon: HandHeart,     color: 'text-saffron-600' },
+  { key: 'ALL',           label: 'All Services',             icon: Layers,        color: 'text-stone-500'   },
+  { key: 'MUNICIPAL',     label: 'Municipal',                 icon: Building2,     color: 'text-gov-700'     },
+  { key: 'TRANSPORT',     label: 'Transport & SARATHI',       icon: Car,           color: 'text-gov-600'     },
+  { key: 'REVENUE',       label: 'Revenue & Land (Bhoomi)',  icon: Landmark,      color: 'text-saffron-700' },
+  { key: 'HEALTH',        label: 'Health & PM-JAY',           icon: HeartPulse,    color: 'text-rose-700'    },
+  { key: 'EDUCATION',     label: 'Education & Grants',        icon: GraduationCap, color: 'text-gov-600'     },
+  { key: 'WELFARE',       label: 'Social Welfare',            icon: HandHeart,     color: 'text-saffron-600' },
+  { key: 'AGRICULTURE',   label: 'Agriculture & Krishi',      icon: Sprout,        color: 'text-emerald-700' },
+  { key: 'FOOD_SUPPLIES', label: 'Food & Ration (NFSA)',      icon: ShoppingBag,   color: 'text-amber-700'   },
+  { key: 'LABOUR',        label: 'Labour & e-Shram',          icon: HardHat,       color: 'text-blue-700'    },
+  { key: 'FINANCE',       label: 'Finance & Taxes',           icon: Coins,         color: 'text-yellow-700'  },
+  { key: 'WOMEN_CHILD',   label: 'Women & Child',             icon: Baby,          color: 'text-pink-700'    },
+  { key: 'POWER',         label: 'Power & Solar (Surya Ghar)',icon: Zap,           color: 'text-orange-700'  },
 ];
 
 // ── Skeleton card ──────────────────────────────────────────────────────────────

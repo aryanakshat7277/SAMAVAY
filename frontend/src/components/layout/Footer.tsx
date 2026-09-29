@@ -102,22 +102,30 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <Link to="/departments" className="hover:text-white transition">Municipal Corporation</Link>
+                <Link to="/services?category=MUNICIPAL" className="hover:text-white transition">Municipal Corporation</Link>
               </li>
               <li>
-                <Link to="/departments" className="hover:text-white transition">Transport Department</Link>
+                <Link to="/services?category=TRANSPORT" className="hover:text-white transition">Transport & Highways</Link>
               </li>
               <li>
-                <Link to="/departments" className="hover:text-white transition">Revenue & Land Records</Link>
+                <Link to="/services?category=REVENUE" className="hover:text-white transition">Revenue & Land Records</Link>
               </li>
               <li>
-                <Link to="/departments" className="hover:text-white transition">Health & Family Welfare</Link>
+                <Link to="/services?category=HEALTH" className="hover:text-white transition">Health & Family Welfare</Link>
               </li>
               <li>
-                <Link to="/departments" className="hover:text-white transition">School & Higher Education</Link>
+                <Link to="/services?category=AGRICULTURE" className="hover:text-white transition">Agriculture & Farmers Welfare</Link>
               </li>
               <li>
-                <Link to="/departments" className="hover:text-white transition">Agriculture & Social Welfare</Link>
+                <Link to="/services?category=FOOD_SUPPLIES" className="hover:text-white transition">Food & Civil Supplies (NFSA)</Link>
+              </li>
+              <li>
+                <Link to="/services?category=LABOUR" className="hover:text-white transition">Labour & e-Shram</Link>
+              </li>
+              <li>
+                <Link to="/departments" className="text-saffron-400 hover:text-saffron-300 font-bold transition flex items-center gap-1 pt-1">
+                  View All 12 Ministries →
+                </Link>
               </li>
             </ul>
           </div>

@@ -40,6 +40,7 @@ import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
   const [popularServices, setPopularServices] = useState<GovernmentService[]>([]);
+  const [totalServicesCount, setTotalServicesCount] = useState<number>(38);
   const [departments, setDepartments] = useState<Department[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedService, setSelectedService] = useState<GovernmentService | null>(null);
@@ -49,7 +50,8 @@ export const LandingPage: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const allServices = await servicesApi.getAll();
-      setPopularServices(allServices.filter((s) => s.isPopular).slice(0, 6));
+      setPopularServices(allServices.filter((s) => s.isPopular).slice(0, 9));
+      setTotalServicesCount(allServices.length);
       const allDepts = await departmentsApi.getAll();
       setDepartments(allDepts);
     };
@@ -359,7 +361,7 @@ export const LandingPage: React.FC = () => {
             </p>
           </div>
           <Link to="/services" className="text-xs font-bold text-gov-800 hover:text-gov-900 inline-flex items-center gap-1">
-            View All Services ({popularServices.length}+) →
+            View All Services ({totalServicesCount}) →
           </Link>
         </div>
 

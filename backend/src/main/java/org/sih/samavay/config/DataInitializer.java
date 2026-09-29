@@ -146,6 +146,42 @@ public class DataInitializer implements CommandLineRunner {
                 "HandHeart", 4
         ));
 
+        Department agriculture = departmentRepository.save(new Department(
+                "Agriculture & Farmers Welfare", "AGRICULTURE",
+                "Direct income support (PM-KISAN), crop insurance settlement (PMFBY), soil health diagnostics, and Kisan Credit Card subventions.",
+                "Sprout", 4
+        ));
+
+        Department foodSupplies = departmentRepository.save(new Department(
+                "Food, Civil Supplies & Consumer Affairs", "FOOD_SUPPLIES",
+                "National food security entitlements (NFSA), One Nation One Ration Card (ONORC), digital smart ration cards, and consumer grievance redressal.",
+                "ShoppingBag", 4
+        ));
+
+        Department labour = departmentRepository.save(new Department(
+                "Labour & Employment", "LABOUR",
+                "Unorganized sector social security (e-Shram), universal provident fund (EPFO), ESIC healthcare cards, and construction worker welfare grants.",
+                "HardHat", 4
+        ));
+
+        Department finance = departmentRepository.save(new Department(
+                "Finance & Commercial Taxes", "FINANCE",
+                "Goods & Services Tax (GST) verification, digital e-stamping and non-judicial stamp duty, PM SVANidhi micro-credit, and profession tax.",
+                "Coins", 4
+        ));
+
+        Department womenChild = departmentRepository.save(new Department(
+                "Women & Child Development", "WOMEN_CHILD",
+                "Direct maternal nutrition support (PMMVY), Sukanya Samriddhi girl child accounts, Poshan tracker supplementary nutrition, and child protection.",
+                "Baby", 4
+        ));
+
+        Department power = departmentRepository.save(new Department(
+                "Power & Renewable Energy", "POWER",
+                "National rooftop solar subsidy (PM Surya Ghar), smart metering, power connection load enhancement, and rural feeder agricultural electrification.",
+                "Zap", 4
+        ));
+
         // 3. Create Services
         GovernmentService propTax = serviceRepository.save(new GovernmentService(
                 "Property Tax Assessment & Receipt", "MUN-001",
@@ -235,6 +271,69 @@ public class DataInitializer implements CommandLineRunner {
                 "Senior citizens aged 60 years and above belonging to BPL or low-income threshold.",
                 "Age Proof (Birth Certificate/Voter ID), BPL Card, Bank Account Details (Aadhaar linked).",
                 12, "Free of Cost", true
+        ));
+
+        GovernmentService pmKisan = serviceRepository.save(new GovernmentService(
+                "PM-KISAN Samman Nidhi e-KYC & Direct Benefit Transfer", "AGR-001",
+                "Register for ₹ 6,000 annual income support transferred directly to bank account in three 4-monthly installments.",
+                agriculture.getId(), agriculture.getName(), "AGRICULTURE",
+                "Small and marginal landholder farmer families with cultivable land in state revenue records.",
+                "Aadhaar Card, Land Record RoR (Khata/Khasra), Aadhaar-linked Bank Account.",
+                7, "Free of Cost", true
+        ));
+
+        GovernmentService pmFasalBima = serviceRepository.save(new GovernmentService(
+                "Pradhan Mantri Fasal Bima Yojana (Crop Insurance Claim)", "AGR-002",
+                "Submit yield loss notices, track automated satellite crop health verification, and receive claim settlements.",
+                agriculture.getId(), agriculture.getName(), "AGRICULTURE",
+                "Farmers growing notified crops in designated areas.",
+                "Sowing Certificate, Land RoR, Bank Account Passbook, Aadhaar.",
+                14, "Nominal Premium (1.5% to 2%)", true
+        ));
+
+        GovernmentService onorc = serviceRepository.save(new GovernmentService(
+                "One Nation One Ration Card (ONORC) National Portability", "FCS-001",
+                "Avail subsidized food grains from any Fair Price Shop (FPS) across India using biometric Aadhaar authentication.",
+                foodSupplies.getId(), foodSupplies.getName(), "FOOD_SUPPLIES",
+                "All NFSA / Antyodaya Anna Yojana (AAY) ration cardholders migrating across state borders.",
+                "Existing Ration Card Number, Aadhaar Number of Beneficiary.",
+                1, "Free of Cost", true
+        ));
+
+        GovernmentService eShram = serviceRepository.save(new GovernmentService(
+                "e-Shram National Database Unorganized Worker Smart Card", "LBR-001",
+                "Register in the National Database of Unorganized Workers (NDUW) to receive a 12-digit UAN and ₹2 Lakh accident cover.",
+                labour.getId(), labour.getName(), "LABOUR",
+                "Unorganized workers aged 16 to 59 years not enrolled in EPFO or ESIC.",
+                "Aadhaar Card, Mobile Number linked with Aadhaar, Bank Account Details.",
+                1, "Free of Cost", true
+        ));
+
+        GovernmentService gstVerify = serviceRepository.save(new GovernmentService(
+                "Goods & Services Tax (GST) Verification & Taxpayer Certificate", "FIN-001",
+                "Instant lookup and cryptographic verification of GSTIN registration, compliance filing history, and active legal status.",
+                finance.getId(), finance.getName(), "FINANCE",
+                "Businesses, consumers, and vendors seeking GST validation.",
+                "15-digit GSTIN Identifier or PAN Number.",
+                1, "Free of Cost", true
+        ));
+
+        GovernmentService pmmvy = serviceRepository.save(new GovernmentService(
+                "Pradhan Mantri Matru Vandana Yojana (PMMVY) Maternity Benefit", "WCD-001",
+                "Conditional cash transfer of ₹ 5,000 directly to pregnant and lactating mothers for health, nutrition, and wage loss.",
+                womenChild.getId(), womenChild.getName(), "WOMEN_CHILD",
+                "Pregnant women and lactating mothers for the first living child belonging to economically eligible households.",
+                "Mother and Child Protection (MCP) Card, Aadhaar Card of Mother, Bank Passbook.",
+                10, "Free of Cost", true
+        ));
+
+        GovernmentService solarRooftop = serviceRepository.save(new GovernmentService(
+                "PM Surya Ghar Muft Bijli Yojana (Rooftop Solar Subsidy)", "PWR-001",
+                "Apply for central financial assistance up to ₹ 78,000 for installing residential rooftop solar panels and net metering.",
+                power.getId(), power.getName(), "POWER",
+                "Residential households with valid electricity consumer number and roof ownership.",
+                "Electricity Bill (last 3 months), Rooftop Area Details, Aadhaar, Bank Details.",
+                7, "Free Application / Subsidy Direct to Bank", true
         ));
 
         // 4. Create Government Platforms

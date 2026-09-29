@@ -7,6 +7,12 @@ import {
   HeartPulse,
   GraduationCap,
   Users,
+  Sprout,
+  ShoppingBag,
+  HardHat,
+  Coins,
+  Baby,
+  Zap,
   ArrowRight
 } from 'lucide-react';
 
@@ -71,6 +77,66 @@ export const CategoryVisualGrid: React.FC = () => {
       deptLink: '/services?category=WELFARE',
       color: 'from-stone-700/10 to-stone-900/5 border-stone-200 text-stone-900',
       badgeColor: 'bg-stone-100 text-stone-900 border-stone-200'
+    },
+    {
+      id: 'AGRICULTURE',
+      title: 'Agriculture & Farmers Welfare',
+      subtitle: 'PM-KISAN DBT ₹6,000, PM Fasal Bima crop insurance & soil health cards',
+      servicesCount: 16,
+      icon: Sprout,
+      deptLink: '/services?category=AGRICULTURE',
+      color: 'from-emerald-700/10 to-emerald-900/5 border-emerald-200 text-emerald-900',
+      badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200'
+    },
+    {
+      id: 'FOOD_SUPPLIES',
+      title: 'Food & Civil Supplies (NFSA)',
+      subtitle: 'One Nation One Ration Card (ONORC), digital smart ration cards & FPS quotas',
+      servicesCount: 12,
+      icon: ShoppingBag,
+      deptLink: '/services?category=FOOD_SUPPLIES',
+      color: 'from-amber-700/10 to-amber-900/5 border-amber-200 text-amber-900',
+      badgeColor: 'bg-amber-100 text-amber-900 border-amber-200'
+    },
+    {
+      id: 'LABOUR',
+      title: 'Labour & Employment',
+      subtitle: 'e-Shram unorganized worker cards, EPFO UAN transfers & BOCW welfare grants',
+      servicesCount: 14,
+      icon: HardHat,
+      deptLink: '/services?category=LABOUR',
+      color: 'from-blue-700/10 to-blue-900/5 border-blue-200 text-blue-900',
+      badgeColor: 'bg-blue-100 text-blue-900 border-blue-200'
+    },
+    {
+      id: 'FINANCE',
+      title: 'Finance & Commercial Taxes',
+      subtitle: 'GSTIN verification, digital e-stamping, PM SVANidhi loans & P-Tax clearance',
+      servicesCount: 13,
+      icon: Coins,
+      deptLink: '/services?category=FINANCE',
+      color: 'from-yellow-700/10 to-yellow-900/5 border-yellow-200 text-yellow-900',
+      badgeColor: 'bg-yellow-100 text-yellow-900 border-yellow-200'
+    },
+    {
+      id: 'WOMEN_CHILD',
+      title: 'Women & Child Development',
+      subtitle: 'PMMVY ₹5,000 maternity benefits, Sukanya Samriddhi accounts & Poshan tracker',
+      servicesCount: 10,
+      icon: Baby,
+      deptLink: '/services?category=WOMEN_CHILD',
+      color: 'from-pink-700/10 to-pink-900/5 border-pink-200 text-pink-900',
+      badgeColor: 'bg-pink-100 text-pink-900 border-pink-200'
+    },
+    {
+      id: 'POWER',
+      title: 'Power & Renewable Energy',
+      subtitle: 'PM Surya Ghar ₹78,000 rooftop solar subsidy, load enhancements & smart metering',
+      servicesCount: 11,
+      icon: Zap,
+      deptLink: '/services?category=POWER',
+      color: 'from-orange-700/10 to-orange-900/5 border-orange-200 text-orange-900',
+      badgeColor: 'bg-orange-100 text-orange-900 border-orange-200'
     }
   ];
 

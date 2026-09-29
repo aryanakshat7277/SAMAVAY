@@ -11,7 +11,13 @@ import {
   Landmark,
   HeartPulse,
   GraduationCap,
-  HandHeart
+  HandHeart,
+  Sprout,
+  ShoppingBag,
+  HardHat,
+  Coins,
+  Baby,
+  Zap
 } from 'lucide-react';
 
 interface ServiceCardProps {
@@ -33,6 +39,18 @@ export const getDepartmentIcon = (category: string) => {
       return GraduationCap;
     case 'WELFARE':
       return HandHeart;
+    case 'AGRICULTURE':
+      return Sprout;
+    case 'FOOD_SUPPLIES':
+      return ShoppingBag;
+    case 'LABOUR':
+      return HardHat;
+    case 'FINANCE':
+      return Coins;
+    case 'WOMEN_CHILD':
+      return Baby;
+    case 'POWER':
+      return Zap;
     default:
       return Building2;
   }
