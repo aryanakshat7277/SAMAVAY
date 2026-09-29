@@ -16,8 +16,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../../components/common/Button';
 import { Card } from '../../components/common/Card';
-import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
-import banner2 from '../../assets/gov_banner_2.jpg';
+import { DpiVisualSlideshow } from '../../components/common/DpiVisualSlideshow';
 
 export const HowSamavayWorksPage: React.FC = () => {
   return (
@@ -35,22 +34,9 @@ export const HowSamavayWorksPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Visual Architecture Banner */}
-      <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-card bg-white max-w-4xl mx-auto">
-        <img
-          src={dpiDataFlowImg}
-          alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
-          className="w-full h-auto object-cover max-h-[380px]"
-        />
-        <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-700">
-          <span className="font-bold text-slate-900 flex items-center gap-1.5 text-xs sm:text-sm">
-            <CheckCircle2 className="w-4.5 h-4.5 text-emerald-600" />
-            Connected Public Infrastructure Pipeline
-          </span>
-          <span className="text-xs text-slate-600 text-center sm:text-right font-medium">
-            Zero paper photocopies • Authoritative data reuse • 100% DPDP Act compliance
-          </span>
-        </div>
+      {/* Interactive DPI Architecture & Workflow Slideshow */}
+      <div className="max-w-5xl mx-auto">
+        <DpiVisualSlideshow initialSlide={0} />
       </div>
 
       {/* 2. SIDE-BY-SIDE COMPARISON: THE PROBLEM VS. THE SAMAVAY SOLUTION */}
@@ -183,28 +169,45 @@ export const HowSamavayWorksPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Visual Showcase: Paperless Digital Verification */}
-      <div className="relative rounded-3xl overflow-hidden border-2 border-stone-200/90 shadow-card bg-gradient-to-br from-amber-50/70 via-white to-stone-50 text-slate-900 max-w-4xl mx-auto select-none">
+      {/* Sovereign Guarantee & Document Minimization Standards */}
+      <div className="relative rounded-3xl overflow-hidden border-2 border-stone-200/90 shadow-card bg-gradient-to-br from-amber-50/80 via-white to-stone-50 text-slate-900 max-w-4xl mx-auto select-none p-6 sm:p-8">
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] z-20" />
-        <div className="p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6">
-          <div className="w-full md:w-1/2 rounded-2xl overflow-hidden border border-stone-200 shadow-xs flex-shrink-0">
-            <img
-              src={banner2}
-              alt="DigiLocker Paperless Governance Experience"
-              className="w-full h-48 sm:h-56 object-cover"
-            />
-          </div>
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full text-xs sm:text-sm font-bold text-emerald-800 w-fit shadow-2xs">
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200/90 pb-4">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-300 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-emerald-800 shadow-2xs">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
               <span>DPDP ACT 2023 & IT ACT 2000 COMPLIANT</span>
             </div>
+            <span className="text-xs sm:text-sm font-mono font-bold text-gov-800 bg-gov-50 border border-gov-200 px-3 py-1 rounded-lg">
+              Section 4 & 5 Legally Enforceable
+            </span>
+          </div>
+
+          <div className="space-y-2">
             <h3 className="text-xl sm:text-2xl font-black font-serif text-slate-900">
               62% Document Submissions Eliminated at Source
             </h3>
             <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
               By connecting directly to authoritative state databases (VAHAN, Bhoomi, e-NagarPalika, DigiLocker), citizens never have to scan or re-upload documents the Government of India already maintains.
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-2xs space-y-1.5">
+              <span className="text-2xl font-black font-mono text-gov-800">62.4%</span>
+              <h4 className="text-sm font-bold text-slate-900">Document Elimination</h4>
+              <p className="text-xs text-slate-600">Zero physical photocopies or attestations needed across 58+ services.</p>
+            </div>
+            <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-2xs space-y-1.5">
+              <span className="text-2xl font-black font-mono text-emerald-700">&lt; 1.8s</span>
+              <h4 className="text-sm font-bold text-slate-900">Master Verification</h4>
+              <p className="text-xs text-slate-600">Real-time authoritative sync with Bhoomi, SARATHI, and VAHAN registries.</p>
+            </div>
+            <div className="bg-white p-4 rounded-2xl border border-stone-200 shadow-2xs space-y-1.5">
+              <span className="text-2xl font-black font-mono text-amber-700">1-Click</span>
+              <h4 className="text-sm font-bold text-slate-900">Revocable Consent</h4>
+              <p className="text-xs text-slate-600">DPDP Act Section 6 citizen privacy controls with instant revocation rights.</p>
+            </div>
           </div>
         </div>
       </div>

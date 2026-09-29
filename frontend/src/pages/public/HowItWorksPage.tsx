@@ -9,7 +9,7 @@ import {
 import { PageHeader } from '../../components/common/PageHeader';
 import { Card } from '../../components/common/Card';
 import { Button } from '../../components/common/Button';
-import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
+import { DpiVisualSlideshow } from '../../components/common/DpiVisualSlideshow';
 
 // ── Connected platforms
 const platforms = [
@@ -121,36 +121,21 @@ export const HowItWorksPage: React.FC = () => {
             ))}
             <div className="flex items-center gap-1.5 bg-gov-50 border border-gov-300 rounded-xl px-3 py-1.5 shadow-2xs">
               <div className="w-2 h-2 rounded-full bg-gov-700 animate-pulse" />
-              <span className="text-[11px] font-black text-gov-800">SAMAVAY DPI Hub</span>
+              <span className="text-xs font-black text-gov-800">SAMAVAY DPI Hub</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ── VISUAL ARCHITECTURE BANNER ── */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-        <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-card bg-white">
-          <img
-            src={dpiDataFlowImg}
-            alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
-            className="w-full h-auto object-cover max-h-[380px]"
-          />
-          <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
-            <span className="font-bold text-slate-800 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Direct Sovereign Data Exchange
-            </span>
-            <span className="text-[11px] text-slate-500 text-center sm:text-right">
-              Citizen 1-Click Consent ➔ Official Department Lookups ➔ Zero Photocopies
-            </span>
-          </div>
-        </div>
+      {/* ── VISUAL ARCHITECTURE SLIDESHOW ── */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+        <DpiVisualSlideshow initialSlide={0} />
       </div>
 
       {/* ── 4-STEP JOURNEY ── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="text-center mb-10 space-y-2">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-gov-800 bg-gov-50 border border-gov-200 px-3.5 py-1 rounded-full">
             SIMPLE 4-STEP PROCESS
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">

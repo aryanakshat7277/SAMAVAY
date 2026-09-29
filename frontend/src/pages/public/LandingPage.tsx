@@ -35,7 +35,7 @@ import { NationalEmblem } from '../../components/common/NationalEmblem';
 import { CitizenQuickUtilityHub } from '../../components/common/CitizenQuickUtilityHub';
 import { CitizenCredentialsCard } from '../../components/common/CitizenCredentialsCard';
 import { AnimatedCounter, CategoryVisualGrid, NationalInteroperabilityShowcase, InteractiveMinimizationPlayground } from '../../components/visual';
-import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
+import { DpiVisualSlideshow } from '../../components/common/DpiVisualSlideshow';
 
 export const LandingPage: React.FC = () => {
   const navigate = useNavigate();
@@ -279,22 +279,9 @@ export const LandingPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Visual Architecture Concept Banner */}
-          <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50/50 max-w-4xl mx-auto">
-            <img
-              src={dpiDataFlowImg}
-              alt="SAMAVAY Interoperability Architecture: Citizen 1-Click Consent connecting official pillars to instant certificate delivery"
-              className="w-full h-auto object-cover max-h-[380px]"
-            />
-            <div className="p-4 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-slate-700">
-              <span className="font-bold text-slate-800 flex items-center gap-1.5 text-sm sm:text-base">
-                <CheckCircle2 className="w-4.5 h-4.5 text-emerald-600" />
-                Verified Sovereign Data Highway
-              </span>
-              <span className="text-xs sm:text-sm text-slate-600 text-center sm:text-right font-medium">
-                1-Click Consent ➔ Official Department Lookups (Revenue, VAHAN, Municipal) ➔ Instant Digital Delivery
-              </span>
-            </div>
+          {/* Interactive DPI Architecture & Workflow Slideshow */}
+          <div className="max-w-5xl mx-auto">
+            <DpiVisualSlideshow />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">

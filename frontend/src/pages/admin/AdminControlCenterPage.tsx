@@ -10,6 +10,8 @@ import { MetricCard } from '../../components/common/MetricCard';
 import { TelemetryRadarWidget } from '../../components/visual';
 import { NationalEmblem } from '../../components/common/NationalEmblem';
 import adminHighwayImg from '../../assets/gov_banner_3.jpg';
+import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
+import banner2 from '../../assets/gov_banner_2.jpg';
 import {
   LayoutDashboard,
   Server,
@@ -24,15 +26,67 @@ import {
   Cpu,
   RefreshCw,
   Play,
+  Pause,
+  ChevronLeft,
+  ChevronRight,
   FileCheck,
   BarChart3,
   Sliders,
   Plus
 } from 'lucide-react';
 
+const adminTelemetrySlides = [
+  {
+    id: 1,
+    tag: 'SOVEREIGN MESH ONLINE (14 NODES)',
+    subtag: 'DPDP ACT 2023 GOVERNED',
+    title: 'National Cross-Departmental Interoperability Pipeline',
+    description: 'Centralized administrative telemetry monitoring mTLS encrypted peer-to-peer registry exchanges between Revenue, Transport, Municipal, Welfare, Health, Agriculture, Food, Labour, Finance, and Renewable Energy nodes across India.',
+    image: adminHighwayImg,
+    stat1: { label: 'Gateway Speed', value: '38ms Avg', color: 'text-emerald-700' },
+    stat2: { label: 'Daily Transactions', value: '4.82M Req', color: 'text-amber-800' },
+    stat3: { label: 'PKI Security', value: 'X.509 Active', color: 'text-slate-900' },
+    primaryAction: { label: 'Platform Status', url: '/admin/platform-status' }
+  },
+  {
+    id: 2,
+    tag: 'DIRECT INTEROPERABILITY HIGHWAY',
+    subtag: '1-CLICK CONSENT ARCHITECTURE',
+    title: 'End-to-End Encrypted Registry Handshake Engine',
+    description: 'Autonomous protocol engine executing ISO-20022 compliant data transformations, mapping citizen consent tokens directly into schema-validated payloads across Bhoomi, SARATHI, and VAHAN masters.',
+    image: dpiDataFlowImg,
+    stat1: { label: 'Latency SLA', value: '1.8s P99', color: 'text-emerald-700' },
+    stat2: { label: 'Field Reduction', value: '62.4% Avg', color: 'text-amber-800' },
+    stat3: { label: 'Encryption', value: 'TLS 1.3 mTLS', color: 'text-slate-900' },
+    primaryAction: { label: 'Platform Status', url: '/admin/platform-status' }
+  },
+  {
+    id: 3,
+    tag: 'STATUTORY AUDIT & TRUST',
+    subtag: 'ZERO DOCUMENT RE-UPLOAD',
+    title: 'DigiLocker Cryptographic Certificate Issuance Ledger',
+    description: 'Tamper-evident audit trail recording public service deliveries with SHA-256 verifiable signatures, ensuring complete citizen privacy and non-repudiation under IT Act 2000 Section 4 & 5.',
+    image: banner2,
+    stat1: { label: 'Issuance Speed', value: 'Instant', color: 'text-emerald-700' },
+    stat2: { label: 'Audit Compliance', value: '100.0%', color: 'text-emerald-700' },
+    stat3: { label: 'Consent Status', value: 'Revocable', color: 'text-slate-900' },
+    primaryAction: { label: 'Platform Status', url: '/admin/platform-status' }
+  }
+];
+
 export const AdminControlCenterPage: React.FC = () => {
   const [summary, setSummary] = useState<ControlCenterSummaryDto | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [adminSlide, setAdminSlide] = useState(0);
+  const [isAdminSlidePlaying, setIsAdminSlidePlaying] = useState(true);
+
+  useEffect(() => {
+    if (!isAdminSlidePlaying) return;
+    const interval = setInterval(() => {
+      setAdminSlide((prev) => (prev + 1) % adminTelemetrySlides.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [isAdminSlidePlaying]);
 
   const loadData = async () => {
     setIsLoading(true);
@@ -80,19 +134,32 @@ export const AdminControlCenterPage: React.FC = () => {
         }
       />
 
-      {/* 1.5 NATIONAL DPI COMMAND HIGHWAY VISUAL BANNER */}
-      <div className="relative rounded-3xl overflow-hidden border-2 border-stone-200/90 shadow-card bg-gradient-to-br from-amber-50/70 via-white to-stone-50 text-slate-900 select-none">
+      {/* 1.5 NATIONAL DPI COMMAND HIGHWAY INTERACTIVE TELEMETRY SLIDESHOW */}
+      <div
+        className="relative rounded-3xl overflow-hidden border-2 border-stone-200/90 shadow-card bg-gradient-to-br from-amber-50/70 via-white to-stone-50 text-slate-900 select-none group"
+        onMouseEnter={() => setIsAdminSlidePlaying(false)}
+        onMouseLeave={() => setIsAdminSlidePlaying(true)}
+      >
         {/* Tricolor Sovereign Top Bar */}
         <div className="absolute top-0 left-0 right-0 h-1.5 z-20 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
-        {/* Background Image with Light Gradient Overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
-            src={adminHighwayImg}
-            alt="National DPI Interoperability Mesh Highway"
-            className="w-full h-full object-cover opacity-10 filter saturate-100"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
+        {/* Dynamic Slide Background Image with Light Gradient Overlay */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {adminTelemetrySlides.map((slide, idx) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                idx === adminSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover opacity-15 filter saturate-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent" />
+            </div>
+          ))}
         </div>
 
         {/* Banner Content */}
@@ -101,37 +168,86 @@ export const AdminControlCenterPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-bold font-mono shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                SOVEREIGN MESH ONLINE (14 NODES)
+                {adminTelemetrySlides[adminSlide].tag}
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold font-mono shadow-2xs">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-700" />
-                DPDP ACT 2023 GOVERNED
+                {adminTelemetrySlides[adminSlide].subtag}
               </span>
             </div>
 
             <h2 className="text-xl sm:text-2xl font-black font-serif text-slate-900 tracking-tight">
-              National Cross-Departmental Interoperability Pipeline
+              {adminTelemetrySlides[adminSlide].title}
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans font-medium">
-              Centralized administrative telemetry monitoring mTLS encrypted peer-to-peer registry exchanges between Revenue, Transport, Municipal, Welfare, Health, Agriculture, Food, Labour, Finance, and Renewable Energy nodes across India.
+              {adminTelemetrySlides[adminSlide].description}
             </p>
+
+            {/* Slide Navigation Controls */}
+            <div className="flex items-center gap-2 pt-1">
+              <div className="flex items-center gap-1 bg-white/90 border border-stone-200 rounded-full px-2 py-1 shadow-2xs">
+                {adminTelemetrySlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setAdminSlide(i)}
+                    className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                      i === adminSlide ? 'w-5 bg-gov-700' : 'w-1.5 bg-stone-300 hover:bg-stone-400'
+                    }`}
+                    title={`Slide ${i + 1}`}
+                  />
+                ))}
+                <span className="text-[10px] font-mono font-bold text-slate-600 ml-1">
+                  0{adminSlide + 1}/0{adminTelemetrySlides.length}
+                </span>
+              </div>
+
+              <div className="flex items-center gap-1 bg-white/90 border border-stone-200 rounded-full p-0.5 shadow-2xs text-slate-700">
+                <button
+                  onClick={() => setAdminSlide((prev) => (prev - 1 + adminTelemetrySlides.length) % adminTelemetrySlides.length)}
+                  className="p-1 rounded-full hover:bg-stone-100 transition cursor-pointer"
+                  title="Previous slide"
+                >
+                  <ChevronLeft className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  onClick={() => setIsAdminSlidePlaying(!isAdminSlidePlaying)}
+                  className="p-1 rounded-full hover:bg-stone-100 transition cursor-pointer"
+                  title={isAdminSlidePlaying ? 'Pause' : 'Play'}
+                >
+                  {isAdminSlidePlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                </button>
+                <button
+                  onClick={() => setAdminSlide((prev) => (prev + 1) % adminTelemetrySlides.length)}
+                  className="p-1 rounded-full hover:bg-stone-100 transition cursor-pointer"
+                  title="Next slide"
+                >
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* Quick Metrics & Actions Widget */}
           <div className="flex flex-col sm:flex-row md:flex-col gap-3 flex-shrink-0">
             <div className="bg-white border border-stone-200/90 p-4 rounded-2xl text-xs space-y-1.5 shadow-sm">
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-600 font-semibold">Gateway Speed:</span>
-                <span className="font-mono font-bold text-emerald-700 text-sm">38ms Avg</span>
+                <span className="text-slate-600 font-semibold">{adminTelemetrySlides[adminSlide].stat1.label}:</span>
+                <span className={`font-mono font-bold text-sm ${adminTelemetrySlides[adminSlide].stat1.color}`}>
+                  {adminTelemetrySlides[adminSlide].stat1.value}
+                </span>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-600 font-semibold">Daily Transactions:</span>
-                <span className="font-mono font-bold text-saffron-800 text-sm">4.82M Req</span>
+                <span className="text-slate-600 font-semibold">{adminTelemetrySlides[adminSlide].stat2.label}:</span>
+                <span className={`font-mono font-bold text-sm ${adminTelemetrySlides[adminSlide].stat2.color}`}>
+                  {adminTelemetrySlides[adminSlide].stat2.value}
+                </span>
               </div>
               <div className="flex items-center justify-between gap-4">
-                <span className="text-slate-600 font-semibold">PKI Security:</span>
-                <span className="font-mono font-bold text-slate-900 text-sm">X.509 Active</span>
+                <span className="text-slate-600 font-semibold">{adminTelemetrySlides[adminSlide].stat3.label}:</span>
+                <span className={`font-mono font-bold text-sm ${adminTelemetrySlides[adminSlide].stat3.color}`}>
+                  {adminTelemetrySlides[adminSlide].stat3.value}
+                </span>
               </div>
             </div>
 

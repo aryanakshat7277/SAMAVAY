@@ -45,6 +45,8 @@ import banner1 from '../../assets/gov_banner_1.jpg';
 import banner2 from '../../assets/gov_banner_2.jpg';
 import banner3 from '../../assets/gov_banner_3.jpg';
 import banner4 from '../../assets/gov_banner_4.jpg';
+import dpiDataFlowImg from '../../assets/dpi_data_flow.jpg';
+import heroCitizenImg from '../../assets/hero_citizen_dpi.jpg';
 
 export const CitizenDashboard: React.FC = () => {
   const { user } = useAuth();
@@ -102,6 +104,22 @@ export const CitizenDashboard: React.FC = () => {
       link: '/services',
       btnText: 'Check Eligibility',
       tag: 'DBT SCHEMES'
+    },
+    {
+      title: 'End-to-End Interoperability Mesh Pipeline',
+      subtitle: 'Instant parallel lookups between Revenue, Transport, and Municipal departments in under 1.8s.',
+      image: dpiDataFlowImg,
+      link: '/how-samavay-works',
+      btnText: 'View Pipeline',
+      tag: 'REGISTRY MESH'
+    },
+    {
+      title: 'Equitable Citizen Access Across 28 States & 8 UTs',
+      subtitle: 'Sovereign public digital infrastructure designed for 1.4 billion citizens in 22 languages.',
+      image: heroCitizenImg,
+      link: '/services',
+      btnText: 'Discover Services',
+      tag: 'CITIZEN FIRST'
     }
   ];
 
@@ -307,8 +325,8 @@ export const CitizenDashboard: React.FC = () => {
                 alt={slide.title}
                 className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-transparent flex flex-col justify-center px-6 sm:px-12 max-w-2xl text-slate-900">
-                <span className="inline-block text-[10px] font-bold tracking-widest uppercase text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md mb-2 border border-amber-300 w-fit shadow-2xs">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/98 via-white/88 to-transparent flex flex-col justify-center px-6 sm:px-12 max-w-2xl text-slate-900">
+                <span className="inline-block text-xs font-bold tracking-wider uppercase text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md mb-2 border border-amber-300 w-fit shadow-2xs">
                   {slide.tag}
                 </span>
                 <h3 className="text-lg sm:text-2xl font-bold font-serif leading-snug text-slate-900 mb-1.5">
@@ -320,7 +338,7 @@ export const CitizenDashboard: React.FC = () => {
                 <div>
                   <Link
                     to={slide.link}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-gov-700 hover:bg-gov-800 text-white font-bold text-xs rounded-xl shadow-xs transition cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-gov-700 hover:bg-gov-800 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition cursor-pointer"
                   >
                     <span>{slide.btnText}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -334,30 +352,35 @@ export const CitizenDashboard: React.FC = () => {
           <button
             onClick={() => setDashboardSlide((prev) => (prev - 1 + dashboardBanners.length) % dashboardBanners.length)}
             aria-label="Previous Slide"
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-slate-900/60 hover:bg-slate-900/80 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition cursor-pointer"
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={() => setDashboardSlide((prev) => (prev + 1) % dashboardBanners.length)}
             aria-label="Next Slide"
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-slate-900/60 hover:bg-slate-900/80 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition cursor-pointer"
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
 
-          {/* Indicators */}
-          <div className="absolute bottom-3 right-6 z-20 flex items-center space-x-1.5">
-            {dashboardBanners.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setDashboardSlide(i)}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                  i === dashboardSlide ? 'w-6 bg-gov-700' : 'w-2 bg-slate-300 hover:bg-slate-400'
-                }`}
-              />
-            ))}
+          {/* Indicators & Counter */}
+          <div className="absolute bottom-3 right-6 z-20 flex items-center space-x-2 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full border border-stone-200 shadow-2xs">
+            <span className="text-[11px] font-mono font-bold text-slate-600">
+              0{dashboardSlide + 1} / 0{dashboardBanners.length}
+            </span>
+            <div className="flex items-center space-x-1">
+              {dashboardBanners.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setDashboardSlide(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                    i === dashboardSlide ? 'w-5 bg-gov-700' : 'w-1.5 bg-stone-300 hover:bg-stone-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
