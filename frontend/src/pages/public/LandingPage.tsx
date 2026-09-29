@@ -80,9 +80,9 @@ export const LandingPage: React.FC = () => {
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-100/90 via-gov-50/30 to-[#F8FAFC] pt-12 pb-16 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Col: Main Headline & Actions */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center space-x-2 bg-gov-100/90 border border-gov-200 px-3.5 py-1.5 rounded-full text-xs font-semibold text-gov-900 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • National Digital Public Infrastructure</span>
@@ -148,26 +148,26 @@ export const LandingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Col: Interactive Visual Hero Showcase (Proper Light Theme Design) */}
-            <div className="lg:col-span-5 flex flex-col items-center w-full">
-              <div className="w-full max-w-lg bg-white p-3.5 sm:p-4 rounded-3xl border-2 border-slate-200/90 shadow-card text-slate-900 relative">
+            {/* Right Col: Interactive Visual Hero Showcase (Expanded & Prominent) */}
+            <div className="lg:col-span-6 flex flex-col items-center w-full">
+              <div className="w-full max-w-2xl bg-white p-4 sm:p-6 lg:p-7 rounded-3xl border-2 border-slate-200/90 shadow-card text-slate-900 relative">
                 {/* Tricolor Ribbon on Bezel */}
                 <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] rounded-t-3xl" />
 
                 {/* Bezel Header & Toggle Switch */}
-                <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200/80 pt-1">
+                <div className="flex flex-wrap items-center justify-between pb-3.5 mb-3.5 border-b border-slate-200/80 pt-1 gap-2">
                   <div className="flex items-center space-x-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-[10px] font-bold font-serif tracking-wider text-slate-800 uppercase">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-xs sm:text-[13px] font-bold font-serif tracking-wider text-slate-800 uppercase">
                       राष्ट्रीय नागरिक वॉल्ट • DPI GATEWAY
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-1 p-0.5 bg-slate-100 rounded-xl border border-slate-200">
+                  <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200">
                     <button
                       type="button"
                       onClick={() => setHeroViewMode('visual')}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                      className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-[13px] font-bold transition-all cursor-pointer ${
                         heroViewMode === 'visual'
                           ? 'bg-gov-800 text-white shadow-xs'
                           : 'text-slate-600 hover:text-slate-900'
@@ -178,13 +178,13 @@ export const LandingPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setHeroViewMode('mesh')}
-                      className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                      className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-[13px] font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                         heroViewMode === 'mesh'
                           ? 'bg-gov-800 text-white shadow-xs'
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
-                      <Network className="w-3.5 h-3.5" />
+                      <Network className="w-4 h-4" />
                       <span>Interoperability Grid</span>
                     </button>
                   </div>

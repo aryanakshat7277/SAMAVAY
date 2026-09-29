@@ -18,35 +18,35 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
   const [isTransmitting, setIsTransmitting] = useState<boolean>(true);
 
   return (
-    <div className="w-full max-w-lg mx-auto bg-slate-50/80 border border-slate-200 rounded-2xl p-5 text-slate-900 shadow-2xs relative overflow-hidden select-none">
+    <div className="w-full bg-slate-50/90 border-2 border-slate-200/90 rounded-2xl sm:rounded-3xl p-5 sm:p-7 text-slate-900 shadow-card relative overflow-hidden select-none space-y-4">
       {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 bg-gov-grid opacity-20 pointer-events-none" />
 
       {/* Header Info */}
-      <div className="flex items-center justify-between border-b border-slate-200/90 pb-3 relative z-10">
-        <div className="flex items-center space-x-2.5">
-          <div className="w-8 h-8 rounded-xl bg-gov-900 text-white flex items-center justify-center p-1 shadow-sm">
-            <NationalEmblem size="sm" variant="gold" />
+      <div className="flex items-center justify-between border-b-2 border-slate-200/90 pb-3 relative z-10">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 rounded-2xl bg-gov-900 text-white flex items-center justify-center p-2 shadow-sm ring-1 ring-gov-700/50 flex-shrink-0">
+            <NationalEmblem size="md" variant="gold" />
           </div>
           <div>
-            <h4 className="text-xs font-bold text-slate-900 font-serif tracking-wide">
+            <h4 className="text-sm sm:text-base font-extrabold text-slate-900 font-serif tracking-wide">
               National Interoperability Mesh
             </h4>
-            <p className="text-[10px] text-slate-500 font-mono">Sovereign mTLS Data Gateway</p>
+            <p className="text-xs text-slate-600 font-mono font-medium">Sovereign mTLS Data Gateway</p>
           </div>
         </div>
 
         <button
           onClick={() => setIsTransmitting(!isTransmitting)}
-          className="text-[10px] font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 px-2.5 py-1 rounded-full inline-flex items-center gap-1.5 transition cursor-pointer"
+          className="text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border-2 border-emerald-300 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5 transition cursor-pointer shadow-xs"
         >
-          <span className={`w-1.5 h-1.5 rounded-full ${isTransmitting ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}`} />
+          <span className={`w-2 h-2 rounded-full ${isTransmitting ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}`} />
           <span>{isTransmitting ? 'Live Stream' : 'Paused'}</span>
         </button>
       </div>
 
       {/* SVG Diagram Canvas */}
-      <div className="relative h-64 sm:h-72 my-2 flex items-center justify-center z-10">
+      <div className="relative h-72 sm:h-84 my-2 flex items-center justify-center z-10">
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 280">
           {/* Connection Lines from Citizen to Center (SAMAVAY) */}
           <line
@@ -173,10 +173,10 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
       </div>
 
       {/* Dynamic Node Context Bar */}
-      <div className="p-3 bg-white border border-slate-200 rounded-xl text-xs relative z-10 space-y-1.5 shadow-2xs">
+      <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 rounded-2xl text-xs sm:text-sm relative z-10 space-y-2 shadow-xs">
         <div className="flex items-center justify-between">
-          <span className="font-bold text-slate-900 font-serif flex items-center gap-1.5 text-xs sm:text-sm">
-            <Activity className="w-4 h-4 text-gov-700" />
+          <span className="font-bold text-slate-900 font-serif flex items-center gap-2 text-xs sm:text-base">
+            <Activity className="w-4.5 h-4.5 text-gov-700" />
             {activeNode === 'REVENUE'
               ? 'Bhoomi Land Records Registry (Revenue)'
               : activeNode === 'TRANSPORT'
@@ -187,11 +187,11 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
               ? 'Single Citizen Identity & DPDP Consent Gate'
               : 'National Cross-Registry Interoperability Gateway'}
           </span>
-          <span className="text-xs font-mono font-bold text-gov-900 bg-gov-50 border border-gov-300 px-2.5 py-0.5 rounded-full">
+          <span className="text-xs font-mono font-bold text-gov-950 bg-gov-50 border border-gov-300 px-3 py-1 rounded-full shadow-2xs">
             38ms Latency
           </span>
         </div>
-        <p className="text-xs text-slate-700 leading-relaxed font-medium">
+        <p className="text-xs sm:text-[13.5px] text-slate-700 leading-relaxed font-medium">
           {activeNode === 'REVENUE'
             ? 'Auto-verifies Land Record of Rights (RoR), survey coordinates, and mutation history.'
             : activeNode === 'TRANSPORT'

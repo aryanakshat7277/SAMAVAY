@@ -16,109 +16,109 @@ import { NationalEmblem } from './NationalEmblem';
 
 export const CitizenCredentialsCard: React.FC = () => {
   return (
-    <div className="w-full bg-slate-50/80 border border-slate-200 rounded-2xl p-4 sm:p-5 text-slate-900 space-y-3.5 select-none relative overflow-hidden shadow-2xs">
+    <div className="w-full bg-slate-50/90 border-2 border-slate-200/90 rounded-2xl sm:rounded-3xl p-5 sm:p-7 text-slate-900 space-y-4 sm:space-y-5 select-none relative overflow-hidden shadow-card">
       {/* Official Government Header */}
-      <div className="flex items-center justify-between border-b border-slate-200/90 pb-3 relative z-10">
-        <div className="flex items-center space-x-2.5">
-          <div className="w-10 h-10 rounded-xl bg-gov-900 text-white flex items-center justify-center p-1.5 shadow-sm ring-1 ring-gov-700/50">
-            <NationalEmblem size="sm" variant="gold" />
+      <div className="flex items-center justify-between border-b-2 border-slate-200/90 pb-4 relative z-10 gap-3">
+        <div className="flex items-center space-x-3.5">
+          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gov-900 text-white flex items-center justify-center p-2.5 shadow-md ring-2 ring-gov-700/50 flex-shrink-0">
+            <NationalEmblem size="md" variant="gold" />
           </div>
           <div>
-            <div className="flex items-center space-x-1.5 text-xs font-bold tracking-wider uppercase text-saffron-800 font-serif">
+            <div className="flex items-center space-x-1.5 text-xs sm:text-[13px] font-bold tracking-wider uppercase text-saffron-800 font-serif">
               <span>भारत सरकार</span>
               <span className="text-slate-400">•</span>
               <span>Government of India</span>
             </div>
-            <h4 className="text-sm font-extrabold text-slate-900 font-serif">
+            <h4 className="text-base sm:text-xl font-black text-slate-900 font-serif tracking-tight mt-0.5">
               National DigiLocker & Registry Vault
             </h4>
           </div>
         </div>
 
-        <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-2xs">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="text-xs sm:text-sm font-bold text-emerald-800 bg-emerald-50 border-2 border-emerald-300 px-3.5 py-1.5 rounded-full flex items-center gap-2 shadow-xs flex-shrink-0">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
           <span>Statutory Active</span>
         </span>
       </div>
 
-      {/* 3 Pre-Verified Sovereign Credentials (Light Clean Card Aesthetic) */}
-      <div className="space-y-2.5 relative z-10">
+      {/* 3 Pre-Verified Sovereign Credentials (Large Light Clean Card Aesthetic) */}
+      <div className="space-y-3.5 relative z-10">
         {/* 1. UIDAI Aadhaar Verification */}
-        <div className="p-3 bg-white border border-slate-200 hover:border-emerald-400 rounded-xl flex items-center justify-between gap-3 shadow-2xs hover:shadow-xs transition">
-          <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 flex-shrink-0">
-              <UserCheck className="w-4.5 h-4.5" />
+        <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 hover:border-emerald-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
+          <div className="flex items-center space-x-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border-2 border-emerald-200 flex items-center justify-center text-emerald-700 flex-shrink-0 shadow-2xs">
+              <UserCheck className="w-6 h-6" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-slate-900">Aadhaar Identity Authentication</span>
-                <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm sm:text-base font-bold text-slate-900">Aadhaar Identity Authentication</span>
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 rounded-md">
                   UIDAI Verified
                 </span>
               </div>
-              <p className="text-xs text-slate-600 font-medium">
+              <p className="text-xs sm:text-[13.5px] text-slate-600 font-medium mt-0.5 leading-snug">
                 VID: •••• •••• 9021 • Demographic & Biometric Match Validated
               </p>
             </div>
           </div>
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 flex-shrink-0" />
         </div>
 
         {/* 2. Transport Department SARATHI 4.0 */}
-        <div className="p-3 bg-white border border-slate-200 hover:border-amber-400 rounded-xl flex items-center justify-between gap-3 shadow-2xs hover:shadow-xs transition">
-          <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 flex-shrink-0">
-              <Car className="w-4.5 h-4.5" />
+        <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 hover:border-amber-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
+          <div className="flex items-center space-x-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-amber-50 border-2 border-amber-200 flex items-center justify-center text-amber-700 flex-shrink-0 shadow-2xs">
+              <Car className="w-6 h-6" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-slate-900">Driving Licence Endorsement</span>
-                <span className="text-[11px] font-bold text-amber-800 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm sm:text-base font-bold text-slate-900">Driving Licence Endorsement</span>
+                <span className="text-xs font-bold text-amber-800 bg-amber-100 border border-amber-300 px-2.5 py-0.5 rounded-md">
                   SARATHI 4.0
                 </span>
               </div>
-              <p className="text-xs text-slate-600 font-medium">
+              <p className="text-xs sm:text-[13.5px] text-slate-600 font-medium mt-0.5 leading-snug">
                 DL-1420110023412 • Class: LMV/MCWG • Valid Till 2038
               </p>
             </div>
           </div>
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 flex-shrink-0" />
         </div>
 
         {/* 3. Revenue & Land Records (Bhoomi LRS) */}
-        <div className="p-3 bg-white border border-slate-200 hover:border-blue-400 rounded-xl flex items-center justify-between gap-3 shadow-2xs hover:shadow-xs transition">
-          <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-700 flex-shrink-0">
-              <Building2 className="w-4.5 h-4.5" />
+        <div className="p-4 sm:p-4.5 bg-white border-2 border-slate-200 hover:border-blue-400 rounded-2xl flex items-center justify-between gap-4 shadow-xs hover:shadow-card hover:-translate-y-0.5 transition-all duration-200">
+          <div className="flex items-center space-x-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-blue-700 flex-shrink-0 shadow-2xs">
+              <Building2 className="w-6 h-6" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-slate-900">State Land Revenue Record (RoR)</span>
-                <span className="text-[11px] font-bold text-gov-800 bg-gov-100 border border-gov-300 px-2 py-0.5 rounded">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-sm sm:text-base font-bold text-slate-900">State Land Revenue Record (RoR)</span>
+                <span className="text-xs font-bold text-gov-800 bg-gov-100 border border-gov-300 px-2.5 py-0.5 rounded-md">
                   Bhoomi LRS
                 </span>
               </div>
-              <p className="text-xs text-slate-600 font-medium">
+              <p className="text-xs sm:text-[13.5px] text-slate-600 font-medium mt-0.5 leading-snug">
                 Plot 402/A • Cadastral Survey RoR Verified • Zero Physical Copies
               </p>
             </div>
           </div>
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          <CheckCircle2 className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600 flex-shrink-0" />
         </div>
       </div>
 
       {/* Statutory Footer with Cryptographic Seal */}
-      <div className="pt-2.5 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-700 relative z-10">
-        <div className="flex items-center gap-1.5 text-emerald-800 font-bold">
-          <ShieldCheck className="w-4 h-4 text-emerald-700" />
+      <div className="pt-3.5 sm:pt-4 border-t-2 border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-slate-700 relative z-10">
+        <div className="flex items-center gap-2 text-emerald-800 font-bold">
+          <ShieldCheck className="w-5 h-5 text-emerald-700 flex-shrink-0" />
           <span>DPDP Act 2023 Governed</span>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="text-gov-900 font-bold bg-gov-50 border border-gov-200 px-2.5 py-0.5 rounded">
+        <div className="flex items-center gap-2.5">
+          <span className="text-gov-950 font-bold bg-gov-50 border border-gov-300 px-3 py-1 rounded-lg shadow-2xs">
             62% Paperwork Eliminated
           </span>
-          <span className="text-slate-300">•</span>
-          <span className="text-slate-600 font-medium">IT Act 2000 §4 & §5</span>
+          <span className="text-slate-400">•</span>
+          <span className="text-slate-700 font-semibold">IT Act 2000 §4 & §5</span>
         </div>
       </div>
     </div>
