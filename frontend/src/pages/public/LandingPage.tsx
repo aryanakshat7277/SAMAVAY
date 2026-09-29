@@ -230,32 +230,32 @@ export const LandingPage: React.FC = () => {
               <span className="text-3xl sm:text-4xl font-extrabold text-gov-800 font-mono tracking-tight">
                 <AnimatedCounter end={62} suffix="%" />
               </span>
-              <p className="text-xs font-semibold text-stone-800">Information Reused</p>
-              <p className="text-[10px] text-stone-500">Zero duplicate citizen entry</p>
+              <p className="text-sm font-bold text-slate-900">Information Reused</p>
+              <p className="text-xs text-slate-600 font-medium">Zero duplicate citizen entry</p>
             </div>
 
             <div className="space-y-1">
-              <span className="text-3xl sm:text-4xl font-extrabold text-amber-600 font-mono tracking-tight">
+              <span className="text-3xl sm:text-4xl font-extrabold text-amber-700 font-mono tracking-tight">
                 4 ➔ 1
               </span>
-              <p className="text-xs font-semibold text-stone-800">Touchpoints Unified</p>
-              <p className="text-[10px] text-stone-500">From 4 portals to 1 journey</p>
+              <p className="text-sm font-bold text-slate-900">Touchpoints Unified</p>
+              <p className="text-xs text-slate-600 font-medium">From 4 portals to 1 journey</p>
             </div>
 
             <div className="space-y-1">
-              <span className="text-3xl sm:text-4xl font-extrabold text-emerald-700 font-mono tracking-tight">
+              <span className="text-3xl sm:text-4xl font-extrabold text-emerald-800 font-mono tracking-tight">
                 <AnimatedCounter end={98.4} decimals={1} suffix="%" />
               </span>
-              <p className="text-xs font-semibold text-stone-800">Integration Reliability</p>
-              <p className="text-[10px] text-stone-500">Across 8 connected nodes</p>
+              <p className="text-sm font-bold text-slate-900">Integration Reliability</p>
+              <p className="text-xs text-slate-600 font-medium">Across 8 connected nodes</p>
             </div>
 
             <div className="space-y-1">
-              <span className="text-3xl sm:text-4xl font-extrabold text-stone-900 font-mono tracking-tight">
+              <span className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-mono tracking-tight">
                 <AnimatedCounter end={1.66} decimals={2} prefix="" suffix="M+" />
               </span>
-              <p className="text-xs font-semibold text-stone-800">Transactions Handled</p>
-              <p className="text-[10px] text-stone-500">Sovereign mTLS data gateway</p>
+              <p className="text-sm font-bold text-slate-900">Transactions Handled</p>
+              <p className="text-xs text-slate-600 font-medium">Sovereign mTLS data gateway</p>
             </div>
           </div>
         </div>
@@ -429,7 +429,7 @@ export const LandingPage: React.FC = () => {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2 relative z-10">
             <Link to="/services">
               <Button variant="white" size="lg" icon={ArrowRight} iconPosition="right">
-                Explore All 20+ Services
+                Explore All 38+ Services
               </Button>
             </Link>
             <Link to="/admin/control-center">

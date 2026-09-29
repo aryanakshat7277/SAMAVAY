@@ -406,30 +406,30 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
           {step === 3 && dynamicFormData && (
             <form onSubmit={handleSubmit} className="space-y-4 text-xs">
               {/* Pre-Verified Summary Banner */}
-              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5 space-y-1 text-emerald-950">
+              <div className="bg-emerald-50 border border-emerald-300 rounded-2xl p-4 space-y-1.5 text-emerald-950">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-1.5 font-bold">
-                    <ShieldCheck className="w-4 h-4 text-emerald-700" />
+                  <div className="flex items-center space-x-1.5 font-bold text-xs sm:text-sm">
+                    <ShieldCheck className="w-4.5 h-4.5 text-emerald-700" />
                     <span>Authoritative Information Reused (5 Details)</span>
                   </div>
-                  <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">
+                  <span className="text-xs font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded border border-emerald-300">
                     Auto-Filled
                   </span>
                 </div>
-                <p className="text-[11px] text-emerald-900 leading-relaxed">
+                <p className="text-xs text-emerald-900 leading-relaxed font-medium">
                   Citizen Identity, Bhoomi Land RoR, and Aadhaar e-KYC have been matched and attached to your application automatically.
                 </p>
               </div>
 
               {/* Dynamic Missing Fields Section */}
-              <div className="space-y-3">
-                <h5 className="font-bold text-stone-800 uppercase tracking-wider text-[11px]">
+              <div className="space-y-3.5">
+                <h5 className="font-bold text-slate-900 uppercase tracking-wider text-xs">
                   Please Provide the Remaining {(dynamicFormData.requiredFields || []).length} Detail(s):
                 </h5>
 
                 {(dynamicFormData.requiredFields || []).map((field) => (
                   <div key={field.id} className="space-y-1">
-                    <label className="block font-bold text-stone-800">
+                    <label className="block font-bold text-slate-800 text-xs">
                       {field.label} {field.required && <span className="text-rose-600">*</span>}
                     </label>
 
@@ -437,7 +437,7 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                       <select
                         value={formValues[field.fieldName] || ''}
                         onChange={(e) => handleFieldChange(field.fieldName, e.target.value)}
-                        className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-1 focus:ring-gov-600 bg-white text-stone-900"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gov-600 bg-white text-slate-900 text-xs sm:text-sm"
                         required={field.required}
                       >
                         <option value="Self Occupied">Self Occupied</option>
@@ -451,12 +451,12 @@ export const ServiceApplyModal: React.FC<ServiceApplyModalProps> = ({
                         onChange={(e) => handleFieldChange(field.fieldName, e.target.value)}
                         placeholder={field.placeholder || 'Enter value...'}
                         required={field.required}
-                        className="w-full px-3 py-2 border border-stone-300 rounded-xl focus:ring-1 focus:ring-gov-600 text-stone-900"
+                        className="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-gov-600 text-slate-900 text-xs sm:text-sm placeholder-slate-400"
                       />
                     )}
 
                     {field.helpText && (
-                      <span className="text-[10px] text-stone-500 block">{field.helpText}</span>
+                      <span className="text-xs text-slate-500 font-medium block">{field.helpText}</span>
                     )}
                   </div>
                 ))}

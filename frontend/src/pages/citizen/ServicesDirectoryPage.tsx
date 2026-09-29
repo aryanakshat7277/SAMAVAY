@@ -124,7 +124,7 @@ export const ServicesDirectoryPage: React.FC = () => {
   const activeCat = categories.find(c => c.key === selectedCategory) ?? categories[0];
 
   return (
-    <div className="min-h-screen bg-sandstone-100">
+    <div className="min-h-screen bg-[#F8FAFC]">
 
       {/* ═══════════════════════════════════════════════════════════════════════
           HERO — dark sovereign panel
@@ -143,10 +143,10 @@ export const ServicesDirectoryPage: React.FC = () => {
 
           {/* Badge */}
           <div className={`flex justify-center transition-all duration-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-gov-200 text-[10px] font-bold px-3.5 py-1.5 rounded-full mb-5">
-              <Compass className="w-3 h-3" />
-              UNIFIED GOVERNMENT DIRECTORY
-              <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse ml-1" />
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-gov-100 text-xs font-bold px-4 py-1.5 rounded-full mb-5">
+              <Compass className="w-3.5 h-3.5" />
+              UNIFIED GOVERNMENT SERVICES DIRECTORY
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse ml-1" />
             </div>
           </div>
 
@@ -159,7 +159,7 @@ export const ServicesDirectoryPage: React.FC = () => {
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-saffron-500/40 rounded-full" />
               </span>
             </h1>
-            <p className="text-gov-300 text-sm max-w-xl mx-auto leading-relaxed">
+            <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-normal">
               All state and central government services in one place — with{' '}
               <strong className="text-saffron-400 font-bold">62% automated data verification</strong>{' '}
               so you never upload the same document twice.
@@ -178,7 +178,7 @@ export const ServicesDirectoryPage: React.FC = () => {
           {/* Hero search bar */}
           <div className="mt-7 max-w-2xl mx-auto">
             <div className="relative flex items-center bg-white rounded-2xl shadow-2xl p-1.5 ring-1 ring-white/20 focus-within:ring-2 focus-within:ring-saffron-400 transition-all duration-300 group">
-              <div className="pl-3.5 flex items-center pointer-events-none text-stone-400 group-focus-within:text-gov-700 transition-colors">
+              <div className="pl-3.5 flex items-center pointer-events-none text-slate-400 group-focus-within:text-gov-700 transition-colors">
                 <Search className="w-5 h-5" />
               </div>
               <input
@@ -186,20 +186,20 @@ export const ServicesDirectoryPage: React.FC = () => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search services, departments, keywords (e.g. Property Tax, Driving Licence...)"
-                className="w-full px-3 py-2.5 bg-transparent text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none"
+                placeholder="Search services, departments, keywords (e.g. Property Tax, Driving Licence, PM-KISAN...)"
+                className="w-full px-3 py-2.5 bg-transparent text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none"
               />
               {/* Live count pill in search */}
               {!searchQuery && services.length > 0 && (
-                <span className="hidden sm:flex items-center gap-1 text-[10px] text-stone-500 font-medium pr-2 whitespace-nowrap flex-shrink-0">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                <span className="hidden sm:flex items-center gap-1.5 text-xs text-slate-600 font-semibold pr-3 whitespace-nowrap flex-shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                   {services.length} services available
                 </span>
               )}
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="p-1.5 text-stone-400 hover:text-stone-700 rounded-xl mr-0.5 hover:bg-stone-100 transition flex-shrink-0"
+                  className="p-1.5 text-slate-400 hover:text-slate-700 rounded-xl mr-0.5 hover:bg-slate-100 transition flex-shrink-0"
                   aria-label="Clear search"
                 >
                   <X className="w-4 h-4" />
@@ -208,8 +208,8 @@ export const ServicesDirectoryPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Category tabs — flush to bottom of hero, lift into sandstone */}
-          <div className="mt-7 -mb-px flex items-end gap-1 overflow-x-auto pb-0 hide-scrollbar">
+          {/* Category tabs — flush to bottom of hero */}
+          <div className="mt-7 -mb-px flex items-end gap-1.5 overflow-x-auto pb-0 hide-scrollbar">
             {categories.map((cat, idx) => {
               const Icon = cat.icon;
               const isSelected = selectedCategory === cat.key;
@@ -217,19 +217,19 @@ export const ServicesDirectoryPage: React.FC = () => {
                 <button
                   key={cat.key}
                   onClick={() => setSelectedCategory(cat.key)}
-                  className={`flex items-center gap-1.5 px-4 py-2.5 rounded-t-xl text-[11px] font-bold whitespace-nowrap transition-all duration-200 cursor-pointer flex-shrink-0 border-b-2 ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-t-xl text-xs sm:text-[13px] font-bold whitespace-nowrap transition-all duration-200 cursor-pointer flex-shrink-0 border-b-2 ${
                     isSelected
-                      ? 'bg-sandstone-100 border-sandstone-100 text-stone-800 shadow-[0_-6px_14px_rgba(0,0,0,0.18)]'
-                      : 'bg-white/10 border-transparent text-gov-300 hover:bg-white/18 hover:text-white'
+                      ? 'bg-[#F8FAFC] border-[#F8FAFC] text-slate-900 shadow-[0_-6px_14px_rgba(0,0,0,0.18)]'
+                      : 'bg-white/10 border-transparent text-slate-300 hover:bg-white/18 hover:text-white'
                   }`}
                   style={{ animationDelay: `${idx * 40}ms` }}
                 >
-                  <Icon className={`w-3.5 h-3.5 flex-shrink-0 transition-colors ${
-                    isSelected ? cat.color : 'text-current opacity-70'
+                  <Icon className={`w-4 h-4 flex-shrink-0 transition-colors ${
+                    isSelected ? cat.color : 'text-current opacity-80'
                   }`} />
                   {cat.label}
                   {isSelected && (
-                    <span className="ml-0.5 px-1.5 py-0.5 bg-gov-100 text-gov-700 rounded-full text-[9px] font-black">
+                    <span className="ml-1 px-2 py-0.5 bg-gov-100 text-gov-800 rounded-full text-xs font-black">
                       {filteredServices.length}
                     </span>
                   )}
@@ -249,28 +249,28 @@ export const ServicesDirectoryPage: React.FC = () => {
         <div className="flex items-center justify-between gap-3 flex-wrap">
           {/* Left: live counter + active filter badges */}
           <div className="flex items-center gap-2.5 flex-wrap">
-            <div className="flex items-center gap-1.5 text-xs text-stone-500">
-              <SlidersHorizontal className="w-3.5 h-3.5 text-stone-400" />
+            <div className="flex items-center gap-1.5 text-xs text-slate-600 font-medium">
+              <SlidersHorizontal className="w-3.5 h-3.5 text-slate-500" />
               <span>
                 Showing{' '}
-                <span className="font-black text-stone-900 tabular-nums">{filteredServices.length}</span>
+                <span className="font-black text-slate-950 tabular-nums">{filteredServices.length}</span>
                 {' '}of{' '}
-                <span className="font-semibold text-stone-700 tabular-nums">{services.length}</span>
+                <span className="font-bold text-slate-800 tabular-nums">{services.length}</span>
                 {' '}services
               </span>
             </div>
             {selectedCategory !== 'ALL' && (
-              <span className="inline-flex items-center gap-1 bg-gov-50 border border-gov-200 text-gov-800 px-2 py-0.5 rounded-full text-[10px] font-bold">
-                <activeCat.icon className="w-2.5 h-2.5" />
+              <span className="inline-flex items-center gap-1 bg-gov-50 border border-gov-300 text-gov-900 px-2.5 py-1 rounded-full text-xs font-bold">
+                <activeCat.icon className="w-3 h-3" />
                 {activeCat.label}
               </span>
             )}
             {searchQuery && (
-              <span className="inline-flex items-center gap-1 bg-saffron-50 border border-saffron-200 text-saffron-800 px-2 py-0.5 rounded-full text-[10px] font-bold">
-                <Search className="w-2.5 h-2.5" />
+              <span className="inline-flex items-center gap-1 bg-saffron-50 border border-saffron-300 text-saffron-900 px-2.5 py-1 rounded-full text-xs font-bold">
+                <Search className="w-3 h-3" />
                 "{searchQuery}"
-                <button onClick={() => setSearchQuery('')} className="hover:text-saffron-600 ml-0.5">
-                  <X className="w-2.5 h-2.5" />
+                <button onClick={() => setSearchQuery('')} className="hover:text-saffron-700 ml-1">
+                  <X className="w-3 h-3" />
                 </button>
               </span>
             )}
@@ -281,9 +281,9 @@ export const ServicesDirectoryPage: React.FC = () => {
             {(searchQuery || selectedCategory !== 'ALL' || popularOnly) && (
               <button
                 onClick={() => { setSearchQuery(''); setSelectedCategory('ALL'); setPopularOnly(false); }}
-                className="text-[11px] text-stone-400 hover:text-stone-700 font-medium transition flex items-center gap-1 hover:underline"
+                className="text-xs text-slate-500 hover:text-slate-800 font-semibold transition flex items-center gap-1 hover:underline cursor-pointer"
               >
-                <X className="w-3 h-3" />
+                <X className="w-3.5 h-3.5" />
                 Clear all
               </button>
             )}
@@ -292,12 +292,12 @@ export const ServicesDirectoryPage: React.FC = () => {
               onClick={() => setPopularOnly(!popularOnly)}
               className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer border ${
                 popularOnly
-                  ? 'bg-saffron-100 text-saffron-800 border-saffron-300 shadow-sm'
-                  : 'bg-white text-stone-600 border-stone-200 hover:bg-stone-50 hover:border-saffron-300 shadow-xs'
+                  ? 'bg-saffron-100 text-saffron-900 border-saffron-400 shadow-sm'
+                  : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50 hover:border-saffron-400 shadow-xs'
               }`}
             >
               <TrendingUp className={`w-3.5 h-3.5 transition-all duration-200 ${
-                popularOnly ? 'text-saffron-600 scale-110' : 'text-stone-400'
+                popularOnly ? 'text-saffron-700 scale-110' : 'text-slate-500'
               }`} />
               Popular Only
             </button>

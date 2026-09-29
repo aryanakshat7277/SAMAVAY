@@ -76,7 +76,7 @@ export const CitizenDashboard: React.FC = () => {
       subtitle: 'Authoritative state registries auto-populate verified citizen credentials with 1-click consent.',
       image: banner1,
       link: '/services',
-      btnText: 'Explore 20+ Services',
+      btnText: 'Explore 38+ Services',
       tag: 'INDIA STACK • DPI'
     },
     {
@@ -158,32 +158,32 @@ export const CitizenDashboard: React.FC = () => {
 
         <div className="space-y-2 relative z-10">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-[11px] font-bold text-gov-800 bg-gov-50 px-2.5 py-0.5 rounded-full border border-gov-200 flex items-center gap-1">
-              <UserCheck className="w-3.5 h-3.5 text-gov-700" />
+            <span className="text-xs font-bold text-gov-800 bg-gov-50 px-3 py-1 rounded-full border border-gov-200 flex items-center gap-1.5">
+              <UserCheck className="w-4 h-4 text-gov-700" />
               Verified Citizen Profile
             </span>
-            <span className="text-xs text-stone-300">|</span>
-            <span className="text-xs text-stone-500 font-mono">UID: SAM-CIT-99201</span>
-            <span className="text-xs text-stone-300">|</span>
-            <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Aadhaar e-KYC Seeded
+            <span className="text-xs text-slate-300">|</span>
+            <span className="text-xs text-slate-600 font-mono font-semibold">UID: SAM-CIT-99201</span>
+            <span className="text-xs text-slate-300">|</span>
+            <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-300 flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Aadhaar e-KYC Seeded
             </span>
-            <span className="text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200 flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-blue-600" /> DigiLocker Linked
+            <span className="text-xs font-bold text-blue-900 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-300 flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" /> DigiLocker Linked
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 font-serif">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-serif">
             {getGreeting()}, {user?.fullName || 'Citizen'}
           </h1>
-          <p className="text-xs sm:text-sm text-stone-600 max-w-2xl">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
             Sovereign Citizen Access Portal. Access departmental registries, track service requests in real-time, and manage your statutory DPDP data sharing authorizations.
           </p>
         </div>
 
         {/* Quick Search & Application Track Form */}
         <form onSubmit={handleTrackSubmit} className="flex-shrink-0 w-full md:w-80 relative z-10">
-          <label className="block text-xs font-semibold text-stone-700 mb-1.5">
+          <label className="block text-xs font-bold text-slate-800 mb-1.5">
             Track Any Application Instantly
           </label>
           <div className="relative flex items-center shadow-xs">
@@ -192,11 +192,11 @@ export const CitizenDashboard: React.FC = () => {
               value={trackInput}
               onChange={(e) => setTrackInput(e.target.value)}
               placeholder="e.g. SAM-2026-10234"
-              className="w-full pl-3.5 pr-20 py-2 bg-stone-50 border border-stone-300 rounded-xl text-xs text-stone-900 placeholder-stone-400 focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
+              className="w-full pl-3.5 pr-20 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
             />
             <button
               type="submit"
-              className="absolute right-1 px-3 py-1.5 bg-gov-700 hover:bg-gov-800 text-white rounded-lg text-xs font-semibold shadow-xs transition cursor-pointer"
+              className="absolute right-1 px-3.5 py-1.5 bg-gov-700 hover:bg-gov-800 text-white rounded-lg text-xs font-bold shadow-xs transition cursor-pointer"
             >
               Track
             </button>
@@ -460,88 +460,88 @@ export const CitizenDashboard: React.FC = () => {
                   <ShieldCheck className="w-4 h-4 text-gov-800" />
                 </div>
                 <div>
-                  <h4 className="font-bold font-serif text-stone-900 text-xs">
+                  <h4 className="font-bold font-serif text-slate-900 text-sm">
                     मेरी पहचान • Sovereign Identity Vault
                   </h4>
-                  <span className="text-[10px] text-stone-500 font-mono">
+                  <span className="text-xs text-slate-600 font-mono font-medium">
                     Gov-Linked Records: 4 Active
                   </span>
                 </div>
               </div>
-              <span className="text-[9px] bg-blue-100 text-gov-800 font-bold px-2 py-0.5 rounded-full font-mono">
+              <span className="text-xs bg-blue-100 text-gov-900 font-bold px-2.5 py-0.5 rounded-full font-mono">
                 VERIFIED
               </span>
             </div>
 
             <div className="space-y-2 text-xs">
               {/* Aadhaar e-KYC */}
-              <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
-                    <Lock className="w-3.5 h-3.5" />
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
+                    <Lock className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="font-bold text-stone-800 block text-[11px]">Aadhaar e-KYC</span>
-                    <span className="text-[10px] text-stone-400 font-mono">XXXX-XXXX-8821 (Biometric Linked)</span>
+                    <span className="font-bold text-slate-900 block text-xs">Aadhaar e-KYC</span>
+                    <span className="text-xs text-slate-600 font-mono">XXXX-XXXX-8821 (Biometric Linked)</span>
                   </div>
                 </div>
-                <span className="text-emerald-700 font-bold text-[10px] flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Active
+                <span className="text-emerald-700 font-bold text-xs flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Active
                 </span>
               </div>
 
               {/* Bhoomi Land Record */}
-              <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
-                    <Layers className="w-3.5 h-3.5" />
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                    <Layers className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="font-bold text-stone-800 block text-[11px]">Bhoomi LRS Cadastral</span>
-                    <span className="text-[10px] text-stone-400 font-mono">Plot #44/2A • Khata #8849</span>
+                    <span className="font-bold text-slate-900 block text-xs">Bhoomi LRS Cadastral</span>
+                    <span className="text-xs text-slate-600 font-mono">Plot #44/2A • Khata #8849</span>
                   </div>
                 </div>
-                <span className="text-emerald-700 font-bold text-[10px] flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Verified
+                <span className="text-emerald-700 font-bold text-xs flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Verified
                 </span>
               </div>
 
               {/* SARATHI Transport */}
-              <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0">
-                    <Car className="w-3.5 h-3.5" />
+                  <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0">
+                    <Car className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="font-bold text-stone-800 block text-[11px]">SARATHI Driving Licence</span>
-                    <span className="text-[10px] text-stone-400 font-mono">DL #KA-05-2018-00912 (LMV)</span>
+                    <span className="font-bold text-slate-900 block text-xs">SARATHI Driving Licence</span>
+                    <span className="text-xs text-slate-600 font-mono">DL #KA-05-2018-00912 (LMV)</span>
                   </div>
                 </div>
-                <span className="text-emerald-700 font-bold text-[10px] flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Active
+                <span className="text-emerald-700 font-bold text-xs flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Active
                 </span>
               </div>
 
               {/* DigiLocker Vault */}
-              <div className="p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between">
+              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center flex-shrink-0">
-                    <FileCheck className="w-3.5 h-3.5" />
+                  <div className="w-8 h-8 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center flex-shrink-0">
+                    <FileCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="font-bold text-stone-800 block text-[11px]">DigiLocker Ecosystem</span>
-                    <span className="text-[10px] text-stone-400 font-mono">4 Issued Certificates Synced</span>
+                    <span className="font-bold text-slate-900 block text-xs">DigiLocker Ecosystem</span>
+                    <span className="text-xs text-slate-600 font-mono">4 Issued Certificates Synced</span>
                   </div>
                 </div>
-                <span className="text-emerald-700 font-bold text-[10px] flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Synced
+                <span className="text-emerald-700 font-bold text-xs flex items-center gap-1">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> Synced
                 </span>
               </div>
             </div>
 
             <Link
               to="/dashboard/permissions"
-              className="block text-center py-2 px-3 bg-gov-50 hover:bg-gov-100 text-gov-800 font-bold text-[11px] rounded-xl border border-gov-200 transition"
+              className="block text-center py-2.5 px-3 bg-gov-50 hover:bg-gov-100 text-gov-800 font-bold text-xs rounded-xl border border-gov-200 transition"
             >
               Manage DPDP Consent & Vault Keys →
             </Link>

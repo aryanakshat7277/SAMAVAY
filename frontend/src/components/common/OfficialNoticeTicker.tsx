@@ -49,7 +49,7 @@ export const OfficialNoticeTicker: React.FC = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600" />
         </span>
-        <span className="font-serif font-black text-gov-950 text-[11px] tracking-wide uppercase flex items-center gap-1.5">
+        <span className="font-serif font-black text-gov-950 text-xs tracking-wide uppercase flex items-center gap-1.5">
           <Bell className="w-3.5 h-3.5 text-saffron-600" />
           नवीनतम सूचनाएं / LATEST UPDATES:
         </span>
@@ -57,17 +57,17 @@ export const OfficialNoticeTicker: React.FC = () => {
 
       {/* Center Scrolling / Rotating Notice */}
       <div className="flex-1 overflow-hidden">
-        <div className="truncate text-slate-700 text-xs">
-          <span className="font-bold text-[10px] text-gov-800 bg-gov-50 border border-gov-200 px-2 py-0.5 rounded mr-2 font-mono">
+        <div className="truncate text-slate-800 text-xs sm:text-[13px]">
+          <span className="font-bold text-xs text-gov-900 bg-gov-50 border border-gov-300 px-2 py-0.5 rounded mr-2 font-mono">
             {notices[currentNoticeIndex].tag}
           </span>
-          <span className="font-medium">{notices[currentNoticeIndex].text}</span>
+          <span className="font-semibold text-slate-800">{notices[currentNoticeIndex].text}</span>
           <Link
             to={notices[currentNoticeIndex].link}
-            className="text-gov-800 hover:text-gov-950 font-bold ml-2 underline text-[11px] inline-flex items-center gap-0.5"
+            className="text-gov-800 hover:text-gov-950 font-bold ml-2 underline text-xs inline-flex items-center gap-0.5"
           >
             <span>Read Details</span>
-            <ChevronRight className="w-3 h-3" />
+            <ChevronRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

@@ -149,31 +149,31 @@ export const CategoryVisualGrid: React.FC = () => {
           <Link
             key={cat.id}
             to={cat.deptLink}
-            className={`p-6 bg-white border-2 rounded-3xl shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-200 flex flex-col justify-between space-y-4 group cursor-pointer ${cat.color}`}
+            className={`p-6 bg-white bg-gradient-to-br border-2 rounded-3xl shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-200 flex flex-col justify-between space-y-4 group cursor-pointer ${cat.color}`}
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <div className="w-12 h-12 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-gov-800 shadow-xs group-hover:scale-110 group-hover:bg-gov-50 transition-all duration-200">
+                <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-gov-800 shadow-xs group-hover:scale-110 group-hover:bg-gov-50 transition-all duration-200">
                   <Icon className="w-6 h-6" />
                 </div>
-                <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border shadow-xs ${cat.badgeColor}`}>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full border shadow-2xs ${cat.badgeColor}`}>
                   {cat.servicesCount} Services
                 </span>
               </div>
 
               <div>
-                <h4 className="text-base font-bold text-stone-900 font-serif group-hover:text-gov-800 transition">
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 font-serif group-hover:text-gov-800 transition">
                   {cat.title}
                 </h4>
-                <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed mt-1">
+                <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed mt-1 font-medium">
                   {cat.subtitle}
                 </p>
               </div>
             </div>
 
-            <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-gov-800">
-              <span className="text-[11px] uppercase tracking-wider">Access Interoperable Portal</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-gov-800">
+              <span className="text-xs uppercase tracking-wider">Access Interoperable Portal</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
             </div>
           </Link>
         );

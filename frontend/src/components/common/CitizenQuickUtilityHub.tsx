@@ -213,11 +213,11 @@ export const CitizenQuickUtilityHub: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <span className="text-[10px] font-bold text-saffron-700 uppercase tracking-widest font-mono">
+                <span className="text-xs font-bold text-saffron-800 uppercase tracking-widest font-mono">
                   त्वरित नागरिक सेवाएं
                 </span>
                 <span className="text-slate-300">•</span>
-                <span className="text-[10px] text-slate-500 font-mono font-semibold">
+                <span className="text-xs text-slate-600 font-mono font-bold">
                   GIGW 3.0 CITIZEN UTILITY HUB
                 </span>
               </div>
@@ -323,26 +323,26 @@ export const CitizenQuickUtilityHub: React.FC = () => {
             </form>
 
             {/* Quick Demo ID Badges */}
-            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-              <span className="font-semibold text-[11px] text-slate-600">Sample Records:</span>
+            <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600">
+              <span className="font-bold text-xs text-slate-800">Sample Records:</span>
               <button
                 type="button"
                 onClick={() => handleQuickTrack('SAM-2026-09841')}
-                className="px-2.5 py-1 bg-white border border-slate-200 hover:border-gov-400 text-slate-700 rounded-lg font-mono text-[11px] transition cursor-pointer hover:bg-gov-50"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 SAM-2026-09841 (Driving Licence • Completed)
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickTrack('SAM-2026-10234')}
-                className="px-2.5 py-1 bg-white border border-slate-200 hover:border-gov-400 text-slate-700 rounded-lg font-mono text-[11px] transition cursor-pointer hover:bg-gov-50"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 SAM-2026-10234 (Property Tax • Processing)
               </button>
               <button
                 type="button"
                 onClick={() => handleQuickTrack('SAM-2026-11490')}
-                className="px-2.5 py-1 bg-white border border-slate-200 hover:border-gov-400 text-slate-700 rounded-lg font-mono text-[11px] transition cursor-pointer hover:bg-gov-50"
+                className="px-3 py-1 bg-white border border-slate-300 hover:border-gov-600 text-slate-800 rounded-lg font-mono text-xs font-semibold transition cursor-pointer hover:bg-gov-50 shadow-2xs"
               >
                 SAM-2026-11490 (Income Cert • Under Review)
               </button>

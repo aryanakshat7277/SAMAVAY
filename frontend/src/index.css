@@ -5,36 +5,68 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    @apply bg-sandstone-100 text-stone-900 antialiased font-sans;
+    @apply bg-[#F8FAFC] text-slate-900 antialiased font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
+    @apply tracking-tight font-serif;
   }
+}
+
+/* ─────────────────────────────────────────────
+   HIGH CONTRAST MODE (WCAG 2.1 AAA)
+   ───────────────────────────────────────────── */
+html.high-contrast {
+  filter: contrast(1.18);
+}
+html.high-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+html.high-contrast .gov-card,
+html.high-contrast .bg-white,
+html.high-contrast .bg-stone-50 {
+  border-color: #0f172a !important;
+  box-shadow: 0 0 0 1px #0f172a !important;
+}
+html.high-contrast a,
+html.high-contrast button {
+  text-decoration-thickness: 2px !important;
+}
+html.high-contrast .text-stone-500,
+html.high-contrast .text-slate-500,
+html.high-contrast .text-stone-400,
+html.high-contrast .text-slate-400 {
+  color: #1e293b !important;
+  font-weight: 500 !important;
 }
 
 /* ─────────────────────────────────────────────
    ACCESSIBLE FOCUS
    ───────────────────────────────────────────── */
 *:focus-visible {
-  @apply outline-none ring-2 ring-gov-700 ring-offset-2 ring-offset-sandstone-100;
+  @apply outline-none ring-2 ring-gov-700 ring-offset-2 ring-offset-[#F8FAFC];
 }
 
 /* ─────────────────────────────────────────────
    SOVEREIGN SURFACE UTILITIES
    ───────────────────────────────────────────── */
 .gov-card {
-  @apply bg-white border border-stone-200/80 rounded-2xl shadow-card transition-all duration-200;
+  @apply bg-white border border-slate-200/90 rounded-2xl shadow-card transition-all duration-200;
 }
 .gov-card-hover {
-  @apply gov-card hover:border-gov-400/70 hover:shadow-card-hover hover:-translate-y-1;
+  @apply gov-card hover:border-gov-600/70 hover:shadow-card-hover hover:-translate-y-1;
 }
 .gov-badge {
-  @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-bold tracking-tight;
 }
 
 /* ─────────────────────────────────────────────

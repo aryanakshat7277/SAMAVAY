@@ -138,15 +138,15 @@ export const AdminLayout: React.FC = () => {
           }`}
         >
           {/* Admin Header / Role Card */}
-          <div className="p-4 border-b border-stone-100 flex items-center justify-between">
+          <div className="p-4 border-b border-slate-100 flex items-center justify-between">
             <div className="flex items-center space-x-3 overflow-hidden">
               <div className="w-10 h-10 rounded-xl bg-gov-900 text-white flex items-center justify-center font-bold shadow-xs flex-shrink-0 p-1">
                 <NationalEmblem size="sm" variant="gold" />
               </div>
               {!isCollapsed && (
                 <div className="truncate">
-                  <p className="text-xs font-bold text-stone-900 leading-tight font-serif">Admin Console</p>
-                  <span className="text-[10px] font-semibold text-gov-800 bg-gov-50 px-2 py-0.5 rounded uppercase">
+                  <p className="text-sm font-bold text-slate-900 leading-tight font-serif">Admin Console</p>
+                  <span className="text-xs font-bold text-gov-800 bg-gov-50 border border-gov-200 px-2 py-0.5 rounded uppercase">
                     {user?.role || 'SUPER_ADMIN'}
                   </span>
                 </div>
@@ -156,7 +156,7 @@ export const AdminLayout: React.FC = () => {
             {/* Collapse Toggle Button */}
             <button
               onClick={() => setIsCollapsed(!isCollapsed)}
-              className="p-1 text-stone-400 hover:text-stone-700 rounded-lg hover:bg-stone-100 transition cursor-pointer"
+              className="p-1 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-slate-100 transition cursor-pointer"
               title={isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
             >
               {isCollapsed ? <PanelLeftOpen className="w-4 h-4" /> : <PanelLeftClose className="w-4 h-4" />}
@@ -168,7 +168,7 @@ export const AdminLayout: React.FC = () => {
             {navSections.map((section) => (
               <div key={section.title} className="space-y-1">
                 {!isCollapsed && (
-                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider px-3 block">
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider px-3 block">
                     {section.title}
                   </span>
                 )}
@@ -183,17 +183,17 @@ export const AdminLayout: React.FC = () => {
                       title={isCollapsed ? item.name : undefined}
                       className={`flex items-center ${
                         isCollapsed ? 'justify-center px-2 py-2.5' : 'justify-between px-3 py-2'
-                      } rounded-xl text-xs font-semibold transition-all duration-150 ${
+                      } rounded-xl text-xs sm:text-[13px] font-semibold transition-all duration-150 ${
                         active
-                          ? 'bg-gov-50 text-gov-800 font-bold border border-gov-200 shadow-xs'
-                          : 'text-stone-600 hover:bg-stone-50 hover:text-stone-900'
+                          ? 'bg-gov-50 text-gov-900 font-bold border border-gov-300 shadow-xs'
+                          : 'text-slate-700 hover:bg-slate-100 hover:text-slate-950'
                       }`}
                     >
                       <div className="flex items-center space-x-2.5">
-                        <Icon className={`w-4 h-4 flex-shrink-0 ${active ? 'text-gov-700' : 'text-stone-400'}`} />
+                        <Icon className={`w-4 h-4 flex-shrink-0 ${active ? 'text-gov-800' : 'text-slate-500'}`} />
                         {!isCollapsed && <span className="truncate">{item.name}</span>}
                       </div>
-                      {!isCollapsed && active && <ChevronRight className="w-3.5 h-3.5 text-gov-600 flex-shrink-0" />}
+                      {!isCollapsed && active && <ChevronRight className="w-4 h-4 text-gov-700 flex-shrink-0" />}
                     </Link>
                   );
                 })}
@@ -202,21 +202,21 @@ export const AdminLayout: React.FC = () => {
           </nav>
 
           {/* Bottom Officer Profile */}
-          <div className="p-3 border-t border-stone-100">
+          <div className="p-3 border-t border-slate-100">
             {!isCollapsed ? (
-              <div className="flex items-center justify-between p-2 rounded-xl bg-stone-50 border border-stone-200/80">
+              <div className="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200">
                 <div className="flex items-center space-x-2.5 overflow-hidden">
                   <div className="w-8 h-8 rounded-lg bg-gov-700 text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
                     {user?.fullName?.charAt(0) || 'A'}
                   </div>
                   <div className="truncate text-xs">
-                    <p className="font-bold text-stone-900 truncate">{user?.fullName || 'Nodal Officer'}</p>
-                    <p className="text-[10px] text-stone-500 truncate">{user?.email || 'officer.admin@gov.in'}</p>
+                    <p className="font-bold text-slate-900 truncate">{user?.fullName || 'Nodal Officer'}</p>
+                    <p className="text-xs text-slate-500 truncate font-medium">{user?.email || 'officer.admin@gov.in'}</p>
                   </div>
                 </div>
                 <button
                   onClick={handleLogout}
-                  className="p-1 text-stone-400 hover:text-rose-600 rounded transition cursor-pointer"
+                  className="p-1.5 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition cursor-pointer"
                   title="Sign Out"
                 >
                   <LogOut className="w-4 h-4" />
@@ -225,7 +225,7 @@ export const AdminLayout: React.FC = () => {
             ) : (
               <button
                 onClick={handleLogout}
-                className="w-full flex justify-center p-2 text-stone-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition cursor-pointer"
+                className="w-full flex justify-center p-2 text-slate-500 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition cursor-pointer"
                 title="Sign Out"
               >
                 <LogOut className="w-5 h-5" />

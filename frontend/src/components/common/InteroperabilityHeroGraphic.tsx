@@ -112,11 +112,11 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           onMouseEnter={() => setActiveNode('CITIZEN')}
           className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer group"
         >
-          <div className="w-14 h-14 rounded-2xl bg-white border-2 border-slate-300 group-hover:border-gov-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
+          <div className="w-16 h-16 rounded-2xl bg-white border-2 border-slate-300 group-hover:border-gov-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
             <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-700 group-hover:bg-gov-50 group-hover:text-gov-700 flex items-center justify-center transition">
-              <User className="w-4 h-4" />
+              <User className="w-4.5 h-4.5" />
             </div>
-            <span className="text-[9px] font-bold text-slate-800 mt-0.5">Citizen</span>
+            <span className="text-xs font-bold text-slate-900 mt-0.5">Citizen</span>
           </div>
         </div>
 
@@ -125,23 +125,23 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           onMouseEnter={() => setActiveNode('SAMAVAY')}
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer group animate-float-gentle"
         >
-          <div className="w-20 h-20 rounded-3xl bg-gov-900 border-2 border-saffron-400 shadow-xl flex flex-col items-center justify-center text-white transition-all group-hover:scale-110 ring-4 ring-gov-100">
-            <Layers className="w-6 h-6 text-saffron-400 mb-0.5 animate-pulse" />
-            <span className="text-[10px] font-black tracking-wider uppercase font-serif text-white">SAMAVAY</span>
-            <span className="text-[8px] text-saffron-300 font-semibold font-mono">DPI Mesh</span>
+          <div className="w-22 h-22 rounded-3xl bg-gov-900 border-2 border-saffron-400 shadow-xl flex flex-col items-center justify-center text-white transition-all group-hover:scale-110 ring-4 ring-gov-100 p-2">
+            <Layers className="w-7 h-7 text-saffron-400 mb-0.5 animate-pulse" />
+            <span className="text-xs font-black tracking-wider uppercase font-serif text-white">SAMAVAY</span>
+            <span className="text-[10px] text-saffron-300 font-bold font-mono">DPI Mesh</span>
           </div>
         </div>
 
         {/* 3. REVENUE REGISTRY (Top Right) */}
         <div
           onMouseEnter={() => setActiveNode('REVENUE')}
-          className="absolute right-2 sm:right-4 top-4 z-20 cursor-pointer group"
+          className="absolute right-2 sm:right-4 top-3 z-20 cursor-pointer group"
         >
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border-2 border-blue-400 group-hover:border-blue-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border-2 border-blue-400 group-hover:border-blue-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
             <div className="w-7 h-7 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center">
-              <Building2 className="w-3.5 h-3.5" />
+              <Building2 className="w-4 h-4" />
             </div>
-            <span className="text-[9px] font-bold text-slate-800 mt-0.5">Bhoomi</span>
+            <span className="text-xs font-bold text-slate-900 mt-0.5">Bhoomi</span>
           </div>
         </div>
 
@@ -150,33 +150,33 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           onMouseEnter={() => setActiveNode('TRANSPORT')}
           className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer group"
         >
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border-2 border-amber-400 group-hover:border-amber-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border-2 border-amber-400 group-hover:border-amber-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
             <div className="w-7 h-7 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center">
-              <Car className="w-3.5 h-3.5" />
+              <Car className="w-4 h-4" />
             </div>
-            <span className="text-[9px] font-bold text-slate-800 mt-0.5">SARATHI</span>
+            <span className="text-xs font-bold text-slate-900 mt-0.5">SARATHI</span>
           </div>
         </div>
 
         {/* 5. MUNICIPAL REGISTRY (Bottom Right) */}
         <div
           onMouseEnter={() => setActiveNode('MUNICIPAL')}
-          className="absolute right-2 sm:right-4 bottom-4 z-20 cursor-pointer group"
+          className="absolute right-2 sm:right-4 bottom-3 z-20 cursor-pointer group"
         >
-          <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white border-2 border-emerald-400 group-hover:border-emerald-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border-2 border-emerald-400 group-hover:border-emerald-600 shadow-sm flex flex-col items-center justify-center transition-all group-hover:scale-105">
             <div className="w-7 h-7 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center">
-              <Landmark className="w-3.5 h-3.5" />
+              <Landmark className="w-4 h-4" />
             </div>
-            <span className="text-[9px] font-bold text-slate-800 mt-0.5">e-Palika</span>
+            <span className="text-xs font-bold text-slate-900 mt-0.5">e-Palika</span>
           </div>
         </div>
       </div>
 
       {/* Dynamic Node Context Bar */}
-      <div className="p-3 bg-white border border-slate-200 rounded-xl text-xs relative z-10 space-y-1 shadow-2xs">
+      <div className="p-3 bg-white border border-slate-200 rounded-xl text-xs relative z-10 space-y-1.5 shadow-2xs">
         <div className="flex items-center justify-between">
-          <span className="font-bold text-slate-900 font-serif flex items-center gap-1.5">
-            <Activity className="w-3.5 h-3.5 text-gov-700" />
+          <span className="font-bold text-slate-900 font-serif flex items-center gap-1.5 text-xs sm:text-sm">
+            <Activity className="w-4 h-4 text-gov-700" />
             {activeNode === 'REVENUE'
               ? 'Bhoomi Land Records Registry (Revenue)'
               : activeNode === 'TRANSPORT'
@@ -187,11 +187,11 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
               ? 'Single Citizen Identity & DPDP Consent Gate'
               : 'National Cross-Registry Interoperability Gateway'}
           </span>
-          <span className="text-[10px] font-mono font-bold text-gov-800 bg-gov-50 border border-gov-200 px-2 py-0.5 rounded-full">
+          <span className="text-xs font-mono font-bold text-gov-900 bg-gov-50 border border-gov-300 px-2.5 py-0.5 rounded-full">
             38ms Latency
           </span>
         </div>
-        <p className="text-[11px] text-slate-600 leading-tight">
+        <p className="text-xs text-slate-700 leading-relaxed font-medium">
           {activeNode === 'REVENUE'
             ? 'Auto-verifies Land Record of Rights (RoR), survey coordinates, and mutation history.'
             : activeNode === 'TRANSPORT'
