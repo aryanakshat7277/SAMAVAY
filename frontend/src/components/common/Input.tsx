@@ -27,11 +27,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
     <div className="space-y-1.5 w-full text-left">
       {label && (
         <div className="flex items-center justify-between">
-          <label htmlFor={inputId} className="block text-xs font-bold text-stone-800">
+          <label htmlFor={inputId} className="block text-xs sm:text-[13px] font-bold text-stone-900">
             {label} {required && <span className="text-rose-600 font-bold">*</span>}
           </label>
           {badge && (
-            <span className="text-[10px] font-bold text-gov-800 bg-gov-50 px-2 py-0.5 rounded border border-gov-200">
+            <span className="text-xs font-bold text-gov-800 bg-gov-50 px-2 py-0.5 rounded border border-gov-200">
               {badge}
             </span>
           )}
@@ -40,7 +40,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
 
       <div className="relative rounded-xl shadow-xs">
         {Icon && (
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-400">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-stone-500">
             <Icon className="w-4 h-4" />
           </div>
         )}
@@ -49,7 +49,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
           ref={ref}
           id={inputId}
           required={required}
-          className={`w-full text-xs text-stone-900 bg-white border rounded-xl py-2.5 transition-all duration-150 outline-none ${
+          className={`w-full text-sm font-medium text-stone-900 bg-white border rounded-xl py-2.5 transition-all duration-150 outline-none ${
             Icon ? 'pl-9 pr-3.5' : 'px-3.5'
           } ${
             error
@@ -61,9 +61,9 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
       </div>
 
       {error ? (
-        <p className="text-[11px] text-rose-600 font-medium">{error}</p>
+        <p className="text-xs text-rose-700 font-semibold">{error}</p>
       ) : helperText ? (
-        <p className="text-[11px] text-stone-500">{helperText}</p>
+        <p className="text-xs text-stone-600 font-medium">{helperText}</p>
       ) : null}
     </div>
   );

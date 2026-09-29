@@ -73,9 +73,9 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({
   }
 
   const sizeClasses = {
-    sm: 'text-[10px] px-2 py-0.5 font-bold',
-    md: 'text-xs px-2.5 py-1 font-semibold',
-    lg: 'text-sm px-3.5 py-1.5 font-bold',
+    sm: 'text-xs px-2.5 py-0.5 font-bold',
+    md: 'text-xs px-3 py-1 font-bold',
+    lg: 'text-sm px-4 py-1.5 font-bold',
   };
 
   return (

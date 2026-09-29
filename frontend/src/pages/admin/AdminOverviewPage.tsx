@@ -119,14 +119,14 @@ export const AdminOverviewPage: React.FC = () => {
       <Card padding="md" className="space-y-4 bg-white border-stone-200 shadow-card">
         <div className="flex items-center justify-between border-b border-stone-100 pb-3">
           <div>
-            <h3 className="text-sm font-bold text-stone-900 font-serif">
+            <h3 className="text-base font-bold text-stone-900 font-serif">
               Connected Government Digital Platforms
             </h3>
-            <p className="text-[11px] text-stone-500 mt-0.5">Authoritative data providers in the national mesh</p>
+            <p className="text-xs text-stone-600 mt-0.5 font-medium">Authoritative data providers in the national mesh</p>
           </div>
           <Link
             to="/admin/platform-registry"
-            className="text-xs font-bold text-gov-700 hover:text-gov-900 inline-flex items-center gap-1"
+            className="text-xs font-bold text-gov-800 hover:text-gov-950 inline-flex items-center gap-1"
           >
             <span>View All ({platforms.length})</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -141,17 +141,17 @@ export const AdminOverviewPage: React.FC = () => {
             >
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-gov-800 bg-gov-50 px-2 py-0.5 rounded border border-gov-200">
+                  <span className="text-xs font-bold text-gov-800 bg-gov-50 px-2.5 py-0.5 rounded border border-gov-200">
                     {plat.departmentName}
                   </span>
                   <StatusBadge status={plat.connectionStatus} size="sm" />
                 </div>
-                <h4 className="font-bold text-stone-900 text-xs font-serif line-clamp-1">{plat.name}</h4>
-                <p className="text-[11px] text-stone-500 font-mono">Code: {plat.code}</p>
+                <h4 className="font-bold text-stone-900 text-sm font-serif line-clamp-1">{plat.name}</h4>
+                <p className="text-xs text-stone-600 font-mono font-medium">Code: {plat.code}</p>
               </div>
 
-              <div className="pt-2 border-t border-stone-200/60 flex items-center justify-between text-[11px] text-stone-600">
-                <span>Type: <strong className="text-stone-800">{plat.platformType}</strong></span>
+              <div className="pt-2 border-t border-stone-200 flex items-center justify-between text-xs text-stone-700 font-medium">
+                <span>Type: <strong className="text-stone-900 font-bold">{plat.platformType}</strong></span>
                 <span className="font-mono text-gov-800 font-bold">{plat.uptimePercentage || 99.9}% SLA</span>
               </div>
             </div>
@@ -163,14 +163,14 @@ export const AdminOverviewPage: React.FC = () => {
       <Card padding="none" className="overflow-hidden bg-white border-stone-200 shadow-card">
         <div className="p-4 sm:p-5 border-b border-stone-100 flex items-center justify-between">
           <div>
-            <h3 className="text-sm font-bold text-stone-900 font-serif">
+            <h3 className="text-base font-bold text-stone-900 font-serif">
               Active Inter-Platform Integration Pipelines
             </h3>
-            <p className="text-[11px] text-stone-500 mt-0.5">High-speed data exchange routes</p>
+            <p className="text-xs text-stone-600 mt-0.5 font-medium">High-speed data exchange routes</p>
           </div>
           <Link
             to="/admin/integrations"
-            className="text-xs font-bold text-gov-700 hover:text-gov-900 inline-flex items-center gap-1"
+            className="text-xs font-bold text-gov-800 hover:text-gov-950 inline-flex items-center gap-1"
           >
             <span>Configure Hub</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -179,7 +179,7 @@ export const AdminOverviewPage: React.FC = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-stone-50 text-stone-500 font-bold border-b border-stone-200 uppercase tracking-wider text-[10px]">
+            <thead className="bg-stone-50 text-stone-700 font-bold border-b border-stone-200 uppercase tracking-wider text-xs">
               <tr>
                 <th className="py-3 px-4">Pipeline Name</th>
                 <th className="py-3 px-4">Source Platform</th>
@@ -189,18 +189,18 @@ export const AdminOverviewPage: React.FC = () => {
                 <th className="py-3 px-4">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100">
+            <tbody className="divide-y divide-stone-100 font-medium">
               {connections.slice(0, 5).map((conn) => (
                 <tr key={conn.id} className="hover:bg-gov-50/30 transition">
                   <td className="py-3 px-4 font-bold text-stone-900">{conn.name}</td>
-                  <td className="py-3 px-4 font-medium text-stone-700">{conn.sourcePlatformName}</td>
-                  <td className="py-3 px-4 font-medium text-stone-700">{conn.destinationPlatformName}</td>
+                  <td className="py-3 px-4 font-semibold text-stone-800">{conn.sourcePlatformName}</td>
+                  <td className="py-3 px-4 font-semibold text-stone-800">{conn.destinationPlatformName}</td>
                   <td className="py-3 px-4">
-                    <span className="bg-gov-50 text-gov-800 border border-gov-200 text-[10px] font-bold px-2 py-0.5 rounded font-mono">
+                    <span className="bg-gov-50 text-gov-800 border border-gov-200 text-xs font-bold px-2.5 py-0.5 rounded font-mono">
                       {conn.connectionType}
                     </span>
                   </td>
-                  <td className="py-3 px-4 font-mono text-stone-700 font-bold">
+                  <td className="py-3 px-4 font-mono text-stone-900 font-bold">
                     {conn.totalTransactionsProcessed.toLocaleString('en-IN')}
                   </td>
                   <td className="py-3 px-4">
@@ -217,14 +217,14 @@ export const AdminOverviewPage: React.FC = () => {
       <Card padding="none" className="overflow-hidden bg-white border-stone-200 shadow-card">
         <div className="p-4 sm:p-5 border-b border-stone-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <ScrollText className="w-4 h-4 text-gov-700" />
-            <h3 className="text-sm font-bold text-stone-900 font-serif">
+            <ScrollText className="w-5 h-5 text-gov-700" />
+            <h3 className="text-base font-bold text-stone-900 font-serif">
               Immutable Cryptographic Audit Trail
             </h3>
           </div>
           <Link
             to="/admin/audit-logs"
-            className="text-xs font-bold text-gov-700 hover:text-gov-900 inline-flex items-center gap-1"
+            className="text-xs font-bold text-gov-800 hover:text-gov-950 inline-flex items-center gap-1"
           >
             <span>View All Logs</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -233,7 +233,7 @@ export const AdminOverviewPage: React.FC = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-stone-50 text-stone-500 font-bold border-b border-stone-200 uppercase tracking-wider text-[10px]">
+            <thead className="bg-stone-50 text-stone-700 font-bold border-b border-stone-200 uppercase tracking-wider text-xs">
               <tr>
                 <th className="py-3 px-4">Timestamp</th>
                 <th className="py-3 px-4">Event Action</th>
@@ -242,17 +242,17 @@ export const AdminOverviewPage: React.FC = () => {
                 <th className="py-3 px-4">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100">
+            <tbody className="divide-y divide-stone-100 font-medium">
               {auditLogs.slice(0, 4).map((log) => (
                 <tr key={log.id} className="hover:bg-gov-50/30 transition">
-                  <td className="py-3 px-4 font-mono text-[11px] text-stone-500">
+                  <td className="py-3 px-4 font-mono text-xs text-stone-600 font-semibold">
                     {new Date(log.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
                   </td>
                   <td className="py-3 px-4 font-bold text-stone-900">{log.action}</td>
-                  <td className="py-3 px-4 font-mono text-gov-800 text-[11px] font-bold">{log.performedBy || 'SYSTEM'}</td>
-                  <td className="py-3 px-4 text-stone-600">{log.resourceType || log.description || 'Entity Record'}</td>
+                  <td className="py-3 px-4 font-mono text-gov-800 text-xs font-bold">{log.performedBy || 'SYSTEM'}</td>
+                  <td className="py-3 px-4 text-stone-800">{log.resourceType || log.description || 'Entity Record'}</td>
                   <td className="py-3 px-4">
-                    <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-full inline-flex items-center gap-1">
+                    <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">
                       <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
                       SEALED
                     </span>

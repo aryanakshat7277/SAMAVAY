@@ -140,18 +140,18 @@ export const MyApplicationsPage: React.FC = () => {
 
         {/* Search Field */}
         <div className="relative w-full sm:w-72">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-2.5" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by ID or service..."
-            className="w-full pl-9 pr-8 py-1.5 text-xs bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
+            className="w-full pl-9 pr-8 py-2 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600 font-medium"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-2 top-2 text-slate-400 hover:text-slate-600"
+              className="absolute right-2 top-2.5 text-slate-400 hover:text-slate-600"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -164,7 +164,7 @@ export const MyApplicationsPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left Column: Applications List (5 cols) */}
           <div className="lg:col-span-5 space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">
               Applications ({filtered.length})
             </h3>
 
@@ -184,15 +184,15 @@ export const MyApplicationsPage: React.FC = () => {
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="space-y-0.5">
-                        <span className="text-[10px] text-slate-500 block">{req.departmentName}</span>
-                        <h4 className="font-bold text-slate-900 font-serif text-sm">{req.serviceName}</h4>
+                        <span className="text-xs text-slate-600 font-semibold block">{req.departmentName}</span>
+                        <h4 className="font-bold text-slate-900 font-serif text-base">{req.serviceName}</h4>
                       </div>
                       <StatusBadge status={req.status} size="sm" />
                     </div>
 
-                    <div className="flex items-center justify-between text-[11px] text-slate-500 pt-2 border-t border-slate-100">
-                      <span className="font-mono font-semibold text-slate-700">{req.applicationNumber}</span>
-                      <span>Submitted {new Date(req.submittedAt || Date.now()).toLocaleDateString('en-IN')}</span>
+                    <div className="flex items-center justify-between text-xs text-slate-600 pt-2.5 border-t border-slate-200">
+                      <span className="font-mono font-bold text-slate-800">{req.applicationNumber}</span>
+                      <span className="font-medium">Submitted {new Date(req.submittedAt || Date.now()).toLocaleDateString('en-IN')}</span>
                     </div>
                   </div>
                 );

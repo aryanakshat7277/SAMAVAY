@@ -30,16 +30,16 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
     <div className="space-y-3 pb-2">
       {/* Breadcrumbs */}
       {breadcrumbs && breadcrumbs.length > 0 && (
-        <nav className="flex items-center space-x-1.5 text-xs text-stone-500 font-medium">
+        <nav className="flex items-center space-x-1.5 text-xs text-stone-600 font-medium">
           {breadcrumbs.map((b, idx) => (
             <React.Fragment key={idx}>
-              {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-stone-400" />}
+              {idx > 0 && <ChevronRight className="w-3.5 h-3.5 text-stone-500" />}
               {b.link ? (
-                <Link to={b.link} className="hover:text-gov-700 transition">
+                <Link to={b.link} className="hover:text-gov-800 transition">
                   {b.label}
                 </Link>
               ) : (
-                <span className="text-stone-800 font-semibold">{b.label}</span>
+                <span className="text-stone-900 font-bold">{b.label}</span>
               )}
             </React.Fragment>
           ))}
@@ -64,7 +64,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
           </div>
 
           {description && (
-            <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-normal">
               {description}
             </p>
           )}

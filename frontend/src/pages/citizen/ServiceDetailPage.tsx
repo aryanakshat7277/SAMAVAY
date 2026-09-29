@@ -122,27 +122,27 @@ export const ServiceDetailPage: React.FC = () => {
 
         {/* Quick Service Meta Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs border-t border-slate-100">
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center space-x-3">
-            <Clock className="w-4 h-4 text-gov-700 flex-shrink-0" />
+          <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl flex items-center space-x-3">
+            <Clock className="w-5 h-5 text-gov-700 flex-shrink-0" />
             <div>
-              <span className="text-[10px] text-slate-400 uppercase font-bold block">Estimated Time</span>
-              <span className="font-semibold text-slate-800">5–10 Minutes (Instant Pre-Fill)</span>
+              <span className="text-xs text-slate-600 uppercase font-bold block">Estimated Time</span>
+              <span className="text-xs sm:text-[13px] font-bold text-slate-900">5–10 Minutes (Instant Pre-Fill)</span>
             </div>
           </div>
 
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center space-x-3">
-            <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+          <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl flex items-center space-x-3">
+            <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0" />
             <div>
-              <span className="text-[10px] text-slate-400 uppercase font-bold block">Authority Verification</span>
-              <span className="font-semibold text-slate-800">Authoritative DPI Sources</span>
+              <span className="text-xs text-slate-600 uppercase font-bold block">Authority Verification</span>
+              <span className="text-xs sm:text-[13px] font-bold text-slate-900">Authoritative DPI Sources</span>
             </div>
           </div>
 
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex items-center space-x-3">
-            <Lock className="w-4 h-4 text-purple-700 flex-shrink-0" />
+          <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl flex items-center space-x-3">
+            <Lock className="w-5 h-5 text-purple-700 flex-shrink-0" />
             <div>
-              <span className="text-[10px] text-slate-400 uppercase font-bold block">DPDP Act 2023</span>
-              <span className="font-semibold text-slate-800">Explicit Consent Enforced</span>
+              <span className="text-xs text-slate-600 uppercase font-bold block">DPDP Act 2023</span>
+              <span className="text-xs sm:text-[13px] font-bold text-slate-900">Explicit Consent Enforced</span>
             </div>
           </div>
         </div>

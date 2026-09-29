@@ -138,13 +138,13 @@ export const LoginPage: React.FC = () => {
             </div>
             <div>
               <span className="text-white font-black text-lg font-serif">SAMAVAY</span>
-              <p className="text-gov-300 text-[10px] font-medium">National Digital Public Infrastructure</p>
+              <p className="text-gov-200 text-xs font-medium">National Digital Public Infrastructure</p>
             </div>
           </div>
 
           {/* Center message */}
           <div className={`space-y-6 transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-gov-200 text-[10px] font-bold px-3 py-1.5 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 text-gov-200 text-xs font-bold px-3 py-1.5 rounded-full">
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
               LIVE INTEROPERABILITY MESH
             </div>
@@ -154,7 +154,7 @@ export const LoginPage: React.FC = () => {
               <span className="text-saffron-400">Every Government Service.</span>
             </h2>
 
-            <p className="text-gov-300 text-sm leading-relaxed max-w-sm">
+            <p className="text-gov-200 text-sm leading-relaxed max-w-sm font-medium">
               SAMAVAY connects Bhoomi LRS, SARATHI, e-NagarPalika, DigiLocker — and auto-verifies
               your documents so you never upload the same file twice.
             </p>
@@ -168,17 +168,17 @@ export const LoginPage: React.FC = () => {
               ].map(({ value, label }) => (
                 <div key={label} className="bg-white/8 border border-white/12 rounded-xl p-3">
                   <p className="text-white font-black text-xl font-mono">{value}</p>
-                  <p className="text-gov-400 text-[10px] font-medium mt-0.5">{label}</p>
+                  <p className="text-gov-300 text-xs font-semibold mt-0.5">{label}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Bottom trust strip */}
-          <div className="flex flex-wrap gap-3 text-[10px] text-gov-400 font-medium">
-            <span className="flex items-center gap-1.5"><Check className="w-3 h-3 text-emerald-500" />DPDP Act 2023</span>
-            <span className="flex items-center gap-1.5"><Check className="w-3 h-3 text-emerald-500" />mTLS Encrypted</span>
-            <span className="flex items-center gap-1.5"><Check className="w-3 h-3 text-emerald-500" />NIC Hosted</span>
+          <div className="flex flex-wrap gap-3 text-xs text-gov-300 font-semibold">
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />DPDP Act 2023</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />mTLS Encrypted</span>
+            <span className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-emerald-400" />NIC Hosted</span>
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@ export const LoginPage: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl font-black text-stone-900 font-serif">
               {loginRole === 'CITIZEN' ? 'Citizen Sign In' : 'Officer Console Access'}
             </h1>
-            <p className="text-xs text-stone-500 mt-1">
+            <p className="text-xs sm:text-sm text-stone-600 mt-1 font-medium">
               Sovereign digital identity — secured under DPDP Act 2023
             </p>
           </div>
@@ -213,10 +213,10 @@ export const LoginPage: React.FC = () => {
               className={`flex items-center justify-center gap-1.5 py-2.5 rounded-xl transition-all cursor-pointer ${
                 loginRole === 'CITIZEN'
                   ? 'bg-gov-950 text-white shadow-gov'
-                  : 'text-stone-600 hover:bg-stone-50'
+                  : 'text-stone-700 hover:bg-stone-50 font-bold'
               }`}
             >
-              <UserCheck className="w-3.5 h-3.5" />
+              <UserCheck className="w-4 h-4" />
               <span>Citizen Portal</span>
             </button>
             <button
@@ -225,10 +225,10 @@ export const LoginPage: React.FC = () => {
               className={`flex items-center justify-center gap-1.5 py-2.5 rounded-xl transition-all cursor-pointer ${
                 loginRole === 'OFFICER'
                   ? 'bg-gov-950 text-white shadow-gov'
-                  : 'text-stone-600 hover:bg-stone-50'
+                  : 'text-stone-700 hover:bg-stone-50 font-bold'
               }`}
             >
-              <Building2 className="w-3.5 h-3.5" />
+              <Building2 className="w-4 h-4" />
               <span>Officer / Admin</span>
             </button>
           </div>
@@ -238,7 +238,7 @@ export const LoginPage: React.FC = () => {
             type="button"
             onClick={loginRole === 'CITIZEN' ? handleDemoCitizenLogin : handleLogin}
             disabled={isLoading}
-            className="w-full flex items-center justify-between px-4 py-3 bg-white border-2 border-gov-300 hover:border-gov-500 hover:bg-gov-50 rounded-2xl text-xs font-bold text-stone-900 transition-all duration-200 group cursor-pointer shadow-xs hover:shadow-gov"
+            className="w-full flex items-center justify-between px-4 py-3 bg-white border-2 border-gov-300 hover:border-gov-500 hover:bg-gov-50 rounded-2xl text-xs sm:text-[13px] font-bold text-stone-900 transition-all duration-200 group cursor-pointer shadow-xs hover:shadow-gov"
           >
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-xl bg-gov-100 flex items-center justify-center">
@@ -248,7 +248,7 @@ export const LoginPage: React.FC = () => {
                 <p className="font-bold text-stone-900">
                   {loginRole === 'CITIZEN' ? '1-Click Citizen Demo Login' : '1-Click Admin Console Access'}
                 </p>
-                <p className="text-[10px] text-stone-500 font-medium">Instant pre-filled credentials for demonstration & testing</p>
+                <p className="text-xs text-stone-600 font-medium">Instant pre-filled credentials for demonstration & testing</p>
               </div>
             </div>
             <ArrowRight className="w-4 h-4 text-gov-700 group-hover:translate-x-0.5 transition-transform" />
@@ -260,7 +260,7 @@ export const LoginPage: React.FC = () => {
               <div className="w-full border-t border-stone-200" />
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-sandstone-100 px-3 text-[10px] font-semibold text-stone-400 uppercase tracking-wider">
+              <span className="bg-sandstone-100 px-3 text-xs font-bold text-stone-500 uppercase tracking-wider">
                 or sign in with credentials
               </span>
             </div>
@@ -269,7 +269,7 @@ export const LoginPage: React.FC = () => {
           {/* Form */}
           <form onSubmit={handleLogin} className="space-y-4">
             {errorMsg && (
-              <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs flex items-center gap-2 animate-fade-in-scale">
+              <div className="p-3 bg-rose-50 border border-rose-200 rounded-xl text-rose-800 text-xs sm:text-sm flex items-center gap-2 animate-fade-in-scale font-medium">
                 <AlertCircle className="w-4 h-4 text-rose-600 flex-shrink-0" />
                 <span>{errorMsg}</span>
               </div>
@@ -286,11 +286,11 @@ export const LoginPage: React.FC = () => {
 
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
-                <label className="block text-xs font-semibold text-stone-800">Password</label>
+                <label className="block text-xs sm:text-[13px] font-bold text-stone-900">Password</label>
                 <button
                   type="button"
                   onClick={(e) => { e.preventDefault(); alert('Demo environment password: DemoPass@2026 (citizen) or OfficerPass@2026 (admin)'); }}
-                  className="text-[11px] text-gov-700 hover:text-gov-900 font-semibold hover:underline"
+                  className="text-xs text-gov-800 hover:text-gov-950 font-bold hover:underline"
                 >
                   Forgot password?
                 </button>
@@ -301,12 +301,12 @@ export const LoginPage: React.FC = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full text-xs text-stone-900 bg-white border border-stone-300 rounded-xl py-2.5 pl-3.5 pr-10 focus:border-gov-600 focus:ring-1 focus:ring-gov-600 outline-none transition"
+                  className="w-full text-sm font-medium text-stone-900 bg-white border border-stone-300 rounded-xl py-2.5 pl-3.5 pr-10 focus:border-gov-600 focus:ring-1 focus:ring-gov-600 outline-none transition"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-stone-500 hover:text-stone-700"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -320,13 +320,13 @@ export const LoginPage: React.FC = () => {
                 onChange={(e) => setRememberMe(e.target.checked)}
                 className="h-4 w-4 rounded border-stone-300 text-gov-600 focus:ring-gov-500 cursor-pointer"
               />
-              <span className="text-xs text-stone-600">Remember this device for 30 days</span>
+              <span className="text-xs sm:text-[13px] text-stone-700 font-medium">Remember this device for 30 days</span>
             </label>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 px-6 bg-gov-700 hover:bg-gov-800 text-white text-xs font-bold rounded-xl transition-all duration-200 shadow-gov hover:shadow-gov-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+              className="w-full py-3 px-6 bg-gov-700 hover:bg-gov-800 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-gov hover:shadow-gov-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
             >
               {isLoading ? (
                 <>
@@ -345,17 +345,17 @@ export const LoginPage: React.FC = () => {
           {/* Trust strip */}
           <div className="flex flex-wrap justify-center gap-4 pt-1">
             {trustItems.map(({ icon: Icon, text, color }) => (
-              <span key={text} className={`flex items-center gap-1 text-[10px] font-medium ${color}`}>
-                <Icon className="w-3 h-3" />
+              <span key={text} className={`flex items-center gap-1.5 text-xs font-semibold ${color}`}>
+                <Icon className="w-3.5 h-3.5" />
                 {text}
               </span>
             ))}
           </div>
 
           {/* Register link */}
-          <div className="text-center text-xs text-stone-500 pt-2 border-t border-stone-200">
+          <div className="text-center text-xs sm:text-[13px] text-stone-600 font-medium pt-2 border-t border-stone-200">
             Don't have an account?{' '}
-            <Link to="/register" className="font-bold text-gov-700 hover:text-gov-900 hover:underline">
+            <Link to="/register" className="font-bold text-gov-800 hover:text-gov-950 hover:underline">
               Register as a Citizen →
             </Link>
           </div>

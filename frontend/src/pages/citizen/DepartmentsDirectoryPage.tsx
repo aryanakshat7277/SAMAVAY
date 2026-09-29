@@ -42,19 +42,19 @@ export const DepartmentsDirectoryPage: React.FC = () => {
       {/* 2. SEARCH & FILTER STRIP */}
       <Card padding="md" className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="relative w-full sm:w-80">
-          <Search className="w-4 h-4 text-stone-400 absolute left-3 top-2.5" />
+          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-2.5" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search departments by name or domain..."
-            className="w-full pl-9 pr-3 py-2 text-xs bg-stone-50 border border-stone-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600"
+            className="w-full pl-9 pr-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:border-gov-600 focus:ring-1 focus:ring-gov-600 font-medium"
           />
         </div>
 
-        <div className="flex items-center space-x-2 text-xs text-stone-500">
+        <div className="flex items-center space-x-2 text-xs text-slate-700 font-semibold">
           <span>Total Connected Ministries:</span>
-          <span className="font-mono font-bold text-gov-800 bg-gov-50 border border-gov-200 px-2.5 py-0.5 rounded-full">
+          <span className="font-mono font-bold text-gov-800 bg-gov-50 border border-gov-200 px-3 py-1 rounded-full text-xs">
             {departments.length} Authorities
           </span>
         </div>

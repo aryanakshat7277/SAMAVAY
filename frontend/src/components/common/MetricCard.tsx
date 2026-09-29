@@ -32,7 +32,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   return (
     <div className="bg-white border border-stone-200/90 rounded-2xl p-5 shadow-card hover:border-gov-300 hover:shadow-card-hover transition-all duration-200 space-y-2 text-left">
       <div className="flex items-center justify-between">
-        <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">
+        <span className="text-xs font-bold uppercase tracking-wider text-stone-700">
           {label}
         </span>
         {Icon && (
@@ -48,7 +48,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
         </span>
         {trend && (
           <span
-            className={`text-[11px] font-bold inline-flex items-center gap-0.5 ${
+            className={`text-xs font-bold inline-flex items-center gap-0.5 ${
               trend.isPositive ? 'text-emerald-700' : 'text-rose-700'
             }`}
           >
@@ -59,7 +59,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
       </div>
 
       {subtext && (
-        <p className="text-[11px] text-stone-500 font-medium">
+        <p className="text-xs text-stone-600 font-medium">
           {subtext}
         </p>
       )}
