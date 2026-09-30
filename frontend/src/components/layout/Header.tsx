@@ -108,7 +108,7 @@ export const Header: React.FC = () => {
                     DPI
                   </span>
                 </div>
-                <span className="text-xs sm:text-[13px] text-slate-600 font-medium tracking-tight leading-none block mt-1">
+                <span className="text-xs sm:text-[13px] text-slate-600 font-medium tracking-tight leading-none block mt-1 truncate max-w-[165px] xs:max-w-[240px] sm:max-w-none">
                   National Interoperability & Citizen Services Mesh
                 </span>
               </div>
@@ -254,10 +254,38 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            {/* ── Mobile Menu Button ── */}
+            {/* ── Mobile Right Actions (Visible on < sm) ── */}
+            <div className="flex sm:hidden items-center space-x-1.5">
+              {isAuthenticated && (
+                <Link
+                  to="/notifications"
+                  className="relative p-2 rounded-xl text-slate-700 hover:text-gov-800 hover:bg-gov-50 transition border border-slate-300"
+                  title="View Notifications"
+                  aria-label="View Notifications"
+                >
+                  <Bell className="w-4.5 h-4.5" />
+                  {unreadCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-rose-600 text-white text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow-xs">
+                      {unreadCount}
+                    </span>
+                  )}
+                </Link>
+              )}
+
+              {/* Mobile Menu Toggle Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-xl text-stone-700 hover:bg-stone-100 transition cursor-pointer"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+
+            {/* Desktop / Tablet Menu Button (for xl:hidden screens >= sm) */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-100 transition cursor-pointer"
+              className="hidden sm:block xl:hidden p-2 rounded-xl text-stone-700 hover:bg-stone-100 transition cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -267,11 +295,65 @@ export const Header: React.FC = () => {
 
         {/* ── Mobile Dropdown ── */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-white border-t border-stone-200 px-4 py-4 space-y-1 animate-slide-down text-xs">
+          <div className="xl:hidden bg-white border-t border-stone-200 px-4 py-4 space-y-2 animate-slide-down text-xs">
+            {/* Citizen Profile Strip for Authenticated Users */}
+            {isAuthenticated && (
+              <div className="p-3 bg-gradient-to-r from-gov-50 via-amber-50/40 to-stone-50 rounded-2xl border border-gov-200/90 space-y-2.5 mb-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-gov-800 to-gov-950 text-white flex items-center justify-center font-black text-sm shadow-xs">
+                      {user?.fullName?.charAt(0) || 'C'}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-slate-900 font-serif leading-tight">
+                        {user?.fullName || 'Verified Citizen'}
+                      </p>
+                      <span className="text-[10px] font-bold text-gov-800 bg-white px-2 py-0.5 rounded border border-gov-200 uppercase tracking-wider inline-block">
+                        {user?.role || 'CITIZEN'} • VERIFIED
+                      </span>
+                    </div>
+                  </div>
+                  <Link
+                    to="/notifications"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 rounded-xl bg-white border border-stone-200 text-slate-700 hover:text-gov-800 relative shadow-2xs"
+                    title="Notifications"
+                  >
+                    <Bell className="w-4 h-4" />
+                    {unreadCount > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-rose-600 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                        {unreadCount}
+                      </span>
+                    )}
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-2 gap-1.5 pt-1 border-t border-gov-200/60 text-[11px] font-bold">
+                  <Link
+                    to="/dashboard/permissions"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 bg-white rounded-lg border border-gov-200 text-gov-900 text-center hover:bg-gov-50 flex items-center justify-center gap-1 shadow-2xs"
+                  >
+                    <Lock className="w-3 h-3 text-gov-700" />
+                    <span>Data Consent</span>
+                  </Link>
+                  <Link
+                    to="/applications"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 bg-white rounded-lg border border-gov-200 text-gov-900 text-center hover:bg-gov-50 flex items-center justify-center gap-1 shadow-2xs"
+                  >
+                    <FileText className="w-3 h-3 text-emerald-700" />
+                    <span>My Applications</span>
+                  </Link>
+                </div>
+              </div>
+            )}
+
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
+                onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center px-3 py-2.5 rounded-xl font-bold transition ${
                   isActive(link.path)
                     ? 'bg-gov-50 text-gov-800 border border-gov-200'
@@ -285,6 +367,7 @@ export const Header: React.FC = () => {
             <div className="pt-3 border-t border-stone-100 flex flex-col gap-2">
               <Link
                 to="/admin/control-center"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full text-center py-2.5 bg-gov-950 hover:bg-gov-900 text-white font-bold rounded-xl transition flex items-center justify-center gap-1.5"
               >
                 <ShieldCheck className="w-4 h-4 text-saffron-400" />
@@ -295,12 +378,14 @@ export const Header: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2">
                   <Link
                     to="/login"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="text-center py-2.5 border border-stone-300 font-bold rounded-xl text-stone-800 hover:bg-stone-50 transition"
                   >
                     Sign In
                   </Link>
                   <Link
                     to="/register"
+                    onClick={() => setMobileMenuOpen(false)}
                     className="text-center py-2.5 bg-gov-700 text-white font-bold rounded-xl hover:bg-gov-800 transition"
                   >
                     Register

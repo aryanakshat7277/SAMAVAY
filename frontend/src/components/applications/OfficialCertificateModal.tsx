@@ -59,25 +59,25 @@ export const OfficialCertificateModal: React.FC<OfficialCertificateModalProps> =
       <div className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-300 flex flex-col max-h-[92vh] overflow-hidden animate-fade-in-scale">
         
         {/* Top Dialog Action Bar (Hidden in Print) */}
-        <div className="print:hidden bg-gov-900 text-white px-6 py-3.5 flex items-center justify-between border-b border-gov-800">
-          <div className="flex items-center space-x-2">
-            <ShieldCheck className="w-4 h-4 text-saffron-400" />
-            <span className="text-xs font-bold font-serif tracking-wide">
-              {isCompleted ? 'National Sovereign Certificate Viewer' : 'Official Citizen Acknowledgement Slip'}
+        <div className="print:hidden bg-gov-900 text-white px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between border-b border-gov-800 gap-2">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 min-w-0">
+            <ShieldCheck className="w-4 h-4 text-saffron-400 shrink-0" />
+            <span className="text-xs font-bold font-serif tracking-wide truncate">
+              {isCompleted ? 'Certificate Viewer' : 'Acknowledgement Slip'}
             </span>
-            <span className="text-[10px] bg-white/10 text-slate-200 px-2 py-0.5 rounded font-mono">
+            <span className="hidden sm:inline-block text-[10px] bg-white/10 text-slate-200 px-2 py-0.5 rounded font-mono shrink-0">
               IT ACT 2000 §4 & §5
             </span>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
             <button
               onClick={handlePrint}
-              className="px-3 py-1.5 bg-saffron-500 hover:bg-saffron-600 text-gov-950 font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5 cursor-pointer"
+              className="px-2.5 sm:px-3 py-1.5 bg-saffron-500 hover:bg-saffron-600 text-gov-950 font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5 cursor-pointer"
               title="Print document or save as PDF"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
+              <span>Print<span className="hidden sm:inline"> / Save PDF</span></span>
             </button>
             <button
               onClick={onClose}
@@ -90,11 +90,11 @@ export const OfficialCertificateModal: React.FC<OfficialCertificateModalProps> =
         </div>
 
         {/* Scrollable Printable Document Paper */}
-        <div className="p-4 sm:p-8 overflow-y-auto bg-slate-50 flex justify-center">
+        <div className="p-2.5 sm:p-8 overflow-y-auto bg-slate-50 flex justify-center">
           <div
             ref={printAreaRef}
             id="printable-official-document"
-            className="w-full bg-white border-2 border-slate-300 rounded-2xl p-6 sm:p-10 shadow-md relative text-slate-800 print:border-none print:shadow-none print:p-0 print:m-0"
+            className="w-full bg-white border-2 border-slate-300 rounded-2xl p-4 sm:p-10 shadow-md relative text-slate-800 print:border-none print:shadow-none print:p-0 print:m-0"
           >
             {/* Tricolor Sovereign Top Micro-Bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20] rounded-t-2xl print:rounded-none" />

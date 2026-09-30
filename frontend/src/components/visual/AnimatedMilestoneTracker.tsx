@@ -127,7 +127,7 @@ export const AnimatedMilestoneTracker: React.FC<Props> = ({
               {/* Connecting vertical progress line */}
               {idx < stages.length - 1 && (
                 <div
-                  className={`absolute left-5 sm:left-5 top-10 w-0.5 h-16 sm:h-20 transition-all duration-500 ${
+                  className={`absolute left-5 sm:left-5 top-10 -bottom-6 w-0.5 transition-all duration-500 ${
                     isDone ? 'bg-gov-700' : 'bg-stone-200'
                   }`}
                 />

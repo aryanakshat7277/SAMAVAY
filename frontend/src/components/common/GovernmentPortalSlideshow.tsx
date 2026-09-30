@@ -144,7 +144,7 @@ export const GovernmentPortalSlideshow: React.FC = () => {
       <div className="absolute top-0 left-0 right-0 h-1.5 z-30 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
       {/* Main Slide Carousel Track */}
-      <div className="relative min-h-[480px] sm:min-h-[460px] lg:h-[500px] w-full overflow-hidden bg-stone-50">
+      <div className="relative min-h-[580px] sm:min-h-[540px] lg:h-[500px] w-full overflow-hidden bg-stone-50">
         {slides.map((slide, index) => {
           const isActive = index === currentSlide;
           const TagIcon = slide.categoryIcon;
@@ -157,29 +157,29 @@ export const GovernmentPortalSlideshow: React.FC = () => {
               }`}
             >
               {/* Left Column: 100% Solid Opaque Content Card (Zero Text Overlapping) */}
-              <div className="w-full lg:w-7/12 p-6 sm:p-10 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-amber-50/95 via-white to-stone-50 border-b lg:border-b-0 lg:border-r border-stone-200/90 z-10">
-                <div className="space-y-4 max-w-xl">
+              <div className="w-full lg:w-7/12 p-5 sm:p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-amber-50/95 via-white to-stone-50 border-b lg:border-b-0 lg:border-r border-stone-200/90 z-10">
+                <div className="space-y-3 sm:space-y-4 max-w-xl">
                   {/* Category Pill with Icon */}
-                  <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-2xs">
+                  <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-300 text-amber-900 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-xs font-bold tracking-wider uppercase shadow-2xs">
                     <TagIcon className="w-3.5 h-3.5 text-amber-700" />
                     <span>{slide.categoryTag}</span>
                   </div>
 
                   {/* Slide Title */}
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 font-serif tracking-tight leading-[1.2]">
+                  <h2 className="text-xl sm:text-2xl lg:text-4xl font-black text-slate-900 font-serif tracking-tight leading-[1.2]">
                     {slide.title}
                   </h2>
 
                   {/* Slide Description */}
-                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
+                  <p className="text-xs sm:text-sm lg:text-base text-slate-700 leading-relaxed font-medium line-clamp-3 sm:line-clamp-none">
                     {slide.subtitle}
                   </p>
 
                   {/* Actions & Metrics Row */}
-                  <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2">
                     <Link
                       to={slide.primaryAction.path}
-                      className="px-5 py-2.5 bg-gradient-to-r from-gov-700 to-gov-800 hover:from-gov-800 hover:to-gov-900 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
+                      className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-gov-700 to-gov-800 hover:from-gov-800 hover:to-gov-900 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer transform hover:-translate-y-0.5"
                     >
                       <span>{slide.primaryAction.label}</span>
                       <ArrowRight className="w-4 h-4" />
@@ -188,7 +188,7 @@ export const GovernmentPortalSlideshow: React.FC = () => {
                     {slide.secondaryAction && (
                       <Link
                         to={slide.secondaryAction.path}
-                        className="px-4 py-2.5 bg-white hover:bg-stone-50 text-slate-800 font-semibold text-xs sm:text-sm rounded-xl border border-stone-300 shadow-2xs transition-all cursor-pointer"
+                        className="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-white hover:bg-stone-50 text-slate-800 font-semibold text-xs sm:text-sm rounded-xl border border-stone-300 shadow-2xs transition-all cursor-pointer"
                       >
                         {slide.secondaryAction.label}
                       </Link>
@@ -206,7 +206,7 @@ export const GovernmentPortalSlideshow: React.FC = () => {
               </div>
 
               {/* Right Column: Clean Picture Column (No Text on Top) */}
-              <div className="w-full lg:w-5/12 relative h-64 lg:h-auto overflow-hidden bg-stone-100 flex-1">
+              <div className="w-full lg:w-5/12 relative h-48 sm:h-56 lg:h-auto overflow-hidden bg-stone-100 flex-1">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -218,37 +218,37 @@ export const GovernmentPortalSlideshow: React.FC = () => {
           );
         })}
 
-        {/* Side Carousel Navigation Arrows (visible on hover) */}
+        {/* Side Carousel Navigation Arrows (visible on hover on desktop, always visible on mobile) */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white border border-stone-200/90 shadow-md text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-200 cursor-pointer"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/95 hover:bg-white border border-stone-200/90 shadow-md text-slate-800 flex items-center justify-center opacity-80 lg:opacity-0 lg:group-hover:opacity-100 transition duration-200 cursor-pointer"
           title="Previous slide"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
 
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/95 hover:bg-white border border-stone-200/90 shadow-md text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-200 cursor-pointer"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/95 hover:bg-white border border-stone-200/90 shadow-md text-slate-800 flex items-center justify-center opacity-80 lg:opacity-0 lg:group-hover:opacity-100 transition duration-200 cursor-pointer"
           title="Next slide"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
       </div>
 
       {/* Floating Bottom Navigation Bar */}
-      <div className="absolute bottom-4 left-6 right-6 z-30 flex items-center justify-between pointer-events-none">
+      <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-6 right-3 sm:right-6 z-30 flex items-center justify-between pointer-events-none">
         {/* Slide Indicators / Tabs */}
-        <div className="flex items-center gap-2 pointer-events-auto bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-full border border-stone-200/90 shadow-md">
+        <div className="flex items-center gap-1.5 sm:gap-2 pointer-events-auto bg-white/95 backdrop-blur-md px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full border border-stone-200/90 shadow-md">
           {slides.map((_, idx) => (
             <button
               key={idx}
               onClick={() => goToSlide(idx)}
               className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                 idx === currentSlide
-                  ? 'w-8 bg-amber-600'
+                  ? 'w-6 sm:w-8 bg-amber-600'
                   : 'w-2 bg-stone-300 hover:bg-stone-400'
               }`}
               title={`Go to slide ${idx + 1}`}

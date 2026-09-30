@@ -55,7 +55,7 @@ export const TopGovBanner: React.FC = () => {
             <div className="flex items-center space-x-1.5 font-bold tracking-wider uppercase text-xs">
               <span className="text-saffron-400 font-serif">भारत सरकार</span>
               <span className="text-slate-400">/</span>
-              <span className="text-slate-100 font-serif">Government of India</span>
+              <span className="text-slate-100 font-serif"><span className="hidden xs:inline">Government of </span>India</span>
             </div>
 
             <span className="hidden xl:inline text-slate-400">•</span>

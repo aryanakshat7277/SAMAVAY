@@ -83,9 +83,9 @@ export const LandingPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Col: Main Headline & Actions */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center space-x-2 bg-gov-100/90 border border-gov-200 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-gov-900 shadow-xs">
+              <div className="inline-flex items-center space-x-2 bg-gov-100/90 border border-gov-200 px-3 sm:px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold text-gov-900 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span>राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • National Digital Public Infrastructure</span>
+                <span><span className="hidden sm:inline">राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • </span>National Digital Public Infrastructure</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] font-serif">
@@ -207,7 +207,7 @@ export const LandingPage: React.FC = () => {
           <div className="flex items-center space-x-2">
             <span className="w-2.5 h-2.5 rounded-full bg-saffron-500 animate-pulse" />
             <h3 className="text-xs sm:text-sm font-bold font-serif uppercase tracking-widest text-slate-800">
-              राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • National DPI Spotlight
+              <span className="hidden sm:inline">राष्ट्रीय डिजिटल सार्वजनिक अवसंरचना • </span>National DPI Spotlight
             </h3>
           </div>
           <span className="text-[10px] text-slate-500 font-mono hidden sm:inline">

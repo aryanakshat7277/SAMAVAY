@@ -312,7 +312,7 @@ export const CitizenDashboard: React.FC = () => {
         {/* Tricolor Ribbon */}
         <div className="absolute top-0 left-0 right-0 h-1.5 z-30 bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
-        <div className="relative min-h-[290px] sm:min-h-[280px] md:h-72 w-full overflow-hidden bg-stone-50">
+        <div className="relative min-h-[460px] sm:min-h-[430px] md:min-h-[290px] md:h-72 w-full overflow-hidden bg-stone-50">
           {dashboardBanners.map((slide, idx) => (
             <div
               key={idx}
@@ -321,11 +321,11 @@ export const CitizenDashboard: React.FC = () => {
               }`}
             >
               {/* Left Column: 100% Solid Opaque Content Card (Zero Text Overlapping) */}
-              <div className="w-full md:w-7/12 lg:w-1/2 p-6 sm:p-8 flex flex-col justify-center bg-gradient-to-br from-amber-50/95 via-white to-stone-50 border-b md:border-b-0 md:border-r border-stone-200/90 z-10">
+              <div className="w-full md:w-7/12 lg:w-1/2 p-5 sm:p-6 md:p-8 flex flex-col justify-center bg-gradient-to-br from-amber-50/95 via-white to-stone-50 border-b md:border-b-0 md:border-r border-stone-200/90 z-10">
                 <span className="inline-block text-xs font-bold tracking-wider uppercase text-amber-900 bg-amber-50 px-2.5 py-1 rounded-md mb-2 border border-amber-300 w-fit shadow-2xs">
                   {slide.tag}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black font-serif leading-snug text-slate-900 mb-2">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-black font-serif leading-snug text-slate-900 mb-2">
                   {slide.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-700 line-clamp-2 mb-4 leading-relaxed font-medium">
@@ -343,7 +343,7 @@ export const CitizenDashboard: React.FC = () => {
               </div>
 
               {/* Right Column: Clean Photographic Visual (No text overlaid on people) */}
-              <div className="w-full md:w-5/12 lg:w-1/2 relative h-48 md:h-auto overflow-hidden bg-stone-100 flex-1">
+              <div className="w-full md:w-5/12 lg:w-1/2 relative h-40 sm:h-44 md:h-auto overflow-hidden bg-stone-100 flex-1">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -353,24 +353,24 @@ export const CitizenDashboard: React.FC = () => {
             </div>
           ))}
 
-          {/* Carousel Arrows */}
+          {/* Carousel Arrows (Always visible on mobile/touch, hover on desktop) */}
           <button
             onClick={() => setDashboardSlide((prev) => (prev - 1 + dashboardBanners.length) % dashboardBanners.length)}
             aria-label="Previous Slide"
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
+            className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-80 md:opacity-0 md:group-hover:opacity-100 transition shadow-sm cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
           <button
             onClick={() => setDashboardSlide((prev) => (prev + 1) % dashboardBanners.length)}
             aria-label="Next Slide"
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-sm cursor-pointer"
+            className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/95 hover:bg-white border border-stone-300 text-slate-800 flex items-center justify-center opacity-80 md:opacity-0 md:group-hover:opacity-100 transition shadow-sm cursor-pointer"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
 
           {/* Indicators & Counter */}
-          <div className="absolute bottom-3 right-6 z-20 flex items-center space-x-2 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full border border-stone-200 shadow-2xs">
+          <div className="absolute bottom-2.5 right-3 sm:bottom-3 sm:right-6 z-20 flex items-center space-x-2 bg-white/95 backdrop-blur-sm px-2.5 py-1 rounded-full border border-stone-200 shadow-2xs">
             <span className="text-[11px] font-mono font-bold text-slate-600">
               0{dashboardSlide + 1} / 0{dashboardBanners.length}
             </span>

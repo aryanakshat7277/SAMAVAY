@@ -153,12 +153,12 @@ export const CitizenAssistant: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 font-sans">
+    <div className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-50 font-sans">
       {/* Helpdesk Floating Trigger Button */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="group relative flex items-center gap-2.5 bg-gov-900 hover:bg-gov-950 text-white pl-3.5 pr-4 py-2.5 rounded-full shadow-xl hover:shadow-2xl border border-gov-700/80 transition-all duration-200 cursor-pointer"
+          className="group relative flex items-center gap-2 sm:gap-2.5 bg-gov-900 hover:bg-gov-950 text-white pl-2.5 pr-3 sm:pl-3.5 sm:pr-4 py-2 sm:py-2.5 rounded-full shadow-xl hover:shadow-2xl border border-gov-700/80 transition-all duration-200 cursor-pointer"
           title="Open Citizen Helpdesk & Service Navigator"
         >
           {/* Emblem Icon */}
@@ -169,16 +169,16 @@ export const CitizenAssistant: React.FC = () => {
             <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-gov-950 animate-pulse" />
           </div>
 
-          <div className="text-left">
+          <div className="text-left hidden xs:block">
             <div className="flex items-center gap-1.5">
               <span className="text-xs font-bold tracking-tight font-serif text-white">
-                नागरिक सहायता केंद्र
+                नागरिक सहायता
               </span>
-              <span className="text-[9px] bg-gov-700 text-gov-100 px-1.5 py-0.2 rounded font-mono font-bold">
+              <span className="text-[9px] bg-gov-700 text-gov-100 px-1.5 py-0.2 rounded font-mono font-bold hidden sm:inline-block">
                 HELPDESK
               </span>
             </div>
-            <p className="text-[10px] text-stone-300 font-medium">
+            <p className="text-[10px] text-stone-300 font-medium hidden sm:block">
               Citizen Support & Guide
             </p>
           </div>
@@ -191,7 +191,7 @@ export const CitizenAssistant: React.FC = () => {
 
       {/* Expanded Helpdesk Drawer / Window */}
       {isOpen && (
-        <div className="w-[360px] sm:w-[420px] h-[560px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden animate-fade-in-scale">
+        <div className="w-[calc(100vw-1.5rem)] max-w-[420px] h-[min(560px,calc(100vh-4rem))] bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden animate-fade-in-scale">
           {/* Top Government Header */}
           <div className="bg-gov-900 text-white p-4 flex items-center justify-between border-b border-gov-800 relative">
             {/* Top tricolor micro bar */}

@@ -104,28 +104,30 @@ export const AdminLayout: React.FC = () => {
       <div className="h-1 w-full bg-gradient-to-r from-[#E65100] via-[#FAF8F5] to-[#1B5E20]" />
 
       {/* Admin Top Sovereign Ribbon */}
-      <div className="bg-[#061e38] text-stone-100 text-xs sm:text-sm py-2 px-4 sm:px-6 flex items-center justify-between border-b border-[#0f345c]">
-        <div className="flex items-center space-x-2.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span className="font-bold tracking-wider font-serif uppercase">SAMAVAY ADMINISTRATION & GATEWAY CONTROL</span>
+      <div className="bg-[#061e38] text-stone-100 text-xs sm:text-sm py-2 px-3 sm:px-6 flex items-center justify-between border-b border-[#0f345c] gap-2">
+        <div className="flex items-center space-x-2 shrink min-w-0">
+          <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span className="font-bold tracking-wider font-serif uppercase text-[11px] sm:text-xs truncate">
+            SAMAVAY ADMIN<span className="hidden sm:inline">ISTRATION & GATEWAY CONTROL</span>
+          </span>
           <span className="hidden md:inline text-stone-500">|</span>
           <span className="hidden md:inline text-stone-300 text-xs">Production Node • DPDP Act Governed</span>
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2.5 sm:space-x-4 shrink-0">
           <Link
             to="/how-samavay-works"
-            className="text-amber-300 hover:text-white transition flex items-center space-x-1 font-semibold text-xs"
+            className="text-amber-300 hover:text-white transition flex items-center space-x-1 font-semibold text-[11px] sm:text-xs"
           >
-            <span>How SAMAVAY Works</span>
-            <Compass className="w-3.5 h-3.5 ml-0.5" />
+            <span className="hidden xs:inline">How It Works</span>
+            <Compass className="w-3.5 h-3.5" />
           </Link>
           <Link
             to="/dashboard"
-            className="text-stone-300 hover:text-white transition flex items-center space-x-1 font-semibold text-xs"
+            className="text-stone-300 hover:text-white transition flex items-center space-x-1 font-semibold text-[11px] sm:text-xs"
           >
-            <span>Citizen Portal</span>
-            <ExternalLink className="w-3.5 h-3.5 ml-0.5" />
+            <span>Citizen<span className="hidden xs:inline"> Portal</span></span>
+            <ExternalLink className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

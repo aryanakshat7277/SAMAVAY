@@ -36,12 +36,12 @@ export const PersonaSwitcher: React.FC = () => {
   const currentRole = user?.role || 'CITIZEN';
 
   return (
-    <div className="fixed bottom-5 left-5 z-50 font-sans">
+    <div className="fixed bottom-3 left-3 sm:bottom-5 sm:left-5 z-50 font-sans">
       {/* Floating Pill Trigger */}
       <div className="flex items-center gap-2">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-full bg-white/95 hover:bg-white text-slate-800 text-xs font-bold transition-all duration-200 border border-slate-200 shadow-lg hover:shadow-xl backdrop-blur-md cursor-pointer group"
+          className="flex items-center gap-2.5 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-full bg-white/95 hover:bg-white text-slate-800 text-xs font-bold transition-all duration-200 border border-slate-200 shadow-lg hover:shadow-xl backdrop-blur-md cursor-pointer group"
           title="Switch Demo Persona or Jump to Evaluation Views"
         >
           {/* Persona Avatar Indicator */}
@@ -99,7 +99,7 @@ export const PersonaSwitcher: React.FC = () => {
 
       {/* Expanded Persona Switcher Drawer Modal */}
       {isOpen && (
-        <div className="absolute bottom-14 left-0 w-84 sm:w-96 bg-white border border-slate-300 rounded-3xl shadow-2xl p-5 text-slate-800 backdrop-blur-xl animate-fade-in-scale">
+        <div className="absolute bottom-14 left-0 w-[calc(100vw-1.5rem)] max-w-sm sm:w-96 max-h-[82vh] overflow-y-auto bg-white border border-slate-300 rounded-3xl shadow-2xl p-4 sm:p-5 text-slate-800 backdrop-blur-xl animate-fade-in-scale">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
             <div className="flex items-center gap-2">

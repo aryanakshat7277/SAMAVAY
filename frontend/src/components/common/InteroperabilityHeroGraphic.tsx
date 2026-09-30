@@ -148,8 +148,14 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
         ))}
       </div>
 
+      {/* Mobile Swipe Hint */}
+      <div className="sm:hidden text-center text-[11px] text-stone-500 font-mono py-0.5">
+        ⇄ Swipe diagram horizontally to view complete mesh
+      </div>
+
       {/* Main Interactive Diagram Canvas */}
-      <div className="relative h-[340px] sm:h-[370px] bg-white/70 border-2 border-slate-200/90 rounded-2xl sm:rounded-3xl p-3 sm:p-4 overflow-hidden z-10 shadow-inner">
+      <div className="w-full overflow-x-auto pb-1 scrollbar-none">
+        <div className="min-w-[480px] sm:min-w-full relative h-[340px] sm:h-[370px] bg-white/70 border-2 border-slate-200/90 rounded-2xl sm:rounded-3xl p-3 sm:p-4 overflow-hidden z-10 shadow-inner">
         {/* Radar concentric circular guides */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
           <div className="w-48 h-48 rounded-full border border-dashed border-gov-700 animate-spin-slow" />
@@ -317,6 +323,7 @@ export const InteroperabilityHeroGraphic: React.FC = () => {
           })}
         </div>
       </div>
+    </div>
 
       {/* Dynamic Telemetry & Live Payload Inspector */}
       <div className="p-4 sm:p-5 bg-white border-2 border-slate-200 rounded-2xl text-xs sm:text-sm relative z-10 space-y-2.5 shadow-xs">
